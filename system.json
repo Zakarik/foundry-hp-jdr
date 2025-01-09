@@ -36,9 +36,8 @@
   },
   "primaryTokenAttribute": "derives.pv",
   "secondaryTokenAttribute": "derives.fougue",
-  "url": "",
-  "manifest": "",
-  "download": "",
-  "changelog": "",
-  "readme": ""
+  "url": "#{URL}#",
+  "manifest": "#{MANIFEST}#",
+  "download": "#{DOWNLOAD}#",
+  "changelog": "https://raw.githubusercontent.com/Zakarik/foundry-hp-jdr/main/changelog.md"
 }
