@@ -4,3 +4,5 @@ Harry Potter JDR est un JDR Fan-made francophone, trouvable à cette adresse : h
 Si vous voulez aider, contactez moi sur le Discord-FR de Foundry : https://discord.gg/pPSDNJk
 
 Pseudo : Zakarik
+
+Lien de téléchargement : https://github.com/Zakarik/foundry-hp-jdr/releases/latest/download/system.json
