@@ -5,6 +5,7 @@ header.main {
     grid-gap: 5px;
 
     &.limited {
+        width: 100%;
         grid-template-columns: 200px 1fr;
     }
 

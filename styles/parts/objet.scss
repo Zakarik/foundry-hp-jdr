@@ -9,7 +9,7 @@
 
         form {
             display: grid;
-            grid-template-columns: 200px 1fr;
+            grid-template-columns: 200px 1fr 100px;
             grid-template-rows: max-content 1fr;
             align-items: flex-start;
             column-gap: 2px;
@@ -30,17 +30,21 @@
             }
 
             img.profil-img {
+                width: 100%;
                 object-fit: contain;
                 grid-row: 1 / 3;
             }
 
             div {
                 &.block {
+                    grid-column: 2 / 4;
+
                     display: grid;
                     grid-template-columns: 1fr;
                     border: 1px solid $black;
                     border-radius: 5px;
                     padding: 2px;
+                    background: $backgroundClair;
                 }
             }
 

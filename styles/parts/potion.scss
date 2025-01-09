@@ -17,6 +17,7 @@
             align-items: flex-start;
 
             img.profil-img {
+                width: 100%;
                 object-fit: contain;
                 grid-row: 1 / 3;
             }

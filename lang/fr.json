@@ -9,7 +9,7 @@
       "coupspouce":"Coups de pouce du destin",
       "crochepatte":"Croche-patte du destin",
       "avantage":"Avantage",
-      "desavantage":"Desavantage",
+      "desavantage":"Désavantage",
       "sortilege":"Sortilège",
       "potion":"Potion",
       "objet":"Objet",
@@ -78,6 +78,7 @@
     "ModificationSeuils":"Modifications des seuils de réussite / échec",
     "Attaque":"Attaque",
     "AddCombat":"Ajouter une attaque",
+    "Prix":"Prix",
     "CAPACITES":{
       "Label":"Capacités"
     },

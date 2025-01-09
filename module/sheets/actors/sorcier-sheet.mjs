@@ -31,7 +31,7 @@ export class SorcierActorSheet extends ActorSheet {
         {navSelector: ".sheet-competences", contentSelector: ".competences", initial: "generales"},
         {navSelector: ".sheet-historiques", contentSelector: ".historiques", initial: "background"},
       ],
-      dragDrop: [{dragSelector: [".draggable"], dropSelector: [".droppable"]}],
+      dragDrop: [{dragSelector: [".draggable"], dropSelector: null}],
     });
   }
 

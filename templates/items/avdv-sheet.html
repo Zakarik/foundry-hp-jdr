@@ -1,9 +1,10 @@
-<form class="mainFlex {{cssClass}}" autocomplete="off">
+<form class="mainFlex {{cssClass}} {{ifThen (or (eq item.type 'avantage') (eq item.type 'desavantage')) 'large' ''}}" autocomplete="off">
     <img class="profil-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" />
     <input type="text" class="name" name="name" value="{{data.name}}" placeholder="{{localize "HP.Name"}}" />
 
+    {{#if (or (eq item.type 'avantage') (eq item.type 'desavantage'))}}
     <input type="number" name="system.cout" value="{{systemData.cout}}" step=0.5 title="{{localize "HP.Cout"}}" />
-
+    {{/if}}
 
     {{!-- Sheet Body --}}
     <section class="body">

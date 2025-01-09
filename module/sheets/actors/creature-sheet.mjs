@@ -23,7 +23,7 @@ export class CreatureActorSheet extends ActorSheet {
       tabs: [
         {navSelector: ".sheet-tabs", contentSelector: ".body", initial: "personnage"},
       ],
-      dragDrop: [{dragSelector: [".draggable"], dropSelector: [".droppable"]}],
+      dragDrop: [{dragSelector: [".draggable"], dropSelector: null}],
     });
   }
 
