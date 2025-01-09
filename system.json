@@ -2,7 +2,7 @@
   "id": "harry-potter-jdr",
   "title": "Harry Potter JDR",
   "description": "Fiche non officielle du JDR Fan-made Harry Potter JDR",
-  "version": "0.9",
+  "version": "#{VERSION}#",
   "esmodules": [
     "module/hp.mjs"
   ],
