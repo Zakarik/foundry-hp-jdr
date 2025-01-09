@@ -5,4 +5,4 @@ Si vous voulez aider, contactez moi sur le Discord-FR de Foundry : https://disco
 
 Pseudo : Zakarik
 
-Lien de téléchargement : https://github.com/Zakarik/foundry-hp-jdr/releases/latest/download/system.json
+Lien de téléchargement (a utiliser dans Foundry) : https://github.com/Zakarik/foundry-hp-jdr/releases/latest/download/system.json
