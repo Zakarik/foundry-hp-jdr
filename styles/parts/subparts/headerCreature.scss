@@ -8,6 +8,10 @@ header.main {
         object-fit: contain;
     }
 
+    &.limited {
+        grid-template-columns: 200px 1fr;
+    }
+
     div {
         &.headerData {
             display: grid;

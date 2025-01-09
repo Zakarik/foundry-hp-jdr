@@ -51,7 +51,7 @@ export class CreatureActorSheet extends ActorSheet {
      */
    get template() {
     if (!game.user.isGM && this.actor.limited) {
-      return "systems/harry-potter-jdr/templates/actors/limited-sorcier-sheet.html";
+      return "systems/harry-potter-jdr/templates/actors/limited-creature-sheet.html";
     }
     return this.options.template;
   }

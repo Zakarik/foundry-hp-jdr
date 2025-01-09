@@ -1,0 +1,21 @@
+<div class="tab historique {{ifThen systemData.options.scolarise 'scolarise' ''}}" data-group="primary" data-tab="historique">
+    <section class="historiques">
+        <div class="firstcol">
+            {{#if systemData.options.scolarise}}
+            <div class="maison">
+                <label>
+                    <span>{{localize 'HP.HISTORIQUE.Maison'}}</span>
+                    <input type="text" name="system.historique.maison.nom" value="{{systemData.historique.maison.nom}}" />
+                </label>
+                <label class="{{ifThen (getOptions 'imgmaison') '' 'noBorder'}}">
+                    <span>{{localize 'HP.HISTORIQUE.Scolarite'}}</span>
+                    <input type="text" name="system.historique.scolarite" value="{{systemData.historique.scolarite}}" />
+                </label>
+                {{#if (getOptions 'imgmaison')}}
+                <img src="{{systemData.historique.maison.img}}" data-edit="system.historique.maison.img" title="{{localize "HP.HISTORIQUE.ImgMaison"}}" />
+                {{/if}}
+            </div>
+            {{/if}}
+        </div>
+    </section>
+</div>

@@ -4,6 +4,10 @@ header.main {
     align-items: flex-start;
     grid-gap: 5px;
 
+    &.limited {
+        grid-template-columns: 200px 1fr;
+    }
+
     img.profil-img {
         object-fit: contain;
     }

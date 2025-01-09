@@ -11,7 +11,10 @@ export const preloadHandlebarsTemplates = async function() {
     ];
 
     const parts = [
+      `${base}/actors/limited-creature-sheet.html`,
+      `${base}/actors/limited-sorcier-sheet.html`,
       `${base}/actors/parts/historique.html`,
+      `${base}/actors/parts/historique-limited.html`,
       `${base}/actors/parts/competences.html`,
       `${base}/actors/parts/competences-creature.html`,
       `${base}/actors/parts/combat.html`,

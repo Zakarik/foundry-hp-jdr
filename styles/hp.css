@@ -11,6 +11,9 @@
   align-items: flex-start;
   grid-gap: 5px;
 }
+.sorcier section.window-content header.main.limited {
+  grid-template-columns: 200px 1fr;
+}
 .sorcier section.window-content header.main img.profil-img {
   object-fit: contain;
 }
@@ -1429,6 +1432,9 @@
 }
 .creature section.window-content header.main img.profil-img {
   object-fit: contain;
+}
+.creature section.window-content header.main.limited {
+  grid-template-columns: 200px 1fr;
 }
 .creature section.window-content header.main div.headerData {
   display: grid;

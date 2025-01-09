@@ -1,0 +1,9 @@
+<form class="mainFlex {{cssClass}}" autocomplete="off">
+    <header class="main {{ifThen limited 'limited'}}">
+        <img class="profil-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" />
+
+        <div class="headerData">
+            <input type="text" class="name" name="name" value="{{data.name}}" placeholder="{{localize "HP.Name"}}" />
+        </div>
+    </header>
+</form>
