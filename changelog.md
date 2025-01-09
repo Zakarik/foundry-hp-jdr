@@ -1,4 +1,7 @@
 # Changelog
+## v0.10.1
+- Correction d'un problème de versioning
+
 ## v0.10.0
 - Correction d'un problème pour drag & drop les objets sur les personnages.
 - Retrait du coût sur les croches pattes et les coups de pouces.
