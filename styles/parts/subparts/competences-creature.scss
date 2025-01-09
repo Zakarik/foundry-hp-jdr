@@ -1,0 +1,232 @@
+div {
+    &.tab.competences.active {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: flex-start;
+        grid-gap: 5px;
+        background: $backgroundClair;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+        border: 1px solid;
+        margin-top: -2px;
+        padding: 5px;
+
+        img {
+            border: 0px;
+            cursor: pointer;
+        }
+
+        div {
+            &.line {
+                display: grid;
+                align-items: flex-start;
+                grid-gap: 2px;
+            }
+
+            &.custom {
+                display: grid;
+                grid-template-columns: 1fr;
+                align-items: flex-start;
+                grid-gap: 2px;
+
+                span {
+                    &.mainLabel {
+                        padding-left: 25px;
+                        align-items: center;
+                        grid-gap: 5px;
+                        font-weight: bold;
+                        font-variant: small-caps;
+                        font-size: 17px;
+
+                        i {
+                            cursor: pointer;
+
+                            &:hover {
+                                color: $white;
+                            }
+                        }
+                    }
+
+                    &.emptyLabel {
+                        text-align: left;
+                        border-bottom: 1px solid $black;
+                        border-radius: 0px;
+                        font-variant: small-caps;
+                        font-weight: bold;
+                        font-size: 15px;
+                        margin-left: 3px;
+                        height: 17px;
+                    }
+                }
+
+                div {
+                    &.main {
+                        grid-template-columns: 20px 1fr 20px max-content 150px;
+
+                        input {
+                            text-align: left;
+                            border-bottom: 1px solid $black;
+                            border-radius: 0px;
+                            font-variant: small-caps;
+                            font-weight: bold;
+                            font-size: 15px;
+                            margin-left: 3px;
+                            height: 17px;
+                            width: calc(100% - 3px);
+
+                            &[type=checkbox] {
+                                width: 100%;
+                                margin: 0px;
+                                padding: 0px;
+                                height: 20px;
+                            }
+                        }
+
+                        i {
+                            margin-left: 3px;
+                            margin-right: 3px;
+                            cursor: pointer;
+
+                            &:hover {
+                                color: $white;
+                            }
+
+                            &.empty {
+                                width: 12.5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        div.main,
+        div.sub {
+            display: grid;
+            grid-template-columns: 1fr 150px;
+            grid-gap: 2px;
+            align-items: center;
+
+            span {
+                &.label {
+                    display: grid;
+                    grid-template-columns: 20px 1fr;
+                    align-items: center;
+                    grid-gap: 5px;
+                    font-weight: bold;
+                    font-variant: small-caps;
+                    font-size: 15px;
+                }
+
+                &.sublabel {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    align-items: center;
+                    font-weight: bold;
+                    font-variant: small-caps;
+                    font-size: 15px;
+                    text-align: left;
+                    white-space: nowrap;
+                }
+
+                &.score,
+                &.separateur {
+                    width: 100%;
+                    text-align: center;
+
+                    &.bold {
+                        font-weight: bold;
+                    }
+                }
+            }
+
+            label {
+                display: grid;
+                grid-template-columns: 85px 5px 1fr;
+                border: 1px solid;
+                border-radius: 3px;
+                text-align: center;
+                line-height: 24px;
+                align-items: center;
+                padding-left: 2px;
+                padding-right: 2px;
+                grid-gap: 2px;
+            }
+
+            input {
+                text-align: center;
+                background:transparent;
+                padding: 0px;
+                width: 100%;
+                border: 0px;
+
+                &[type=checkbox] {
+                    margin: 0px;
+                    padding: 0px;
+                }
+            }
+        }
+
+        div.sub {
+            span.label {
+                padding-left: 25px;
+            }
+        }
+
+        header {
+            display: grid;
+            grid-column: 1 / 4;
+            grid-template-columns: repeat(3, 1fr 150px);
+            grid-gap: 2px;
+            align-items: center;
+            font-size: 17px;
+
+            span {
+                text-align: center;
+            }
+            font-weight: bold;
+            font-variant: small-caps;
+        }
+
+        span {
+            &.roll {
+                width: max-content;
+                display: grid;
+                grid-template-columns: max-content 15px;
+                cursor: pointer;
+                grid-gap: 2px;
+                align-items: center;
+
+                &:hover {
+                    color: $white;
+                }
+            }
+        }
+
+        i {
+            &.roll {
+                cursor: pointer;
+
+                &:hover {
+                    color: $white;
+                }
+            }
+        }
+
+        button.addCmp {
+            grid-column: 1 / 4;
+            margin: 0px;
+            padding: 0px;
+            border-radius: 5px;
+            border: 1px solid $black;
+            font-weight: bold;
+            font-variant: small-caps;
+            font-size: 14px;
+            line-height: 20px;
+            background: $background;
+        }
+    }
+}

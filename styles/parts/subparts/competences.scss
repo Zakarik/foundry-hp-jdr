@@ -1,0 +1,349 @@
+div {
+    &.tab.competences.active {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: flex-start;
+        grid-gap: 5px;
+        background: $backgroundClair;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+        border: 1px solid;
+        margin-top: -2px;
+        padding: 5px;
+        z-index: 0;
+
+        button {
+            &.EvolutionMaitriseBase,
+            &.EvolutionMaitrise,
+            &.EvolutionCompetence {
+                width: calc(100% - 5px);
+                border: 1px solid $black;
+                border-radius: 5px;
+                padding: 2px;
+                margin: 0px;
+                font-variant: small-caps;
+                font-weight: bold;
+                margin-right: 5px;
+                margin-top: 2px;
+                line-height: 20px;
+                min-height: 34px;
+
+                &:hover {
+                    box-shadow: none;
+                    background: $black;
+                    color: $white;
+                }
+            }
+        }
+
+        section {
+            &.competences {
+                display: grid;
+                grid-template-columns: 170px 1fr;
+                align-items: flex-start;
+
+                nav {
+                    grid-row: 1 / 5;
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    align-items: flex-start;
+                    grid-gap: 2px;
+                    border: 0px;
+                    font-size: 16px;
+                    font-weight: bold;
+                    margin-bottom: 0px;
+
+                    a {
+                        position: relative;
+                        display: grid;
+                        grid-template-columns: 1fr max-content;
+                        font-variant: small-caps;
+                        border-radius: 5px;
+                        background: #D3D3D3;
+                        border: 1px solid;
+                        text-align: left;
+                        letter-spacing: 1px;
+                        align-items: center;
+                        margin-right: 5px;
+                        z-index: 1;
+                        padding: 8px 12px;
+
+                        &.active {
+                            text-shadow: none;
+                            border-top-right-radius: 0px;
+                            border-bottom-right-radius: 0px;
+                            margin-right: 0px;
+                            padding-right: 18px;
+                            border-right: 0px;
+                        }
+                    }
+                }
+            }
+        }
+
+        img {
+            border: 0px;
+            cursor: pointer;
+        }
+
+        div {
+            &.generales.active,
+            &.moldus.active,
+            &.sorciers.active,
+            &.scolaires.active {
+                display: grid;
+                grid-template-columns: 1fr;
+                align-items: flex-start;
+                grid-gap: 2px;
+                border: 1px solid $black;
+                border-radius: 5px;
+                padding: 5px;
+                z-index: 0;
+                margin-left: -1px;
+
+                div {
+                    &.line {
+                        display: grid;
+                        align-items: flex-start;
+                        grid-gap: 2px;
+                    }
+
+                    &.specialisation,
+                    &.custom {
+                        display: grid;
+                        grid-template-columns: 1fr;
+                        align-items: flex-start;
+                        grid-gap: 2px;
+
+                        span {
+                            &.mainLabel {
+                                padding-left: 25px;
+                                align-items: center;
+                                grid-gap: 5px;
+                                font-weight: bold;
+                                font-variant: small-caps;
+                                font-size: 17px;
+
+                                i {
+                                    cursor: pointer;
+
+                                    &:hover {
+                                        color: $white;
+                                    }
+                                }
+                            }
+
+                            &.emptyLabel {
+                                text-align: left;
+                                border-bottom: 1px solid $black;
+                                border-radius: 0px;
+                                font-variant: small-caps;
+                                font-weight: bold;
+                                font-size: 15px;
+                                margin-left: 3px;
+                                height: 17px;
+                            }
+                        }
+
+                        div {
+                            &.main {
+                                grid-template-columns: 20px 1fr 20px max-content 150px 150px 150px 25px;
+
+                                input {
+                                    text-align: left;
+                                    border-bottom: 1px solid $black;
+                                    border-radius: 0px;
+                                    font-variant: small-caps;
+                                    font-weight: bold;
+                                    font-size: 15px;
+                                    margin-left: 3px;
+                                    height: 17px;
+                                    width: calc(100% - 3px);
+
+                                    &[type=checkbox] {
+                                        width: 100%;
+                                        margin: 0px;
+                                        padding: 0px;
+                                        height: 20px;
+                                    }
+                                }
+
+                                i {
+                                    margin-left: 3px;
+                                    margin-right: 3px;
+                                    cursor: pointer;
+
+                                    &:hover {
+                                        color: $white;
+                                    }
+
+                                    &.empty {
+                                        width: 12.5px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                header,
+                div.main,
+                div.sub {
+                    display: grid;
+                    grid-template-columns: 1fr 150px 150px 150px 25px;
+                    grid-gap: 2px;
+                    align-items: center;
+
+                    span {
+                        &.label {
+                            display: grid;
+                            grid-template-columns: 20px 1fr;
+                            align-items: center;
+                            grid-gap: 5px;
+                            font-weight: bold;
+                            font-variant: small-caps;
+                            font-size: 15px;
+                        }
+
+                        &.sublabel {
+                            display: grid;
+                            grid-template-columns: 1fr;
+                            align-items: center;
+                            font-weight: bold;
+                            font-variant: small-caps;
+                            font-size: 15px;
+                            text-align: left;
+                            white-space: nowrap;
+                        }
+
+                        &.base,
+                        &.max,
+                        &.actuel {
+                            display: grid;
+                            grid-template-columns: 1fr;
+                            align-items: center;
+                            text-align: center;
+                        }
+
+                        &.score,
+                        &.separateur {
+                            width: 100%;
+                            text-align: center;
+
+                            &.bold {
+                                font-weight: bold;
+                            }
+                        }
+                    }
+
+                    label {
+                        display: grid;
+                        grid-template-columns: 85px 5px 1fr;
+                        border: 1px solid;
+                        border-radius: 3px;
+                        text-align: center;
+                        line-height: 24px;
+                        align-items: center;
+                        padding-left: 2px;
+                        padding-right: 2px;
+                        grid-gap: 2px;
+                    }
+
+                    input {
+                        text-align: center;
+                        background:transparent;
+                        padding: 0px;
+                        width: 100%;
+                        border: 0px;
+
+                        &[type=checkbox] {
+                            margin: 0px;
+                            padding: 0px;
+                        }
+                    }
+                }
+
+                div.sub {
+                    span.label {
+                        padding-left: 25px;
+                    }
+                }
+
+                header {
+                    font-weight: bold;
+                    font-variant: small-caps;
+                    font-size: 16px;
+                }
+
+                span {
+                    &.roll {
+                        width: max-content;
+                        display: grid;
+                        grid-template-columns: max-content 15px;
+                        cursor: pointer;
+                        grid-gap: 2px;
+                        align-items: center;
+
+                        &:hover {
+                            color: $white;
+                        }
+                    }
+                }
+
+                i {
+                    &.roll {
+                        cursor: pointer;
+
+                        &:hover {
+                            color: $white;
+                        }
+                    }
+                }
+
+                button.addCmp {
+                    margin: 0px;
+                    padding: 0px;
+                    border-radius: 5px;
+                    border: 1px solid $black;
+                    font-weight: bold;
+                    font-variant: small-caps;
+                    font-size: 14px;
+                    line-height: 20px;
+                    background: $background;
+                }
+
+                a.toggleEvolutionCmp {
+                    display: grid;
+                    grid-template-columns: 1fr max-content;
+                    align-items: center;
+                    text-align: left;
+                    padding: 2px;
+                    margin: 0px;
+                    border: 1px solid $black;
+                    border-radius: 5px;
+                    font-variant: small-caps;
+                    height: 28px;
+                    font-weight: bold;
+                    font-size: 15px;
+
+                    i {
+                        font-size: 17px;
+                    }
+
+                    &:hover {
+                        box-shadow: none;
+                        color: $white;
+                        background: $black;
+                    }
+                }
+            }
+
+            &.generales.active {
+                border-top-left-radius: 0px;
+            }
+        }
+    }
+}

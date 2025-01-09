@@ -1,0 +1,58 @@
+<form class="mainFlex {{cssClass}}" autocomplete="off">
+    <img class="profil-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" />
+
+    <input type="text" class="name" name="name" value="{{data.name}}" placeholder="{{localize "HP.Name"}}" />
+    <input type="number" class="niveau" name="system.niveau" value="{{systemData.niveau}}" title="{{localize "HP.Niveau"}}" min="0" />
+
+    <div class="data">
+        <div class="ingredients">
+            <span class="header">{{localize "HP.POTIONS.Ingredients"}}</span>
+            <select name="system.ingredients.type">
+                {{selectOptions item.listtypeingredients selected=systemData.ingredients.type localize=true}}
+            </select>
+            <div class="liste">
+                {{#each systemData.ingredients.liste}}
+                    <div class="{{ifThen (isImpair @index) 'impair' 'pair'}}">
+                        {{#unless (isImpair @index)}}
+                            <i class="fa-solid fa-trash delete clickable" data-index="{{@index}}" title="{{localize 'HP.Supprimer'}}"></i>
+                        {{/unless}}
+                        <input type="text" name="system.ingredients.liste.{{@index}}" value="{{this}}" />
+                        {{#if (isImpair @index)}}
+                            <i class="fa-solid fa-trash delete clickable" data-index="{{@index}}" title="{{localize 'HP.Supprimer'}}"></i>
+                        {{/if}}
+                    </div>
+                {{/each}}
+            </div>
+            <button type="action" class="addIngredient">{{localize "HP.Add"}}</button>
+        </div>
+
+        <label class="malus">
+            <span>{{localize "HP.Malus"}}</span>
+            {{numberInput systemData.malus name="system.malus" min=0}}
+        </label>
+
+        <div class="cible">
+            <span class="header">{{localize "HP.Cibles"}}</span>
+            <div class="{{ifThen systemData.cibles.a 'checked' ''}}" data-cible="a" title="{{localize "HP.Animal"}}">
+                <i class="fa-solid {{ifThen systemData.cibles.a 'fa-check' 'fa-xmark'}}"></i>
+                <span>{{localize "HP.A"}}</span>
+            </div>
+            <div class="{{ifThen systemData.cibles.o 'checked' ''}}" data-cible="o" title="{{localize "HP.Objet"}}">
+                <i class="fa-solid {{ifThen systemData.cibles.o 'fa-check' 'fa-xmark'}}"></i>
+                <span>{{localize "HP.O"}}</span>
+            </div>
+            <div class="{{ifThen systemData.cibles.p 'checked' ''}}" data-cible="p" title="{{localize "HP.Personne"}}">
+                <i class="fa-solid {{ifThen systemData.cibles.p 'fa-check' 'fa-xmark'}}"></i>
+                <span>{{localize "HP.P"}}</span>
+            </div>
+            <div class="{{ifThen systemData.cibles.v 'checked' ''}}" data-cible="v" title="{{localize "HP.Vegetaux"}}">
+                <i class="fa-solid {{ifThen systemData.cibles.v 'fa-check' 'fa-xmark'}}"></i>
+                <span>{{localize "HP.V"}}</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="block">
+        {{editor systemData.effets target="system.effets" engine="prosemirror" button=true owner=owner editable=editable}}
+    </div>
+</form>

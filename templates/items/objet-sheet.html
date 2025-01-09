@@ -1,0 +1,8 @@
+<form class="mainFlex {{cssClass}}" autocomplete="off">
+    <img class="profil-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" />
+    <input type="text" class="name" name="name" value="{{data.name}}" placeholder="{{localize "HP.Name"}}" />
+
+    <div class="block">
+        {{editor systemData.particularite target="system.particularite" engine="prosemirror" button=true owner=owner editable=editable}}
+    </div>
+</form>

@@ -1,0 +1,44 @@
+{
+  "id": "harry-potter-jdr",
+  "title": "Harry Potter JDR",
+  "description": "Fiche non officielle du JDR Fan-made Harry Potter JDR",
+  "version": "0.9",
+  "esmodules": [
+    "module/hp.mjs"
+  ],
+  "styles": [
+    "styles/hp.css"
+  ],
+  "languages": [
+    {
+      "lang": "fr",
+      "name": "French",
+      "path": "lang/fr.json",
+      "flags": {}
+    }
+  ],
+  "authors": [
+    {
+      "name": "Zakarik",
+      "url": "https://fr.tipeee.com/zakarik",
+      "discord": "Zakarik#9006",
+      "flags": {}
+    }
+  ],
+  "compatibility": {
+    "minimum": "12",
+    "verified": "12"
+  },
+  "packs": [],
+  "grid": {
+    "distance": 5,
+    "units": "m"
+  },
+  "primaryTokenAttribute": "derives.pv",
+  "secondaryTokenAttribute": "derives.fougue",
+  "url": "",
+  "manifest": "",
+  "download": "",
+  "changelog": "",
+  "readme": ""
+}

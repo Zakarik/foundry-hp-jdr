@@ -1,0 +1,333 @@
+li.hp.roll {
+    border: 1px solid $black;
+    border-radius: 5px;
+    background: $background;
+    color: $black;
+
+    header {
+        &.message-header {
+            color: $black;
+            font-variant: small-caps;
+            font-size: 17px;
+            border-bottom: 1px solid $black;
+
+            h4 {
+                font-weight: bold;
+            }
+        }
+    }
+
+    div {
+        &.message-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: 2px;
+            cursor: pointer;
+
+            >header {
+                text-align: center;
+                font-variant: small-caps;
+                font-size: 15px;
+                font-weight: bold;
+                line-height: 30px;
+            }
+
+            h4 {
+                &.formula {
+                    margin: 0px;
+                    border: 1px solid $black;
+                    text-align: center;
+                    font-size: 15px;
+                    line-height: 25px;
+                    border-radius: 5px;
+                    background: $backgroundClair;
+                }
+            }
+
+            header {
+                &.part-header {
+                    border-color: $black;
+                }
+            }
+
+            span {
+                &.part-formula {
+                    text-transform: uppercase;
+                }
+
+                &.part-total {
+                    background: $backgroundClair;
+                    border-top: 1px solid $black;
+                    border-left: 1px solid $black;
+                    border-right: 1px solid $black;
+                }
+            }
+
+            div {
+                &.bonus {
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+
+                    span {
+                        font-variant: small-caps;
+                        font-size: 15px;
+                        border: 1px solid $black;
+                        padding: 2px;
+                        border-radius: 5px;
+                        background: $backgroundClair;
+                        margin-top: 2px;
+                    }
+                }
+
+                &.result {
+                    margin: 0px;
+                    border: 1px solid $black;
+                    text-align: center;
+                    font-size: 15px;
+                    line-height: 25px;
+                    border-radius: 5px;
+                    background: $backgroundClair;
+                    font-weight: bold;
+                    text-transform: uppercase;
+
+                    &.success {
+                        color: $valide;
+                    }
+
+                    &.fail {
+                        color: $unvalide;
+                    }
+                }
+
+                &.sortilege,
+                &.potion {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    column-gap: 5px;
+                    row-gap: 2px;
+                    border: 1px solid $black;
+                    border-radius: 5px;
+                    padding: 2px;
+                    background: $backgroundClair;
+                    font-variant: small-caps;
+                    font-size: 15px;
+
+                    span {
+                        grid-column: 1 / 3;
+                        text-align: left;
+
+                        &.mid-first {
+                            grid-column: 1;
+                        }
+
+                        &.mid-second {
+                            grid-column: 2;
+                        }
+
+                        &.tri-row {
+                            grid-row: 1 / 4;
+                        }
+
+                        &.description {
+                            text-align: justify;
+                            font-variant: normal;
+                            font-size: 13px;
+                        }
+
+                        p {
+                            display: contents;
+                        }
+
+                        b {
+                            &.title {
+                                text-transform: uppercase;
+                                font-size: 15px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+li.hp.multi {
+    div {
+        &.blockRoll {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: 2px;
+            border: 1px solid $black;
+            border-radius: 5px;
+            padding: 2px;
+            background: $backgroundClair;
+
+            span {
+                &.label {
+                    text-align: center;
+                    font-variant: small-caps;
+                    font-weight: bold;
+                    font-size: 15px;
+                }
+
+                &.objective {
+                    text-align: center;
+                    font-variant: small-caps;
+                    font-size: 15px;
+                }
+
+                &.result {
+                    text-align: center;
+                    font-variant: small-caps;
+                    font-size: 15px;
+
+                    &.success {
+                        color: $valide;
+                    }
+
+                    &.fail {
+                        color: $unvalide;
+                    }
+                }
+
+                &.gain {
+                    font-variant: small-caps;
+                    text-align: center;
+                    font-weight: bold;
+                    font-size: 15px;
+                }
+
+                &.borderTop {
+                    border-top: 1px solid $black;
+                    padding-top: 2px;
+                    margin-top: 2px;
+                }
+            }
+
+            a {
+                &.btn {
+                    text-align: center;
+                    font-variant: small-caps;
+                    font-weight: bold;
+                    border: 1px solid $black;
+                    border-radius: 10px;
+                    background: $background;
+                    cursor: pointer;
+
+                    &:hover {
+                        background: $white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+li.hp {
+    border: 1px solid $black;
+    border-radius: 5px;
+    background: $background;
+    color: $black;
+
+    header {
+        &.message-header {
+            color: $black;
+            font-variant: small-caps;
+            font-size: 17px;
+            border-bottom: 1px solid $black;
+
+            h4 {
+                font-weight: bold;
+            }
+        }
+    }
+
+    div {
+        &.message-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: 2px;
+
+            >header {
+                text-align: center;
+                font-variant: small-caps;
+                font-size: 15px;
+                font-weight: bold;
+                line-height: 30px;
+            }
+
+            span {
+                &.msg {
+                    text-align: center;
+                    width: 100%;
+                    border: 1px solid $black;
+                    border-radius: 5px;
+                    line-height: 30px;
+                    font-size: 20px;
+                    font-variant: small-caps;
+                    font-weight: bold;
+                    background: $backgroundClair;
+
+                    &.justify {
+                        font-size: 13px;
+                        line-height: inherit;
+                        font-weight: normal;
+                        font-variant: normal;
+                        text-align: justify;
+                        padding-left: 2px;
+                        padding-right: 2px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+li.hp.initiative {
+    div {
+        &.message-content,
+        &.dice-result {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: 2px;
+            cursor: pointer;
+        }
+
+        &.dice-roll {
+            margin-top: 2px;
+        }
+
+        &.dice-formula,
+        h4.dice-total {
+            margin: 0px;
+            border: 1px solid $black;
+            text-align: center;
+            font-size: 15px;
+            line-height: 25px;
+            border-radius: 5px;
+            background: $backgroundClair;
+            text-transform: uppercase;
+            font-variant: small-caps;
+        }
+
+        header {
+            &.part-header {
+                border-color: $black;
+            }
+        }
+
+        span {
+            &.part-formula {
+                text-transform: uppercase;
+            }
+
+            &.part-total {
+                background: $backgroundClair;
+                border-top: 1px solid $black;
+                border-left: 1px solid $black;
+                border-right: 1px solid $black;
+            }
+        }
+    }
+}

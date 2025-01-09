@@ -1,0 +1,98 @@
+<div class="tab competences" data-group="primary" data-tab="competences">
+    <header>
+        <span class="label"></span>
+        <span class="base">{{localize 'HP.COMPETENCES.Score'}}</span>
+        <span class="label"></span>
+        <span class="base">{{localize 'HP.COMPETENCES.Score'}}</span>
+        <span class="label"></span>
+        <span class="base">{{localize 'HP.COMPETENCES.Score'}}</span>
+    </header>
+    {{#each actor.listCompetences}}
+        {{#if (eq key 'custom')}}
+            {{#each data}}
+                <input type="hidden" name="system.competences.custom.{{@index}}.id" value="{{id}}" />
+                <input type="hidden" name="system.competences.custom.{{@index}}.origin" value="{{origin}}" />
+
+                <div class="line custom">
+                    <div class="main js-simpletoggler">
+                        <img class="options" src="systems/harry-potter-jdr/assets/icons/optionBlack.svg" />
+                        {{#unless origin}}
+                            <input type="text" name="system.competences.custom.{{@index}}.label" value="{{label}}" />
+                        {{else}}
+                            <span class="emptyLabel" title="{{label}}">{{label}}</span>
+                        {{/unless}}
+                        <i class="fa-solid fa-dice-d20 roll draggable" data-id="custom_{{id}}" data-label="{{label}}" data-value="{{total}}"></i>
+                        {{#unless origin}}
+                            <i class="fa-solid fa-trash delete" title="{{localize "HP.Delete"}}" data-index="{{@index}}"></i>
+                        {{else}}
+                            <i class="empty"></i>
+                        {{/unless}}
+                        <span class="score">{{total}}</span>
+                    </div>
+                    <div class="sub" style="display:none;">
+                        <span class="label"></span>
+                        <label>
+                            <span class="sublabel">{{localize 'HP.Base'}}</span>
+                            <span class="separateur">:</span>
+                            {{numberInput base name=(concat 'system.competences.custom.' @index '.base') min=0}}
+                        </label>
+                    </div>
+                    <div class="sub" style="display:none;">
+                        <span class="label"></span>
+                        <label>
+                            <span class="sublabel">{{localize 'HP.Modificateur'}}</span>
+                            <span class="separateur">:</span>
+                            {{numberInput (ifThen mod.user mod.user 0) name=(concat 'system.competences.custom.' @index '.mod.user')}}
+                        </label>
+                    </div>
+                    <div class="sub" style="display:none;">
+                        <span class="label"></span>
+                        <label>
+                            <span class="sublabel">{{localize 'HP.Temporaire'}}</span>
+                            <span class="separateur">:</span>
+                            {{numberInput (ifThen mod.temp mod.temp 0) name=(concat 'system.competences.custom.' @index '.mod.temp')}}
+                        </label>
+                    </div>
+                </div>
+            {{/each}}
+        <button type="action" class="addCmp">{{localize "HP.AddCompetence"}}</button>
+        {{else}}
+            <div class="line">
+                <div class="main js-simpletoggler">
+                    <span class="label">
+                        <img class="options" src="systems/harry-potter-jdr/assets/icons/optionBlack.svg" />
+                        <span class="roll draggable" data-id="{{key}}" data-label="{{label}}" data-value="{{data.total}}">
+                            {{label}}
+                            <i class="fa-solid fa-dice-d20"></i>
+                        </span>
+                    </span>
+                    <span class="score {{ifThen (gt data.total 0) 'bold' ''}}">{{data.total}}</span>
+                </div>
+                <div class="sub" style="display:none;">
+                    <span class="label"></span>
+                    <label>
+                        <span class="sublabel">{{localize 'HP.Base'}}</span>
+                        <span class="separateur">:</span>
+                        {{numberInput data.base name=(concat 'system.competences.' key '.base')}}
+                    </label>
+                </div>
+                <div class="sub" style="display:none;">
+                    <span class="label"></span>
+                    <label>
+                        <span class="sublabel">{{localize 'HP.Modificateur'}}</span>
+                        <span class="separateur">:</span>
+                        {{numberInput (ifThen data.mod.user data.mod.user 0) name=(concat 'system.competences.' key '.mod.user')}}
+                    </label>
+                </div>
+                <div class="sub" style="display:none;">
+                    <span class="label"></span>
+                    <label>
+                        <span class="sublabel">{{localize 'HP.Temporaire'}}</span>
+                        <span class="separateur">:</span>
+                        {{numberInput (ifThen data.mod.temp data.mod.temp 0) name=(concat 'system.competences.' key '.mod.temp')}}
+                    </label>
+                </div>
+            </div>
+        {{/if}}
+    {{/each}}
+</div>

@@ -1,0 +1,92 @@
+<div class="tab inventaire" data-group="primary" data-tab="inventaire">
+    <div class="baguette">
+        <header>
+            <span>{{localize "HP.INVENTAIRE.Baguettes"}}</span>
+            <a class="item-create" data-type="baguette">
+                <i class="fa-solid fa-plus" title="{{localize 'HP.Ajouter'}}"></i>
+            </a>
+        </header>
+        {{#each actor.baguettes}}
+            <div class="line summary draggable" data-item-id="{{_id}}">
+                <img src="{{img}}" />
+                <header class="name">
+                    <span class="eqp {{ifThen system.wear 'wear' ''}}">
+                        <i class="fa-solid {{ifThen system.wear 'fa-check' 'fa-xmark'}}"></i>
+                        {{localize (ifThen system.wear 'HP.Equipe' 'HP.NonEquipe')}}
+                    </span>
+                    <span class="name">{{name}}</span>
+                    <i class="fa-solid fa-pen-to-square item-edit clickable" title="{{localize 'HP.Edit'}}"></i>
+                    <i class="fa-solid fa-trash item-delete clickable" title="{{localize 'HP.Supprimer'}}"></i>
+                </header>
+                <span class="visuel label">{{localize "HP.Visuel"}}</span>
+                <span class="bois label">{{localize "HP.BAGUETTES.Bois"}}</span>
+                <span class="coeur label">{{localize "HP.BAGUETTES.Coeur"}}</span>
+                <span class="taille label">{{localize "HP.BAGUETTES.Taille"}}</span>
+                <span class="affinite label">{{localize "HP.BAGUETTES.Affinite"}}</span>
+
+                <span class="visuel">{{{textarea system.visuel}}}</span>
+                <span class="bois" title="{{system.bois.description}}">{{system.bois.name}}</span>
+                <span class="coeur" title="{{system.coeur.description}}">{{system.coeur.name}}</span>
+                <span class="taille">{{system.taille}}</span>
+                <span class="affinite">{{system.affinite.label}}</span>
+            </div>
+        {{/each}}
+    </div>
+
+    <div class="balai">
+        <header>
+            <span>{{localize "HP.INVENTAIRE.Balais"}}</span>
+            <a class="item-create" data-type="balai">
+                <i class="fa-solid fa-plus" title="{{localize 'HP.Ajouter'}}"></i>
+            </a>
+        </header>
+        {{#each actor.balais}}
+            <div class="line summary draggable" data-item-id="{{_id}}">
+                <img src="{{img}}" />
+                <header class="name">
+                    <span class="eqp {{ifThen system.wear 'wear' ''}}">
+                        <i class="fa-solid {{ifThen system.wear 'fa-check' 'fa-xmark'}}"></i>
+                        {{localize (ifThen system.wear 'HP.Equipe' 'HP.NonEquipe')}}
+                    </span>
+                    <span class="name">{{name}}</span>
+                    <i class="fa-solid fa-pen-to-square item-edit clickable" title="{{localize 'HP.Edit'}}"></i>
+                    <i class="fa-solid fa-trash item-delete clickable" title="{{localize 'HP.Supprimer'}}"></i>
+                </header>
+                <span class="visuel label">{{localize "HP.Visuel"}}</span>
+                <span class="marque label">{{localize "HP.BALAIS.Marque"}}</span>
+                <span class="bonus label">{{localize "HP.BALAIS.Bonus"}}</span>
+
+                <span class="visuel value">{{{textarea system.visuel}}}</span>
+                <span class="marque value">{{system.marque}}</span>
+                <div class="bonus value">
+                    {{#each system.bonus.liste}}
+                        <span class="data" title="{{description}}">{{#if (gte @index 1)}} / {{/if}}{{getBalaiBonusLocalization this}}{{#unless (eq key 'autre')}} ({{value}}){{/unless}}</span>
+                    {{/each}}
+                </div>
+            </div>
+        {{/each}}
+    </div>
+
+    <div class="liste">
+        <header>
+            <span>{{localize "HP.INVENTAIRE.Label"}}</span>
+            <a class="item-create" data-type="objet">
+                <i class="fa-solid fa-plus" title="{{localize 'HP.Ajouter'}}"></i>
+            </a>
+        </header>
+        {{#each actor.inventaire}}
+        <div class="line summary draggable" data-item-id="{{_id}}">
+            <header class="name js-toggler">
+                <i class="far fa-plus-square"></i>
+                <span>{{name}}</span>
+                <i class="fa-solid fa-comment-dots clickable sendchat" title="{{localize "HP.SendChat"}}" data-label="{{name}}" data-id="{{_id}}"></i>
+                <i class="fa-solid fa-pen-to-square item-edit clickable" title="{{localize 'HP.Edit'}}"></i>
+                <i class="fa-solid fa-trash item-delete clickable" title="{{localize 'HP.Supprimer'}}"></i>
+            </header>
+            {{#if system.particularite}}
+            <span class="particularite" style="display:none;">{{{system.particularite}}}</span>
+            {{/if}}
+        </div>
+        {{/each}}
+    </div>
+</div>

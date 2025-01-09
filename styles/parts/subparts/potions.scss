@@ -1,0 +1,135 @@
+div {
+    &.tab.potions.active {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: flex-start;
+        column-gap: 5px;
+        background: $backgroundClair;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+        border: 1px solid;
+        margin-top: -2px;
+        padding: 5px;
+        z-index: 0;
+
+        header {
+            display: grid;
+            grid-template-columns: 1fr 100px 100px 150px 150px;
+            font-variant: small-caps;
+            font-weight: bold;
+            font-size: 15px;
+            align-items: flex-start;
+            border-bottom: 1px solid $black;
+            padding-bottom: 2px;
+            margin-bottom: 2px;
+
+            span {
+                &.niveau,
+                &.ingredientstype,
+                &.cibles,
+                &.malus {
+                    text-align: center;
+                    border-left: 1px solid $black;
+                }
+            }
+        }
+
+        div {
+            &.line {
+                display: grid;
+                grid-template-columns: 1fr 100px 100px 150px 150px;
+                align-items: center;
+                cursor: context-menu;
+
+                span,
+                div {
+                    &.niveau,
+                    &.ingredientstype,
+                    &.cibles,
+                    &.malus {
+                        display: grid;
+                        font-variant: small-caps;
+                        font-size: 15px;
+                        text-align: center;
+                        border-left: 1px solid $black;
+                        height: 100%;
+                        align-items: center;
+                    }
+
+                    &.name {
+                        display: grid;
+                        grid-template-columns: 1fr 14px 14px 14px ;
+                        grid-gap: 2px;
+                        align-items: center;
+                        font-variant: small-caps;
+                        font-size: 15px;
+                        height: 100%;
+
+                        i {
+                            font-size: 12px;
+                        }
+                    }
+
+                    &.roll {
+                        width: max-content;
+                        cursor: pointer;
+
+                        &:hover {
+                            color: $white;
+                        }
+                    }
+
+                    &.malus {
+                        display: grid;
+                        grid-template-columns: 1fr;
+                        grid-gap: 2px;
+                        align-items: flex-start;
+                    }
+
+                    &.text,
+                    &.ingredientsliste {
+                        grid-column: 1 / 6;
+                        border-top: 1px dotted $background;
+                    }
+
+                    &.ingredientsliste {
+                        padding-top:2px;
+                        padding-bottom:2px;
+                    }
+                }
+
+                i {
+                    &.clickable {
+                        cursor: pointer;
+
+                        &:hover {
+                            color: $white;
+                        }
+                    }
+                }
+
+                &.bordertop {
+                    border-top: 1px solid $black;
+                    margin-top: 2px;
+                    padding-top:2px;
+                }
+            }
+        }
+
+        button {
+            margin: 0px;
+            padding: 0px;
+            border-radius: 5px;
+            border: 1px solid $black;
+            font-weight: bold;
+            font-variant: small-caps;
+            font-size: 14px;
+            line-height: 20px;
+            background: $background;
+            margin-top: 5px;
+        }
+    }
+}

@@ -1,0 +1,68 @@
+<form class="mainFlex {{cssClass}}" autocomplete="off">
+    <header>
+        <img class="profil-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" />
+        <input type="text" class="name" name="name" value="{{data.name}}" placeholder="{{localize "HP.Name"}}" />
+
+        <div class="block">
+            <label class="visuel">
+                <span>{{localize "HP.Visuel"}}</span>
+                <textarea name="system.visuel">{{systemData.visuel}}</textarea>
+            </label>
+
+            <label class="marque">
+                <span>{{localize "HP.BALAIS.Marque"}}</span>
+                <input type="text" name="system.marque" value="{{systemData.marque}}" />
+            </label>
+
+            <div class="bonus">
+                <header>
+                    <span class="title">{{localize "HP.BALAIS.Bonus"}}</span>
+                    <span class="score">{{{systemData.bonus.cout}}}</span>
+                </header>
+                {{#each systemData.bonus.liste}}
+                    <div class="list">
+                        <label>
+                            <span class="subtitle">{{localize "HP.Type"}}</span>
+                            <select name="system.bonus.liste.{{@index}}.key">
+                                {{selectOptions ../item.listbonus selected=key localize=true}}
+                            </select>
+                        </label>
+
+                        {{#if (eq key 'autre')}}
+                        <label class="name large">
+                            <span class="subtitle">{{localize "HP.Name"}}</span>
+                            <input type="text" name="system.bonus.liste.{{@index}}.label" value="{{label}}" />
+                        </label>
+                        {{else}}
+                        <label class="name">
+                            <span class="subtitle">{{localize "HP.Name"}}</span>
+                            <select name="system.bonus.liste.{{@index}}.label">
+                                {{selectOptions (ifThen (eq key 'caracteristique') ../item.listcaracteristique ../item.listcompetence) selected=label sort=true}}
+                            </select>
+                        </label>
+                        {{/if}}
+
+                        <label style="{{ifThen (eq key 'autre') 'display:none;' ''}}">
+                            <span class="subtitle">{{localize "HP.Bonus"}}</span>
+                            {{numberInput value name=(concat "system.bonus.liste." @index ".value") step=5 min=0}}
+                        </label>
+
+                        <label>
+                            <span class="subtitle">{{localize "HP.Cout"}}</span>
+                            {{numberInput cout name=(concat "system.bonus.liste." @index ".cout") step=0.5}}
+                        </label>
+
+                        <i class="fa-solid fa-trash deleteBonus clickable" data-index="{{@index}}" title="{{localize 'HP.Supprimer'}}"></i>
+
+                        <textarea name="system.bonus.liste.{{@index}}.description" placeholder="{{localize 'HP.Description'}}">{{description}}</textarea>
+                    </div>
+                {{/each}}
+                <button type="action" class="addBonus">{{localize "HP.Ajouter"}}</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="block">
+        {{editor systemData.description target="system.description" engine="prosemirror" button=true owner=owner editable=editable}}
+    </div>
+</form>

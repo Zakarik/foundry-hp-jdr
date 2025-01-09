@@ -1,0 +1,23 @@
+<div class="tab effets" data-group="primary" data-tab="effets">
+    {{#each systemData.effets}}
+        {{log key}}
+        {{#if (or (contain key 'addspe') (contain key 'custom'))}}
+        <div class="line" data-index="{{@index}}">
+            <select name="system.effets.{{@index}}.key" data-index="{{@index}}">
+                {{selectOptions (prepareOptionsEffects ../item.optionseffects @index) selected=key sort=true}}
+            </select>
+            <input type="text" name="system.effets.{{@index}}.value" value="{{ifThen (eq value '0') '' value}}" placeholder="{{localize 'HP.Name'}}" />
+            <i class="fa-solid fa-trash deleteEffets" title="{{localize "HP.Delete"}}" data-index="{{@index}}"></i>
+        </div>
+        {{else}}
+        <div class="line" data-index="{{@index}}">
+            <select name="system.effets.{{@index}}.key">
+                {{selectOptions (prepareOptionsEffects ../item.optionseffects @index) selected=key sort=true}}
+            </select>
+            <input type="number" name="system.effets.{{@index}}.value" value="{{ifThen value value 0}}" />
+            <i class="fa-solid fa-trash deleteEffets" title="{{localize "HP.Delete"}}" data-index="{{@index}}"></i>
+        </div>
+        {{/if}}
+    {{/each}}
+    <button type="action" class="addEffets">{{localize "HP.Ajouter"}}</button>
+</div>

@@ -1,0 +1,70 @@
+<form class="mainFlex {{cssClass}}" autocomplete="off">
+    <img class="profil-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" />
+
+    <input type="text" class="name" name="name" value="{{data.name}}" placeholder="{{localize "HP.Name"}}" />
+    <input type="number" class="niveau" name="system.niveau" value="{{systemData.niveau}}" title="{{localize "HP.Niveau"}}" min="0" />
+
+    <div class="data">
+        <label class="type">
+            <span>{{localize "HP.Type"}} :</span>
+            <select name="system.type">
+                {{selectOptions item.listtype selected=systemData.type}}
+            </select>
+        </label>
+
+        <div class="malus">
+            <span class="header">{{localize "HP.Malus"}}</span>
+            <label>
+                <span>{{localize "HP.SORTILEGES.FormuleClassique"}}</span>
+                {{numberInput systemData.malus.fc name="system.malus.fc" min=0}}
+            </label>
+            <div class="fe">
+                <span class="subheader">{{localize "HP.SORTILEGES.FormuleExtreme"}}</span>
+                <button type="action" class="btnHasFE {{ifThen systemData.malus.fe.has 'check' ''}}" data-value="{{systemData.malus.fe.has}}">
+                    <span>{{localize "HP.SORTILEGES.PossedeFormuleExtreme"}}</span>
+                    <i class="fa-solid {{ifThen systemData.malus.fe.has 'fa-check' 'fa-xmark'}}"></i>
+                </button>
+                {{#if systemData.malus.fe.has}}
+                <button type="action" class="btnHasFC {{ifThen systemData.malus.fe.fc.reduction 'check' ''}}" data-value="{{systemData.malus.fe.fc.reduction}}">
+                    <span>{{localize "HP.SORTILEGES.MalusFormuleClassiqueReduit"}}</span>
+                    <i class="fa-solid {{ifThen systemData.malus.fe.fc.reduction 'fa-check' 'fa-xmark'}}"></i>
+                </button>
+                {{#if systemData.malus.fe.fc.reduction}}
+                <label>
+                    <span>{{localize "HP.SORTILEGES.MalusFormuleClassiqueReduction"}} : </span>
+                    {{numberInput systemData.malus.fe.fc.malus name="system.malus.fe.fc.malus" min=0}}
+                </label>
+                {{/if}}
+                <label>
+                    <span>{{localize "HP.Malus"}} : </span>
+                    {{numberInput systemData.malus.fe.malus name="system.malus.fe.malus" min=0}}
+                </label>
+                {{/if}}
+            </div>
+        </div>
+
+        <div class="cible">
+            <span class="header">{{localize "HP.Cibles"}}</span>
+            <div class="{{ifThen systemData.cibles.a 'checked' ''}}" data-cible="a" title="{{localize "HP.Animal"}}">
+                <i class="fa-solid {{ifThen systemData.cibles.a 'fa-check' 'fa-xmark'}}"></i>
+                <span>{{localize "HP.A"}}</span>
+            </div>
+            <div class="{{ifThen systemData.cibles.o 'checked' ''}}" data-cible="o" title="{{localize "HP.Objet"}}">
+                <i class="fa-solid {{ifThen systemData.cibles.o 'fa-check' 'fa-xmark'}}"></i>
+                <span>{{localize "HP.O"}}</span>
+            </div>
+            <div class="{{ifThen systemData.cibles.p 'checked' ''}}" data-cible="p" title="{{localize "HP.Personne"}}">
+                <i class="fa-solid {{ifThen systemData.cibles.p 'fa-check' 'fa-xmark'}}"></i>
+                <span>{{localize "HP.P"}}</span>
+            </div>
+            <div class="{{ifThen systemData.cibles.v 'checked' ''}}" data-cible="v" title="{{localize "HP.Vegetaux"}}">
+                <i class="fa-solid {{ifThen systemData.cibles.v 'fa-check' 'fa-xmark'}}"></i>
+                <span>{{localize "HP.V"}}</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="block">
+        {{editor systemData.effets target="system.effets" engine="prosemirror" button=true owner=owner editable=editable}}
+    </div>
+</form>

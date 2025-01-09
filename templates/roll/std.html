@@ -1,0 +1,40 @@
+<header>
+    <span>{{header}}</span>
+</header>
+{{#if tags}}
+<div class="bonus">
+    {{#each tags}}
+    <span>{{label}} {{value}}</span>
+    {{/each}}
+</div>
+{{/if}}
+{{#if label}}
+<h4 class="formula">{{label}}</h4>
+{{/if}}
+{{#if tooltip}}{{{tooltip}}}{{/if}}
+{{#if result}}
+<div class="result {{ifThen success 'success' 'fail'}}">{{result}}</div>
+{{/if}}
+{{#if sortilege}}
+<div class="sortilege">
+    <span class="mid-first"><b>{{localize "HP.Niveau"}}</b> : {{sortilege.niveau}}</span>
+    <span class="mid-first"><b>{{localize "HP.Type"}}</b> : {{sortilege.type}}</span>
+    <span class="mid-first"><b>{{localize "HP.Cibles"}}</b> : {{{sortilege.cibles}}}</span>
+    <span class="mid-second tri-row"><b class="title">{{localize "HP.Malus"}}</b><br/>{{{sortilege.malus}}}</span>
+    <span class="description">{{{sortilege.description}}}</span>
+</div>
+{{/if}}
+{{#if potion}}
+<div class="potion">
+    <span class="mid-first"><b>{{localize "HP.Niveau"}}</b> : {{potion.niveau}}</span>
+    <span class="mid-second"><b>{{localize "HP.POTIONS.Ingredients"}}</b> : {{potion.ingredients}}</span>
+    <span class="mid-first"><b>{{localize "HP.Cibles"}}</b> : {{{potion.cibles}}}</span>
+    <span class="mid-second"><b>{{localize "HP.Malus"}}</b> : {{{potion.malus}}}</span>
+    <span class="description">{{{potion.listingredients}}}</span>
+    <span class="description">{{{potion.description}}}</span>
+</div>
+{{/if}}
+{{#if degats}}
+<h4 class="formula" title="{{ifThen degats.base degats.base '0'}}{{ifThen degats.bonus (concat ' + ' degats.bonus) ''}}">{{localize "HP.DERIVES.Degats"}} : {{degats.value}}</h4>
+{{#if degats.tooltip}}{{{degats.tooltip}}}{{/if}}
+{{/if}}

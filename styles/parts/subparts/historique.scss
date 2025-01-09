@@ -1,0 +1,327 @@
+div {
+    &.tab.historique.active {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: flex-start;
+        grid-gap: 5px;
+        background: $backgroundClair;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        border-top-right-radius: 5px;
+        border: 1px solid;
+        margin-top: -2px;
+        padding: 5px;
+        z-index: 0;
+
+        section {
+            &.historiques {
+                display: grid;
+                grid-template-columns: 300px 1fr;
+                align-items: flex-start;
+
+                nav {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    align-items: flex-start;
+                    grid-gap: 2px;
+                    border: 0px;
+                    font-size: 16px;
+                    font-weight: bold;
+                    margin-bottom: 0px;
+
+                    a {
+                        position: relative;
+                        display: grid;
+                        grid-template-columns: 1fr max-content;
+                        font-variant: small-caps;
+                        border-radius: 5px;
+                        background: $backgroundClair;
+                        border: 1px solid;
+                        text-align: left;
+                        letter-spacing: 1px;
+                        align-items: center;
+                        margin-right: 5px;
+                        z-index: 1;
+                        padding: 8px 12px;
+
+                        &.active {
+                            text-shadow: none;
+                            border-top-right-radius: 0px;
+                            border-bottom-right-radius: 0px;
+                            margin-right: 0px;
+                            padding-right: 18px;
+                            border-right: 0px;
+                        }
+                    }
+                }
+            }
+        }
+
+        div {
+            &.tab {
+                border: 1px solid $black;
+                border-radius: 5px;
+                padding: 5px;
+                margin-left: -1px;
+                min-height: 300px;
+                align-items: flex-start;
+                height: 100%;
+
+                &.backgrounds {
+                    border-top-left-radius: 0px;
+                }
+
+                &.cpcp,
+                &.avdv {
+                    &.active {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        grid-gap: 2px;
+                    }
+                }
+            }
+
+            &.col {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-gap: 2px;
+                align-items: flex-start;
+                border: 1px solid $black;
+                border-radius: 5px;
+                width: 100%;
+                row-gap: 2px;
+
+                header {
+                    &.clHeader {
+                        display: grid;
+                        grid-template-columns: 1fr max-content;
+                        font-weight: bold;
+                        font-size: 17px;
+                        font-variant: small-caps;
+                        border-bottom: 1px solid $black;
+                        padding-left: 5px;
+                        padding-right: 5px;
+                    }
+
+                    &.blHeader {
+                        display: grid;
+                        grid-template-columns: max-content 1fr max-content;
+                        grid-gap: 2px;
+                        font-weight: bold;
+                        font-variant: small-caps;
+                        font-size: 15px;
+                        align-items: center;
+
+                        padding-left: 5px;
+                        padding-right: 5px;
+
+                        div {
+                            &.cmd {
+                                font-size: 13px;
+                            }
+                        }
+
+                        i {
+                            cursor: pointer;
+
+                            &:hover {
+                                color: $white;
+                            }
+                        }
+                    }
+                }
+
+                div {
+                    &.block {
+                        display: grid;
+                        grid-template-columns: 1fr;
+                        padding-bottom: 5px;
+                        padding-top: 5px;
+                        align-items: flex-start;
+                        align-content: flex-start;
+
+                        span {
+                            &.description {
+                                padding-left: 5px;
+                                padding-right: 5px;
+                            }
+                        }
+
+                        &:not(:last-of-type) {
+                            border-bottom: 1px solid $black;
+                        }
+                    }
+                }
+            }
+
+            &.patronus {
+                width: calc(100% - 5px);
+                display: grid;
+                grid-template-columns: 1fr;
+                border: 1px solid $black;
+                border-radius: 5px;
+                margin-top: 2px;
+
+                span {
+                    text-align: center;
+                    white-space: nowrap;
+                    font-variant: small-caps;
+                    font-weight: bold;
+                }
+
+                div.editor {
+                    min-height: 50px;
+
+                    menu {
+                        border-radius: 0px;
+                    }
+
+                    >div.editor-content {
+                        padding-left: 5px;
+                        padding-right: 5px;
+                        padding-bottom: 5px;
+                    }
+
+                    >div.editor-container {
+                        min-height: 100px;
+                    }
+                }
+            }
+
+            &.maison {
+                width: calc(100% - 5px);
+                display: grid;
+                grid-template-columns: 1fr;
+                border: 1px solid $black;
+                border-radius: 5px;
+                margin-top: 2px;
+
+                label {
+                    display: grid;
+                    grid-gap: 5px;
+                    align-items: flex-end;
+
+                    grid-template-columns: 1fr;
+                    grid-gap: 0px;
+                    border-bottom: 1px solid $black;
+                    text-align: center;
+
+
+                    span {
+                        white-space: nowrap;
+                        font-variant: small-caps;
+                        font-weight: bold;
+                    }
+
+                    input,
+                    select {
+                        width: 100%;
+                        border-radius: 0px;
+                        border-left: 0px;
+                        border-right: 0px;
+                        border-top: 0px;
+                        border-bottom: 1px solid;
+                        text-align: center;
+                        background: transparent;
+                        border: 0px;
+                    }
+
+                    &.noBorder {
+                        border-bottom: 0px;
+                    }
+                }
+
+                img {
+                    min-height: 200px;
+                    border: 0px;
+                    object-fit: contain;
+                }
+            }
+
+            &.background {
+                display: grid;
+                grid-template-columns: 200px 200px 1fr;
+                grid-template-rows: max-content;
+                grid-gap: 5px;
+                height: 100%;
+                align-items: flex-start;
+
+                label {
+                    display: grid;
+                    grid-gap: 5px;
+                    align-items: center;
+
+                    grid-template-columns: max-content 1fr;
+                    grid-gap: 5px;
+                    border-radius: 5px;
+                    border: 1px solid $black;
+                    padding-left: 5px;
+                    padding-right: 5px;
+
+                    span {
+                        white-space: nowrap;
+                        font-variant: small-caps;
+                        font-weight: bold;
+                        font-size: 15px;
+                    }
+
+                    input,
+                    select {
+                        width: 100%;
+                        border-radius: 0px;
+                        border-left: 0px;
+                        border-right: 0px;
+                        border-top: 0px;
+                        border-bottom: 1px solid;
+                        text-align: center;
+                        background: transparent;
+                        border: 0px;
+                    }
+                }
+
+                div {
+                    &.block {
+                        display: grid;
+                        grid-template-columns: 1fr;
+                        grid-column: 1 / 4;
+                        border: 1px solid $black;
+                        border-radius: 5px;
+                        padding-top: 5px;
+                        height: 100%;
+                        align-items: flex-start;
+                        align-content: flex-start;
+
+                        span {
+                            text-align: center;
+                            white-space: nowrap;
+                            font-variant: small-caps;
+                            font-weight: bold;
+                            font-size: 15px;
+                        }
+
+                        div.editor {
+                            min-height: 300px;
+
+                            menu {
+                                border-radius: 0px;
+                            }
+
+                            >div.editor-content {
+                                padding-left: 5px;
+                                padding-right: 5px;
+                                padding-bottom: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.epouvantard {
+                div.editor {
+                    height: 100%;
+                }
+            }
+        }
+    }
+}

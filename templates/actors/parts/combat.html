@@ -1,0 +1,27 @@
+<div class="tab combat" data-group="primary" data-tab="combat">
+    <header>
+        <span class="label"></span>
+        <span class="score">{{localize 'HP.Attaque'}}</span>
+        <span class="degats">{{localize 'HP.DERIVES.Degats'}}</span>
+        <span></span>
+        <span></span>
+
+        <span class="label margin"></span>
+        <span class="score">{{localize 'HP.Attaque'}}</span>
+        <span class="degats">{{localize 'HP.DERIVES.Degats'}}</span>
+        <span></span>
+        <span></span>
+    </header>
+    {{#each actor.listCombat}}
+        <input type="hidden" name="system.combat.{{@index}}.id" value="{{id}}" />
+        <div class="line {{ifThen (isImpair @index) 'margin'}}">
+            <input type="text" class="label" name="system.combat.{{@index}}.label" value="{{label}}" />
+            <input type="number" name="system.combat.{{@index}}.attaque" value="{{attaque}}" min="0" />
+            <input type="text" name="system.combat.{{@index}}.degats" value="{{degats}}" placeholder="1D6" />
+
+            <i class="fa-solid fa-dice-d20 roll draggable" data-id="combat_{{id}}" data-label="{{label}}" data-attaque="{{attaque}}" data-degats="{{degats}}"></i>
+            <i class="fa-solid fa-trash delete" title="{{localize "HP.Delete"}}" data-index="{{@index}}"></i>
+        </div>
+    {{/each}}
+    <button type="action" class="addCombat">{{localize "HP.AddCombat"}}</button>
+</div>

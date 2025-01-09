@@ -1,0 +1,137 @@
+<form class="mainFlex {{cssClass}}" autocomplete="off">
+    <header class="main">
+        <img class="profil-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" />
+
+        <div class="headerData">
+            <input type="text" class="name" name="name" value="{{data.name}}" placeholder="{{localize "HP.Name"}}" />
+            <label>
+                <span>{{localize "HP.Sexe"}}</span>
+                <input type="text" name="system.sexe" value="{{systemData.sexe}}" />
+            </label>
+            <label>
+                <span>{{localize "HP.Age"}}</span>
+                <input type="text" name="system.age" value="{{systemData.age}}" />
+            </label>
+            <label>
+                <span>{{localize "HP.SANG.Label"}}</span>
+                <select name="system.sang">
+                    {{selectOptions (getSang) selected=systemData.sang localize=true}}
+                </select>
+            </label>
+            <label>
+                <span>{{localize "HP.Argent"}}</span>
+                <input type="text" name="system.argent" value="{{systemData.argent}}" />
+            </label>
+
+            {{#each systemData.derives as |data key|}}
+            <div class="data">
+                <div class="main js-simpletoggler">
+                    <img class="options" src="systems/harry-potter-jdr/assets/icons/optionBlack.svg" />
+                    <span class="label">{{localize (getLocalization 'derives' key)}}</span>
+
+                    {{#if (eq key 'degats')}}
+                        <div class="block simple">
+                            <span class="score degats">
+                                <i></i>
+                                {{data.total}}
+                                <i class="fa-solid fa-dice-d20 rolldgts draggable" data-id="dgts" data-value="{{data.total}}"></i>
+                            </span>
+                        </div>
+                    {{else}}
+                        <div class="block {{ifThen (eq data.max undefined) 'simple' 'double'}}" title="{{data.base}} + {{data.divers}}">
+                            {{#unless (eq data.max undefined)}}
+                                {{numberInput data.actuel name=(concat "system.derives." key ".actuel") min=0 max=data.max}}
+                                <span class="separateur">/</span>
+                                <span class="max">{{data.max}}</span>
+                            {{else}}
+                                <span class="max">{{data.total}}{{ifThen (or (eq key 'idee') (or key 'chance')) '%' ''}}</span>
+                            {{/unless}}
+                        </div>
+                    {{/if}}
+                </div>
+                <div class="sub" style="display:none;">
+                    {{#if (eq key 'degats')}}
+                        <label>
+                            <span>{{localize "HP.Base"}}</span>
+                            <span class="max">{{data.base.complet}}</span>
+                        </label>
+                        <label>
+                            <span>{{localize "HP.ModificateurDice"}}</span>
+                            {{numberInput (ifThen data.mod.dice.user data.mod.dice.user 0) name=(concat "system.derives." key ".mod.dice.user")}}
+                        </label>
+                        <label>
+                            <span>{{localize "HP.ModificateurFace"}}</span>
+                            {{numberInput (ifThen data.mod.face.user data.mod.face.user 0) name=(concat "system.derives." key ".mod.face.user")}}
+                        </label>
+                        <label>
+                            <span>{{localize "HP.TemporaireDice"}}</span>
+                            {{numberInput (ifThen data.mod.dice.temp data.mod.dice.temp 0) name=(concat "system.derives." key ".mod.dice.temp")}}
+                        </label>
+                        <label>
+                            <span>{{localize "HP.TemporaireFace"}}</span>
+                            {{numberInput (ifThen data.mod.face.temp data.mod.face.temp 0) name=(concat "system.derives." key ".mod.face.temp")}}
+                        </label>
+                    {{else}}
+                        <label>
+                            <span>{{localize "HP.Base"}}</span>
+                            <span class="max">{{data.base}}{{ifThen (or (eq key 'idee') (eq key 'chance')) '%' ''}}</span>
+                        </label>
+                        <label>
+                            <span>{{localize "HP.Modificateur"}}</span>
+                            {{numberInput (ifThen data.mod.user data.mod.user 0) name=(concat "system.derives." key ".mod.user")}}
+                        </label>
+                        <label>
+                            <span>{{localize "HP.Temporaire"}}</span>
+                            {{numberInput (ifThen data.mod.temp data.mod.temp 0) name=(concat "system.derives." key ".mod.temp")}}
+                        </label>
+                    {{/if}}
+                </div>
+            </div>
+            {{/each}}
+        </div>
+
+        <div class="caracteristiques">
+            {{#each systemData.caracteristiques as |data key|}}
+                <div class="data">
+                    <div class="main js-simpletoggler">
+                        <img class="options" src="systems/harry-potter-jdr/assets/icons/optionBlack.svg" />
+                        <span class="label roll draggable" data-id="caracteristique_{{key}}" data-key="{{key}}" data-label="{{localize (getLocalization 'caracteristiques' key)}}" data-value="{{data.total}}">{{localize (getLocalization 'caracteristiques' key)}} <i class="fa-solid fa-dice-d20"></i></span>
+                        <span class="value" title="{{data.base}} + {{data.divers}}">{{data.total}}</span>
+                    </div>
+                    <div class="sub" style="display:none;">
+                        <label>
+                            <span>{{localize "HP.Base"}}</span>
+                            {{numberInput data.base name=(concat "system.caracteristiques." key ".base") min=0}}
+                        </label>
+                        <label>
+                            <span>{{localize "HP.Modificateur"}}</span>
+                            {{numberInput (ifThen data.mod.user data.mod.user 0) name=(concat "system.caracteristiques." key ".mod.user")}}
+                        </label>
+                        <label>
+                            <span>{{localize "HP.Temporaire"}}</span>
+                            {{numberInput (ifThen data.mod.temp data.mod.temp 0) name=(concat "system.caracteristiques." key ".mod.temp")}}
+                        </label>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    </header>
+
+    {{!-- Sheet Body --}}
+    <section class="body">
+        {{!-- Sheet Tab Navigation --}}
+        <nav class="sheet-tabs tabs" data-group="primary">
+            <a class="item" data-tab="historique">{{localize "HP.HISTORIQUE.Label"}}</a>
+            <a class="item" data-tab="competences">{{localize "HP.COMPETENCES.Label"}}</a>
+            <a class="item" data-tab="sortileges">{{localize "HP.SORTILEGES.Label"}}</a>
+            <a class="item" data-tab="potions">{{localize "HP.POTIONS.Label"}}</a>
+            <a class="item" data-tab="inventaire">{{localize "HP.INVENTAIRE.Label"}}</a>
+        </nav>
+
+        {{> systems/harry-potter-jdr/templates/actors/parts/historique.html}}
+        {{> systems/harry-potter-jdr/templates/actors/parts/competences.html}}
+        {{> systems/harry-potter-jdr/templates/actors/parts/sortileges.html}}
+        {{> systems/harry-potter-jdr/templates/actors/parts/potions.html}}
+        {{> systems/harry-potter-jdr/templates/actors/parts/inventaire.html}}
+    </section>
+</form>

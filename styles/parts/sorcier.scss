@@ -1,0 +1,23 @@
+.sorcier {
+    section.window-content {
+        background:$background;
+
+        span,
+        input {
+            color: $black;
+        }
+
+        @import "subparts/headerSorcier.scss";
+
+        section {
+            &.body {
+                @import "subparts/menu.scss";
+                @import "subparts/historique.scss";
+                @import "subparts/competences.scss";
+                @import "subparts/sortileges.scss";
+                @import "subparts/potions.scss";
+                @import "subparts/inventaire.scss";
+            }
+        }
+    }
+}

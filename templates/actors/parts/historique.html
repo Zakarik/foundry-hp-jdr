@@ -1,0 +1,165 @@
+<div class="tab historique {{ifThen systemData.options.scolarise 'scolarise' ''}}" data-group="primary" data-tab="historique">
+    <section class="historiques">
+        <div class="firstcol">
+            {{!-- Sheet Tab Competences --}}
+            <nav class="sheet-historiques" data-group="historiques">
+                <a class="item" data-tab="background">{{localize "HP.HISTORIQUE.Label"}}</a>
+                <a class="item" data-tab="cpcp">{{localize "HP.HISTORIQUE.CoupsPoucesCrochesPattes"}}</a>
+                <a class="item" data-tab="avdv">{{localize "HP.HISTORIQUE.AvantagesDesavantages"}}</a>
+                <a class="item" data-tab="epouvantard">{{localize "HP.HISTORIQUE.Epouvantard"}}</a>
+            </nav>
+
+            {{#if systemData.options.patronus}}
+            <div class="patronus">
+                <span>{{localize 'HP.HISTORIQUE.Patronus'}}</span>
+                {{editor systemData.historique.patronus target="system.historique.patronus" engine="prosemirror" button=true owner=owner editable=editable}}
+            </div>
+            {{/if}}
+
+            {{#if systemData.options.scolarise}}
+            <div class="maison">
+                <label>
+                    <span>{{localize 'HP.HISTORIQUE.Maison'}}</span>
+                    <input type="text" name="system.historique.maison.nom" value="{{systemData.historique.maison.nom}}" />
+                </label>
+                <label class="{{ifThen (getOptions 'imgmaison') '' 'noBorder'}}">
+                    <span>{{localize 'HP.HISTORIQUE.Scolarite'}}</span>
+                    <input type="text" name="system.historique.scolarite" value="{{systemData.historique.scolarite}}" />
+                </label>
+                {{#if (getOptions 'imgmaison')}}
+                <img src="{{systemData.historique.maison.img}}" data-edit="system.historique.maison.img" title="{{localize "HP.HISTORIQUE.ImgMaison"}}" />
+                {{/if}}
+            </div>
+            {{/if}}
+        </div>
+
+        <div class="tab backgrounds" data-group="historiques" data-tab="background">
+            <div class="background">
+                <label>
+                    <span>
+                        {{localize 'HP.HISTORIQUE.Taille'}}
+                    </span>
+                    <input type="text" name="system.historique.taille" value="{{systemData.historique.taille}}" />
+                </label>
+                <label>
+                    <span>{{localize 'HP.HISTORIQUE.Poids'}}</span>
+                    <input type="text" name="system.historique.poids" value="{{systemData.historique.poids}}" />
+                </label>
+
+                <div class="block">
+                    <span>{{localize 'HP.HISTORIQUE.Label'}}</span>
+                    {{editor systemData.historique.historique target="system.historique.historique" engine="prosemirror" button=true owner=owner editable=editable}}
+                </div>
+            </div>
+        </div>
+
+        <div class="tab cpcp" data-group="historiques" data-tab="cpcp">
+            <div class="col">
+                <header class="clHeader">
+                    <span>{{localize "HP.DETAILS.Coupspouce"}}</span>
+                    <a class="item-create" data-type="coupspouce">
+                        <i class="fa-solid fa-plus" title="{{localize 'HP.Ajouter'}}"></i>
+                    </a>
+                </header>
+                {{#each actor.coupspouces}}
+                <div class="block">
+                    <header class="blHeader js-toggler summary" data-item-id="{{_id}}">
+                        <i class="far fa-minus-square"></i>
+
+                        <span class="label draggable" data-item-id="{{_id}}">{{name}}</span>
+
+                        <div class="cmd">
+                            <i class="fa-solid fa-pen-to-square item-edit clickable" title="{{localize 'HP.Edit'}}"></i>
+                            <i class="fa-solid fa-trash item-delete clickable" title="{{localize 'HP.Supprimer'}}"></i>
+                        </div>
+                    </header>
+
+                    <span class="description">{{{system.description}}}</span>
+                </div>
+                {{/each}}
+            </div>
+
+            <div class="col">
+                <header class="clHeader">
+                    <span>{{localize "HP.DETAILS.Crochespattes"}}</span>
+                    <a class="item-create" data-type="crochepatte">
+                        <i class="fa-solid fa-plus" title="{{localize 'HP.Ajouter'}}"></i>
+                    </a>
+                </header>
+                {{#each actor.crochespattes}}
+                <div class="block">
+                    <header class="blHeader js-toggler summary" data-item-id="{{_id}}">
+                        <i class="far fa-minus-square"></i>
+
+                        <span class="label draggable" data-item-id="{{_id}}">{{name}}</span>
+
+                        <div class="cmd">
+                            <i class="fa-solid fa-pen-to-square item-edit clickable" title="{{localize 'HP.Edit'}}"></i>
+                            <i class="fa-solid fa-trash item-delete clickable" title="{{localize 'HP.Supprimer'}}"></i>
+                        </div>
+                    </header>
+
+                    <span class="description">{{{system.description}}}</span>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+
+        <div class="tab avdv" data-group="historiques" data-tab="avdv">
+            <div class="col">
+                <header class="clHeader">
+                    <span>{{localize "HP.DETAILS.Avantages"}}</span>
+                    <a class="item-create" data-type="avantage">
+                        <i class="fa-solid fa-plus" title="{{localize 'HP.Ajouter'}}"></i>
+                    </a>
+                </header>
+                {{#each actor.avantages}}
+                <div class="block">
+                    <header class="blHeader js-toggler summary" data-item-id="{{_id}}">
+                        <i class="far fa-minus-square"></i>
+
+                        <span class="label draggable" data-item-id="{{_id}}">{{name}}</span>
+
+                        <div class="cmd">
+                            <i class="fa-solid fa-pen-to-square item-edit clickable" title="{{localize 'HP.Edit'}}"></i>
+                            <i class="fa-solid fa-trash item-delete clickable" title="{{localize 'HP.Supprimer'}}"></i>
+                        </div>
+                    </header>
+
+                    <span class="description">{{{system.description}}}</span>
+                </div>
+                {{/each}}
+            </div>
+
+            <div class="col">
+                <header class="clHeader">
+                    <span>{{localize "HP.DETAILS.Desavantages"}}</span>
+                    <a class="item-create" data-type="desavantage">
+                        <i class="fa-solid fa-plus" title="{{localize 'HP.Ajouter'}}"></i>
+                    </a>
+                </header>
+                {{#each actor.desavantages}}
+                <div class="block">
+                    <header class="blHeader js-toggler summary" data-item-id="{{_id}}">
+                        <i class="far fa-minus-square"></i>
+
+                        <span class="label draggable" data-item-id="{{_id}}">{{name}}</span>
+
+                        <div class="cmd">
+                            <i class="fa-solid fa-pen-to-square item-edit clickable" title="{{localize 'HP.Edit'}}"></i>
+                            <i class="fa-solid fa-trash item-delete clickable" title="{{localize 'HP.Supprimer'}}"></i>
+                        </div>
+                    </header>
+
+                    <span class="description">{{{system.description}}}</span>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+
+        <div class="tab epouvantard" data-group="historiques" data-tab="epouvantard">
+            {{editor systemData.historique.epouvantard target="system.historique.epouvantard" engine="prosemirror" button=true owner=owner editable=editable}}
+        </div>
+    </section>
+
+</div>

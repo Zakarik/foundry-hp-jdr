@@ -1,0 +1,37 @@
+<div class="tab potions" data-group="primary" data-tab="potions">
+    <header>
+        <span class="name">{{localize "HP.Name"}}</span>
+        <span class="niveau">{{localize "HP.Niveau"}}</span>
+        <span class="ingredientstype">{{localize "HP.POTIONS.Ingredients"}}</span>
+        <span class="cibles">{{localize "HP.Cibles"}}</span>
+        <span class="malus">{{localize "HP.Malus"}}</span>
+    </header>
+    {{#each actor.potions}}
+        <div class="line summary draggable {{ifThen (gte @index 1) 'bordertop' ''}}" data-item-id="{{_id}}">
+            <div class="name">
+                <span class="roll draggable" data-id="itm_{{_id}}" data-label="{{name}}">
+                    <i class="fa-solid fa-dice-d20"></i>
+                    {{name}}
+                </span>
+                <i class="fa-solid fa-comment-dots clickable sendchat" title="{{localize "HP.SendChat"}}" data-label="{{name}}" data-id="{{_id}}"></i>
+                <i class="fa-solid fa-pen-to-square item-edit clickable" title="{{localize 'HP.Edit'}}"></i>
+                <i class="fa-solid fa-trash item-delete clickable" title="{{localize 'HP.Supprimer'}}"></i>
+            </div>
+            <span class="niveau">{{system.niveau}}</span>
+            <span class="ingredientstype">{{ingredientstype system.ingredients.type}}</span>
+            <span class="cibles">{{cibles system.cibles}}</span>
+            <span class="malus">{{system.malus}}%</span>
+            {{#if system.ingredients.liste}}
+            <div class="ingredientsliste" title="{{localize "HP.POTIONS.Ingredients"}}">
+                {{ingredientsliste system.ingredients.liste}}
+            </div>
+            {{/if}}
+            {{#if system.effets}}
+            <div class="text">
+                {{{system.effets}}}
+            </div>
+            {{/if}}
+        </div>
+    {{/each}}
+    <button type="action" class="item-create" data-type="potion">{{localize "HP.Ajouter"}}</button>
+</div>

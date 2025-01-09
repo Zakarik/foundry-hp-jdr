@@ -1,0 +1,33 @@
+nav.tabs {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 5px;
+    border: 0px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 0px;
+
+    a {
+        position:relative;
+        display: grid;
+        grid-template-columns: 1fr max-content;
+        font-variant: small-caps;
+        border-radius: 5px;
+        background: $backgroundClair;
+        border: 1px solid;
+        text-align: left;
+        letter-spacing: 1px;
+        align-items: center;
+        margin-bottom: 5px;
+        z-index: 1;
+
+        &.active {
+            text-shadow: none;
+            border-bottom-right-radius: 0px;
+            border-bottom-left-radius: 0px;
+            margin-bottom: 0px;
+            padding-bottom: 13px;
+            border-bottom: 0px;
+        }
+    }
+}

@@ -1,0 +1,58 @@
+<form class="{{cssClass}}" autocomplete="off">
+    {{#each data}}
+        {{#if (eq key 'select')}}
+        <label class="{{class}}" data-value="{{data}}">
+            <span>{{localize label}}</span>
+            <select>
+                {{selectOptions list selected=value localize=true}}
+            </select>
+        </label>
+        {{/if}}
+
+        {{#if (eq key 'number')}}
+        <label class="{{class}}" data-value="{{data}}">
+            <span>{{localize label}}</span>
+            {{numberInput value min=min max=max}}
+        </label>
+        {{/if}}
+
+        {{#if (eq key 'numberWithCheck')}}
+        <label class="numberWithCheck {{class}}" data-value="{{data}}">
+            <input type="checkbox" />
+            <span class="label">{{localize label}}</span>
+            <span class="score">{{value}}</span>
+        </label>
+        {{/if}}
+
+        {{#if (eq key 'text')}}
+        <label class="{{class}}" data-value="{{data}}">
+            <span>{{localize label}}</span>
+            <input type="text" value="{{value}}" />
+        </label>
+        {{/if}}
+
+        {{#if (eq key 'btn')}}
+        <button type="action" class="{{class}}">{{localize label}}</button>
+        {{/if}}
+
+        {{#if (eq key 'btnWithIconAndNumber')}}
+        <div class="btnWithIconAndNumber {{mainclass}}">
+            <button type="action" class="btnWithIcon {{class}}" data-value="{{value}}">
+                <span>{{ifThen localized label (localize label)}}</span></spanj>
+                <i class="{{icon}}"></i>
+            </button>
+            <input type="number" value="{{number}}" min="{{min}}" max="{{max}}" />
+        </div>
+        {{/if}}
+    {{/each}}
+</form>
+{{#if buttons}}
+<div class="dialog-buttons">
+    {{#each buttons}}
+        <button type="action" class="dialog-button {{class}}" data-button="{{data}}">
+            <i class="{{icon}}"></i>
+            {{localize label}}
+        </button>
+    {{/each}}
+</div>
+{{/if}}

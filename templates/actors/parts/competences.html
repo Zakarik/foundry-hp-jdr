@@ -1,0 +1,69 @@
+<div class="tab competences" data-group="primary" data-tab="competences">
+    <section class="competences">
+        <div class="firstcol">
+
+            {{!-- Sheet Tab Competences --}}
+            <nav class="sheet-competences" data-group="competences">
+                <a class="item" data-tab="generales">{{localize "HP.COMPETENCES.Generales"}}</a>
+                <a class="item" data-tab="sorciers">{{localize "HP.COMPETENCES.Sorciers"}}</a>
+                <a class="item" data-tab="moldus">{{localize "HP.COMPETENCES.Moldus"}}</a>
+                <a class="item" data-tab="scolaires">{{localize "HP.COMPETENCES.Scolaires"}}</a>
+            </nav>
+            <button type="action" class="EvolutionMaitriseBase">{{localize "HP.COMPETENCES.EvolutionBase"}}</button>
+            <button type="action" class="EvolutionMaitrise">{{localize "HP.COMPETENCES.EvolutionMaitrise"}}</button>
+            <button type="action" class="EvolutionCompetence">{{localize "HP.COMPETENCES.EvolutionCompetence"}}</button>
+        </div>
+
+        <div class="tab generales" data-group="competences" data-tab="generales">
+            <header>
+                <span class="label"></span>
+                <span class="base">{{localize 'HP.COMPETENCES.MaitriseBase'}}</span>
+                <span class="max">{{localize 'HP.COMPETENCES.MaitriseMax'}}</span>
+                <span class="actuel">{{localize 'HP.COMPETENCES.MaitriseActuelle'}}</span>
+            </header>
+
+            {{#each actor.listCompetencesGenerales}}
+                {{> systems/harry-potter-jdr/templates/actors/parts/subparts/competence.html domain='generales'}}
+            {{/each}}
+        </div>
+
+        <div class="tab moldus" data-group="competences" data-tab="moldus">
+            <header>
+                <span class="label"></span>
+                <span class="base">{{localize 'HP.COMPETENCES.MaitriseBase'}}</span>
+                <span class="max">{{localize 'HP.COMPETENCES.MaitriseMax'}}</span>
+                <span class="actuel">{{localize 'HP.COMPETENCES.MaitriseActuelle'}}</span>
+            </header>
+
+            {{#each actor.listCompetencesMoldus}}
+                {{> systems/harry-potter-jdr/templates/actors/parts/subparts/competence.html domain='moldus'}}
+            {{/each}}
+        </div>
+
+        <div class="tab scolaires" data-group="competences" data-tab="scolaires">
+            <header>
+                <span class="label"></span>
+                <span class="base">{{localize 'HP.COMPETENCES.MaitriseBase'}}</span>
+                <span class="max">{{localize 'HP.COMPETENCES.MaitriseMax'}}</span>
+                <span class="actuel">{{localize 'HP.COMPETENCES.MaitriseActuelle'}}</span>
+            </header>
+
+            {{#each actor.listCompetencesScolaires}}
+                {{> systems/harry-potter-jdr/templates/actors/parts/subparts/competence.html domain='scolaires' editbase=true}}
+            {{/each}}
+        </div>
+
+        <div class="tab sorciers" data-group="competences" data-tab="sorciers">
+            <header>
+                <span class="label"></span>
+                <span class="base">{{localize 'HP.COMPETENCES.MaitriseBase'}}</span>
+                <span class="max">{{localize 'HP.COMPETENCES.MaitriseMax'}}</span>
+                <span class="actuel">{{localize 'HP.COMPETENCES.MaitriseActuelle'}}</span>
+            </header>
+
+            {{#each actor.listCompetencesSorciers}}
+                {{> systems/harry-potter-jdr/templates/actors/parts/subparts/competence.html domain='sorciers'}}
+            {{/each}}
+        </div>
+    </section>
+</div>

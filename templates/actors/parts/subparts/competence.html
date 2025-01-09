@@ -1,0 +1,291 @@
+{{#if specialisation}}
+<div class="specialisation" data-key="{{key}}" data-domain="{{domain}}">
+    <span class="mainLabel">
+        {{label}}
+        <i class="fa-solid fa-plus add" title="{{localize "HP.Add"}}"></i>
+    </span>
+    {{#each data.list}}
+        <input type="hidden" name="system.competences.{{../domain}}.{{../key}}.list.{{@index}}.id" value="{{id}}" />
+        <input type="hidden" name="system.competences.{{../domain}}.{{../key}}.list.{{@index}}.origin" value="{{origin}}" />
+        <div class="line">
+            <div class="main js-simpletoggler">
+                <img class="options" src="systems/harry-potter-jdr/assets/icons/optionBlack.svg" />
+                {{#unless origin}}
+                    <input type="text" name="system.competences.{{../domain}}.{{../key}}.list.{{@index}}.specialisation" value="{{specialisation}}" />
+                {{else}}
+                    <span class="emptyLabel" title="{{specialisation}}">{{specialisation}}</span>
+                {{/unless}}
+                <i class="fa-solid fa-dice-d20 roll draggable" data-id="specialisation_{{../domain}}_{{../key}}_{{id}}" data-key="specialisation_{{../domain}}_{{../key}}_{{@index}}" data-label="{{specialisation}}" data-value="{{actuel.total}}"></i>
+                {{#unless origin}}
+                    <i class="fa-solid fa-trash delete" title="{{localize "HP.Delete"}}" data-index="{{@index}}"></i>
+                {{else}}
+                    <i class="empty"></i>
+                {{/unless}}
+                <span class="base">{{base.total}}</span>
+                <span class="max">{{max.total}}</span>
+                <span class="score {{ifThen (gt actuel.total 0) 'bold' ''}}">{{actuel.total}}</span>
+                <input type="checkbox" name="system.competences.{{../domain}}.{{../key}}.list.{{@index}}.check" {{checked check}} title="{{specialisation}}"/>
+            </div>
+            <div class="sub" style="display:none;">
+                <span class="label"></span>
+                <label>
+                    <span class="sublabel">{{localize 'HP.Base'}}</span>
+                    <span class="separateur">:</span>
+                    <span class="score">{{base.initial}}</span>
+                </label>
+                <label>
+                    <span class="sublabel">{{localize 'HP.Base'}}</span>
+                    <span class="separateur">:</span>
+                    {{#if ../editbase}}
+                    {{numberInput max.initial name=(concat 'system.competences.' ../domain '.' ../key '.list.' @index '.max.initial')}}
+                    {{else}}
+                    <span class="score">{{max.initial}}</span>
+                    {{/if}}
+                </label>
+                <label>
+                    <span class="sublabel">{{localize 'HP.Progression'}}</span>
+                    <span class="separateur">:</span>
+                    {{numberInput actuel.progression name=(concat 'system.competences.' ../domain '.' ../key '.list.' @index '.actuel.progression') min=0}}
+                </label>
+            </div>
+            {{#if ../data.max.evolution}}
+            <div class="sub" style="display:none;">
+                <span class="label"></span>
+                <span></span>
+                <label>
+                    <span class="sublabel">{{localize 'HP.Evolution'}}</span>
+                    <span class="separateur">:</span>
+                    <span class="score">{{../data.max.evolution}}</span>
+                </label>
+                <span></span>
+            </div>
+            {{/if}}
+            <div class="sub" style="display:none;">
+                <span class="label"></span>
+                <label>
+                    <span class="sublabel">{{localize 'HP.Modificateur'}}</span>
+                    <span class="separateur">:</span>
+                    {{numberInput (ifThen base.mod.user base.mod.user 0) name=(concat 'system.competences.' ../domain '.' ../key '.list.' @index '.base.mod.user')}}
+                </label>
+                <label>
+                    <span class="sublabel">{{localize 'HP.Modificateur'}}</span>
+                    <span class="separateur">:</span>
+                    {{numberInput (ifThen max.mod.user max.mod.user 0) name=(concat 'system.competences.' ../domain '.' ../key '.list.' @index '.max.mod.user')}}
+                </label>
+                <label>
+                    <span class="sublabel">{{localize 'HP.Modificateur'}}</span>
+                    <span class="separateur">:</span>
+                    {{numberInput (ifThen actuel.mod.user actuel.mod.user 0) name=(concat 'system.competences.' ../domain '.' ../key '.list.' @index '.actuel.mod.user')}}
+                </label>
+            </div>
+            <div class="sub" style="display:none;">
+                <span class="label"></span>
+                <label>
+                    <span class="sublabel">{{localize 'HP.Temporaire'}}</span>
+                    <span class="separateur">:</span>
+                    {{numberInput (ifThen base.mod.temp base.mod.temp 0) name=(concat 'system.competences.' ../domain '.' ../key '.list.' @index '.base.mod.temp')}}
+                </label>
+                <label>
+                    <span class="sublabel">{{localize 'HP.Temporaire'}}</span>
+                    <span class="separateur">:</span>
+                    {{numberInput (ifThen max.mod.temp max.mod.temp 0) name=(concat 'system.competences.' ../domain '.' ../key '.list.' @index '.max.mod.temp')}}
+                </label>
+                <label>
+                    <span class="sublabel">{{localize 'HP.Temporaire'}}</span>
+                    <span class="separateur">:</span>
+                    {{numberInput (ifThen actuel.mod.temp actuel.mod.temp 0) name=(concat 'system.competences.' ../domain '.' ../key '.list.' @index '.actuel.mod.temp')}}
+                </label>
+            </div>
+        </div>
+    {{/each}}
+</div>
+{{else}}
+    {{#if (eq key 'custom')}}
+        {{#each data}}
+            <input type="hidden" name="system.competences.{{../domain}}.custom.{{@index}}.id" value="{{id}}" />
+            <input type="hidden" name="system.competences.{{../domain}}.custom.{{@index}}.origin" value="{{origin}}" />
+            <input type="hidden" name="system.competences.{{../domain}}.custom.{{@index}}.max.evolution" value="{{max.evolution}}" />
+
+            <div class="line custom" data-domain="{{../domain}}">
+                <div class="main js-simpletoggler">
+                    <img class="options" src="systems/harry-potter-jdr/assets/icons/optionBlack.svg" />
+                    {{#unless origin}}
+                        <input type="text" name="system.competences.{{../domain}}.custom.{{@index}}.label" value="{{label}}" />
+                    {{else}}
+                        <span class="emptyLabel" title="{{label}}">{{label}}</span>
+                    {{/unless}}
+                    <i class="fa-solid fa-dice-d20 roll draggable" data-id="custom_{{../domain}}_{{id}}" data-key="custom_{{../domain}}_{{@index}}" data-label="{{label}}" data-value="{{actuel.total}}"></i>
+                    {{#unless origin}}
+                        <i class="fa-solid fa-trash delete" title="{{localize "HP.Delete"}}" data-index="{{@index}}"></i>
+                    {{else}}
+                        <i class="empty"></i>
+                    {{/unless}}
+                    <span class="base">{{base.total}}</span>
+                    <span class="max">{{max.total}}</span>
+                    <span class="score {{ifThen (gt actuel.total 0) 'bold' ''}}">{{actuel.total}}</span>
+                    <input type="checkbox" name="system.competences.{{../domain}}.custom.{{@index}}.check" {{checked check}}  title="{{label}}"/>
+                </div>
+                <div class="sub" style="display:none;">
+                    <a class="toggleEvolutionCmp" data-index="{{@index}}" data-value="{{max.evolution}}">
+                        {{localize "HP.COMPETENCES.MaitriseMaxPeutEvoluer"}}
+                        {{#if max.evolution}}
+                            <i class="fa-solid fa-hexagon-check valide"></i>
+                        {{else}}
+                            <i class="fa-solid fa-hexagon-xmark unvalide"></i>
+                        {{/if}}
+                    </a>
+                    <label>
+                        <span class="sublabel">{{localize 'HP.Base'}}</span>
+                        <span class="separateur">:</span>
+                        {{numberInput base.initial name=(concat 'system.competences.' ../domain '.custom.' @index '.base.initial') min=0}}
+                    </label>
+                    <label>
+                        <span class="sublabel">{{localize 'HP.Base'}}</span>
+                        <span class="separateur">:</span>
+                        {{numberInput max.initial name=(concat 'system.competences.' ../domain '.custom.' @index '.max.initial') min=0}}
+                    </label>
+                    <label>
+                        <span class="sublabel">{{localize 'HP.Progression'}}</span>
+                        <span class="separateur">:</span>
+                        {{numberInput actuel.progression name=(concat 'system.competences.' ../domain '.custom.' @index '.actuel.progression') min=0}}
+                    </label>
+                </div>
+                {{#if max.evolution}}
+                <div class="sub" style="display:none;">
+                    <span class="label"></span>
+                    <span></span>
+                    <label>
+                        <span class="sublabel">{{localize 'HP.Evolution'}}</span>
+                        <span class="separateur">:</span>
+                        <span class="score">{{ifThen ../data.max.evolution ../data.max.evolution 0}}</span>
+                    </label>
+                    <span></span>
+                </div>
+                {{/if}}
+                <div class="sub" style="display:none;">
+                    <span class="label"></span>
+                    <label>
+                        <span class="sublabel">{{localize 'HP.Modificateur'}}</span>
+                        <span class="separateur">:</span>
+                        {{numberInput (ifThen base.mod.user base.mod.user 0) name=(concat 'system.competences.' ../domain '.custom.' @index '.base.mod.user')}}
+                    </label>
+                    <label>
+                        <span class="sublabel">{{localize 'HP.Modificateur'}}</span>
+                        <span class="separateur">:</span>
+                        {{numberInput (ifThen max.mod.user max.mod.user 0) name=(concat 'system.competences.' ../domain '.custom.' @index '.max.mod.user')}}
+                    </label>
+                    <label>
+                        <span class="sublabel">{{localize 'HP.Modificateur'}}</span>
+                        <span class="separateur">:</span>
+                        {{numberInput (ifThen actuel.mod.user actuel.mod.user 0) name=(concat 'system.competences.' ../domain '.custom.' @index '.actuel.mod.user')}}
+                    </label>
+                </div>
+                <div class="sub" style="display:none;">
+                    <span class="label"></span>
+                    <label>
+                        <span class="sublabel">{{localize 'HP.Temporaire'}}</span>
+                        <span class="separateur">:</span>
+                        {{numberInput (ifThen base.mod.temp base.mod.temp 0) name=(concat 'system.competences.' ../domain '.custom.' @index '.base.mod.temp')}}
+                    </label>
+                    <label>
+                        <span class="sublabel">{{localize 'HP.Temporaire'}}</span>
+                        <span class="separateur">:</span>
+                        {{numberInput (ifThen max.mod.temp max.mod.temp 0) name=(concat 'system.competences.' ../domain '.custom.' @index '.max.mod.temp')}}
+                    </label>
+                    <label>
+                        <span class="sublabel">{{localize 'HP.Temporaire'}}</span>
+                        <span class="separateur">:</span>
+                        {{numberInput (ifThen actuel.mod.temp actuel.mod.temp 0) name=(concat 'system.competences.' ../domain '.custom.' @index '.actuel.mod.temp')}}
+                    </label>
+                </div>
+            </div>
+        {{/each}}
+    <button type="action" class="addCmp" data-domain="{{domain}}">{{localize "HP.AddCompetence"}}</button>
+    {{else}}
+        <div class="line">
+            <div class="main js-simpletoggler">
+                <span class="label">
+                    <img class="options" src="systems/harry-potter-jdr/assets/icons/optionBlack.svg" />
+                    <span class="roll draggable" data-id="{{domain}}_{{key}}" data-key="{{domain}}_{{key}}" data-label="{{label}}" data-value="{{data.actuel.total}}">
+                        {{label}}
+                        <i class="fa-solid fa-dice-d20"></i>
+                    </span>
+                </span>
+                <span class="base">{{data.base.total}}</span>
+                <span class="max">{{data.max.total}}</span>
+                <span class="score {{ifThen (gt data.actuel.total 0) 'bold' ''}}">{{data.actuel.total}}</span>
+                <input type="checkbox" name="system.competences.{{domain}}.{{key}}.check" {{checked check}}  title="{{label}}"/>
+            </div>
+            <div class="sub" style="display:none;">
+                <span class="label"></span>
+                <label>
+                    <span class="sublabel">{{localize 'HP.Base'}}</span>
+                    <span class="separateur">:</span>
+                    <span class="score">{{data.base.initial}}</span>
+                </label>
+                <label>
+                    <span class="sublabel">{{localize 'HP.Base'}}</span>
+                    <span class="separateur">:</span>
+                    {{#if editbase}}
+                    {{numberInput data.max.initial name=(concat 'system.competences.' domain '.' key '.max.initial')}}
+                    {{else}}
+                    <span class="score">{{data.max.initial}}</span>
+                    {{/if}}
+                </label>
+                <label>
+                    <span class="sublabel">{{localize 'HP.Progression'}}</span>
+                    <span class="separateur">:</span>
+                    {{numberInput data.actuel.progression name=(concat 'system.competences.' domain '.' key '.actuel.progression') min=0}}
+                </label>
+            </div>
+            {{#if data.max.evolution}}
+            <div class="sub" style="display:none;">
+                <span class="label"></span>
+                <span></span>
+                <label>
+                    <span class="sublabel">{{localize 'HP.Evolution'}}</span>
+                    <span class="separateur">:</span>
+                    <span class="score">{{data.max.evolution}}</span>
+                </label>
+                <span></span>
+            </div>
+            {{/if}}
+            <div class="sub" style="display:none;">
+                <span class="label"></span>
+                <label>
+                    <span class="sublabel">{{localize 'HP.Modificateur'}}</span>
+                    <span class="separateur">:</span>
+                    {{numberInput (ifThen data.base.mod.user data.base.mod.user 0) name=(concat 'system.competences.' domain '.' key '.base.mod.user')}}
+                </label>
+                <label>
+                    <span class="sublabel">{{localize 'HP.Modificateur'}}</span>
+                    <span class="separateur">:</span>
+                    {{numberInput (ifThen data.max.mod.user data.max.mod.user 0) name=(concat 'system.competences.' domain '.' key '.max.mod.user')}}
+                </label>
+                <label>
+                    <span class="sublabel">{{localize 'HP.Modificateur'}}</span>
+                    <span class="separateur">:</span>
+                    {{numberInput (ifThen data.actuel.mod.user data.actuel.mod.user 0) name=(concat 'system.competences.' domain '.' key '.actuel.mod.user')}}
+                </label>
+            </div>
+            <div class="sub" style="display:none;">
+                <span class="label"></span>
+                <label>
+                    <span class="sublabel">{{localize 'HP.Temporaire'}}</span>
+                    <span class="separateur">:</span>
+                    {{numberInput (ifThen data.base.mod.temp data.base.mod.temp 0) name=(concat 'system.competences.' domain '.' key '.base.mod.temp')}}
+                </label>
+                <label>
+                    <span class="sublabel">{{localize 'HP.Temporaire'}}</span>
+                    <span class="separateur">:</span>
+                    {{numberInput (ifThen data.max.mod.temp data.max.mod.temp 0) name=(concat 'system.competences.' domain '.' key '.max.mod.temp')}}
+                </label>
+                <label>
+                    <span class="sublabel">{{localize 'HP.Temporaire'}}</span>
+                    <span class="separateur">:</span>
+                    {{numberInput (ifThen data.actuel.mod.temp data.actuel.mod.temp 0) name=(concat 'system.competences.' domain '.' key '.actuel.mod.temp')}}
+                </label>
+            </div>
+        </div>
+    {{/if}}
+{{/if}}

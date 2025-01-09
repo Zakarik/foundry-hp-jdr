@@ -1,0 +1,44 @@
+<form class="mainFlex {{cssClass}}" autocomplete="off">
+    <header>
+        <img class="profil-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" />
+        <input type="text" class="name" name="name" value="{{data.name}}" placeholder="{{localize "HP.Name"}}" />
+
+        <div class="block">
+            <label class="visuel">
+                <span>{{localize "HP.Visuel"}}</span>
+                <textarea name="system.visuel">{{systemData.visuel}}</textarea>
+            </label>
+
+            <label class="taille">
+                <span>{{localize "HP.BAGUETTES.Taille"}}</span>
+                <textarea name="system.taille">{{systemData.taille}}</textarea>
+            </label>
+
+            <div class="bois">
+                <span>{{localize "HP.BAGUETTES.Bois"}}</span>
+                <input type="text" name="system.bois.name" value="{{systemData.bois.name}}" placeholder="{{localize "HP.Name"}}" />
+                <textarea name="system.bois.description">{{systemData.bois.description}}</textarea>
+            </div>
+
+            <div class="coeur">
+                <span>{{localize "HP.BAGUETTES.Coeur"}}</span>
+                <input type="text" name="system.coeur.name" value="{{systemData.coeur.name}}" placeholder="{{localize "HP.Name"}}"/>
+                <textarea name="system.coeur.description">{{systemData.coeur.description}}</textarea>
+            </div>
+
+            <div class="affinite">
+                <span>
+                    {{localize "HP.BAGUETTES.Affinite"}}
+                </span>
+                <select name="system.affinite.key">
+                    {{selectOptions item.affinite selected=systemData.affinite.key}}
+                </select>
+                {{numberInput systemData.affinite.value name="system.affinite.value" min=0}}
+            </div>
+        </div>
+    </header>
+
+    <div class="block">
+        {{editor systemData.description target="system.description" engine="prosemirror" button=true owner=owner editable=editable}}
+    </div>
+</form>

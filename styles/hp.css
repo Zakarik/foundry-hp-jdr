@@ -1,0 +1,3617 @@
+.sorcier section.window-content {
+  background: #A9A9A9;
+}
+.sorcier section.window-content span,
+.sorcier section.window-content input {
+  color: #000000;
+}
+.sorcier section.window-content header.main {
+  display: grid;
+  grid-template-columns: 200px 1fr 200px;
+  align-items: flex-start;
+  grid-gap: 5px;
+}
+.sorcier section.window-content header.main img.profil-img {
+  object-fit: contain;
+}
+.sorcier section.window-content header.main div.headerData {
+  display: grid;
+  grid-gap: 5px;
+  align-items: flex-start;
+  font-size: 16px;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5px;
+}
+.sorcier section.window-content header.main div.headerData label {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-gap: 5px;
+  align-items: flex-end;
+}
+.sorcier section.window-content header.main div.headerData label.scolarite {
+  grid-template-columns: 1fr;
+  grid-gap: 0px;
+  border: 1px solid;
+  border-radius: 5px;
+  text-align: center;
+}
+.sorcier section.window-content header.main div.headerData label.scolarite input {
+  width: 100%;
+  border: 0px;
+}
+.sorcier section.window-content header.main div.headerData span {
+  white-space: nowrap;
+  font-variant: small-caps;
+  font-weight: bold;
+}
+.sorcier section.window-content header.main div.headerData input,
+.sorcier section.window-content header.main div.headerData select {
+  width: 100%;
+  border-radius: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-top: 0px;
+  border-bottom: 1px solid;
+  text-align: center;
+  background: transparent;
+}
+.sorcier section.window-content header.main div.headerData input.name,
+.sorcier section.window-content header.main div.headerData select.name {
+  font-variant: small-caps;
+  font-size: 18px;
+  grid-column: 1/3;
+}
+.sorcier section.window-content header.main div.headerData div.data {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2px;
+  min-height: 27px;
+  align-items: flex-end;
+}
+.sorcier section.window-content header.main div.headerData div.data img {
+  border: 0px;
+  cursor: pointer;
+}
+.sorcier section.window-content header.main div.headerData div.data div.main {
+  display: grid;
+  grid-template-columns: 20px 1fr 100px;
+  grid-gap: 5px;
+  align-items: flex-end;
+  height: 27px;
+}
+.sorcier section.window-content header.main div.headerData div.data div.main div.block {
+  display: grid;
+  grid-gap: 2px;
+  border-bottom: 1px solid;
+}
+.sorcier section.window-content header.main div.headerData div.data div.main div.block.simple {
+  grid-template-columns: 1fr;
+}
+.sorcier section.window-content header.main div.headerData div.data div.main div.block.double {
+  grid-template-columns: 1fr 10px 1fr;
+}
+.sorcier section.window-content header.main div.headerData div.data div.main div.block input {
+  width: 100%;
+  border: 0px;
+  font-variant: small-caps;
+  padding: 0px;
+  margin: 0px;
+}
+.sorcier section.window-content header.main div.headerData div.data div.main div.block span {
+  display: grid;
+  font-weight: normal;
+  text-align: center;
+  align-items: center;
+}
+.sorcier section.window-content header.main div.headerData div.data div.main div.block span.degats {
+  display: grid;
+  grid-template-columns: 15px 1fr 15px;
+}
+.sorcier section.window-content header.main div.headerData div.data div.main div.block span.degats i.fa-dice-d20 {
+  cursor: pointer;
+}
+.sorcier section.window-content header.main div.headerData div.data div.main div.block span.degats i.fa-dice-d20:hover {
+  color: white;
+}
+.sorcier section.window-content header.main div.headerData div.data div.sub {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2px;
+  padding-left: 25px;
+}
+.sorcier section.window-content header.main div.headerData div.data div.sub label {
+  grid-template-columns: 1fr 100px;
+  line-height: 25px;
+}
+.sorcier section.window-content header.main div.headerData div.data div.sub label span.max {
+  font-weight: normal;
+  text-align: center;
+  border-bottom: 1px solid;
+  align-items: center;
+}
+.sorcier section.window-content header.main div.headerData div.data div.sub label input {
+  width: 100%;
+  border-bottom: 1px solid;
+  font-variant: small-caps;
+  padding: 0px;
+  margin: 0px;
+}
+.sorcier section.window-content header.main div.caracteristiques {
+  display: grid;
+  align-items: flex-start;
+  grid-gap: 2px;
+  border: 1px solid;
+  padding: 2px;
+  border-radius: 5px;
+  background: #D3D3D3;
+}
+.sorcier section.window-content header.main div.caracteristiques div img {
+  border: 0px;
+  cursor: pointer;
+}
+.sorcier section.window-content header.main div.caracteristiques div.data {
+  display: grid;
+  align-items: flex-start;
+  grid-gap: 2px;
+}
+.sorcier section.window-content header.main div.caracteristiques div.main {
+  display: grid;
+  grid-template-columns: 20px 1fr 50px;
+  align-items: center;
+  grid-gap: 5px;
+}
+.sorcier section.window-content header.main div.caracteristiques div.sub {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  padding-left: 25px;
+  grid-gap: 2px;
+}
+.sorcier section.window-content header.main div.caracteristiques div span.label {
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 15px;
+}
+.sorcier section.window-content header.main div.caracteristiques div span.roll {
+  cursor: pointer;
+}
+.sorcier section.window-content header.main div.caracteristiques div span.roll:hover {
+  color: white;
+}
+.sorcier section.window-content header.main div.caracteristiques div span.value {
+  background: #F5F5F5;
+  border-radius: 5px;
+  border: 1px solid;
+  text-align: center;
+  font-size: 15px;
+}
+.sorcier section.window-content header.main div.caracteristiques div label {
+  display: grid;
+  grid-template-columns: 1fr 50px;
+  align-items: center;
+}
+.sorcier section.window-content header.main div.caracteristiques div label input {
+  width: 100%;
+  text-align: center;
+  border-radius: 5px;
+  background: #F5F5F5;
+  height: 20px;
+  font-size: 15px;
+}
+.sorcier section.window-content section.body nav.tabs {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 5px;
+  border: 0px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+.sorcier section.window-content section.body nav.tabs a {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  font-variant: small-caps;
+  border-radius: 5px;
+  background: #D3D3D3;
+  border: 1px solid;
+  text-align: left;
+  letter-spacing: 1px;
+  align-items: center;
+  margin-bottom: 5px;
+  z-index: 1;
+}
+.sorcier section.window-content section.body nav.tabs a.active {
+  text-shadow: none;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  margin-bottom: 0px;
+  padding-bottom: 13px;
+  border-bottom: 0px;
+}
+.sorcier section.window-content section.body div.tab.historique.active {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: flex-start;
+  grid-gap: 5px;
+  background: #D3D3D3;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  border: 1px solid;
+  margin-top: -2px;
+  padding: 5px;
+  z-index: 0;
+}
+.sorcier section.window-content section.body div.tab.historique.active section.historiques {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  align-items: flex-start;
+}
+.sorcier section.window-content section.body div.tab.historique.active section.historiques nav {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: flex-start;
+  grid-gap: 2px;
+  border: 0px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+.sorcier section.window-content section.body div.tab.historique.active section.historiques nav a {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  font-variant: small-caps;
+  border-radius: 5px;
+  background: #D3D3D3;
+  border: 1px solid;
+  text-align: left;
+  letter-spacing: 1px;
+  align-items: center;
+  margin-right: 5px;
+  z-index: 1;
+  padding: 8px 12px;
+}
+.sorcier section.window-content section.body div.tab.historique.active section.historiques nav a.active {
+  text-shadow: none;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  margin-right: 0px;
+  padding-right: 18px;
+  border-right: 0px;
+}
+.sorcier section.window-content section.body div.tab.historique.active div.tab {
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 5px;
+  margin-left: -1px;
+  min-height: 300px;
+  align-items: flex-start;
+  height: 100%;
+}
+.sorcier section.window-content section.body div.tab.historique.active div.tab.backgrounds {
+  border-top-left-radius: 0px;
+}
+.sorcier section.window-content section.body div.tab.historique.active div.tab.cpcp.active, .sorcier section.window-content section.body div.tab.historique.active div.tab.avdv.active {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2px;
+}
+.sorcier section.window-content section.body div.tab.historique.active div.col {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2px;
+  align-items: flex-start;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  width: 100%;
+  row-gap: 2px;
+}
+.sorcier section.window-content section.body div.tab.historique.active div.col header.clHeader {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  font-weight: bold;
+  font-size: 17px;
+  font-variant: small-caps;
+  border-bottom: 1px solid #000000;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.sorcier section.window-content section.body div.tab.historique.active div.col header.blHeader {
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  grid-gap: 2px;
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 15px;
+  align-items: center;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.sorcier section.window-content section.body div.tab.historique.active div.col header.blHeader div.cmd {
+  font-size: 13px;
+}
+.sorcier section.window-content section.body div.tab.historique.active div.col header.blHeader i {
+  cursor: pointer;
+}
+.sorcier section.window-content section.body div.tab.historique.active div.col header.blHeader i:hover {
+  color: white;
+}
+.sorcier section.window-content section.body div.tab.historique.active div.col div.block {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+.sorcier section.window-content section.body div.tab.historique.active div.col div.block span.description {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.sorcier section.window-content section.body div.tab.historique.active div.col div.block:not(:last-of-type) {
+  border-bottom: 1px solid #000000;
+}
+.sorcier section.window-content section.body div.tab.historique.active div.patronus {
+  width: calc(100% - 5px);
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  margin-top: 2px;
+}
+.sorcier section.window-content section.body div.tab.historique.active div.patronus span {
+  text-align: center;
+  white-space: nowrap;
+  font-variant: small-caps;
+  font-weight: bold;
+}
+.sorcier section.window-content section.body div.tab.historique.active div.patronus div.editor {
+  min-height: 50px;
+}
+.sorcier section.window-content section.body div.tab.historique.active div.patronus div.editor menu {
+  border-radius: 0px;
+}
+.sorcier section.window-content section.body div.tab.historique.active div.patronus div.editor > div.editor-content {
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 5px;
+}
+.sorcier section.window-content section.body div.tab.historique.active div.patronus div.editor > div.editor-container {
+  min-height: 100px;
+}
+.sorcier section.window-content section.body div.tab.historique.active div.maison {
+  width: calc(100% - 5px);
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  margin-top: 2px;
+}
+.sorcier section.window-content section.body div.tab.historique.active div.maison label {
+  display: grid;
+  grid-gap: 5px;
+  align-items: flex-end;
+  grid-template-columns: 1fr;
+  grid-gap: 0px;
+  border-bottom: 1px solid #000000;
+  text-align: center;
+}
+.sorcier section.window-content section.body div.tab.historique.active div.maison label span {
+  white-space: nowrap;
+  font-variant: small-caps;
+  font-weight: bold;
+}
+.sorcier section.window-content section.body div.tab.historique.active div.maison label input,
+.sorcier section.window-content section.body div.tab.historique.active div.maison label select {
+  width: 100%;
+  border-radius: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-top: 0px;
+  border-bottom: 1px solid;
+  text-align: center;
+  background: transparent;
+  border: 0px;
+}
+.sorcier section.window-content section.body div.tab.historique.active div.maison label.noBorder {
+  border-bottom: 0px;
+}
+.sorcier section.window-content section.body div.tab.historique.active div.maison img {
+  min-height: 200px;
+  border: 0px;
+  object-fit: contain;
+}
+.sorcier section.window-content section.body div.tab.historique.active div.background {
+  display: grid;
+  grid-template-columns: 200px 200px 1fr;
+  grid-template-rows: max-content;
+  grid-gap: 5px;
+  height: 100%;
+  align-items: flex-start;
+}
+.sorcier section.window-content section.body div.tab.historique.active div.background label {
+  display: grid;
+  grid-gap: 5px;
+  align-items: center;
+  grid-template-columns: max-content 1fr;
+  grid-gap: 5px;
+  border-radius: 5px;
+  border: 1px solid #000000;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.sorcier section.window-content section.body div.tab.historique.active div.background label span {
+  white-space: nowrap;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 15px;
+}
+.sorcier section.window-content section.body div.tab.historique.active div.background label input,
+.sorcier section.window-content section.body div.tab.historique.active div.background label select {
+  width: 100%;
+  border-radius: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-top: 0px;
+  border-bottom: 1px solid;
+  text-align: center;
+  background: transparent;
+  border: 0px;
+}
+.sorcier section.window-content section.body div.tab.historique.active div.background div.block {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-column: 1/4;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding-top: 5px;
+  height: 100%;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+.sorcier section.window-content section.body div.tab.historique.active div.background div.block span {
+  text-align: center;
+  white-space: nowrap;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 15px;
+}
+.sorcier section.window-content section.body div.tab.historique.active div.background div.block div.editor {
+  min-height: 300px;
+}
+.sorcier section.window-content section.body div.tab.historique.active div.background div.block div.editor menu {
+  border-radius: 0px;
+}
+.sorcier section.window-content section.body div.tab.historique.active div.background div.block div.editor > div.editor-content {
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 5px;
+}
+.sorcier section.window-content section.body div.tab.historique.active div.epouvantard div.editor {
+  height: 100%;
+}
+.sorcier section.window-content section.body div.tab.competences.active {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: flex-start;
+  grid-gap: 5px;
+  background: #D3D3D3;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border: 1px solid;
+  margin-top: -2px;
+  padding: 5px;
+  z-index: 0;
+}
+.sorcier section.window-content section.body div.tab.competences.active button.EvolutionMaitriseBase, .sorcier section.window-content section.body div.tab.competences.active button.EvolutionMaitrise, .sorcier section.window-content section.body div.tab.competences.active button.EvolutionCompetence {
+  width: calc(100% - 5px);
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 2px;
+  margin: 0px;
+  font-variant: small-caps;
+  font-weight: bold;
+  margin-right: 5px;
+  margin-top: 2px;
+  line-height: 20px;
+  min-height: 34px;
+}
+.sorcier section.window-content section.body div.tab.competences.active button.EvolutionMaitriseBase:hover, .sorcier section.window-content section.body div.tab.competences.active button.EvolutionMaitrise:hover, .sorcier section.window-content section.body div.tab.competences.active button.EvolutionCompetence:hover {
+  box-shadow: none;
+  background: #000000;
+  color: white;
+}
+.sorcier section.window-content section.body div.tab.competences.active section.competences {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  align-items: flex-start;
+}
+.sorcier section.window-content section.body div.tab.competences.active section.competences nav {
+  grid-row: 1/5;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: flex-start;
+  grid-gap: 2px;
+  border: 0px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+.sorcier section.window-content section.body div.tab.competences.active section.competences nav a {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  font-variant: small-caps;
+  border-radius: 5px;
+  background: #D3D3D3;
+  border: 1px solid;
+  text-align: left;
+  letter-spacing: 1px;
+  align-items: center;
+  margin-right: 5px;
+  z-index: 1;
+  padding: 8px 12px;
+}
+.sorcier section.window-content section.body div.tab.competences.active section.competences nav a.active {
+  text-shadow: none;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  margin-right: 0px;
+  padding-right: 18px;
+  border-right: 0px;
+}
+.sorcier section.window-content section.body div.tab.competences.active img {
+  border: 0px;
+  cursor: pointer;
+}
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active, .sorcier section.window-content section.body div.tab.competences.active div.moldus.active, .sorcier section.window-content section.body div.tab.competences.active div.sorciers.active, .sorcier section.window-content section.body div.tab.competences.active div.scolaires.active {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: flex-start;
+  grid-gap: 2px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 5px;
+  z-index: 0;
+  margin-left: -1px;
+}
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active div.line, .sorcier section.window-content section.body div.tab.competences.active div.moldus.active div.line, .sorcier section.window-content section.body div.tab.competences.active div.sorciers.active div.line, .sorcier section.window-content section.body div.tab.competences.active div.scolaires.active div.line {
+  display: grid;
+  align-items: flex-start;
+  grid-gap: 2px;
+}
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active div.specialisation, .sorcier section.window-content section.body div.tab.competences.active div.generales.active div.custom, .sorcier section.window-content section.body div.tab.competences.active div.moldus.active div.specialisation, .sorcier section.window-content section.body div.tab.competences.active div.moldus.active div.custom, .sorcier section.window-content section.body div.tab.competences.active div.sorciers.active div.specialisation, .sorcier section.window-content section.body div.tab.competences.active div.sorciers.active div.custom, .sorcier section.window-content section.body div.tab.competences.active div.scolaires.active div.specialisation, .sorcier section.window-content section.body div.tab.competences.active div.scolaires.active div.custom {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: flex-start;
+  grid-gap: 2px;
+}
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active div.specialisation span.mainLabel, .sorcier section.window-content section.body div.tab.competences.active div.generales.active div.custom span.mainLabel, .sorcier section.window-content section.body div.tab.competences.active div.moldus.active div.specialisation span.mainLabel, .sorcier section.window-content section.body div.tab.competences.active div.moldus.active div.custom span.mainLabel, .sorcier section.window-content section.body div.tab.competences.active div.sorciers.active div.specialisation span.mainLabel, .sorcier section.window-content section.body div.tab.competences.active div.sorciers.active div.custom span.mainLabel, .sorcier section.window-content section.body div.tab.competences.active div.scolaires.active div.specialisation span.mainLabel, .sorcier section.window-content section.body div.tab.competences.active div.scolaires.active div.custom span.mainLabel {
+  padding-left: 25px;
+  align-items: center;
+  grid-gap: 5px;
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 17px;
+}
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active div.specialisation span.mainLabel i, .sorcier section.window-content section.body div.tab.competences.active div.generales.active div.custom span.mainLabel i, .sorcier section.window-content section.body div.tab.competences.active div.moldus.active div.specialisation span.mainLabel i, .sorcier section.window-content section.body div.tab.competences.active div.moldus.active div.custom span.mainLabel i, .sorcier section.window-content section.body div.tab.competences.active div.sorciers.active div.specialisation span.mainLabel i, .sorcier section.window-content section.body div.tab.competences.active div.sorciers.active div.custom span.mainLabel i, .sorcier section.window-content section.body div.tab.competences.active div.scolaires.active div.specialisation span.mainLabel i, .sorcier section.window-content section.body div.tab.competences.active div.scolaires.active div.custom span.mainLabel i {
+  cursor: pointer;
+}
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active div.specialisation span.mainLabel i:hover, .sorcier section.window-content section.body div.tab.competences.active div.generales.active div.custom span.mainLabel i:hover, .sorcier section.window-content section.body div.tab.competences.active div.moldus.active div.specialisation span.mainLabel i:hover, .sorcier section.window-content section.body div.tab.competences.active div.moldus.active div.custom span.mainLabel i:hover, .sorcier section.window-content section.body div.tab.competences.active div.sorciers.active div.specialisation span.mainLabel i:hover, .sorcier section.window-content section.body div.tab.competences.active div.sorciers.active div.custom span.mainLabel i:hover, .sorcier section.window-content section.body div.tab.competences.active div.scolaires.active div.specialisation span.mainLabel i:hover, .sorcier section.window-content section.body div.tab.competences.active div.scolaires.active div.custom span.mainLabel i:hover {
+  color: white;
+}
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active div.specialisation span.emptyLabel, .sorcier section.window-content section.body div.tab.competences.active div.generales.active div.custom span.emptyLabel, .sorcier section.window-content section.body div.tab.competences.active div.moldus.active div.specialisation span.emptyLabel, .sorcier section.window-content section.body div.tab.competences.active div.moldus.active div.custom span.emptyLabel, .sorcier section.window-content section.body div.tab.competences.active div.sorciers.active div.specialisation span.emptyLabel, .sorcier section.window-content section.body div.tab.competences.active div.sorciers.active div.custom span.emptyLabel, .sorcier section.window-content section.body div.tab.competences.active div.scolaires.active div.specialisation span.emptyLabel, .sorcier section.window-content section.body div.tab.competences.active div.scolaires.active div.custom span.emptyLabel {
+  text-align: left;
+  border-bottom: 1px solid #000000;
+  border-radius: 0px;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 15px;
+  margin-left: 3px;
+  height: 17px;
+}
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active div.specialisation div.main, .sorcier section.window-content section.body div.tab.competences.active div.generales.active div.custom div.main, .sorcier section.window-content section.body div.tab.competences.active div.moldus.active div.specialisation div.main, .sorcier section.window-content section.body div.tab.competences.active div.moldus.active div.custom div.main, .sorcier section.window-content section.body div.tab.competences.active div.sorciers.active div.specialisation div.main, .sorcier section.window-content section.body div.tab.competences.active div.sorciers.active div.custom div.main, .sorcier section.window-content section.body div.tab.competences.active div.scolaires.active div.specialisation div.main, .sorcier section.window-content section.body div.tab.competences.active div.scolaires.active div.custom div.main {
+  grid-template-columns: 20px 1fr 20px max-content 150px 150px 150px 25px;
+}
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active div.specialisation div.main input, .sorcier section.window-content section.body div.tab.competences.active div.generales.active div.custom div.main input, .sorcier section.window-content section.body div.tab.competences.active div.moldus.active div.specialisation div.main input, .sorcier section.window-content section.body div.tab.competences.active div.moldus.active div.custom div.main input, .sorcier section.window-content section.body div.tab.competences.active div.sorciers.active div.specialisation div.main input, .sorcier section.window-content section.body div.tab.competences.active div.sorciers.active div.custom div.main input, .sorcier section.window-content section.body div.tab.competences.active div.scolaires.active div.specialisation div.main input, .sorcier section.window-content section.body div.tab.competences.active div.scolaires.active div.custom div.main input {
+  text-align: left;
+  border-bottom: 1px solid #000000;
+  border-radius: 0px;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 15px;
+  margin-left: 3px;
+  height: 17px;
+  width: calc(100% - 3px);
+}
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active div.specialisation div.main input[type=checkbox], .sorcier section.window-content section.body div.tab.competences.active div.generales.active div.custom div.main input[type=checkbox], .sorcier section.window-content section.body div.tab.competences.active div.moldus.active div.specialisation div.main input[type=checkbox], .sorcier section.window-content section.body div.tab.competences.active div.moldus.active div.custom div.main input[type=checkbox], .sorcier section.window-content section.body div.tab.competences.active div.sorciers.active div.specialisation div.main input[type=checkbox], .sorcier section.window-content section.body div.tab.competences.active div.sorciers.active div.custom div.main input[type=checkbox], .sorcier section.window-content section.body div.tab.competences.active div.scolaires.active div.specialisation div.main input[type=checkbox], .sorcier section.window-content section.body div.tab.competences.active div.scolaires.active div.custom div.main input[type=checkbox] {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  height: 20px;
+}
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active div.specialisation div.main i, .sorcier section.window-content section.body div.tab.competences.active div.generales.active div.custom div.main i, .sorcier section.window-content section.body div.tab.competences.active div.moldus.active div.specialisation div.main i, .sorcier section.window-content section.body div.tab.competences.active div.moldus.active div.custom div.main i, .sorcier section.window-content section.body div.tab.competences.active div.sorciers.active div.specialisation div.main i, .sorcier section.window-content section.body div.tab.competences.active div.sorciers.active div.custom div.main i, .sorcier section.window-content section.body div.tab.competences.active div.scolaires.active div.specialisation div.main i, .sorcier section.window-content section.body div.tab.competences.active div.scolaires.active div.custom div.main i {
+  margin-left: 3px;
+  margin-right: 3px;
+  cursor: pointer;
+}
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active div.specialisation div.main i:hover, .sorcier section.window-content section.body div.tab.competences.active div.generales.active div.custom div.main i:hover, .sorcier section.window-content section.body div.tab.competences.active div.moldus.active div.specialisation div.main i:hover, .sorcier section.window-content section.body div.tab.competences.active div.moldus.active div.custom div.main i:hover, .sorcier section.window-content section.body div.tab.competences.active div.sorciers.active div.specialisation div.main i:hover, .sorcier section.window-content section.body div.tab.competences.active div.sorciers.active div.custom div.main i:hover, .sorcier section.window-content section.body div.tab.competences.active div.scolaires.active div.specialisation div.main i:hover, .sorcier section.window-content section.body div.tab.competences.active div.scolaires.active div.custom div.main i:hover {
+  color: white;
+}
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active div.specialisation div.main i.empty, .sorcier section.window-content section.body div.tab.competences.active div.generales.active div.custom div.main i.empty, .sorcier section.window-content section.body div.tab.competences.active div.moldus.active div.specialisation div.main i.empty, .sorcier section.window-content section.body div.tab.competences.active div.moldus.active div.custom div.main i.empty, .sorcier section.window-content section.body div.tab.competences.active div.sorciers.active div.specialisation div.main i.empty, .sorcier section.window-content section.body div.tab.competences.active div.sorciers.active div.custom div.main i.empty, .sorcier section.window-content section.body div.tab.competences.active div.scolaires.active div.specialisation div.main i.empty, .sorcier section.window-content section.body div.tab.competences.active div.scolaires.active div.custom div.main i.empty {
+  width: 12.5px;
+}
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active header,
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active div.main,
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active div.sub, .sorcier section.window-content section.body div.tab.competences.active div.moldus.active header,
+.sorcier section.window-content section.body div.tab.competences.active div.moldus.active div.main,
+.sorcier section.window-content section.body div.tab.competences.active div.moldus.active div.sub, .sorcier section.window-content section.body div.tab.competences.active div.sorciers.active header,
+.sorcier section.window-content section.body div.tab.competences.active div.sorciers.active div.main,
+.sorcier section.window-content section.body div.tab.competences.active div.sorciers.active div.sub, .sorcier section.window-content section.body div.tab.competences.active div.scolaires.active header,
+.sorcier section.window-content section.body div.tab.competences.active div.scolaires.active div.main,
+.sorcier section.window-content section.body div.tab.competences.active div.scolaires.active div.sub {
+  display: grid;
+  grid-template-columns: 1fr 150px 150px 150px 25px;
+  grid-gap: 2px;
+  align-items: center;
+}
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active header span.label,
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active div.main span.label,
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active div.sub span.label, .sorcier section.window-content section.body div.tab.competences.active div.moldus.active header span.label,
+.sorcier section.window-content section.body div.tab.competences.active div.moldus.active div.main span.label,
+.sorcier section.window-content section.body div.tab.competences.active div.moldus.active div.sub span.label, .sorcier section.window-content section.body div.tab.competences.active div.sorciers.active header span.label,
+.sorcier section.window-content section.body div.tab.competences.active div.sorciers.active div.main span.label,
+.sorcier section.window-content section.body div.tab.competences.active div.sorciers.active div.sub span.label, .sorcier section.window-content section.body div.tab.competences.active div.scolaires.active header span.label,
+.sorcier section.window-content section.body div.tab.competences.active div.scolaires.active div.main span.label,
+.sorcier section.window-content section.body div.tab.competences.active div.scolaires.active div.sub span.label {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  align-items: center;
+  grid-gap: 5px;
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 15px;
+}
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active header span.sublabel,
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active div.main span.sublabel,
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active div.sub span.sublabel, .sorcier section.window-content section.body div.tab.competences.active div.moldus.active header span.sublabel,
+.sorcier section.window-content section.body div.tab.competences.active div.moldus.active div.main span.sublabel,
+.sorcier section.window-content section.body div.tab.competences.active div.moldus.active div.sub span.sublabel, .sorcier section.window-content section.body div.tab.competences.active div.sorciers.active header span.sublabel,
+.sorcier section.window-content section.body div.tab.competences.active div.sorciers.active div.main span.sublabel,
+.sorcier section.window-content section.body div.tab.competences.active div.sorciers.active div.sub span.sublabel, .sorcier section.window-content section.body div.tab.competences.active div.scolaires.active header span.sublabel,
+.sorcier section.window-content section.body div.tab.competences.active div.scolaires.active div.main span.sublabel,
+.sorcier section.window-content section.body div.tab.competences.active div.scolaires.active div.sub span.sublabel {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 15px;
+  text-align: left;
+  white-space: nowrap;
+}
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active header span.base, .sorcier section.window-content section.body div.tab.competences.active div.generales.active header span.max, .sorcier section.window-content section.body div.tab.competences.active div.generales.active header span.actuel,
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active div.main span.base,
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active div.main span.max,
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active div.main span.actuel,
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active div.sub span.base,
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active div.sub span.max,
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active div.sub span.actuel, .sorcier section.window-content section.body div.tab.competences.active div.moldus.active header span.base, .sorcier section.window-content section.body div.tab.competences.active div.moldus.active header span.max, .sorcier section.window-content section.body div.tab.competences.active div.moldus.active header span.actuel,
+.sorcier section.window-content section.body div.tab.competences.active div.moldus.active div.main span.base,
+.sorcier section.window-content section.body div.tab.competences.active div.moldus.active div.main span.max,
+.sorcier section.window-content section.body div.tab.competences.active div.moldus.active div.main span.actuel,
+.sorcier section.window-content section.body div.tab.competences.active div.moldus.active div.sub span.base,
+.sorcier section.window-content section.body div.tab.competences.active div.moldus.active div.sub span.max,
+.sorcier section.window-content section.body div.tab.competences.active div.moldus.active div.sub span.actuel, .sorcier section.window-content section.body div.tab.competences.active div.sorciers.active header span.base, .sorcier section.window-content section.body div.tab.competences.active div.sorciers.active header span.max, .sorcier section.window-content section.body div.tab.competences.active div.sorciers.active header span.actuel,
+.sorcier section.window-content section.body div.tab.competences.active div.sorciers.active div.main span.base,
+.sorcier section.window-content section.body div.tab.competences.active div.sorciers.active div.main span.max,
+.sorcier section.window-content section.body div.tab.competences.active div.sorciers.active div.main span.actuel,
+.sorcier section.window-content section.body div.tab.competences.active div.sorciers.active div.sub span.base,
+.sorcier section.window-content section.body div.tab.competences.active div.sorciers.active div.sub span.max,
+.sorcier section.window-content section.body div.tab.competences.active div.sorciers.active div.sub span.actuel, .sorcier section.window-content section.body div.tab.competences.active div.scolaires.active header span.base, .sorcier section.window-content section.body div.tab.competences.active div.scolaires.active header span.max, .sorcier section.window-content section.body div.tab.competences.active div.scolaires.active header span.actuel,
+.sorcier section.window-content section.body div.tab.competences.active div.scolaires.active div.main span.base,
+.sorcier section.window-content section.body div.tab.competences.active div.scolaires.active div.main span.max,
+.sorcier section.window-content section.body div.tab.competences.active div.scolaires.active div.main span.actuel,
+.sorcier section.window-content section.body div.tab.competences.active div.scolaires.active div.sub span.base,
+.sorcier section.window-content section.body div.tab.competences.active div.scolaires.active div.sub span.max,
+.sorcier section.window-content section.body div.tab.competences.active div.scolaires.active div.sub span.actuel {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  text-align: center;
+}
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active header span.score, .sorcier section.window-content section.body div.tab.competences.active div.generales.active header span.separateur,
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active div.main span.score,
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active div.main span.separateur,
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active div.sub span.score,
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active div.sub span.separateur, .sorcier section.window-content section.body div.tab.competences.active div.moldus.active header span.score, .sorcier section.window-content section.body div.tab.competences.active div.moldus.active header span.separateur,
+.sorcier section.window-content section.body div.tab.competences.active div.moldus.active div.main span.score,
+.sorcier section.window-content section.body div.tab.competences.active div.moldus.active div.main span.separateur,
+.sorcier section.window-content section.body div.tab.competences.active div.moldus.active div.sub span.score,
+.sorcier section.window-content section.body div.tab.competences.active div.moldus.active div.sub span.separateur, .sorcier section.window-content section.body div.tab.competences.active div.sorciers.active header span.score, .sorcier section.window-content section.body div.tab.competences.active div.sorciers.active header span.separateur,
+.sorcier section.window-content section.body div.tab.competences.active div.sorciers.active div.main span.score,
+.sorcier section.window-content section.body div.tab.competences.active div.sorciers.active div.main span.separateur,
+.sorcier section.window-content section.body div.tab.competences.active div.sorciers.active div.sub span.score,
+.sorcier section.window-content section.body div.tab.competences.active div.sorciers.active div.sub span.separateur, .sorcier section.window-content section.body div.tab.competences.active div.scolaires.active header span.score, .sorcier section.window-content section.body div.tab.competences.active div.scolaires.active header span.separateur,
+.sorcier section.window-content section.body div.tab.competences.active div.scolaires.active div.main span.score,
+.sorcier section.window-content section.body div.tab.competences.active div.scolaires.active div.main span.separateur,
+.sorcier section.window-content section.body div.tab.competences.active div.scolaires.active div.sub span.score,
+.sorcier section.window-content section.body div.tab.competences.active div.scolaires.active div.sub span.separateur {
+  width: 100%;
+  text-align: center;
+}
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active header span.score.bold, .sorcier section.window-content section.body div.tab.competences.active div.generales.active header span.separateur.bold,
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active div.main span.score.bold,
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active div.main span.separateur.bold,
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active div.sub span.score.bold,
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active div.sub span.separateur.bold, .sorcier section.window-content section.body div.tab.competences.active div.moldus.active header span.score.bold, .sorcier section.window-content section.body div.tab.competences.active div.moldus.active header span.separateur.bold,
+.sorcier section.window-content section.body div.tab.competences.active div.moldus.active div.main span.score.bold,
+.sorcier section.window-content section.body div.tab.competences.active div.moldus.active div.main span.separateur.bold,
+.sorcier section.window-content section.body div.tab.competences.active div.moldus.active div.sub span.score.bold,
+.sorcier section.window-content section.body div.tab.competences.active div.moldus.active div.sub span.separateur.bold, .sorcier section.window-content section.body div.tab.competences.active div.sorciers.active header span.score.bold, .sorcier section.window-content section.body div.tab.competences.active div.sorciers.active header span.separateur.bold,
+.sorcier section.window-content section.body div.tab.competences.active div.sorciers.active div.main span.score.bold,
+.sorcier section.window-content section.body div.tab.competences.active div.sorciers.active div.main span.separateur.bold,
+.sorcier section.window-content section.body div.tab.competences.active div.sorciers.active div.sub span.score.bold,
+.sorcier section.window-content section.body div.tab.competences.active div.sorciers.active div.sub span.separateur.bold, .sorcier section.window-content section.body div.tab.competences.active div.scolaires.active header span.score.bold, .sorcier section.window-content section.body div.tab.competences.active div.scolaires.active header span.separateur.bold,
+.sorcier section.window-content section.body div.tab.competences.active div.scolaires.active div.main span.score.bold,
+.sorcier section.window-content section.body div.tab.competences.active div.scolaires.active div.main span.separateur.bold,
+.sorcier section.window-content section.body div.tab.competences.active div.scolaires.active div.sub span.score.bold,
+.sorcier section.window-content section.body div.tab.competences.active div.scolaires.active div.sub span.separateur.bold {
+  font-weight: bold;
+}
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active header label,
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active div.main label,
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active div.sub label, .sorcier section.window-content section.body div.tab.competences.active div.moldus.active header label,
+.sorcier section.window-content section.body div.tab.competences.active div.moldus.active div.main label,
+.sorcier section.window-content section.body div.tab.competences.active div.moldus.active div.sub label, .sorcier section.window-content section.body div.tab.competences.active div.sorciers.active header label,
+.sorcier section.window-content section.body div.tab.competences.active div.sorciers.active div.main label,
+.sorcier section.window-content section.body div.tab.competences.active div.sorciers.active div.sub label, .sorcier section.window-content section.body div.tab.competences.active div.scolaires.active header label,
+.sorcier section.window-content section.body div.tab.competences.active div.scolaires.active div.main label,
+.sorcier section.window-content section.body div.tab.competences.active div.scolaires.active div.sub label {
+  display: grid;
+  grid-template-columns: 85px 5px 1fr;
+  border: 1px solid;
+  border-radius: 3px;
+  text-align: center;
+  line-height: 24px;
+  align-items: center;
+  padding-left: 2px;
+  padding-right: 2px;
+  grid-gap: 2px;
+}
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active header input,
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active div.main input,
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active div.sub input, .sorcier section.window-content section.body div.tab.competences.active div.moldus.active header input,
+.sorcier section.window-content section.body div.tab.competences.active div.moldus.active div.main input,
+.sorcier section.window-content section.body div.tab.competences.active div.moldus.active div.sub input, .sorcier section.window-content section.body div.tab.competences.active div.sorciers.active header input,
+.sorcier section.window-content section.body div.tab.competences.active div.sorciers.active div.main input,
+.sorcier section.window-content section.body div.tab.competences.active div.sorciers.active div.sub input, .sorcier section.window-content section.body div.tab.competences.active div.scolaires.active header input,
+.sorcier section.window-content section.body div.tab.competences.active div.scolaires.active div.main input,
+.sorcier section.window-content section.body div.tab.competences.active div.scolaires.active div.sub input {
+  text-align: center;
+  background: transparent;
+  padding: 0px;
+  width: 100%;
+  border: 0px;
+}
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active header input[type=checkbox],
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active div.main input[type=checkbox],
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active div.sub input[type=checkbox], .sorcier section.window-content section.body div.tab.competences.active div.moldus.active header input[type=checkbox],
+.sorcier section.window-content section.body div.tab.competences.active div.moldus.active div.main input[type=checkbox],
+.sorcier section.window-content section.body div.tab.competences.active div.moldus.active div.sub input[type=checkbox], .sorcier section.window-content section.body div.tab.competences.active div.sorciers.active header input[type=checkbox],
+.sorcier section.window-content section.body div.tab.competences.active div.sorciers.active div.main input[type=checkbox],
+.sorcier section.window-content section.body div.tab.competences.active div.sorciers.active div.sub input[type=checkbox], .sorcier section.window-content section.body div.tab.competences.active div.scolaires.active header input[type=checkbox],
+.sorcier section.window-content section.body div.tab.competences.active div.scolaires.active div.main input[type=checkbox],
+.sorcier section.window-content section.body div.tab.competences.active div.scolaires.active div.sub input[type=checkbox] {
+  margin: 0px;
+  padding: 0px;
+}
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active div.sub span.label, .sorcier section.window-content section.body div.tab.competences.active div.moldus.active div.sub span.label, .sorcier section.window-content section.body div.tab.competences.active div.sorciers.active div.sub span.label, .sorcier section.window-content section.body div.tab.competences.active div.scolaires.active div.sub span.label {
+  padding-left: 25px;
+}
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active header, .sorcier section.window-content section.body div.tab.competences.active div.moldus.active header, .sorcier section.window-content section.body div.tab.competences.active div.sorciers.active header, .sorcier section.window-content section.body div.tab.competences.active div.scolaires.active header {
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 16px;
+}
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active span.roll, .sorcier section.window-content section.body div.tab.competences.active div.moldus.active span.roll, .sorcier section.window-content section.body div.tab.competences.active div.sorciers.active span.roll, .sorcier section.window-content section.body div.tab.competences.active div.scolaires.active span.roll {
+  width: max-content;
+  display: grid;
+  grid-template-columns: max-content 15px;
+  cursor: pointer;
+  grid-gap: 2px;
+  align-items: center;
+}
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active span.roll:hover, .sorcier section.window-content section.body div.tab.competences.active div.moldus.active span.roll:hover, .sorcier section.window-content section.body div.tab.competences.active div.sorciers.active span.roll:hover, .sorcier section.window-content section.body div.tab.competences.active div.scolaires.active span.roll:hover {
+  color: white;
+}
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active i.roll, .sorcier section.window-content section.body div.tab.competences.active div.moldus.active i.roll, .sorcier section.window-content section.body div.tab.competences.active div.sorciers.active i.roll, .sorcier section.window-content section.body div.tab.competences.active div.scolaires.active i.roll {
+  cursor: pointer;
+}
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active i.roll:hover, .sorcier section.window-content section.body div.tab.competences.active div.moldus.active i.roll:hover, .sorcier section.window-content section.body div.tab.competences.active div.sorciers.active i.roll:hover, .sorcier section.window-content section.body div.tab.competences.active div.scolaires.active i.roll:hover {
+  color: white;
+}
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active button.addCmp, .sorcier section.window-content section.body div.tab.competences.active div.moldus.active button.addCmp, .sorcier section.window-content section.body div.tab.competences.active div.sorciers.active button.addCmp, .sorcier section.window-content section.body div.tab.competences.active div.scolaires.active button.addCmp {
+  margin: 0px;
+  padding: 0px;
+  border-radius: 5px;
+  border: 1px solid #000000;
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 14px;
+  line-height: 20px;
+  background: #A9A9A9;
+}
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active a.toggleEvolutionCmp, .sorcier section.window-content section.body div.tab.competences.active div.moldus.active a.toggleEvolutionCmp, .sorcier section.window-content section.body div.tab.competences.active div.sorciers.active a.toggleEvolutionCmp, .sorcier section.window-content section.body div.tab.competences.active div.scolaires.active a.toggleEvolutionCmp {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  align-items: center;
+  text-align: left;
+  padding: 2px;
+  margin: 0px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  font-variant: small-caps;
+  height: 28px;
+  font-weight: bold;
+  font-size: 15px;
+}
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active a.toggleEvolutionCmp i, .sorcier section.window-content section.body div.tab.competences.active div.moldus.active a.toggleEvolutionCmp i, .sorcier section.window-content section.body div.tab.competences.active div.sorciers.active a.toggleEvolutionCmp i, .sorcier section.window-content section.body div.tab.competences.active div.scolaires.active a.toggleEvolutionCmp i {
+  font-size: 17px;
+}
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active a.toggleEvolutionCmp:hover, .sorcier section.window-content section.body div.tab.competences.active div.moldus.active a.toggleEvolutionCmp:hover, .sorcier section.window-content section.body div.tab.competences.active div.sorciers.active a.toggleEvolutionCmp:hover, .sorcier section.window-content section.body div.tab.competences.active div.scolaires.active a.toggleEvolutionCmp:hover {
+  box-shadow: none;
+  color: white;
+  background: #000000;
+}
+.sorcier section.window-content section.body div.tab.competences.active div.generales.active {
+  border-top-left-radius: 0px;
+}
+.sorcier section.window-content section.body div.tab.sortileges.active {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: flex-start;
+  column-gap: 5px;
+  background: #D3D3D3;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border: 1px solid;
+  margin-top: -2px;
+  padding: 5px;
+  z-index: 0;
+}
+.sorcier section.window-content section.body div.tab.sortileges.active header {
+  display: grid;
+  grid-template-columns: 1fr 100px 50px 150px 150px;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 15px;
+  align-items: flex-start;
+  border-bottom: 1px solid #000000;
+  padding-bottom: 2px;
+  margin-bottom: 2px;
+}
+.sorcier section.window-content section.body div.tab.sortileges.active header span.niveau, .sorcier section.window-content section.body div.tab.sortileges.active header span.type, .sorcier section.window-content section.body div.tab.sortileges.active header span.cibles, .sorcier section.window-content section.body div.tab.sortileges.active header span.malus {
+  text-align: center;
+  border-left: 1px solid #000000;
+}
+.sorcier section.window-content section.body div.tab.sortileges.active div.line {
+  display: grid;
+  grid-template-columns: 1fr 100px 50px 150px 150px;
+  align-items: center;
+  cursor: context-menu;
+}
+.sorcier section.window-content section.body div.tab.sortileges.active div.line span.niveau, .sorcier section.window-content section.body div.tab.sortileges.active div.line span.type, .sorcier section.window-content section.body div.tab.sortileges.active div.line span.cibles, .sorcier section.window-content section.body div.tab.sortileges.active div.line span.malus,
+.sorcier section.window-content section.body div.tab.sortileges.active div.line div.niveau,
+.sorcier section.window-content section.body div.tab.sortileges.active div.line div.type,
+.sorcier section.window-content section.body div.tab.sortileges.active div.line div.cibles,
+.sorcier section.window-content section.body div.tab.sortileges.active div.line div.malus {
+  display: grid;
+  font-variant: small-caps;
+  font-size: 15px;
+  text-align: center;
+  border-left: 1px solid #000000;
+  height: 100%;
+  align-items: center;
+}
+.sorcier section.window-content section.body div.tab.sortileges.active div.line span.name,
+.sorcier section.window-content section.body div.tab.sortileges.active div.line div.name {
+  display: grid;
+  grid-template-columns: 1fr 14px 14px 14px;
+  grid-gap: 2px;
+  align-items: center;
+  font-variant: small-caps;
+  font-size: 15px;
+  height: 100%;
+}
+.sorcier section.window-content section.body div.tab.sortileges.active div.line span.name i,
+.sorcier section.window-content section.body div.tab.sortileges.active div.line div.name i {
+  font-size: 12px;
+}
+.sorcier section.window-content section.body div.tab.sortileges.active div.line span.name button,
+.sorcier section.window-content section.body div.tab.sortileges.active div.line div.name button {
+  display: grid;
+  grid-template-columns: 1fr 15px;
+  grid-gap: 2px;
+  width: 200px;
+  padding-left: 5px;
+  padding-right: 5px;
+  align-items: center;
+}
+.sorcier section.window-content section.body div.tab.sortileges.active div.line span.name button span,
+.sorcier section.window-content section.body div.tab.sortileges.active div.line div.name button span {
+  text-align: left;
+}
+.sorcier section.window-content section.body div.tab.sortileges.active div.line span.name button i,
+.sorcier section.window-content section.body div.tab.sortileges.active div.line div.name button i {
+  color: #8b2222;
+}
+.sorcier section.window-content section.body div.tab.sortileges.active div.line span.name button.check,
+.sorcier section.window-content section.body div.tab.sortileges.active div.line div.name button.check {
+  background: white;
+}
+.sorcier section.window-content section.body div.tab.sortileges.active div.line span.name button.check i,
+.sorcier section.window-content section.body div.tab.sortileges.active div.line div.name button.check i {
+  color: #228B22;
+}
+.sorcier section.window-content section.body div.tab.sortileges.active div.line span.malus,
+.sorcier section.window-content section.body div.tab.sortileges.active div.line div.malus {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2px;
+  align-items: flex-start;
+}
+.sorcier section.window-content section.body div.tab.sortileges.active div.line span.text,
+.sorcier section.window-content section.body div.tab.sortileges.active div.line div.text {
+  grid-column: 1/6;
+  border-top: 1px dotted #A9A9A9;
+}
+.sorcier section.window-content section.body div.tab.sortileges.active div.line span.roll,
+.sorcier section.window-content section.body div.tab.sortileges.active div.line div.roll {
+  width: max-content;
+  cursor: pointer;
+}
+.sorcier section.window-content section.body div.tab.sortileges.active div.line span.roll:hover,
+.sorcier section.window-content section.body div.tab.sortileges.active div.line div.roll:hover {
+  color: white;
+}
+.sorcier section.window-content section.body div.tab.sortileges.active div.line span.btn,
+.sorcier section.window-content section.body div.tab.sortileges.active div.line div.btn {
+  grid-column: 1/5;
+  display: grid;
+  grid-template-columns: max-content max-content;
+  grid-gap: 2px;
+}
+.sorcier section.window-content section.body div.tab.sortileges.active div.line i.clickable {
+  cursor: pointer;
+}
+.sorcier section.window-content section.body div.tab.sortileges.active div.line i.clickable:hover {
+  color: white;
+}
+.sorcier section.window-content section.body div.tab.sortileges.active div.line.bordertop {
+  border-top: 1px solid #000000;
+  margin-top: 2px;
+  padding-top: 2px;
+}
+.sorcier section.window-content section.body div.tab.sortileges.active button {
+  margin: 0px;
+  padding: 0px;
+  border-radius: 5px;
+  border: 1px solid #000000;
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 14px;
+  line-height: 20px;
+  background: #A9A9A9;
+  margin-top: 5px;
+}
+.sorcier section.window-content section.body div.tab.potions.active {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: flex-start;
+  column-gap: 5px;
+  background: #D3D3D3;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border: 1px solid;
+  margin-top: -2px;
+  padding: 5px;
+  z-index: 0;
+}
+.sorcier section.window-content section.body div.tab.potions.active header {
+  display: grid;
+  grid-template-columns: 1fr 100px 100px 150px 150px;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 15px;
+  align-items: flex-start;
+  border-bottom: 1px solid #000000;
+  padding-bottom: 2px;
+  margin-bottom: 2px;
+}
+.sorcier section.window-content section.body div.tab.potions.active header span.niveau, .sorcier section.window-content section.body div.tab.potions.active header span.ingredientstype, .sorcier section.window-content section.body div.tab.potions.active header span.cibles, .sorcier section.window-content section.body div.tab.potions.active header span.malus {
+  text-align: center;
+  border-left: 1px solid #000000;
+}
+.sorcier section.window-content section.body div.tab.potions.active div.line {
+  display: grid;
+  grid-template-columns: 1fr 100px 100px 150px 150px;
+  align-items: center;
+  cursor: context-menu;
+}
+.sorcier section.window-content section.body div.tab.potions.active div.line span.niveau, .sorcier section.window-content section.body div.tab.potions.active div.line span.ingredientstype, .sorcier section.window-content section.body div.tab.potions.active div.line span.cibles, .sorcier section.window-content section.body div.tab.potions.active div.line span.malus,
+.sorcier section.window-content section.body div.tab.potions.active div.line div.niveau,
+.sorcier section.window-content section.body div.tab.potions.active div.line div.ingredientstype,
+.sorcier section.window-content section.body div.tab.potions.active div.line div.cibles,
+.sorcier section.window-content section.body div.tab.potions.active div.line div.malus {
+  display: grid;
+  font-variant: small-caps;
+  font-size: 15px;
+  text-align: center;
+  border-left: 1px solid #000000;
+  height: 100%;
+  align-items: center;
+}
+.sorcier section.window-content section.body div.tab.potions.active div.line span.name,
+.sorcier section.window-content section.body div.tab.potions.active div.line div.name {
+  display: grid;
+  grid-template-columns: 1fr 14px 14px 14px;
+  grid-gap: 2px;
+  align-items: center;
+  font-variant: small-caps;
+  font-size: 15px;
+  height: 100%;
+}
+.sorcier section.window-content section.body div.tab.potions.active div.line span.name i,
+.sorcier section.window-content section.body div.tab.potions.active div.line div.name i {
+  font-size: 12px;
+}
+.sorcier section.window-content section.body div.tab.potions.active div.line span.roll,
+.sorcier section.window-content section.body div.tab.potions.active div.line div.roll {
+  width: max-content;
+  cursor: pointer;
+}
+.sorcier section.window-content section.body div.tab.potions.active div.line span.roll:hover,
+.sorcier section.window-content section.body div.tab.potions.active div.line div.roll:hover {
+  color: white;
+}
+.sorcier section.window-content section.body div.tab.potions.active div.line span.malus,
+.sorcier section.window-content section.body div.tab.potions.active div.line div.malus {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2px;
+  align-items: flex-start;
+}
+.sorcier section.window-content section.body div.tab.potions.active div.line span.text, .sorcier section.window-content section.body div.tab.potions.active div.line span.ingredientsliste,
+.sorcier section.window-content section.body div.tab.potions.active div.line div.text,
+.sorcier section.window-content section.body div.tab.potions.active div.line div.ingredientsliste {
+  grid-column: 1/6;
+  border-top: 1px dotted #A9A9A9;
+}
+.sorcier section.window-content section.body div.tab.potions.active div.line span.ingredientsliste,
+.sorcier section.window-content section.body div.tab.potions.active div.line div.ingredientsliste {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+.sorcier section.window-content section.body div.tab.potions.active div.line i.clickable {
+  cursor: pointer;
+}
+.sorcier section.window-content section.body div.tab.potions.active div.line i.clickable:hover {
+  color: white;
+}
+.sorcier section.window-content section.body div.tab.potions.active div.line.bordertop {
+  border-top: 1px solid #000000;
+  margin-top: 2px;
+  padding-top: 2px;
+}
+.sorcier section.window-content section.body div.tab.potions.active button {
+  margin: 0px;
+  padding: 0px;
+  border-radius: 5px;
+  border: 1px solid #000000;
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 14px;
+  line-height: 20px;
+  background: #A9A9A9;
+  margin-top: 5px;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: flex-start;
+  column-gap: 5px;
+  background: #D3D3D3;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border: 1px solid;
+  margin-top: -2px;
+  padding: 5px;
+  z-index: 0;
+  grid-gap: 2px;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.baguette {
+  display: grid;
+  grid-template-columns: 1fr;
+  background: #A9A9A9;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 5px;
+  grid-gap: 5px;
+  align-items: flex-start;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.baguette > header {
+  grid-column: 1;
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 20px;
+  align-items: flex-start;
+  text-align: center;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.baguette div.line {
+  display: grid;
+  grid-template-columns: 50px repeat(5, 1fr);
+  background: #D3D3D3;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 2px;
+  cursor: context-menu;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.baguette div.line img {
+  grid-row: 2/4;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.baguette div.line header {
+  grid-column: 1/7;
+  display: grid;
+  grid-template-columns: 90px 1fr max-content max-content;
+  align-items: center;
+  grid-gap: 2px;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 15px;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.baguette div.line header span.eqp {
+  font-size: 15px;
+  font-variant: small-caps;
+  cursor: pointer;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.baguette div.line header span.eqp i {
+  color: #8b2222;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.baguette div.line header span.eqp.wear i {
+  color: #228B22;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.baguette div.line header span.eqp:hover {
+  color: white;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.baguette div.line header span.eqp:hover i {
+  color: white;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.baguette div.line header span.name {
+  text-align: center;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 20px;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.baguette div.line header i {
+  cursor: pointer;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.baguette div.line header i:hover {
+  color: white;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.baguette div.line span {
+  line-height: 22px;
+  height: 100%;
+  min-height: 22px;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.baguette div.line span.bois, .sorcier section.window-content section.body div.tab.inventaire.active div.baguette div.line span.coeur, .sorcier section.window-content section.body div.tab.inventaire.active div.baguette div.line span.taille, .sorcier section.window-content section.body div.tab.inventaire.active div.baguette div.line span.affinite {
+  border-left: 1px solid #000000;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.baguette div.line span.visuel, .sorcier section.window-content section.body div.tab.inventaire.active div.baguette div.line span.taille {
+  text-align: justify;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.baguette div.line span.bois, .sorcier section.window-content section.body div.tab.inventaire.active div.baguette div.line span.coeur, .sorcier section.window-content section.body div.tab.inventaire.active div.baguette div.line span.affinite {
+  text-align: center;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.baguette div.line span.label {
+  text-align: center;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 15px;
+  border-bottom: 1px dotted #A9A9A9;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.balai {
+  display: grid;
+  grid-template-columns: 1fr;
+  background: #A9A9A9;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 5px;
+  grid-gap: 5px;
+  align-items: flex-start;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.balai > header {
+  grid-column: 1;
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 20px;
+  align-items: flex-start;
+  text-align: center;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.balai div.line {
+  display: grid;
+  grid-template-columns: 50px 1fr 150px 1fr;
+  background: #D3D3D3;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 2px;
+  cursor: context-menu;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.balai div.line img {
+  grid-row: 2/4;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.balai div.line header {
+  grid-column: 1/45;
+  display: grid;
+  grid-template-columns: 90px 1fr max-content max-content;
+  align-items: center;
+  grid-gap: 2px;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 15px;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.balai div.line header span.eqp {
+  font-size: 15px;
+  font-variant: small-caps;
+  cursor: pointer;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.balai div.line header span.eqp i {
+  color: #8b2222;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.balai div.line header span.eqp.wear i {
+  color: #228B22;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.balai div.line header span.eqp:hover {
+  color: white;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.balai div.line header span.eqp:hover i {
+  color: white;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.balai div.line header span.name {
+  text-align: center;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 20px;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.balai div.line header i {
+  cursor: pointer;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.balai div.line header i:hover {
+  color: white;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.balai div.line span {
+  line-height: 22px;
+  height: 100%;
+  min-height: 22px;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.balai div.line span.visuel.value {
+  grid-column: 2;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.balai div.line span.marque.value {
+  grid-column: 3;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.balai div.line span.marque, .sorcier section.window-content section.body div.tab.inventaire.active div.balai div.line span.bonus {
+  border-left: 1px solid #000000;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.balai div.line span.visuel {
+  text-align: justify;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.balai div.line span.marque {
+  text-align: center;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.balai div.line span.label {
+  text-align: center;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 15px;
+  border-bottom: 1px dotted #A9A9A9;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.balai div.line div.bonus {
+  border-left: 1px solid #000000;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.balai div.line div.bonus span {
+  padding: 2px;
+  font-variant: small-caps;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.balai div.line div.bonus.value {
+  grid-column: 4;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.liste {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #A9A9A9;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 5px;
+  grid-gap: 5px;
+  align-items: flex-start;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.liste > header {
+  grid-column: 1/3;
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 20px;
+  align-items: flex-start;
+  text-align: center;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.liste button {
+  grid-column: 1/3;
+  margin: 0px;
+  padding: 0px;
+  border-radius: 5px;
+  border: 1px solid #000000;
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 14px;
+  line-height: 20px;
+  background: #A9A9A9;
+  margin-top: 5px;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.liste div.line {
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 5px;
+  background: #D3D3D3;
+  cursor: context-menu;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.liste div.line header {
+  display: grid;
+  grid-template-columns: max-content 1fr max-content max-content max-content;
+  align-items: center;
+  grid-gap: 2px;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 15px;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.liste div.line header i {
+  cursor: pointer;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.liste div.line header i:hover {
+  color: white;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.liste div.line span.particularite {
+  border-top: 1px solid #000000;
+}
+
+.creature section.window-content {
+  background: #A9A9A9;
+}
+.creature section.window-content span,
+.creature section.window-content input {
+  color: #000000;
+}
+.creature section.window-content header.main {
+  display: grid;
+  grid-template-columns: 200px 1fr 200px;
+  align-items: flex-start;
+  grid-gap: 5px;
+}
+.creature section.window-content header.main img.profil-img {
+  object-fit: contain;
+}
+.creature section.window-content header.main div.headerData {
+  display: grid;
+  grid-gap: 5px;
+  align-items: flex-start;
+  font-size: 16px;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5px;
+}
+.creature section.window-content header.main div.headerData label {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-gap: 5px;
+  align-items: flex-end;
+}
+.creature section.window-content header.main div.headerData label.scolarite {
+  grid-template-columns: 1fr;
+  grid-gap: 0px;
+  border: 1px solid;
+  border-radius: 5px;
+  text-align: center;
+}
+.creature section.window-content header.main div.headerData label.scolarite input {
+  width: 100%;
+  border: 0px;
+}
+.creature section.window-content header.main div.headerData span {
+  white-space: nowrap;
+  font-variant: small-caps;
+  font-weight: bold;
+}
+.creature section.window-content header.main div.headerData input,
+.creature section.window-content header.main div.headerData select {
+  width: 100%;
+  border-radius: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-top: 0px;
+  border-bottom: 1px solid;
+  text-align: center;
+  background: transparent;
+}
+.creature section.window-content header.main div.headerData input.name,
+.creature section.window-content header.main div.headerData select.name {
+  font-variant: small-caps;
+  font-size: 18px;
+  grid-column: 1/3;
+}
+.creature section.window-content header.main div.headerData div.data {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2px;
+  min-height: 27px;
+  align-items: flex-end;
+}
+.creature section.window-content header.main div.headerData div.data img {
+  border: 0px;
+  cursor: pointer;
+}
+.creature section.window-content header.main div.headerData div.data div.main {
+  display: grid;
+  grid-template-columns: 20px 1fr 100px;
+  grid-gap: 5px;
+  align-items: flex-end;
+  height: 27px;
+}
+.creature section.window-content header.main div.headerData div.data div.main div.block {
+  display: grid;
+  grid-gap: 2px;
+  border-bottom: 1px solid;
+}
+.creature section.window-content header.main div.headerData div.data div.main div.block.simple {
+  grid-template-columns: 1fr;
+}
+.creature section.window-content header.main div.headerData div.data div.main div.block.double {
+  grid-template-columns: 1fr 10px 1fr;
+}
+.creature section.window-content header.main div.headerData div.data div.main div.block input {
+  width: 100%;
+  border: 0px;
+  font-variant: small-caps;
+  padding: 0px;
+  margin: 0px;
+}
+.creature section.window-content header.main div.headerData div.data div.main div.block span {
+  display: grid;
+  font-weight: normal;
+  text-align: center;
+  align-items: center;
+}
+.creature section.window-content header.main div.headerData div.data div.main div.block span.degats {
+  display: grid;
+  grid-template-columns: 15px 1fr 15px;
+}
+.creature section.window-content header.main div.headerData div.data div.main div.block span.degats i.fa-dice-d20 {
+  cursor: pointer;
+}
+.creature section.window-content header.main div.headerData div.data div.main div.block span.degats i.fa-dice-d20:hover {
+  color: white;
+}
+.creature section.window-content header.main div.headerData div.data div.sub {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2px;
+  padding-left: 25px;
+}
+.creature section.window-content header.main div.headerData div.data div.sub label {
+  grid-template-columns: 1fr 100px;
+  line-height: 25px;
+}
+.creature section.window-content header.main div.headerData div.data div.sub label span.max {
+  font-weight: normal;
+  text-align: center;
+  border-bottom: 1px solid;
+  align-items: center;
+}
+.creature section.window-content header.main div.headerData div.data div.sub label input {
+  width: 100%;
+  border-bottom: 1px solid;
+  font-variant: small-caps;
+  padding: 0px;
+  margin: 0px;
+}
+.creature section.window-content header.main div.headerData div.lien {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 20px 1fr;
+  grid-column: 1/3;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.creature section.window-content header.main div.headerData div.lien span {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.creature section.window-content header.main div.headerData div.lien textarea {
+  border: 0px;
+  border-radius: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.creature section.window-content header.main div.caracteristiques {
+  display: grid;
+  align-items: flex-start;
+  grid-gap: 2px;
+  border: 1px solid;
+  padding: 2px;
+  border-radius: 5px;
+  background: #D3D3D3;
+}
+.creature section.window-content header.main div.caracteristiques div img {
+  border: 0px;
+  cursor: pointer;
+}
+.creature section.window-content header.main div.caracteristiques div.data {
+  display: grid;
+  align-items: flex-start;
+  grid-gap: 2px;
+}
+.creature section.window-content header.main div.caracteristiques div.main {
+  display: grid;
+  grid-template-columns: 20px 1fr 50px;
+  align-items: center;
+  grid-gap: 5px;
+}
+.creature section.window-content header.main div.caracteristiques div.sub {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  padding-left: 25px;
+  grid-gap: 2px;
+}
+.creature section.window-content header.main div.caracteristiques div span.label {
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 15px;
+}
+.creature section.window-content header.main div.caracteristiques div span.roll {
+  cursor: pointer;
+}
+.creature section.window-content header.main div.caracteristiques div span.roll:hover {
+  color: white;
+}
+.creature section.window-content header.main div.caracteristiques div span.value {
+  background: #F5F5F5;
+  border-radius: 5px;
+  border: 1px solid;
+  text-align: center;
+  font-size: 15px;
+}
+.creature section.window-content header.main div.caracteristiques div label {
+  display: grid;
+  grid-template-columns: 1fr 50px;
+  align-items: center;
+}
+.creature section.window-content header.main div.caracteristiques div label input {
+  width: 100%;
+  text-align: center;
+  border-radius: 5px;
+  background: #F5F5F5;
+  height: 20px;
+  font-size: 15px;
+}
+.creature section.window-content section.body nav.tabs {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 5px;
+  border: 0px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+.creature section.window-content section.body nav.tabs a {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  font-variant: small-caps;
+  border-radius: 5px;
+  background: #D3D3D3;
+  border: 1px solid;
+  text-align: left;
+  letter-spacing: 1px;
+  align-items: center;
+  margin-bottom: 5px;
+  z-index: 1;
+}
+.creature section.window-content section.body nav.tabs a.active {
+  text-shadow: none;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  margin-bottom: 0px;
+  padding-bottom: 13px;
+  border-bottom: 0px;
+}
+.creature section.window-content section.body button.ModSeuil {
+  grid-column: 5;
+  width: calc(100% - 5px);
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 2px;
+  margin: 0px;
+  font-variant: small-caps;
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-top: -10px;
+  line-height: 20px;
+  min-height: 38px;
+}
+.creature section.window-content section.body button.ModSeuil:hover {
+  box-shadow: none;
+  background: #000000;
+  color: white;
+}
+.creature section.window-content section.body div.tab.description.active {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: flex-start;
+  grid-gap: 5px;
+  background: #D3D3D3;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  border: 1px solid;
+  margin-top: -2px;
+  padding: 5px;
+  z-index: 0;
+}
+.creature section.window-content section.body div.tab.description.active div.editor {
+  min-height: 300px;
+}
+.creature section.window-content section.body div.tab.description.active div.editor menu {
+  border-radius: 0px;
+}
+.creature section.window-content section.body div.tab.description.active div.editor > div.editor-content {
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 5px;
+}
+.creature section.window-content section.body div.tab.competences.active {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: flex-start;
+  grid-gap: 5px;
+  background: #D3D3D3;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border: 1px solid;
+  margin-top: -2px;
+  padding: 5px;
+}
+.creature section.window-content section.body div.tab.competences.active img {
+  border: 0px;
+  cursor: pointer;
+}
+.creature section.window-content section.body div.tab.competences.active div.line {
+  display: grid;
+  align-items: flex-start;
+  grid-gap: 2px;
+}
+.creature section.window-content section.body div.tab.competences.active div.custom {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: flex-start;
+  grid-gap: 2px;
+}
+.creature section.window-content section.body div.tab.competences.active div.custom span.mainLabel {
+  padding-left: 25px;
+  align-items: center;
+  grid-gap: 5px;
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 17px;
+}
+.creature section.window-content section.body div.tab.competences.active div.custom span.mainLabel i {
+  cursor: pointer;
+}
+.creature section.window-content section.body div.tab.competences.active div.custom span.mainLabel i:hover {
+  color: white;
+}
+.creature section.window-content section.body div.tab.competences.active div.custom span.emptyLabel {
+  text-align: left;
+  border-bottom: 1px solid #000000;
+  border-radius: 0px;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 15px;
+  margin-left: 3px;
+  height: 17px;
+}
+.creature section.window-content section.body div.tab.competences.active div.custom div.main {
+  grid-template-columns: 20px 1fr 20px max-content 150px;
+}
+.creature section.window-content section.body div.tab.competences.active div.custom div.main input {
+  text-align: left;
+  border-bottom: 1px solid #000000;
+  border-radius: 0px;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 15px;
+  margin-left: 3px;
+  height: 17px;
+  width: calc(100% - 3px);
+}
+.creature section.window-content section.body div.tab.competences.active div.custom div.main input[type=checkbox] {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  height: 20px;
+}
+.creature section.window-content section.body div.tab.competences.active div.custom div.main i {
+  margin-left: 3px;
+  margin-right: 3px;
+  cursor: pointer;
+}
+.creature section.window-content section.body div.tab.competences.active div.custom div.main i:hover {
+  color: white;
+}
+.creature section.window-content section.body div.tab.competences.active div.custom div.main i.empty {
+  width: 12.5px;
+}
+.creature section.window-content section.body div.tab.competences.active div.main,
+.creature section.window-content section.body div.tab.competences.active div.sub {
+  display: grid;
+  grid-template-columns: 1fr 150px;
+  grid-gap: 2px;
+  align-items: center;
+}
+.creature section.window-content section.body div.tab.competences.active div.main span.label,
+.creature section.window-content section.body div.tab.competences.active div.sub span.label {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  align-items: center;
+  grid-gap: 5px;
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 15px;
+}
+.creature section.window-content section.body div.tab.competences.active div.main span.sublabel,
+.creature section.window-content section.body div.tab.competences.active div.sub span.sublabel {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 15px;
+  text-align: left;
+  white-space: nowrap;
+}
+.creature section.window-content section.body div.tab.competences.active div.main span.score, .creature section.window-content section.body div.tab.competences.active div.main span.separateur,
+.creature section.window-content section.body div.tab.competences.active div.sub span.score,
+.creature section.window-content section.body div.tab.competences.active div.sub span.separateur {
+  width: 100%;
+  text-align: center;
+}
+.creature section.window-content section.body div.tab.competences.active div.main span.score.bold, .creature section.window-content section.body div.tab.competences.active div.main span.separateur.bold,
+.creature section.window-content section.body div.tab.competences.active div.sub span.score.bold,
+.creature section.window-content section.body div.tab.competences.active div.sub span.separateur.bold {
+  font-weight: bold;
+}
+.creature section.window-content section.body div.tab.competences.active div.main label,
+.creature section.window-content section.body div.tab.competences.active div.sub label {
+  display: grid;
+  grid-template-columns: 85px 5px 1fr;
+  border: 1px solid;
+  border-radius: 3px;
+  text-align: center;
+  line-height: 24px;
+  align-items: center;
+  padding-left: 2px;
+  padding-right: 2px;
+  grid-gap: 2px;
+}
+.creature section.window-content section.body div.tab.competences.active div.main input,
+.creature section.window-content section.body div.tab.competences.active div.sub input {
+  text-align: center;
+  background: transparent;
+  padding: 0px;
+  width: 100%;
+  border: 0px;
+}
+.creature section.window-content section.body div.tab.competences.active div.main input[type=checkbox],
+.creature section.window-content section.body div.tab.competences.active div.sub input[type=checkbox] {
+  margin: 0px;
+  padding: 0px;
+}
+.creature section.window-content section.body div.tab.competences.active div.sub span.label {
+  padding-left: 25px;
+}
+.creature section.window-content section.body div.tab.competences.active header {
+  display: grid;
+  grid-column: 1/4;
+  grid-template-columns: repeat(3, 1fr 150px);
+  grid-gap: 2px;
+  align-items: center;
+  font-size: 17px;
+  font-weight: bold;
+  font-variant: small-caps;
+}
+.creature section.window-content section.body div.tab.competences.active header span {
+  text-align: center;
+}
+.creature section.window-content section.body div.tab.competences.active span.roll {
+  width: max-content;
+  display: grid;
+  grid-template-columns: max-content 15px;
+  cursor: pointer;
+  grid-gap: 2px;
+  align-items: center;
+}
+.creature section.window-content section.body div.tab.competences.active span.roll:hover {
+  color: white;
+}
+.creature section.window-content section.body div.tab.competences.active i.roll {
+  cursor: pointer;
+}
+.creature section.window-content section.body div.tab.competences.active i.roll:hover {
+  color: white;
+}
+.creature section.window-content section.body div.tab.competences.active button.addCmp {
+  grid-column: 1/4;
+  margin: 0px;
+  padding: 0px;
+  border-radius: 5px;
+  border: 1px solid #000000;
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 14px;
+  line-height: 20px;
+  background: #A9A9A9;
+}
+.creature section.window-content section.body div.tab.combat.active {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: flex-start;
+  grid-gap: 2px;
+  background: #D3D3D3;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border: 1px solid;
+  margin-top: -2px;
+  padding: 5px;
+}
+.creature section.window-content section.body div.tab.combat.active header {
+  display: grid;
+  grid-column: 1/3;
+  grid-template-columns: repeat(2, 1fr 150px 150px 15px 15px);
+  grid-gap: 2px;
+  align-items: center;
+  font-size: 17px;
+  font-weight: bold;
+  font-variant: small-caps;
+}
+.creature section.window-content section.body div.tab.combat.active header span {
+  text-align: center;
+}
+.creature section.window-content section.body div.tab.combat.active header span.margin {
+  margin-left: 12px;
+}
+.creature section.window-content section.body div.tab.combat.active div.line {
+  display: grid;
+  grid-template-columns: 1fr 150px 150px 15px 15px;
+  grid-gap: 2px;
+  align-items: center;
+}
+.creature section.window-content section.body div.tab.combat.active div.line.margin {
+  margin-left: 12px;
+}
+.creature section.window-content section.body div.tab.combat.active div.line input {
+  text-align: center;
+  background: transparent;
+  padding: 0px;
+  width: 100%;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 1px solid #000000;
+  border-radius: 0px;
+  font-variant: small-caps;
+  font-size: 15px;
+}
+.creature section.window-content section.body div.tab.combat.active div.line input.label {
+  text-align: left;
+}
+.creature section.window-content section.body div.tab.combat.active div.line i {
+  cursor: pointer;
+}
+.creature section.window-content section.body div.tab.combat.active div.line i:hover {
+  color: white;
+}
+.creature section.window-content section.body div.tab.combat.active button.addCombat {
+  grid-column: 1/3;
+  margin: 0px;
+  padding: 0px;
+  border-radius: 5px;
+  border: 1px solid #000000;
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 14px;
+  line-height: 20px;
+  background: #A9A9A9;
+}
+.creature section.window-content section.body div.tab.capacites.active {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: flex-start;
+  grid-gap: 5px;
+  background: #D3D3D3;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  border: 1px solid;
+  margin-top: -2px;
+  padding: 5px;
+  z-index: 0;
+}
+.creature section.window-content section.body div.tab.capacites.active header {
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  grid-gap: 2px;
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 15px;
+  align-items: center;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.creature section.window-content section.body div.tab.capacites.active header div.cmd {
+  font-size: 13px;
+}
+.creature section.window-content section.body div.tab.capacites.active header i {
+  cursor: pointer;
+}
+.creature section.window-content section.body div.tab.capacites.active header i:hover {
+  color: white;
+}
+.creature section.window-content section.body div.tab.capacites.active div.block {
+  padding: 2px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+}
+.creature section.window-content section.body div.tab.capacites.active button {
+  grid-column: 1/4;
+  margin: 0px;
+  padding: 0px;
+  border-radius: 5px;
+  border: 1px solid #000000;
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 14px;
+  line-height: 20px;
+  background: #A9A9A9;
+}
+
+.avdv section.window-content {
+  background: #A9A9A9;
+}
+.avdv section.window-content span,
+.avdv section.window-content input {
+  color: #000000;
+}
+.avdv section.window-content form {
+  display: grid;
+  grid-template-columns: 200px 1fr 100px;
+  grid-template-rows: max-content 1fr;
+  align-items: flex-start;
+  column-gap: 2px;
+  row-gap: 5px;
+}
+.avdv section.window-content form nav.tabs {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 5px;
+  border: 0px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+.avdv section.window-content form nav.tabs a {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  font-variant: small-caps;
+  border-radius: 5px;
+  background: #D3D3D3;
+  border: 1px solid;
+  text-align: left;
+  letter-spacing: 1px;
+  align-items: center;
+  margin-bottom: 5px;
+  z-index: 1;
+}
+.avdv section.window-content form nav.tabs a.active {
+  text-shadow: none;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  margin-bottom: 0px;
+  padding-bottom: 13px;
+  border-bottom: 0px;
+}
+.avdv section.window-content form nav.tabs {
+  grid-template-columns: repeat(2, 1fr);
+}
+.avdv section.window-content form input {
+  width: 100%;
+  border-radius: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-top: 0px;
+  border-bottom: 1px solid;
+  text-align: center;
+  background: transparent;
+  font-variant: small-caps;
+  font-size: 18px;
+  border-radius: 0px;
+}
+.avdv section.window-content form img.profil-img {
+  object-fit: contain;
+  grid-row: 1/3;
+}
+.avdv section.window-content form section.body {
+  grid-column: 2/4;
+}
+.avdv section.window-content form div.description.active {
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid #000000;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding: 2px;
+  margin-top: -2px;
+  background: #D3D3D3;
+}
+.avdv section.window-content form div.effets.active {
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid #000000;
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding: 2px;
+  margin-top: -2px;
+  background: #D3D3D3;
+  min-height: 100px;
+  align-items: flex-start;
+  align-content: flex-start;
+  grid-gap: 2px;
+}
+.avdv section.window-content form div.effets.active div.line {
+  display: grid;
+  grid-template-columns: 1fr max-content max-content;
+  grid-gap: 2px;
+  align-items: center;
+}
+.avdv section.window-content form div.effets.active div.line input,
+.avdv section.window-content form div.effets.active div.line select {
+  width: 100%;
+  background: transparent;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  font-variant: small-caps;
+  font-size: 15px;
+  height: 25px;
+}
+.avdv section.window-content form div.effets.active div.line input {
+  text-align: center;
+}
+.avdv section.window-content form div.effets.active div.line i {
+  cursor: pointer;
+}
+.avdv section.window-content form div.effets.active div.line i:hover {
+  color: white;
+}
+.avdv section.window-content form div.effets.active button.addEffets {
+  margin: 0px;
+  padding: 0px;
+  border-radius: 5px;
+  border: 1px solid #000000;
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 14px;
+  line-height: 20px;
+  background: #A9A9A9;
+}
+.avdv section.window-content form div.editor {
+  min-height: 300px;
+}
+.avdv section.window-content form div.editor menu {
+  border-radius: 0px;
+}
+.avdv section.window-content form div.editor > div.editor-content {
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 5px;
+}
+
+.capacite section.window-content {
+  background: #A9A9A9;
+}
+.capacite section.window-content span,
+.capacite section.window-content input {
+  color: #000000;
+}
+.capacite section.window-content form {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: 26px max-content;
+  align-items: flex-start;
+  column-gap: 2px;
+  row-gap: 5px;
+}
+.capacite section.window-content form nav.tabs {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 5px;
+  border: 0px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+.capacite section.window-content form nav.tabs a {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  font-variant: small-caps;
+  border-radius: 5px;
+  background: #D3D3D3;
+  border: 1px solid;
+  text-align: left;
+  letter-spacing: 1px;
+  align-items: center;
+  margin-bottom: 5px;
+  z-index: 1;
+}
+.capacite section.window-content form nav.tabs a.active {
+  text-shadow: none;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  margin-bottom: 0px;
+  padding-bottom: 13px;
+  border-bottom: 0px;
+}
+.capacite section.window-content form nav.tabs {
+  grid-template-columns: repeat(2, 1fr);
+}
+.capacite section.window-content form input {
+  width: 100%;
+  border-radius: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-top: 0px;
+  border-bottom: 1px solid;
+  text-align: center;
+  background: transparent;
+  font-variant: small-caps;
+  font-size: 18px;
+  border-radius: 0px;
+}
+.capacite section.window-content form img.profil-img {
+  object-fit: contain;
+  grid-row: 1/3;
+}
+.capacite section.window-content form section.body {
+  grid-column: 1/3;
+}
+.capacite section.window-content form div.effets {
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid #000000;
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding: 2px;
+  margin-top: -2px;
+  background: #D3D3D3;
+  min-height: 100px;
+  align-items: flex-start;
+  align-content: flex-start;
+  grid-gap: 2px;
+}
+.capacite section.window-content form div.effets div.line {
+  display: grid;
+  grid-template-columns: 1fr max-content max-content;
+  grid-gap: 2px;
+  align-items: center;
+}
+.capacite section.window-content form div.effets div.line input,
+.capacite section.window-content form div.effets div.line select {
+  width: 100%;
+  background: transparent;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  font-variant: small-caps;
+  font-size: 15px;
+  height: 25px;
+}
+.capacite section.window-content form div.effets div.line input {
+  text-align: center;
+}
+.capacite section.window-content form div.effets div.line i {
+  cursor: pointer;
+}
+.capacite section.window-content form div.effets div.line i:hover {
+  color: white;
+}
+.capacite section.window-content form div.effets button.addEffets {
+  margin: 0px;
+  padding: 0px;
+  border-radius: 5px;
+  border: 1px solid #000000;
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 14px;
+  line-height: 20px;
+  background: #A9A9A9;
+}
+.capacite section.window-content form div.editor {
+  background: #D3D3D3;
+  border-radius: 5px;
+  border: 1px solid #000000;
+  min-height: 100%;
+}
+.capacite section.window-content form div.editor menu {
+  border-radius: 0px;
+}
+.capacite section.window-content form div.editor > div.editor-content {
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 5px;
+}
+
+.sortilege section.window-content {
+  background: #A9A9A9;
+}
+.sortilege section.window-content span,
+.sortilege section.window-content input {
+  color: #000000;
+}
+.sortilege section.window-content form {
+  display: grid;
+  grid-template-columns: 200px 1fr 100px;
+  grid-template-rows: 26px max-content;
+  align-items: flex-start;
+  column-gap: 2px;
+  row-gap: 5px;
+  align-items: flex-start;
+}
+.sortilege section.window-content form img.profil-img {
+  object-fit: contain;
+  grid-row: 1/3;
+}
+.sortilege section.window-content form input.name {
+  width: 100%;
+  border-radius: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-top: 0px;
+  border-bottom: 1px solid;
+  text-align: center;
+  background: transparent;
+  font-variant: small-caps;
+  font-size: 18px;
+  border-radius: 0px;
+}
+.sortilege section.window-content form input.niveau {
+  width: 100%;
+  border-radius: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-top: 0px;
+  border-bottom: 1px solid;
+  text-align: center;
+  background: transparent;
+  font-variant: small-caps;
+  font-size: 18px;
+  border-radius: 0px;
+}
+.sortilege section.window-content form div.data {
+  grid-column: 2/4;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: max-content;
+  grid-gap: 5px;
+  align-items: flex-start;
+}
+.sortilege section.window-content form div.data label.type {
+  border-radius: 5px;
+  padding: 2px;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  align-items: center;
+  grid-gap: 5px;
+  background: #D3D3D3;
+  border: 1px solid #000000;
+}
+.sortilege section.window-content form div.data label.type span {
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 15px;
+  white-space: nowrap;
+}
+.sortilege section.window-content form div.data label.type select {
+  border-radius: 0px;
+  border: 0px;
+  padding: 0px;
+  margin: 0px;
+  background: transparent;
+}
+.sortilege section.window-content form div.data div.cible {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2px;
+  background: #D3D3D3;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  align-items: center;
+  justify-items: center;
+  grid-gap: 2px;
+  padding: 5px;
+}
+.sortilege section.window-content form div.data div.cible span.header {
+  grid-column: 1/5;
+  text-align: center;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 15px;
+}
+.sortilege section.window-content form div.data div.cible div {
+  display: grid;
+  width: 45px;
+  grid-template-columns: 18px 1fr;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  align-items: center;
+  padding-left: 5px;
+  padding-right: 5px;
+  grid-gap: 5px;
+  background: white;
+  cursor: pointer;
+}
+.sortilege section.window-content form div.data div.cible div span {
+  font-weight: bold;
+  font-size: 15px;
+  font-variant: small-caps;
+}
+.sortilege section.window-content form div.data div.cible div i {
+  font-size: 20px;
+  color: #8b2222;
+}
+.sortilege section.window-content form div.data div.cible div.checked i {
+  color: #228B22;
+}
+.sortilege section.window-content form div.data div.cible div:hover {
+  background: #000000;
+}
+.sortilege section.window-content form div.data div.cible div:hover span {
+  color: white;
+}
+.sortilege section.window-content form div.data div.malus {
+  grid-row: 1/4;
+  grid-column: 2;
+  width: max-content;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2px;
+  background: #D3D3D3;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  align-items: center;
+  justify-items: center;
+  grid-gap: 2px;
+  padding: 5px;
+  justify-self: flex-end;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100%;
+}
+.sortilege section.window-content form div.data div.malus span.header {
+  text-align: center;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 20px;
+}
+.sortilege section.window-content form div.data div.malus label {
+  display: grid;
+  grid-template-columns: 1fr 50px;
+  grid-gap: 5px;
+  align-items: center;
+}
+.sortilege section.window-content form div.data div.malus label span {
+  font-variant: small-caps;
+  font-size: 15px;
+  font-weight: bold;
+}
+.sortilege section.window-content form div.data div.malus label input {
+  background: white;
+  border-radius: 5px;
+  border: 1px solid;
+  text-align: center;
+  font-size: 15px;
+}
+.sortilege section.window-content form div.data div.malus div.fe {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: max-content;
+  align-items: center;
+  grid-gap: 2px;
+  width: 100%;
+  margin-top: 5px;
+  padding-top: 5px;
+  border-top: 1px solid #000000;
+}
+.sortilege section.window-content form div.data div.malus div.fe label {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  align-items: center;
+}
+.sortilege section.window-content form div.data div.malus div.fe span.subheader {
+  text-align: center;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 15px;
+}
+.sortilege section.window-content form div.data div.malus div.fe span.separateur {
+  width: max-content;
+  font-weight: bold;
+}
+.sortilege section.window-content form div.data div.malus div.fe input {
+  background: white;
+  border-radius: 5px;
+  border: 1px solid;
+  text-align: center;
+  font-size: 15px;
+  width: 50px;
+  padding: 0px;
+  margin: 0px;
+  justify-self: center;
+}
+.sortilege section.window-content form div.data div.malus div.fe button {
+  display: grid;
+  grid-template-columns: 1fr 15px;
+  align-items: center;
+  margin: 0px;
+  padding: 0px;
+  border-radius: 5px;
+  border: 1px solid #000000;
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 14px;
+  line-height: 20px;
+  background: #A9A9A9;
+  text-align: left;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+.sortilege section.window-content form div.data div.malus div.fe button.check {
+  background: white;
+}
+.sortilege section.window-content form div.data div.malus div.fe button i {
+  color: #8b2222;
+}
+.sortilege section.window-content form div.data div.malus div.fe button i.fa-check {
+  color: #228B22;
+}
+.sortilege section.window-content form div.data div.malus div.fe i.delete {
+  cursor: pointer;
+}
+.sortilege section.window-content form div.data div.malus div.fe i.delete:hover {
+  color: white;
+}
+.sortilege section.window-content form div.block {
+  grid-column: 1/4;
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 2px;
+}
+.sortilege section.window-content form div.editor {
+  min-height: 300px;
+}
+.sortilege section.window-content form div.editor menu {
+  border-radius: 0px;
+}
+.sortilege section.window-content form div.editor > div.editor-content {
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 5px;
+}
+
+.potion section.window-content {
+  background: #A9A9A9;
+}
+.potion section.window-content span,
+.potion section.window-content input {
+  color: #000000;
+}
+.potion section.window-content form {
+  display: grid;
+  grid-template-columns: 200px 1fr 100px;
+  grid-template-rows: 26px max-content;
+  align-items: flex-start;
+  column-gap: 2px;
+  row-gap: 5px;
+  align-items: flex-start;
+}
+.potion section.window-content form img.profil-img {
+  object-fit: contain;
+  grid-row: 1/3;
+}
+.potion section.window-content form input.name {
+  width: 100%;
+  border-radius: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-top: 0px;
+  border-bottom: 1px solid;
+  text-align: center;
+  background: transparent;
+  font-variant: small-caps;
+  font-size: 18px;
+  border-radius: 0px;
+}
+.potion section.window-content form input.niveau {
+  width: 100%;
+  border-radius: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-top: 0px;
+  border-bottom: 1px solid;
+  text-align: center;
+  background: transparent;
+  font-variant: small-caps;
+  font-size: 18px;
+  border-radius: 0px;
+}
+.potion section.window-content form div.data {
+  grid-column: 2/4;
+  display: grid;
+  grid-template-columns: 1fr 150px;
+  grid-template-rows: 32px max-content;
+  grid-gap: 5px;
+  align-items: flex-start;
+}
+.potion section.window-content form div.data label.malus {
+  border-radius: 5px;
+  padding: 2px;
+  display: grid;
+  grid-template-columns: 1fr 50px;
+  align-items: center;
+  grid-gap: 5px;
+  background: #D3D3D3;
+  border: 1px solid #000000;
+}
+.potion section.window-content form div.data label.malus span {
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 15px;
+  white-space: nowrap;
+}
+.potion section.window-content form div.data label.malus input {
+  background: white;
+  border-radius: 5px;
+  border: 1px solid;
+  text-align: center;
+  font-size: 15px;
+}
+.potion section.window-content form div.data div.ingredients {
+  grid-row: 1/3;
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  background: #D3D3D3;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  align-items: center;
+  padding: 2px;
+}
+.potion section.window-content form div.data div.ingredients span.header {
+  text-align: center;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 15px;
+}
+.potion section.window-content form div.data div.ingredients select {
+  border-radius: 0px;
+  border: 0px;
+  padding: 0px;
+  margin: 0px;
+  background: transparent;
+  text-align: center;
+  font-variant: small-caps;
+}
+.potion section.window-content form div.data div.ingredients div.liste {
+  display: grid;
+  grid-column: 1/3;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  grid-gap: 5px;
+  margin-bottom: 5px;
+}
+.potion section.window-content form div.data div.ingredients div.liste div {
+  display: grid;
+  align-items: center;
+  grid-gap: 2px;
+  border-bottom: 1px solid #000000;
+}
+.potion section.window-content form div.data div.ingredients div.liste div.pair {
+  grid-template-columns: 18px 1fr;
+}
+.potion section.window-content form div.data div.ingredients div.liste div.impair {
+  grid-template-columns: 1fr 18px;
+}
+.potion section.window-content form div.data div.ingredients div.liste div input {
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+  background: transparent;
+  text-align: center;
+}
+.potion section.window-content form div.data div.ingredients div.liste div i {
+  cursor: pointer;
+}
+.potion section.window-content form div.data div.ingredients div.liste div i:hover {
+  color: white;
+}
+.potion section.window-content form div.data div.ingredients button {
+  grid-column: 1/6;
+  margin: 0px;
+  padding: 0px;
+  border-radius: 5px;
+  border: 1px solid #000000;
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 14px;
+  line-height: 20px;
+  background: #A9A9A9;
+}
+.potion section.window-content form div.data div.cible {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2px;
+  background: #D3D3D3;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  align-items: center;
+  justify-items: center;
+  grid-gap: 2px;
+  padding: 5px;
+}
+.potion section.window-content form div.data div.cible span.header {
+  grid-column: 1/3;
+  text-align: center;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 15px;
+}
+.potion section.window-content form div.data div.cible div {
+  display: grid;
+  width: 45px;
+  grid-template-columns: 18px 1fr;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  align-items: center;
+  padding-left: 5px;
+  padding-right: 5px;
+  grid-gap: 5px;
+  background: white;
+  cursor: pointer;
+}
+.potion section.window-content form div.data div.cible div span {
+  font-weight: bold;
+  font-size: 15px;
+  font-variant: small-caps;
+}
+.potion section.window-content form div.data div.cible div i {
+  font-size: 20px;
+  color: #8b2222;
+}
+.potion section.window-content form div.data div.cible div.checked i {
+  color: #228B22;
+}
+.potion section.window-content form div.data div.cible div:hover {
+  background: #000000;
+}
+.potion section.window-content form div.data div.cible div:hover span {
+  color: white;
+}
+.potion section.window-content form div.block {
+  grid-column: 1/4;
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 2px;
+}
+.potion section.window-content form div.editor {
+  min-height: 300px;
+}
+.potion section.window-content form div.editor menu {
+  border-radius: 0px;
+}
+.potion section.window-content form div.editor > div.editor-content {
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 5px;
+}
+
+.objet section.window-content {
+  background: #A9A9A9;
+}
+.objet section.window-content span,
+.objet section.window-content input {
+  color: #000000;
+}
+.objet section.window-content form {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: max-content 1fr;
+  align-items: flex-start;
+  column-gap: 2px;
+  row-gap: 5px;
+}
+.objet section.window-content form input {
+  width: 100%;
+  border-radius: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-top: 0px;
+  border-bottom: 1px solid;
+  text-align: center;
+  background: transparent;
+  font-variant: small-caps;
+  font-size: 18px;
+  border-radius: 0px;
+}
+.objet section.window-content form img.profil-img {
+  object-fit: contain;
+  grid-row: 1/3;
+}
+.objet section.window-content form div.block {
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 2px;
+}
+.objet section.window-content form div.editor {
+  min-height: 164px;
+}
+.objet section.window-content form div.editor menu {
+  border-radius: 0px;
+}
+.objet section.window-content form div.editor > div.editor-content {
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 5px;
+}
+
+.baguette section.window-content {
+  background: #A9A9A9;
+}
+.baguette section.window-content span,
+.baguette section.window-content input {
+  color: #000000;
+}
+.baguette section.window-content form {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.baguette section.window-content form header {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: max-content 1fr;
+  align-items: flex-start;
+  column-gap: 2px;
+  row-gap: 5px;
+}
+.baguette section.window-content form header div.block {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2px;
+  align-items: flex-start;
+  border: 0px;
+}
+.baguette section.window-content form header div.block label.visuel, .baguette section.window-content form header div.block label.taille,
+.baguette section.window-content form header div.block div.visuel,
+.baguette section.window-content form header div.block div.taille {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  align-items: flex-start;
+}
+.baguette section.window-content form header div.block label.visuel span, .baguette section.window-content form header div.block label.taille span,
+.baguette section.window-content form header div.block div.visuel span,
+.baguette section.window-content form header div.block div.taille span {
+  font-variant: small-caps;
+  font-size: 15px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 1px solid #000000;
+}
+.baguette section.window-content form header div.block label.visuel textarea, .baguette section.window-content form header div.block label.taille textarea,
+.baguette section.window-content form header div.block div.visuel textarea,
+.baguette section.window-content form header div.block div.taille textarea {
+  border: 0px;
+  padding: 2px;
+  margin: 0px;
+  color: #000000;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.baguette section.window-content form header div.block label.bois, .baguette section.window-content form header div.block label.coeur,
+.baguette section.window-content form header div.block div.bois,
+.baguette section.window-content form header div.block div.coeur {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  align-items: flex-start;
+}
+.baguette section.window-content form header div.block label.bois span, .baguette section.window-content form header div.block label.coeur span,
+.baguette section.window-content form header div.block div.bois span,
+.baguette section.window-content form header div.block div.coeur span {
+  font-variant: small-caps;
+  font-size: 15px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 1px solid #000000;
+}
+.baguette section.window-content form header div.block label.bois input, .baguette section.window-content form header div.block label.coeur input,
+.baguette section.window-content form header div.block div.bois input,
+.baguette section.window-content form header div.block div.coeur input {
+  width: 100%;
+  border-radius: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-top: 0px;
+  border-bottom: 1px solid;
+  text-align: center;
+  background: transparent;
+  font-variant: small-caps;
+  font-size: 18px;
+  border-radius: 0px;
+}
+.baguette section.window-content form header div.block label.bois textarea, .baguette section.window-content form header div.block label.coeur textarea,
+.baguette section.window-content form header div.block div.bois textarea,
+.baguette section.window-content form header div.block div.coeur textarea {
+  border: 0px;
+  padding: 2px;
+  margin: 0px;
+  color: #000000;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.baguette section.window-content form header div.affinite {
+  display: grid;
+  grid-template-columns: 1fr 50px;
+  grid-gap: 2px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  align-items: flex-start;
+  padding-top: 2px;
+}
+.baguette section.window-content form header div.affinite span {
+  grid-column: 1/3;
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  font-variant: small-caps;
+  font-size: 15px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 1px solid #000000;
+}
+.baguette section.window-content form header div.affinite select {
+  border-radius: 0px;
+  border: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-right: 0px;
+  padding-left: 0px;
+  text-align: left;
+  margin: 0px;
+}
+.baguette section.window-content form header div.affinite input {
+  border-radius: 0px;
+  border: 0px;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+}
+.baguette section.window-content form header input.name {
+  width: 100%;
+  border-radius: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-top: 0px;
+  border-bottom: 1px solid;
+  text-align: center;
+  background: transparent;
+  font-variant: small-caps;
+  font-size: 18px;
+  border-radius: 0px;
+}
+.baguette section.window-content form header img.profil-img {
+  object-fit: contain;
+  grid-row: 1/3;
+}
+.baguette section.window-content form div.block {
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 2px;
+}
+.baguette section.window-content form div.editor {
+  min-height: 164px;
+}
+.baguette section.window-content form div.editor menu {
+  border-radius: 0px;
+}
+.baguette section.window-content form div.editor > div.editor-content {
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 5px;
+}
+
+.balai section.window-content {
+  background: #A9A9A9;
+}
+.balai section.window-content span,
+.balai section.window-content input {
+  color: #000000;
+}
+.balai section.window-content form {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: max-content;
+  grid-gap: 2px;
+}
+.balai section.window-content form header {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: max-content 1fr;
+  align-items: flex-start;
+  column-gap: 2px;
+  row-gap: 5px;
+}
+.balai section.window-content form header div.block {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2px;
+  align-items: flex-start;
+  border: 0px;
+}
+.balai section.window-content form header div.block label.visuel,
+.balai section.window-content form header div.block div.visuel {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  align-items: flex-start;
+}
+.balai section.window-content form header div.block label.visuel span,
+.balai section.window-content form header div.block div.visuel span {
+  font-variant: small-caps;
+  font-size: 15px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 1px solid #000000;
+}
+.balai section.window-content form header div.block label.visuel textarea,
+.balai section.window-content form header div.block div.visuel textarea {
+  border: 0px;
+  padding: 2px;
+  margin: 0px;
+  color: #000000;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.balai section.window-content form header div.block label.marque,
+.balai section.window-content form header div.block div.marque {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  align-items: flex-start;
+}
+.balai section.window-content form header div.block label.marque span,
+.balai section.window-content form header div.block div.marque span {
+  font-variant: small-caps;
+  font-size: 15px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 1px solid #000000;
+}
+.balai section.window-content form header div.block label.marque input,
+.balai section.window-content form header div.block div.marque input {
+  width: 100%;
+  border-radius: 0px;
+  border: 0px;
+  text-align: center;
+  background: transparent;
+  font-variant: small-caps;
+  font-size: 18px;
+  border-radius: 0px;
+}
+.balai section.window-content form header div.block label.marque textarea,
+.balai section.window-content form header div.block div.marque textarea {
+  border: 0px;
+  padding: 2px;
+  margin: 0px;
+  color: #000000;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.balai section.window-content form header div.bonus {
+  grid-column: 1/3;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  align-items: flex-start;
+  padding: 2px;
+  background: #A9A9A9;
+}
+.balai section.window-content form header div.bonus header {
+  display: grid;
+  grid-template-columns: 1fr 50px 15px;
+  grid-gap: 2px;
+  font-variant: small-caps;
+  font-weight: bold;
+  align-items: center;
+}
+.balai section.window-content form header div.bonus header span.title {
+  font-size: 20px;
+}
+.balai section.window-content form header div.bonus header span.score {
+  text-align: center;
+}
+.balai section.window-content form header div.bonus div.list {
+  display: grid;
+  grid-template-columns: max-content 1fr 50px 50px max-content;
+  grid-gap: 2px;
+  background: #D3D3D3;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  align-items: flex-start;
+  padding: 2px;
+}
+.balai section.window-content form header div.bonus div.list label {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: flex-start;
+  grid-gap: 2px;
+}
+.balai section.window-content form header div.bonus div.list label span {
+  font-variant: small-caps;
+  font-size: 15px;
+  text-align: center;
+  font-weight: bold;
+}
+.balai section.window-content form header div.bonus div.list label select {
+  border-radius: 0px;
+  border: 0px;
+  padding: 0px;
+  text-align: left;
+  margin: 0px;
+  font-variant: small-caps;
+}
+.balai section.window-content form header div.bonus div.list label input {
+  border-radius: 0px;
+  border: 0px;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+}
+.balai section.window-content form header div.bonus div.list label.name span {
+  text-align: left;
+}
+.balai section.window-content form header div.bonus div.list label.name input {
+  text-align: left;
+}
+.balai section.window-content form header div.bonus div.list label.name.large {
+  grid-column: 2/4;
+}
+.balai section.window-content form header div.bonus div.list textarea {
+  grid-column: 1/5;
+  border: 0px;
+  padding: 2px;
+  margin: 0px;
+  color: #000000;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.balai section.window-content form header div.bonus div.list i {
+  cursor: pointer;
+}
+.balai section.window-content form header div.bonus div.list i:hover {
+  color: white;
+}
+.balai section.window-content form header div.bonus button {
+  margin: 0px;
+  padding: 0px;
+  border-radius: 5px;
+  border: 1px solid #000000;
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 14px;
+  line-height: 20px;
+  margin-top: 5px;
+}
+.balai section.window-content form header input.name {
+  width: 100%;
+  border-radius: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-top: 0px;
+  border-bottom: 1px solid;
+  text-align: center;
+  background: transparent;
+  font-variant: small-caps;
+  font-size: 18px;
+  border-radius: 0px;
+}
+.balai section.window-content form header img.profil-img {
+  object-fit: contain;
+  grid-row: 1/3;
+}
+.balai section.window-content form div.block {
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 2px;
+}
+.balai section.window-content form div.editor {
+  min-height: 164px;
+}
+.balai section.window-content form div.editor menu {
+  border-radius: 0px;
+}
+.balai section.window-content form div.editor > div.editor-content {
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 5px;
+}
+
+.dialog.hp section.window-content {
+  background: #A9A9A9;
+}
+.dialog.hp section.window-content form {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2px;
+  padding-bottom: 5px;
+}
+.dialog.hp section.window-content form button {
+  font-variant: small-caps;
+  font-size: 15px;
+  text-align: center;
+  border: 1px solid #000000;
+  border-radius: 5px;
+}
+.dialog.hp section.window-content form button.btnWithIcon {
+  display: grid;
+  grid-template-columns: 1fr 15px;
+  align-items: center;
+  border-radius: 5px;
+  background: #D3D3D3;
+}
+.dialog.hp section.window-content form button.btnWithIcon span {
+  text-align: left;
+}
+.dialog.hp section.window-content form button.btnWithIcon i {
+  color: #8b2222;
+}
+.dialog.hp section.window-content form button.btnWithIcon.check {
+  background: white;
+}
+.dialog.hp section.window-content form button.btnWithIcon.check i {
+  color: #228B22;
+}
+.dialog.hp section.window-content form button.fs17 {
+  font-size: 17px;
+}
+.dialog.hp section.window-content span,
+.dialog.hp section.window-content input {
+  color: #000000;
+  border-color: #000000;
+}
+.dialog.hp section.window-content label {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  align-items: center;
+}
+.dialog.hp section.window-content label span {
+  font-variant: small-caps;
+  font-size: 15px;
+}
+.dialog.hp section.window-content label select {
+  width: 100px;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+  font-variant: small-caps;
+  border-color: #000000;
+  background: white;
+}
+.dialog.hp section.window-content label input {
+  width: 100px;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+  font-variant: small-caps;
+  background: white;
+}
+.dialog.hp section.window-content label input[type=text] {
+  width: 200px;
+  text-align: left;
+  padding-left: 2px;
+}
+.dialog.hp section.window-content label input[type=checkbox] {
+  width: 20px;
+}
+.dialog.hp section.window-content label.degats input {
+  width: 100px;
+  text-align: center;
+}
+.dialog.hp section.window-content label.numberWithCheck {
+  grid-template-columns: max-content 1fr max-content;
+  grid-gap: 2px;
+  cursor: pointer;
+}
+.dialog.hp section.window-content label.numberWithCheck input[type=checkbox]:not(:checked) {
+  opacity: 0.7;
+}
+.dialog.hp section.window-content label.numberWithCheck input[type=checkbox]:not(:checked) ~ span {
+  opacity: 0.7;
+}
+.dialog.hp section.window-content label.numberWithCheck span.score {
+  display: grid;
+  align-items: center;
+  width: 100px;
+  border: 1px solid #000000;
+  background: white;
+  height: var(--form-field-height);
+  color: #000000;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+  font-variant: small-caps;
+  border-radius: 3px;
+  font-size: var(--font-size-14);
+}
+.dialog.hp section.window-content div.btnWithIconAndNumber {
+  display: grid;
+  grid-template-columns: 1fr 50px;
+  grid-gap: 2px;
+}
+.dialog.hp section.window-content div.btnWithIconAndNumber input {
+  border: 1px solid #000000;
+  border-radius: 5px;
+  opacity: 0.5;
+  text-align: center;
+  background: white;
+  height: 32px;
+  color: #000000;
+  font-weight: bold;
+}
+.dialog.hp section.window-content div.btnWithIconAndNumber.check input {
+  opacity: 1;
+}
+.dialog.hp section.window-content div.btnWithIconAndNumber.fs17 input {
+  font-size: 17px;
+}
+.dialog.hp section.window-content div.dialog-buttons button {
+  font-size: 16px;
+  font-variant: small-caps;
+  font-weight: bold;
+}
+
+li.hp.roll {
+  border: 1px solid #000000;
+  border-radius: 5px;
+  background: #A9A9A9;
+  color: #000000;
+}
+li.hp.roll header.message-header {
+  color: #000000;
+  font-variant: small-caps;
+  font-size: 17px;
+  border-bottom: 1px solid #000000;
+}
+li.hp.roll header.message-header h4 {
+  font-weight: bold;
+}
+li.hp.roll div.message-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2px;
+  cursor: pointer;
+}
+li.hp.roll div.message-content > header {
+  text-align: center;
+  font-variant: small-caps;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 30px;
+}
+li.hp.roll div.message-content h4.formula {
+  margin: 0px;
+  border: 1px solid #000000;
+  text-align: center;
+  font-size: 15px;
+  line-height: 25px;
+  border-radius: 5px;
+  background: #D3D3D3;
+}
+li.hp.roll div.message-content header.part-header {
+  border-color: #000000;
+}
+li.hp.roll div.message-content span.part-formula {
+  text-transform: uppercase;
+}
+li.hp.roll div.message-content span.part-total {
+  background: #D3D3D3;
+  border-top: 1px solid #000000;
+  border-left: 1px solid #000000;
+  border-right: 1px solid #000000;
+}
+li.hp.roll div.message-content div.bonus {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+li.hp.roll div.message-content div.bonus span {
+  font-variant: small-caps;
+  font-size: 15px;
+  border: 1px solid #000000;
+  padding: 2px;
+  border-radius: 5px;
+  background: #D3D3D3;
+  margin-top: 2px;
+}
+li.hp.roll div.message-content div.result {
+  margin: 0px;
+  border: 1px solid #000000;
+  text-align: center;
+  font-size: 15px;
+  line-height: 25px;
+  border-radius: 5px;
+  background: #D3D3D3;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+li.hp.roll div.message-content div.result.success {
+  color: #228B22;
+}
+li.hp.roll div.message-content div.result.fail {
+  color: #8b2222;
+}
+li.hp.roll div.message-content div.sortilege, li.hp.roll div.message-content div.potion {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 5px;
+  row-gap: 2px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 2px;
+  background: #D3D3D3;
+  font-variant: small-caps;
+  font-size: 15px;
+}
+li.hp.roll div.message-content div.sortilege span, li.hp.roll div.message-content div.potion span {
+  grid-column: 1/3;
+  text-align: left;
+}
+li.hp.roll div.message-content div.sortilege span.mid-first, li.hp.roll div.message-content div.potion span.mid-first {
+  grid-column: 1;
+}
+li.hp.roll div.message-content div.sortilege span.mid-second, li.hp.roll div.message-content div.potion span.mid-second {
+  grid-column: 2;
+}
+li.hp.roll div.message-content div.sortilege span.tri-row, li.hp.roll div.message-content div.potion span.tri-row {
+  grid-row: 1/4;
+}
+li.hp.roll div.message-content div.sortilege span.description, li.hp.roll div.message-content div.potion span.description {
+  text-align: justify;
+  font-variant: normal;
+  font-size: 13px;
+}
+li.hp.roll div.message-content div.sortilege span p, li.hp.roll div.message-content div.potion span p {
+  display: contents;
+}
+li.hp.roll div.message-content div.sortilege span b.title, li.hp.roll div.message-content div.potion span b.title {
+  text-transform: uppercase;
+  font-size: 15px;
+}
+
+li.hp.multi div.blockRoll {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 2px;
+  background: #D3D3D3;
+}
+li.hp.multi div.blockRoll span.label {
+  text-align: center;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 15px;
+}
+li.hp.multi div.blockRoll span.objective {
+  text-align: center;
+  font-variant: small-caps;
+  font-size: 15px;
+}
+li.hp.multi div.blockRoll span.result {
+  text-align: center;
+  font-variant: small-caps;
+  font-size: 15px;
+}
+li.hp.multi div.blockRoll span.result.success {
+  color: #228B22;
+}
+li.hp.multi div.blockRoll span.result.fail {
+  color: #8b2222;
+}
+li.hp.multi div.blockRoll span.gain {
+  font-variant: small-caps;
+  text-align: center;
+  font-weight: bold;
+  font-size: 15px;
+}
+li.hp.multi div.blockRoll span.borderTop {
+  border-top: 1px solid #000000;
+  padding-top: 2px;
+  margin-top: 2px;
+}
+li.hp.multi div.blockRoll a.btn {
+  text-align: center;
+  font-variant: small-caps;
+  font-weight: bold;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  background: #A9A9A9;
+  cursor: pointer;
+}
+li.hp.multi div.blockRoll a.btn:hover {
+  background: white;
+}
+
+li.hp {
+  border: 1px solid #000000;
+  border-radius: 5px;
+  background: #A9A9A9;
+  color: #000000;
+}
+li.hp header.message-header {
+  color: #000000;
+  font-variant: small-caps;
+  font-size: 17px;
+  border-bottom: 1px solid #000000;
+}
+li.hp header.message-header h4 {
+  font-weight: bold;
+}
+li.hp div.message-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2px;
+}
+li.hp div.message-content > header {
+  text-align: center;
+  font-variant: small-caps;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 30px;
+}
+li.hp div.message-content span.msg {
+  text-align: center;
+  width: 100%;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  line-height: 30px;
+  font-size: 20px;
+  font-variant: small-caps;
+  font-weight: bold;
+  background: #D3D3D3;
+}
+li.hp div.message-content span.msg.justify {
+  font-size: 13px;
+  line-height: inherit;
+  font-weight: normal;
+  font-variant: normal;
+  text-align: justify;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+li.hp.initiative div.message-content, li.hp.initiative div.dice-result {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2px;
+  cursor: pointer;
+}
+li.hp.initiative div.dice-roll {
+  margin-top: 2px;
+}
+li.hp.initiative div.dice-formula,
+li.hp.initiative div h4.dice-total {
+  margin: 0px;
+  border: 1px solid #000000;
+  text-align: center;
+  font-size: 15px;
+  line-height: 25px;
+  border-radius: 5px;
+  background: #D3D3D3;
+  text-transform: uppercase;
+  font-variant: small-caps;
+}
+li.hp.initiative div header.part-header {
+  border-color: #000000;
+}
+li.hp.initiative div span.part-formula {
+  text-transform: uppercase;
+}
+li.hp.initiative div span.part-total {
+  background: #D3D3D3;
+  border-top: 1px solid #000000;
+  border-left: 1px solid #000000;
+  border-right: 1px solid #000000;
+}

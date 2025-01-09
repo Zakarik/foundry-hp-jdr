@@ -1,0 +1,240 @@
+header.main {
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+    align-items: flex-start;
+    grid-gap: 5px;
+
+    img.profil-img {
+        object-fit: contain;
+    }
+
+    div {
+        &.headerData {
+            display: grid;
+            grid-gap: 5px;
+            align-items: flex-start;
+            font-size: 16px;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 5px;
+
+            label {
+                display: grid;
+                grid-template-columns: max-content 1fr;
+                grid-gap: 5px;
+                align-items: flex-end;
+
+                &.scolarite {
+                    grid-template-columns: 1fr;
+                    grid-gap: 0px;
+                    border: 1px solid;
+                    border-radius: 5px;
+                    text-align: center;
+
+                    input {
+                        width: 100%;
+                        border: 0px;
+                    }
+                }
+            }
+
+            span {
+                white-space: nowrap;
+                font-variant: small-caps;
+                font-weight: bold;
+            }
+
+            input,
+            select {
+                width: 100%;
+                border-radius: 0px;
+                border-left: 0px;
+                border-right: 0px;
+                border-top: 0px;
+                border-bottom: 1px solid;
+                text-align: center;
+                background: transparent;
+
+                &.name {
+                    font-variant: small-caps;
+                    font-size: 18px;
+                    grid-column: 1 / 3;
+                }
+            }
+
+            div {
+                &.data {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    grid-gap: 2px;
+                    min-height: 27px;
+                    align-items: flex-end;
+
+                    img {
+                        border: 0px;
+                        cursor: pointer;
+                    }
+
+                    div {
+                        &.main {
+                            display: grid;
+                            grid-template-columns: 20px 1fr 100px;
+                            grid-gap: 5px;
+                            align-items: flex-end;
+                            height: 27px;
+
+                            div {
+                                &.block {
+                                    display: grid;
+                                    grid-gap: 2px;
+                                    border-bottom: 1px solid;
+
+                                    &.simple {
+                                        grid-template-columns: 1fr;
+                                    }
+
+                                    &.double {
+                                        grid-template-columns: 1fr 10px 1fr;
+                                    }
+
+                                    input {
+                                        width: 100%;
+                                        border: 0px;
+                                        font-variant: small-caps;
+                                        padding: 0px;
+                                        margin: 0px;
+                                    }
+
+                                    span {
+                                        display: grid;
+                                        font-weight: normal;
+                                        text-align: center;
+                                        align-items: center;
+
+                                        &.degats {
+                                            display: grid;
+                                            grid-template-columns: 15px 1fr 15px;
+
+                                            i.fa-dice-d20 {
+                                                cursor: pointer;
+
+                                                &:hover {
+                                                    color: $white;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        &.sub {
+                            display: grid;
+                            grid-template-columns: 1fr;
+                            grid-gap: 2px;
+                            padding-left: 25px;
+
+                            label {
+                                grid-template-columns: 1fr 100px;
+                                line-height: 25px;
+
+                                span {
+                                    &.max {
+                                        font-weight: normal;
+                                        text-align: center;
+                                        border-bottom: 1px solid;
+                                        align-items: center;
+                                    }
+                                }
+
+                                input {
+                                    width: 100%;
+                                    border-bottom: 1px solid;
+                                    font-variant: small-caps;
+                                    padding: 0px;
+                                    margin: 0px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.caracteristiques {
+            display: grid;
+            align-items: flex-start;
+            grid-gap: 2px;
+            border: 1px solid;
+            padding: 2px;
+            border-radius: 5px;
+            background: $backgroundClair;
+
+            div {
+                img {
+                    border: 0px;
+                    cursor: pointer;
+                }
+
+                &.data {
+                    display: grid;
+                    align-items: flex-start;
+                    grid-gap: 2px;
+                }
+
+                &.main {
+                    display: grid;
+                    grid-template-columns: 20px 1fr 50px;
+                    align-items: center;
+                    grid-gap: 5px;
+                }
+
+                &.sub {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    align-items: center;
+                    padding-left: 25px;
+                    grid-gap: 2px;
+                }
+
+                span {
+                    &.label {
+                        font-variant: small-caps;
+                        font-weight: bold;
+                        font-size: 15px;
+                    }
+
+                    &.roll {
+                        cursor: pointer;
+
+                        &:hover {
+                            color: $white;
+                        }
+                    }
+
+                    &.value {
+                        background: $casse;
+                        border-radius: 5px;
+                        border: 1px solid;
+                        text-align: center;
+                        font-size: 15px;
+                    }
+                }
+
+                label {
+                    display: grid;
+                    grid-template-columns: 1fr 50px;
+                    align-items: center;
+
+                    input {
+                        width: 100%;
+                        text-align: center;
+                        border-radius: 5px;
+                        background:$casse;
+                        height: 20px;
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+    }
+}

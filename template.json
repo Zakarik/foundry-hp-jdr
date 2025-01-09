@@ -1,0 +1,18 @@
+{
+  "Actor": {
+    "types": ["sorcier", "familier", "creature"],
+    "sorcier": {}
+  },
+  "Item": {
+    "types": ["coupspouce", "crochepatte", "avantage", "desavantage", "sortilege", "potion", "objet", "baguette", "balai", "capacite"],
+    "coupspouce":{},
+    "crochepatte":{},
+    "avantage":{},
+    "desavantage":{},
+    "sortilege":{},
+    "potion":{},
+    "objet":{},
+    "baguette":{},
+    "balai":{}
+  }
+}

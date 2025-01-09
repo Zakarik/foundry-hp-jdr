@@ -1,0 +1,11 @@
+<header>
+    <span>{{header}}</span>
+</header>
+{{#if tags}}
+<div class="bonus">
+    {{#each tags}}
+    <span>{{label}} {{value}}</span>
+    {{/each}}
+</div>
+{{/if}}
+<span class="msg {{class}}">{{{msg}}}</span>

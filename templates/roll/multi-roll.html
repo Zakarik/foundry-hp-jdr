@@ -1,0 +1,28 @@
+<header class="main">
+    <span>{{header}}</span>
+</header>
+{{#if tags}}
+<div class="bonus">
+    {{#each tags}}
+    <span>{{label}} {{value}}</span>
+    {{/each}}
+</div>
+{{/if}}
+{{#each content}}
+    <h4 class="formula">{{label}}</h4>
+    <div class="blockRoll">
+        {{#each subcontent}}
+            <span class="label {{ifThen (eq @index 0) '' 'borderTop'}}">{{label}}</span>
+            <span class="objective">{{objective}}</span>
+            {{#if tooltip}}{{{tooltip}}}{{/if}}
+            <span class="result {{ifThen success 'success' 'fail'}}">{{localize (ifThen success 'HP.ROLL.Success' 'HP.ROLL.Fail')}}</span>
+            {{#if gain}}<span class="gain">{{gain}}</span>{{/if}}
+            {{#if gainTooltip}}{{{gainTooltip}}}{{/if}}
+            {{#if success}}
+            <a class="btn gain" data-key="{{key}}" data-gain="{{gainvalue}}">{{localize 'HP.ROLL.AppliquerGain'}}</a>
+            {{/if}}
+        {{/each}}
+    </div>
+{{/each}}
+{{{tooltip}}}
+<div class="result {{ifThen success 'success' 'fail'}}">{{result}}</div>

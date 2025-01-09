@@ -1,0 +1,96 @@
+<form class="mainFlex {{cssClass}}" autocomplete="off">
+    <header class="main">
+        <img class="profil-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" />
+
+        <div class="headerData">
+            <input type="text" class="name" name="name" value="{{data.name}}" placeholder="{{localize "HP.Name"}}" />
+
+            {{#each systemData.derives as |data key|}}
+            <div class="data">
+                <div class="main js-simpletoggler">
+                    <img class="options" src="systems/harry-potter-jdr/assets/icons/optionBlack.svg" />
+                    <span class="label">{{localize (getLocalization 'derives' key)}}</span>
+
+                    <div class="block {{ifThen (eq data.max undefined) 'simple' 'double'}}" title="{{data.base}} + {{data.divers}}">
+                        {{#unless (eq data.max undefined)}}
+                            {{numberInput data.actuel name=(concat "system.derives." key ".actuel") min=0 max=data.max}}
+                            <span class="separateur">/</span>
+                            <span class="max">{{data.max}}</span>
+                        {{else}}
+                            <span class="max">{{data.total}}{{ifThen (or (eq key 'idee') (eq key 'chance')) '%' ''}}</span>
+                        {{/unless}}
+                    </div>
+                </div>
+                <div class="sub" style="display:none;">
+                    <label>
+                        <span>{{localize "HP.Base"}}</span>
+                        {{numberInput (ifThen data.base data.base 0) name=(concat "system.derives." key ".base")}}
+                    </label>
+                    <label>
+                        <span>{{localize "HP.Modificateur"}}</span>
+                        {{numberInput (ifThen data.mod.user data.mod.user 0) name=(concat "system.derives." key ".mod.user")}}
+                    </label>
+                    <label>
+                        <span>{{localize "HP.Temporaire"}}</span>
+                        {{numberInput (ifThen data.mod.temp data.mod.temp 0) name=(concat "system.derives." key ".mod.temp")}}
+                    </label>
+                </div>
+            </div>
+            {{/each}}
+
+            {{#if (eq actor.type 'familier')}}
+            <div class="lien">
+                <span>{{localize "HP.Lien"}}</span>
+                <textarea name="system.lien">{{systemData.lien}}</textarea>
+            </div>
+            {{/if}}
+        </div>
+
+        <div class="caracteristiques">
+            {{#each systemData.caracteristiques as |data key|}}
+                <div class="data">
+                    <div class="main js-simpletoggler">
+                        <img class="options" src="systems/harry-potter-jdr/assets/icons/optionBlack.svg" />
+                        <span class="label roll draggable" data-id="caracteristique_{{key}}" data-key="{{key}}" data-label="{{localize (getLocalization 'caracteristiques' key)}}" data-value="{{data.total}}">{{localize (getLocalization 'caracteristiques' key)}} <i class="fa-solid fa-dice-d20"></i></span>
+                        <span class="value" title="{{data.base}} + {{data.divers}}">{{data.total}}</span>
+                    </div>
+                    <div class="sub" style="display:none;">
+                        <label>
+                            <span>{{localize "HP.Base"}}</span>
+                            {{numberInput data.base name=(concat "system.caracteristiques." key ".base") min=0}}
+                        </label>
+                        <label>
+                            <span>{{localize "HP.Modificateur"}}</span>
+                            {{numberInput (ifThen data.mod.user data.mod.user 0) name=(concat "system.caracteristiques." key ".mod.user")}}
+                        </label>
+                        <label>
+                            <span>{{localize "HP.Temporaire"}}</span>
+                            {{numberInput (ifThen data.mod.temp data.mod.temp 0) name=(concat "system.caracteristiques." key ".mod.temp")}}
+                        </label>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    </header>
+
+    {{!-- Sheet Body --}}
+    <section class="body">
+        {{!-- Sheet Tab Navigation --}}
+        <nav class="sheet-tabs tabs" data-group="primary">
+            <a class="item" data-tab="description">{{localize "HP.Description"}}</a>
+            <a class="item" data-tab="competences">{{localize "HP.COMPETENCES.Label"}}</a>
+            <a class="item" data-tab="combat">{{localize "HP.Combat"}}</a>
+            <a class="item" data-tab="capacites">{{localize "HP.CAPACITES.Label"}}</a>
+
+            <button type="action" class="ModSeuil">{{localize "HP.ModificationSeuils"}}</button>
+        </nav>
+
+        <div class="tab description" data-group="primary" data-tab="description">
+            {{editor systemData.description target="system.description" engine="prosemirror" button=true owner=owner editable=editable}}
+        </div>
+
+        {{> systems/harry-potter-jdr/templates/actors/parts/competences-creature.html}}
+        {{> systems/harry-potter-jdr/templates/actors/parts/combat.html}}
+        {{> systems/harry-potter-jdr/templates/actors/parts/capacites.html}}
+    </section>
+</form>
