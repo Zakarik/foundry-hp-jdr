@@ -1,6 +1,10 @@
-<form class="mainFlex {{cssClass}}" autocomplete="off">
+<form class="mainFlex {{cssClass}} {{ifThen (eq item.type 'capacitefamilier') 'large' ''}}" autocomplete="off">
     <img class="profil-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" />
     <input type="text" class="name" name="name" value="{{data.name}}" placeholder="{{localize "HP.Name"}}" />
+
+    {{#if (eq item.type 'capacitefamilier')}}
+    <input type="number" name="system.cout" value="{{systemData.cout}}" step=0.5 title="{{localize "HP.Cout"}}" />
+    {{/if}}
 
     {{editor systemData.description target="system.description" engine="prosemirror" rollData=actor button=true owner=owner editable=editable}}
 

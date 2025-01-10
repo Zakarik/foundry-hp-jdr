@@ -98,6 +98,7 @@ Hooks.once('init', async function() {
     baguette:BaguetteDataModel,
     balai:BalaiDataModel,
     capacite:CapaciteDataModel,
+    capacitefamilier:CapaciteDataModel,
   };
 
   // Register sheet application classes
@@ -145,7 +146,7 @@ Hooks.once('init', async function() {
   });
 
   Items.registerSheet("harry-potter-jdr", CapaciteItemSheet, {
-    types: ["capacite"],
+    types: ["capacite", "capacitefamilier"],
     makeDefault: true
   });
 

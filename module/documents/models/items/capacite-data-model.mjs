@@ -1,9 +1,10 @@
 export class CapaciteDataModel extends foundry.abstract.TypeDataModel {
     static defineSchema() {
-		const {HTMLField, StringField, BooleanField, ArrayField, SchemaField, NumberField} = foundry.data.fields;
+		const {HTMLField, StringField, ArrayField, SchemaField, NumberField} = foundry.data.fields;
 
         return {
             description:new HTMLField(),
+            cout:new NumberField({initial:0}),
             effets:new ArrayField(new SchemaField({
                 key:new StringField({initial:''}),
                 value:new StringField({initial:0}),

@@ -2322,6 +2322,15 @@
   padding-right: 5px;
   padding-bottom: 5px;
 }
+.capacite section.window-content form.large {
+  grid-template-columns: 200px 1fr 100px;
+}
+.capacite section.window-content form.large div.editor {
+  grid-column: 2/4;
+}
+.capacite section.window-content form.large section.body {
+  grid-column: 1/4;
+}
 
 .sortilege section.window-content {
   background: #A9A9A9;

@@ -43,6 +43,10 @@ export function getDefaultImg(type) {
       img = "systems/harry-potter-jdr/assets/icons/capacite.svg";
       break;
 
+    case "capacitefamilier":
+      img = "systems/harry-potter-jdr/assets/icons/capacitefamilier.svg";
+      break;
+
     case "objet":
       img = "systems/harry-potter-jdr/assets/icons/objet.svg";
       break;

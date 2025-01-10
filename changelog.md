@@ -1,4 +1,7 @@
 # Changelog
+## v0.13.0
+- Distinction des capacités de créature et des capacités de familier, étant donné que celles-ci ont un coût et pas les capacités des créatures.
+
 ## v0.12.0
 - Ajout de la possibilité de mettre des jets de dé dans la description de tous les objets, modificateur compris (au format [[/r 1d6 + @caracteristiques.dexterite.total]])
 

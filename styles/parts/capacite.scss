@@ -17,6 +17,7 @@
             column-gap: 2px;
             row-gap: 5px;
 
+
             nav.tabs {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -124,6 +125,20 @@
                     padding-left: 5px;
                     padding-right: 5px;
                     padding-bottom: 5px;
+                }
+            }
+
+            &.large {
+                grid-template-columns: 200px 1fr 100px;
+
+                div.editor {
+                    grid-column: 2 / 4;
+                }
+
+                section {
+                    &.body {
+                        grid-column: 1 / 4;
+                    }
                 }
             }
         }

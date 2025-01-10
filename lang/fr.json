@@ -15,7 +15,8 @@
       "objet":"Objet",
       "baguette":"Baguette",
       "balai":"Balai",
-      "capacite":"Capacité de créature / familier"
+      "capacite":"Capacité de créature",
+      "capacitefamilier":"Capacité de familier"
     }
   },
   "HP": {
