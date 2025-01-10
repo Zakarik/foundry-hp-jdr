@@ -16,8 +16,7 @@
       "baguette":"Baguette",
       "balai":"Balai",
       "capacite":"Capacité de créature",
-      "capacitefamilier":"Capacité de familier",
-      "pouvoirmagique":"Pouvoir magique"
+      "capacitefamilier":"Capacité de familier"
     }
   },
   "HP": {
@@ -85,6 +84,9 @@
     "Prix":"Prix",
     "CAPACITES":{
       "Label":"Capacités"
+    },
+    "POUVOIRSMAGIQUES":{
+      "Label":"Pouvoirs magiques / Sortilèges"
     },
     "DERIVES":{
       "Idee":"Idée",
@@ -158,6 +160,7 @@
       "Fouillemenage": "Fouille/Ménage",
       "Langueetrangere": "Langue étrangère",
       "Languenatale": "Langue natale",
+      "Languematernelle": "Langue maternelle",
       "Orientation": "Orientation",
       "Persuasionbaratin": "Persuasion/Baratin",
       "Psychologie": "Psychologie",
@@ -326,6 +329,8 @@
       "CompetenceMolduMax":"Modificateur de compétence moldu (Maximum) : {name}",
       "CompetenceScolaireMax":"Modificateur de compétence scolaire (Maximum) : {name}",
       "Idee":"Modificateur d'Idée",
+      "Mouvement":"Modificateur de mouvement",
+      "Armure":"Modificateur d'armure",
       "PV":"Modificateur de points de vie",
       "Fougue":"Modificateur de points de fougue",
       "Chance":"Modificateur de chance",

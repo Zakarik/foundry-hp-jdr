@@ -16,6 +16,7 @@
   grid-template-columns: 200px 1fr;
 }
 .sorcier section.window-content header.main img.profil-img {
+  width: 100%;
   object-fit: contain;
 }
 .sorcier section.window-content header.main div.headerData {
@@ -1734,7 +1735,7 @@
 .creature section.window-content section.body div.tab.competences.active {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   align-items: flex-start;
   grid-gap: 5px;
   background: #D3D3D3;
@@ -1749,6 +1750,11 @@
 .creature section.window-content section.body div.tab.competences.active img {
   border: 0px;
   cursor: pointer;
+}
+.creature section.window-content section.body div.tab.competences.active div.col {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: flex-start;
 }
 .creature section.window-content section.body div.tab.competences.active div.line {
   display: grid;
@@ -1886,8 +1892,7 @@
 }
 .creature section.window-content section.body div.tab.competences.active header {
   display: grid;
-  grid-column: 1/4;
-  grid-template-columns: repeat(3, 1fr 150px);
+  grid-template-columns: 1fr 150px;
   grid-gap: 2px;
   align-items: center;
   font-size: 17px;
@@ -2003,7 +2008,7 @@
 .creature section.window-content section.body div.tab.capacites.active {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
   align-items: flex-start;
   grid-gap: 5px;
   background: #D3D3D3;
@@ -2015,7 +2020,45 @@
   padding: 5px;
   z-index: 0;
 }
-.creature section.window-content section.body div.tab.capacites.active header {
+.creature section.window-content section.body div.tab.capacites.active section.capacitessortileges {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  align-items: flex-start;
+}
+.creature section.window-content section.body div.tab.capacites.active section.capacitessortileges nav {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: flex-start;
+  grid-gap: 2px;
+  border: 0px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+.creature section.window-content section.body div.tab.capacites.active section.capacitessortileges nav a {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  font-variant: small-caps;
+  border-radius: 5px;
+  background: #D3D3D3;
+  border: 1px solid;
+  text-align: left;
+  letter-spacing: 1px;
+  align-items: center;
+  margin-right: 5px;
+  z-index: 1;
+  padding: 8px 12px;
+}
+.creature section.window-content section.body div.tab.capacites.active section.capacitessortileges nav a.active {
+  text-shadow: none;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  margin-right: 0px;
+  padding-right: 18px;
+  border-right: 0px;
+}
+.creature section.window-content section.body div.tab.capacites.active > header {
   display: grid;
   grid-template-columns: max-content 1fr max-content;
   grid-gap: 2px;
@@ -2026,14 +2069,165 @@
   padding-left: 5px;
   padding-right: 5px;
 }
-.creature section.window-content section.body div.tab.capacites.active header div.cmd {
+.creature section.window-content section.body div.tab.capacites.active > header div.cmd {
   font-size: 13px;
 }
-.creature section.window-content section.body div.tab.capacites.active header i {
+.creature section.window-content section.body div.tab.capacites.active > header i {
   cursor: pointer;
 }
-.creature section.window-content section.body div.tab.capacites.active header i:hover {
+.creature section.window-content section.body div.tab.capacites.active > header i:hover {
   color: white;
+}
+.creature section.window-content section.body div.tab.capacites.active div.tab {
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 5px;
+  margin-left: -1px;
+  min-height: 300px;
+  align-items: flex-start;
+  height: 100%;
+}
+.creature section.window-content section.body div.tab.capacites.active div.tab.listcapacite {
+  border-top-left-radius: 0px;
+}
+.creature section.window-content section.body div.tab.capacites.active div.tab.listcapacite header {
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  grid-gap: 2px;
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 15px;
+  align-items: center;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.creature section.window-content section.body div.tab.capacites.active div.tab.listcapacite header div.cmd {
+  font-size: 13px;
+}
+.creature section.window-content section.body div.tab.capacites.active div.tab.listcapacite header i {
+  cursor: pointer;
+}
+.creature section.window-content section.body div.tab.capacites.active div.tab.listcapacite header i:hover {
+  color: white;
+}
+.creature section.window-content section.body div.tab.capacites.active div.tab.listcapacite.active, .creature section.window-content section.body div.tab.capacites.active div.tab.listpouvoirs.active {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2px;
+  align-content: flex-start;
+}
+.creature section.window-content section.body div.tab.capacites.active div.tab.listpouvoirs.active header {
+  display: grid;
+  grid-template-columns: 1fr 100px 150px 150px;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 15px;
+  align-items: flex-start;
+  border-bottom: 1px solid #000000;
+  padding-bottom: 2px;
+  margin-bottom: 2px;
+}
+.creature section.window-content section.body div.tab.capacites.active div.tab.listpouvoirs.active header span.niveau, .creature section.window-content section.body div.tab.capacites.active div.tab.listpouvoirs.active header span.cibles, .creature section.window-content section.body div.tab.capacites.active div.tab.listpouvoirs.active header span.malus {
+  text-align: center;
+  border-left: 1px solid #000000;
+}
+.creature section.window-content section.body div.tab.capacites.active div.tab.listpouvoirs.active div.line {
+  display: grid;
+  grid-template-columns: 1fr 100px 150px 150px;
+  align-items: center;
+  cursor: context-menu;
+}
+.creature section.window-content section.body div.tab.capacites.active div.tab.listpouvoirs.active div.line span.niveau, .creature section.window-content section.body div.tab.capacites.active div.tab.listpouvoirs.active div.line span.cibles, .creature section.window-content section.body div.tab.capacites.active div.tab.listpouvoirs.active div.line span.malus,
+.creature section.window-content section.body div.tab.capacites.active div.tab.listpouvoirs.active div.line div.niveau,
+.creature section.window-content section.body div.tab.capacites.active div.tab.listpouvoirs.active div.line div.cibles,
+.creature section.window-content section.body div.tab.capacites.active div.tab.listpouvoirs.active div.line div.malus {
+  display: grid;
+  font-variant: small-caps;
+  font-size: 15px;
+  text-align: center;
+  border-left: 1px solid #000000;
+  height: 100%;
+  align-items: center;
+}
+.creature section.window-content section.body div.tab.capacites.active div.tab.listpouvoirs.active div.line span.name,
+.creature section.window-content section.body div.tab.capacites.active div.tab.listpouvoirs.active div.line div.name {
+  display: grid;
+  grid-template-columns: 1fr 14px 14px 14px;
+  grid-gap: 2px;
+  align-items: center;
+  font-variant: small-caps;
+  font-size: 15px;
+  height: 100%;
+}
+.creature section.window-content section.body div.tab.capacites.active div.tab.listpouvoirs.active div.line span.name i,
+.creature section.window-content section.body div.tab.capacites.active div.tab.listpouvoirs.active div.line div.name i {
+  font-size: 12px;
+}
+.creature section.window-content section.body div.tab.capacites.active div.tab.listpouvoirs.active div.line span.name button,
+.creature section.window-content section.body div.tab.capacites.active div.tab.listpouvoirs.active div.line div.name button {
+  grid-column: 1/4;
+  display: grid;
+  grid-template-columns: 1fr 15px;
+  grid-gap: 2px;
+  width: 200px;
+  padding-left: 5px;
+  padding-right: 5px;
+  align-items: center;
+}
+.creature section.window-content section.body div.tab.capacites.active div.tab.listpouvoirs.active div.line span.name button span,
+.creature section.window-content section.body div.tab.capacites.active div.tab.listpouvoirs.active div.line div.name button span {
+  text-align: left;
+}
+.creature section.window-content section.body div.tab.capacites.active div.tab.listpouvoirs.active div.line span.name button i,
+.creature section.window-content section.body div.tab.capacites.active div.tab.listpouvoirs.active div.line div.name button i {
+  color: #8b2222;
+}
+.creature section.window-content section.body div.tab.capacites.active div.tab.listpouvoirs.active div.line span.name button.check,
+.creature section.window-content section.body div.tab.capacites.active div.tab.listpouvoirs.active div.line div.name button.check {
+  background: white;
+}
+.creature section.window-content section.body div.tab.capacites.active div.tab.listpouvoirs.active div.line span.name button.check i,
+.creature section.window-content section.body div.tab.capacites.active div.tab.listpouvoirs.active div.line div.name button.check i {
+  color: #228B22;
+}
+.creature section.window-content section.body div.tab.capacites.active div.tab.listpouvoirs.active div.line span.malus,
+.creature section.window-content section.body div.tab.capacites.active div.tab.listpouvoirs.active div.line div.malus {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2px;
+  align-items: flex-start;
+}
+.creature section.window-content section.body div.tab.capacites.active div.tab.listpouvoirs.active div.line span.text,
+.creature section.window-content section.body div.tab.capacites.active div.tab.listpouvoirs.active div.line div.text {
+  grid-column: 1/5;
+  border-top: 1px dotted #A9A9A9;
+}
+.creature section.window-content section.body div.tab.capacites.active div.tab.listpouvoirs.active div.line span.roll,
+.creature section.window-content section.body div.tab.capacites.active div.tab.listpouvoirs.active div.line div.roll {
+  width: max-content;
+  cursor: pointer;
+}
+.creature section.window-content section.body div.tab.capacites.active div.tab.listpouvoirs.active div.line span.roll:hover,
+.creature section.window-content section.body div.tab.capacites.active div.tab.listpouvoirs.active div.line div.roll:hover {
+  color: white;
+}
+.creature section.window-content section.body div.tab.capacites.active div.tab.listpouvoirs.active div.line span.btn,
+.creature section.window-content section.body div.tab.capacites.active div.tab.listpouvoirs.active div.line div.btn {
+  grid-column: 1/5;
+  display: grid;
+  grid-template-columns: max-content max-content;
+  grid-gap: 2px;
+}
+.creature section.window-content section.body div.tab.capacites.active div.tab.listpouvoirs.active div.line i.clickable {
+  cursor: pointer;
+}
+.creature section.window-content section.body div.tab.capacites.active div.tab.listpouvoirs.active div.line i.clickable:hover {
+  color: white;
+}
+.creature section.window-content section.body div.tab.capacites.active div.tab.listpouvoirs.active div.line.bordertop {
+  border-top: 1px solid #000000;
+  margin-top: 2px;
+  padding-top: 2px;
 }
 .creature section.window-content section.body div.tab.capacites.active div.block {
   padding: 2px;
@@ -2041,7 +2235,6 @@
   border-radius: 5px;
 }
 .creature section.window-content section.body div.tab.capacites.active button {
-  grid-column: 1/4;
   margin: 0px;
   padding: 0px;
   border-radius: 5px;

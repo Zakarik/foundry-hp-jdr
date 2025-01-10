@@ -365,9 +365,13 @@ HP.competencescreatures = {
     dressagesoin:{},
     empathie:{},
     esquive:{},
-    fouille:{},
+    fouillemenage:{},
+    languematernelle:{},
+    langueetrangere:{
+        specialisation:true
+    },
     orientation:{},
-    persuasion:{},
+    persuasionbaratin:{},
     pistage:{},
     psychologie:{},
     survie:{},
@@ -401,7 +405,7 @@ HP.balai = {
 }
 
 HP.ItemsInterdits = {
-    'familier':["coupspouce", "crochepatte", "avantage", "desavantage", "sortilege", "potion", "objet", "baguette", "balai"],
-    'creature':["coupspouce", "crochepatte", "avantage", "desavantage", "sortilege", "potion", "objet", "baguette", "balai"],
-    'sorcier':["capacite"]
+    'familier':["coupspouce", "crochepatte", "avantage", "desavantage", "potion", "objet", "baguette", "balai"],
+    'creature':["coupspouce", "crochepatte", "avantage", "desavantage", "potion", "objet", "baguette", "balai"],
+    'sorcier':["capacite", "capacitefamilier"]
 }

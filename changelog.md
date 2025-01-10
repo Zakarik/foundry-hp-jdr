@@ -1,4 +1,11 @@
 # Changelog
+## v0.15.0
+- Ajout des pouvoirs magiques pour les créatures / familier (ce sont les sortilèges, en réalité - glisser - déposer un sortilège l'ajoutera à une créature).
+Pouvoir x3 est utilisé pour le jet.
+- Mouvement est ajouté aux sorciers.
+- Ajout du modificateur de mouvements aux avantages / désavantages / coups de pouces / croches pattes / capacités
+- Ajout du modificateur d'armure aux capacités.
+
 ## v0.14.0
 - Modification de la gestion des compétences des créatures / familiers, pour y inclure la liste complète pour les créatures et la version réduite pour les familiers.
 - Ajout du modificateur d'age pour les sorciers.

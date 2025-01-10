@@ -70,6 +70,8 @@ export function menu(html) {
   $(html.find('nav.sheet-competences a.active')).append(`<i class="fa-solid fa-hexagon-check"></i>`);
   $(html.find('nav.sheet-historiques a i')).remove();
   $(html.find('nav.sheet-historiques a.active')).append(`<i class="fa-solid fa-hexagon-check"></i>`);
+  $(html.find('nav.sheet-capacitessortileges a i')).remove();
+  $(html.find('nav.sheet-capacitessortileges a.active')).append(`<i class="fa-solid fa-hexagon-check"></i>`);
 
   html.find('nav.tabs a').click(ev => {
     const target = $(ev.currentTarget);
@@ -89,6 +91,13 @@ export function menu(html) {
     const target = $(ev.currentTarget);
 
     $(html.find('nav.sheet-historiques a i')).remove();
+    target.append(`<i class="fa-solid fa-hexagon-check"></i>`);
+  });
+
+  html.find('nav.sheet-capacitessortileges a').click(ev => {
+    const target = $(ev.currentTarget);
+
+    $(html.find('nav.sheet-capacitessortileges a i')).remove();
     target.append(`<i class="fa-solid fa-hexagon-check"></i>`);
   });
 }
@@ -850,6 +859,193 @@ export async function prepareRollSortilege(id, actor) {
   }
 }
 
+export async function prepareRollSortilegeCreature(id, actor) {
+  const items = actor.items;
+  const itmSortilege = items.get(id);
+  const balai = items.find(itm => itm.system.wear && itm.type === 'balai');
+  const baguette = items.find(itm => itm.system.wear && itm.type === 'baguette');
+  const content = [];
+  const pouvoir = actor.system.caracteristiques.pouvoir.total*3;
+  const sortilegeType = {e:'enchantements', s:'mauvaisorts', m:'metamorphose'}[itmSortilege.system.type];
+  const label = itmSortilege.name;
+  let update = {};
+  let total = pouvoir;
+
+  content.push(
+    {
+      key:'btnWithIconAndNumber',
+      label:`HP.SORTILEGES.FormuleClassique`,
+      mainclass:'FC check fs17',
+      class:'btnFC check fs17 onlychoice onlychoice0',
+      value:'1/2',
+      icon:`fa-solid fa-check`,
+      number:-itmSortilege.system.fc,
+      max:0
+  });
+
+  if(itmSortilege.system.malus.fe.has && itmSortilege.system.malus.fe.appris) {
+    content.push(
+      {
+        key:'btnWithIconAndNumber',
+        label:`HP.SORTILEGES.FormuleExtreme`,
+        mainclass:'FE fs17',
+        class:'btnFE fs17 onlychoice onlychoice1',
+        value:'2/2',
+        icon:`fa-solid fa-xmark`,
+        number:-itmSortilege.system.fe,
+        max:0
+      });
+  }
+
+  content.push({
+    key:'number',
+    label:"HP.ROLL.Modificateur",
+    class:'mod bonus',
+    data:game.i18n.localize("HP.ROLL.Modificateur"),
+    value:0,
+  })
+
+  if(baguette) {
+    const affinite = baguette.system.affinite;
+
+    if(affinite.key) {
+      const splitKey = affinite.key.split('_');
+
+      if(splitKey[0] === 'competence' && splitKey[1] === sortilegeType) {
+        content.push({
+          key:'numberWithCheck',
+          label:"HP.ROLL.AffiniteBaguette",
+          class:'baguette bonus',
+          data:game.i18n.localize("HP.ROLL.AffiniteBaguette"),
+          value:affinite.value,
+        })
+      }
+    }
+  }
+
+  if(balai) {
+    const bonus = balai.system.bonus.liste.filter(itm => itm.key === 'competence' && itm.label === `competences_scolaires_${sortilegeType}`);
+
+    for(let b of bonus) {
+      content.push({
+        key:'numberWithCheck',
+        label:"HP.ROLL.BonusBalai",
+        class:'balai bonus',
+        data:game.i18n.localize("HP.ROLL.BonusBalai"),
+        value:b.value,
+      })
+    }
+  }
+
+  const dialog = await rollDialog(`${label} : ${game.i18n.localize('HP.ROLL.Modificateurs')}`, content);
+
+  if(!dialog) return;
+  const findBonus = dialog.find('.bonus');
+  const findFC = dialog.find('.FC.check');
+  const findFE = dialog.find('.FE.check');
+  const tags = [];
+  const bonus = [];
+
+  tags.push({
+    label:game.i18n.localize(`HP.SORTILEGES.PouvoirUtilise`),
+    value:''
+  });
+
+  if(findFC.length > 0) {
+    tags.push({
+      label:game.i18n.localize(`HP.SORTILEGES.FormuleClassique`),
+      value:parseInt(findFC.find('input').val())
+    });
+
+    bonus.push({
+      label:game.i18n.localize(`HP.SORTILEGES.FormuleClassique`),
+      value:parseInt(findFC.find('input').val())
+    })
+  }
+
+  if(findFE.length > 0) {
+    bonus.push({
+      label:game.i18n.localize(`HP.SORTILEGES.FormuleExtreme`),
+      value:parseInt(findFE.find('input').val())
+    })
+
+    tags.push({
+      label:game.i18n.localize(`HP.SORTILEGES.FormuleExtreme`),
+      value:parseInt(findFE.find('input').val())
+    })
+  }
+
+  for(let b of findBonus) {
+    const dB = $(b);
+
+    if(dB.hasClass("numberWithCheck")) {
+      if(!dB.find('input').is(':checked')) continue;
+
+      const dBV = parseInt(dB.find('.score').text());
+
+      if(dBV === 0) continue;
+
+      bonus.push({
+        label:dB.data("value"),
+        value:dBV
+      });
+
+      tags.push({
+        label:dB.data("value"),
+        value:dBV
+      });
+    } else {
+      const dBV = parseInt(dB.find('input').val());
+      if(dBV === 0) continue;
+
+      bonus.push({
+        label:dB.data("value"),
+        value:dBV
+      });
+
+      tags.push({
+        label:dB.data("value"),
+        value:dBV
+      });
+    }
+  }
+
+  let cibles = [];
+
+  if(itmSortilege.system.cibles.a) cibles.push(`<p title="${game.i18n.localize('HP.Animal')}">${game.i18n.localize('HP.A')}</p>`);
+  if(itmSortilege.system.cibles.o) cibles.push(`<p title="${game.i18n.localize('HP.Objet')}">${game.i18n.localize('HP.O')}</p>`);
+  if(itmSortilege.system.cibles.p) cibles.push(`<p title="${game.i18n.localize('HP.Personne')}">${game.i18n.localize('HP.P')}</p>`);
+  if(itmSortilege.system.cibles.v) cibles.push(`<p title="${game.i18n.localize('HP.Vegetaux')}">${game.i18n.localize('HP.V')}</p>`);
+
+  let malus = `${game.i18n.localize('HP.SORTILEGES.FormuleClassique-short')} : ${itmSortilege.system.malus.fc}%`
+
+  if(itmSortilege.system.malus.fe.has && itmSortilege.system.malus.fe.fc.reduction) {
+    malus += `<br/>${game.i18n.localize('HP.SORTILEGES.FormuleExtreme-short')} : ${itmSortilege.system.malus.fe.fc.malus}% / ${itmSortilege.system.malus.fe.malus}%`;
+  } else if(itmSortilege.system.malus.fe.has) {
+    malus += `<br/>${game.i18n.localize('HP.SORTILEGES.FormuleExtreme-short')} : ${itmSortilege.system.malus.fe.malus}%`
+  }
+
+  const sortilege = {
+    cibles:cibles.join(' / '),
+    niveau:itmSortilege.system.niveau,
+    type:localizeScolaire(sortilegeType),
+    malus:malus,
+    description:itmSortilege.system.effets
+  }
+
+  const roll = await doRoll(actor, {label, total, bonus, tags, sortilege})
+
+  if(roll.resultRoll === 3) {
+    const data = actor.system.competences.scolaires[sortilegeType];
+    data.check = true;
+
+    update[`system.competences.scolaires.${sortilegeType}`] = data;
+    console.warn(update);
+
+    actor.update(update);
+  }
+}
+
 export async function prepareRollPotion(id, actor) {
   const items = actor.items;
   const itmPotion = items.get(id);
@@ -1093,4 +1289,9 @@ export async function prepareRollCombat(id, actor) {
   }
 
   const roll = await doRoll(actor, {label, total, bonus, tags, degats})
+}
+
+export function splitArrayInHalf(array) {
+  const midIndex = Math.ceil(array.length / 2);
+  return [array.slice(0, midIndex), array.slice(midIndex)];
 }

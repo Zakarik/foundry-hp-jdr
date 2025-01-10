@@ -2,7 +2,7 @@ div {
     &.tab.competences.active {
         position: relative;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         align-items: flex-start;
         grid-gap: 5px;
         background: $backgroundClair;
@@ -20,10 +20,16 @@ div {
         }
 
         div {
+            &.col {
+                display: grid;
+                grid-template-columns: 1fr;
+                align-items: flex-start;
+            }
             &.line {
                 display: grid;
                 align-items: flex-start;
                 grid-gap: 2px;
+
             }
 
             &.specialisation,
@@ -179,8 +185,7 @@ div {
 
         header {
             display: grid;
-            grid-column: 1 / 4;
-            grid-template-columns: repeat(3, 1fr 150px);
+            grid-template-columns: 1fr 150px;
             grid-gap: 2px;
             align-items: center;
             font-size: 17px;

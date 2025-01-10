@@ -6,6 +6,9 @@ import {
     prepareRollCaracteristique,
     prepareRollCombat,
     capitalizeFirstLetter,
+    splitArrayInHalf,
+    localizeScolaire,
+    prepareRollSortilegeCreature,
   } from "../../helpers/common.mjs";
 
   import toggler from '../../helpers/toggler.js';
@@ -23,6 +26,7 @@ export class CreatureActorSheet extends ActorSheet {
       height: 720,
       tabs: [
         {navSelector: ".sheet-tabs", contentSelector: ".body", initial: "personnage"},
+        {navSelector: ".sheet-capacitessortileges", contentSelector: ".capacitessortileges", initial: "listcapacite"},
       ],
       dragDrop: [{dragSelector: [".draggable"], dropSelector: null}],
     });
@@ -292,6 +296,80 @@ export class CreatureActorSheet extends ActorSheet {
        });
        d.render(true);
     });
+
+    html.find('div.listpouvoirs .roll').click(async ev => {
+      const tgt = $(ev.currentTarget);
+      const id = tgt.data("id");
+      const label = tgt.data("label");
+      await prepareRollSortilegeCreature(id.split('_')[1], this.actor);
+    });
+
+    html.find('div.listpouvoirs .sendchat').click(async ev => {
+      const tgt = $(ev.currentTarget);
+      const id = tgt.data("id");
+      const label = tgt.data("label");
+      const actor = this.actor;
+      const items = actor.items;
+      const itmSortilege = items.get(id);
+      const type = itmSortilege.system.type;
+      const sortilegeType = {'e':'enchantements', 's':'mauvaisorts', 'm':'metamorphose'}[type];
+      let cibles = [];
+
+      if(itmSortilege.system.cibles.a) cibles.push(`<p title="${game.i18n.localize('HP.Animal')}">${game.i18n.localize('HP.A')}</p>`);
+      if(itmSortilege.system.cibles.o) cibles.push(`<p title="${game.i18n.localize('HP.Objet')}">${game.i18n.localize('HP.O')}</p>`);
+      if(itmSortilege.system.cibles.p) cibles.push(`<p title="${game.i18n.localize('HP.Personne')}">${game.i18n.localize('HP.P')}</p>`);
+      if(itmSortilege.system.cibles.v) cibles.push(`<p title="${game.i18n.localize('HP.Vegetaux')}">${game.i18n.localize('HP.V')}</p>`);
+
+      let malus = `${game.i18n.localize('HP.SORTILEGES.FormuleClassique-short')} : ${itmSortilege.system.malus.fc}%`
+
+      if(itmSortilege.system.malus.fe.has && itmSortilege.system.malus.fe.fc.reduction) {
+        malus += `<br/>${game.i18n.localize('HP.SORTILEGES.FormuleExtreme-short')} : ${itmSortilege.system.malus.fe.fc.malus}% / ${itmSortilege.system.malus.fe.malus}%`;
+      } else if(itmSortilege.system.malus.fe.has) {
+        malus += `<br/>${game.i18n.localize('HP.SORTILEGES.FormuleExtreme-short')} : ${itmSortilege.system.malus.fe.malus}%`
+      }
+
+      const sortilege = {
+        cibles:cibles.join(' / '),
+        niveau:itmSortilege.system.niveau,
+        type:localizeScolaire(sortilegeType),
+        malus:malus,
+        description:itmSortilege.system.effets
+      }
+
+      const chatRollMode = game.settings.get("core", "rollMode");
+
+      let main = {
+        header:label,
+        sortilege
+      }
+
+      let chatData = {
+          user:game.user.id,
+          speaker: {
+              actor: actor?.id ?? null,
+              token: actor?.token ?? null,
+              alias: actor?.name ?? null,
+              scene: actor?.token?.parent?.id ?? null
+          },
+          content:await renderTemplate('systems/harry-potter-jdr/templates/roll/std.html', main),
+          sound: CONFIG.sounds.dice,
+          rollMode:chatRollMode,
+      };
+
+      const msg = await ChatMessage.create(chatData);
+
+      msg.setFlag('harry-potter-jdr', 'roll', true);
+    });
+
+    html.find('.fe-appris').click(async ev => {
+      const tgt = $(ev.currentTarget);
+      const id = tgt.data("id");
+      const value = tgt.data("value");
+      let result = true;
+      if(value) result = false;
+
+      this.actor.items.get(id).update({['system.malus.fe.appris']:result});
+    });
   }
 
   async _prepareCharacterItems(actorData) {
@@ -304,6 +382,7 @@ export class CreatureActorSheet extends ActorSheet {
     const competences = Object.keys(dataCompetence).filter(c => Object.keys(cfgCompetences).includes(c));
     let listCompetences = [];
     let capacites = [];
+    let sortilege = [];
 
     for (let i of items) {
       const type = i.type;
@@ -314,6 +393,10 @@ export class CreatureActorSheet extends ActorSheet {
         case 'capacitefamilier':
           i.system.description = await TextEditor.enrichHTML(i.system.description, {async: true});
           capacites.push(i);
+          break;
+
+        case 'sortilege':
+          sortilege.push(i);
           break;
       }
     };
@@ -335,8 +418,6 @@ export class CreatureActorSheet extends ActorSheet {
       }
     };
 
-
-
     listCompetences = Object.keys(competences).map(c => ({
       key: competences[c],
       label: competences[c] === 'custom' ? c : game.i18n.localize(`HP.COMPETENCES.${capitalizeFirstLetter(competences[c])}`),
@@ -348,9 +429,13 @@ export class CreatureActorSheet extends ActorSheet {
       return a.label.localeCompare(b.label);
     });
 
-    actor.listCompetences = listCompetences;
+    const [firstCmp, secondCmp] = splitArrayInHalf(listCompetences);
+
+    actor.listCompetencesFirst = firstCmp;
+    actor.listCompetencesSecond = secondCmp;
     actor.listCombat = data.combat;
     actor.capacites = capacites;
+    actor.sortileges = sortilege;
   }
 
   /* -------------------------------------------- */
@@ -382,12 +467,11 @@ export class CreatureActorSheet extends ActorSheet {
   }
 
   async _onDropItemCreate(itemData) {
-    const actorData = this.getData().data.system;
-
     itemData = itemData instanceof Array ? itemData : [itemData];
     const itemBaseType = itemData[0].type;
+    const filtre = this.actor.type === 'familier' ? CONFIG.HP.ItemsInterdits.familier : CONFIG.HP.ItemsInterdits.creature
 
-    if(CONFIG.HP.ItemsInterdits.familier.includes(itemBaseType)) return;
+    if(filtre.includes(itemBaseType)) return;
 
     const itemCreate = await this.actor.createEmbeddedDocuments("Item", itemData);
 

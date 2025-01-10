@@ -1,20 +1,75 @@
 <div class="tab capacites" data-group="primary" data-tab="capacites">
-    {{#each actor.capacites}}
-    <div class="block">
-        <header class="js-toggler summary" data-item-id="{{_id}}">
-            <i class="far fa-minus-square"></i>
+    <section class="capacitessortileges">
+        <div class="firstcol">
 
-            <span class="label draggable" data-item-id="{{_id}}">{{name}}</span>
+            {{!-- Sheet Tab Competences --}}
+            <nav class="sheet-capacitessortileges" data-group="capacitessortileges">
+                <a class="item" data-tab="listcapacite">{{localize "HP.CAPACITES.Label"}}</a>
+                <a class="item" data-tab="listpouvoirs">{{localize "HP.POUVOIRSMAGIQUES.Label"}}</a>
+            </nav>
+        </div>
 
-            <div class="cmd">
-                <i class="fa-solid fa-comment-dots clickable sendchat" title="{{localize "HP.SendChat"}}" data-label="{{name}}" data-id="{{_id}}"></i>
-                <i class="fa-solid fa-pen-to-square item-edit clickable" title="{{localize 'HP.Edit'}}"></i>
-                <i class="fa-solid fa-trash item-delete clickable" title="{{localize 'HP.Supprimer'}}"></i>
+        <div class="tab listcapacite" data-group="capacitessortileges" data-tab="listcapacite">
+            {{#each actor.capacites}}
+            <div class="block">
+                <header class="js-toggler summary" data-item-id="{{_id}}">
+                    <i class="far fa-minus-square"></i>
+
+                    <span class="label draggable" data-item-id="{{_id}}">{{name}}</span>
+
+                    <div class="cmd">
+                        <i class="fa-solid fa-comment-dots clickable sendchat" title="{{localize "HP.SendChat"}}" data-label="{{name}}" data-id="{{_id}}"></i>
+                        <i class="fa-solid fa-pen-to-square item-edit clickable" title="{{localize 'HP.Edit'}}"></i>
+                        <i class="fa-solid fa-trash item-delete clickable" title="{{localize 'HP.Supprimer'}}"></i>
+                    </div>
+                </header>
+
+                <span class="description">{{{system.description}}}</span>
             </div>
-        </header>
+            {{/each}}
+            <button type="action" class="addCapacite item-create" data-type="capacite">{{localize "HP.Add"}}</button>
+        </div>
 
-        <span class="description">{{{system.description}}}</span>
-    </div>
-    {{/each}}
-    <button type="action" class="addCapacite item-create" data-type="capacite">{{localize "HP.Add"}}</button>
+        <div class="tab listpouvoirs" data-group="capacitessortileges" data-tab="listpouvoirs">
+            <header>
+                <span class="name">{{localize "HP.Name"}}</span>
+                <span class="niveau">{{localize "HP.Niveau"}}</span>
+                <span class="cibles">{{localize "HP.Cibles"}}</span>
+                <span class="malus">{{localize "HP.Malus"}}</span>
+            </header>
+            {{#each actor.sortileges}}
+                <div class="line summary draggable {{ifThen (gte @index 1) 'bordertop' ''}}" data-item-id="{{_id}}">
+                    <div class="name">
+                        <span class="roll draggable" data-id="itm_{{_id}}" data-label="{{name}}">
+                            <i class="fa-solid fa-dice-d20"></i>
+                            {{name}}
+                        </span>
+                        <i class="fa-solid fa-comment-dots clickable sendchat" title="{{localize "HP.SendChat"}}" data-label="{{name}}" data-id="{{_id}}"></i>
+                        <i class="fa-solid fa-pen-to-square item-edit clickable" title="{{localize 'HP.Edit'}}"></i>
+                        <i class="fa-solid fa-trash item-delete clickable" title="{{localize 'HP.Supprimer'}}"></i>
+                        {{#if system.malus.fe.has}}
+                        <div class="btn">
+                            <button type="action" class="fe-appris {{ifThen system.malus.fe.appris 'check' ''}}" data-id="{{_id}}" data-value="{{system.malus.fe.appris}}">
+                                <span>{{localize "HP.SORTILEGES.FormuleExtremeApprise"}}</span>
+                                <i class="fa-solid {{ifThen system.malus.fe.appris 'fa-check' 'fa-xmark'}}"></i>
+                            </button>
+                        </div>
+                        {{/if}}
+                    </div>
+                    <span class="niveau">{{system.niveau}}</span>
+                    <span class="cibles">{{cibles system.cibles}}</span>
+                    <div class="malus">
+                        <span>{{localize "HP.SORTILEGES.FormuleClassique-short"}} : {{ifThen (and system.malus.fe.appris system.malus.fe.fc.reduction) (concat system.malus.fe.fc.malus '%') (concat system.malus.fc '%')}}</span>
+                        {{#if system.malus.fe.has}}
+                        <span>{{localize "HP.SORTILEGES.FormuleExtreme-short"}} : {{ifThen (and system.malus.fe.fc.reduction (not system.malus.fe.appris)) (concat system.malus.fe.fc.malus '% / ') ''}}{{system.malus.fe.malus}}%</span>
+                        {{/if}}
+                    </div>
+                    <div class="text">
+                        {{{system.effets}}}
+                    </div>
+                </div>
+            {{/each}}
+            <button type="action" class="item-create" data-type="sortilege">{{localize "HP.Ajouter"}}</button>
+        </div>
+    </section>
 </div>

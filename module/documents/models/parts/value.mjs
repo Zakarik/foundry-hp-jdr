@@ -1,7 +1,7 @@
 
 export default class ValueDataModel extends foundry.abstract.DataModel {
     static defineSchema() {
-		const {NumberField, ObjectField} = foundry.data.fields;
+		const {NumberField, ObjectField, BooleanField} = foundry.data.fields;
 
         return {
             base:new NumberField({initial:0}),
@@ -13,10 +13,11 @@ export default class ValueDataModel extends foundry.abstract.DataModel {
                   temp:0,
                 }
             }),
+            pourcentage:new BooleanField({initial:false})
         }
     }
 
-    prepareData(base) {
+    prepareData(base, pourcentage=false) {
         const mod = Object.values(this.mod).reduce((acc, curr) => acc + (Number(curr) || 0), 0);
 
         Object.defineProperty(this, 'base', {
@@ -29,6 +30,10 @@ export default class ValueDataModel extends foundry.abstract.DataModel {
 
         Object.defineProperty(this, 'total', {
             value: this.base+this.divers,
+        });
+
+        Object.defineProperty(this, 'pourcentage', {
+            value: pourcentage,
         });
     }
 }

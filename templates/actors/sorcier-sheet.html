@@ -47,7 +47,7 @@
                                 <span class="separateur">/</span>
                                 <span class="max">{{data.max}}</span>
                             {{else}}
-                                <span class="max">{{data.total}}{{ifThen (or (eq key 'idee') (or key 'chance')) '%' ''}}</span>
+                                <span class="max">{{data.total}}{{ifThen data.pourcentage '%' ''}}</span>
                             {{/unless}}
                         </div>
                     {{/if}}
@@ -77,7 +77,11 @@
                     {{else}}
                         <label>
                             <span>{{localize "HP.Base"}}</span>
+                            {{#if (eq key 'mouvement')}}
+                            {{numberInput (ifThen data.base data.base 0) name=(concat "system.derives." key ".base")}}
+                            {{else}}
                             <span class="max">{{data.base}}{{ifThen (or (eq key 'idee') (eq key 'chance')) '%' ''}}</span>
+                            {{/if}}
                         </label>
                         <label>
                             <span>{{localize "HP.Modificateur"}}</span>

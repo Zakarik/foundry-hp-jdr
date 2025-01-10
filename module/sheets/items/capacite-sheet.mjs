@@ -187,6 +187,8 @@
       result[`system.derives.chance.mod.${this.item.type}`] = game.i18n.format('HP.EFFETS.Autre', {name:game.i18n.localize('HP.EFFETS.Chance')});
       result[`system.derives.idee.mod.${this.item.type}`] = game.i18n.format('HP.EFFETS.Autre', {name:game.i18n.localize('HP.EFFETS.Idee')});
       result[`system.derives.pv.mod.${this.item.type}`] = game.i18n.format('HP.EFFETS.Autre', {name:game.i18n.localize('HP.EFFETS.PV')});
+      result[`system.derives.armure.mod.${this.item.type}`] = game.i18n.format('HP.EFFETS.Autre', {name:game.i18n.localize('HP.EFFETS.Armure')});
+      result[`system.derives.mouvement.mod.${this.item.type}`] = game.i18n.format('HP.EFFETS.Autre', {name:game.i18n.localize('HP.EFFETS.Mouvement')});
       result[`system.initiative`] = game.i18n.format('HP.EFFETS.Autre', {name:game.i18n.localize('HP.EFFETS.Initiative')});
 
       return result;

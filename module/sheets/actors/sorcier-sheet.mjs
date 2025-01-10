@@ -2,8 +2,6 @@ import {
     getDefaultImg,
     menu,
     confirmationDialog,
-    rollDialog,
-    doRoll,
     capitalizeFirstLetter,
     localizeScolaire,
     prepareRollSorcierCmp,
@@ -1056,6 +1054,8 @@ export class SorcierActorSheet extends ActorSheet {
       const actor = this.actor;
       const items = actor.items;
       const itmSortilege = items.get(id);
+      const type = itmSortilege.system.type;
+      const sortilegeType = {'e':'enchantements', 's':'mauvaisorts', 'm':'metamorphose'}[type];
       let cibles = [];
 
       if(itmSortilege.system.cibles.a) cibles.push(`<p title="${game.i18n.localize('HP.Animal')}">${game.i18n.localize('HP.A')}</p>`);
@@ -1538,5 +1538,18 @@ export class SorcierActorSheet extends ActorSheet {
 
     // Set data transfer
     event.dataTransfer.setData("text/plain", JSON.stringify(dragData));
+  }
+
+  async _onDropItemCreate(itemData) {
+    const actorData = this.getData().data.system;
+
+    itemData = itemData instanceof Array ? itemData : [itemData];
+    const itemBaseType = itemData[0].type;
+
+    if(CONFIG.HP.ItemsInterdits.sorcier.includes(itemBaseType)) return;
+
+    const itemCreate = await this.actor.createEmbeddedDocuments("Item", itemData);
+
+    return itemCreate;
   }
 }

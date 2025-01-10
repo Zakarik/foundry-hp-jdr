@@ -6,7 +6,7 @@ import DiceDataModel from '../parts/dice.mjs'
 
 export class SorcierDataModel extends foundry.abstract.TypeDataModel {
     static defineSchema() {
-		const {SchemaField, EmbeddedDataField, StringField, NumberField, BooleanField, FilePathField, ArrayField, HTMLField} = foundry.data.fields;
+		const {SchemaField, EmbeddedDataField, StringField, NumberField, BooleanField, FilePathField, ObjectField, HTMLField} = foundry.data.fields;
 
         return {
             nom:new StringField({initial:""}),
@@ -32,6 +32,17 @@ export class SorcierDataModel extends foundry.abstract.TypeDataModel {
                 idee:new EmbeddedDataField(ValueDataModel),
                 chance:new EmbeddedDataField(ValueDataModel),
                 degats:new EmbeddedDataField(DiceDataModel),
+                mouvement:new SchemaField({
+                    base:new NumberField({initial:8}),
+                    divers:new NumberField({initial:0}),
+                    total:new NumberField({initial:0}),
+                    mod:new ObjectField({
+                        initial:{
+                          user:0,
+                          temp:0,
+                        }
+                    })
+                }),
             }),
             caracteristiques:new SchemaField({
                 force:new EmbeddedDataField(CaracteristiqueDataModel),
@@ -315,7 +326,19 @@ export class SorcierDataModel extends foundry.abstract.TypeDataModel {
             }
 
             if(d === 'degats') this.derives[d].prepareData(dice, face);
-            else this.derives[d].prepareData(base);
+            else if(d === 'chance' || d === 'idee') this.derives[d].prepareData(base, true);
+            else if(d !== 'mouvement') this.derives[d].prepareData(base);
+            else {
+                const mod = Object.values(this.derives[d].mod).reduce((acc, curr) => acc + (Number(curr) || 0), 0);
+
+                Object.defineProperty(this.derives[d], 'divers', {
+                    value: mod,
+                });
+
+                Object.defineProperty(this.derives[d], 'total', {
+                    value: this.derives[d].base+this.derives[d].divers,
+                });
+            }
         }
 
         Object.defineProperty(this.seuils.epicsuccess, 'total', {
