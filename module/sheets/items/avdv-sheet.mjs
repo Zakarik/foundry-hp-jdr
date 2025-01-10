@@ -29,6 +29,11 @@ import {
       const context = super.getData();
 
       context.item.optionseffects = this._setListEffects();
+      context.item.sangs = {
+        "":"",
+        "sangpur":"HP.SANG.SangPur",
+        "nemoldu":"HP.SANG.NeMoldu",
+      }
 
       context.systemData = context.data.system;
 
@@ -148,6 +153,12 @@ import {
       super.close(options);
       const effects = this.item.effects.contents[0];
       const dataEffects = this.item.system.effets;
+      console.warn(dataEffects);
+
+      for(let e of dataEffects) {
+        if(e.key.includes('basemaitrise')) e.mode = CONST.ACTIVE_EFFECT_MODES.OVERRIDE;
+        else e.mode = CONST.ACTIVE_EFFECT_MODES.ADD;
+      }
 
       if(effects) {
           this.item.updateEmbeddedDocuments("ActiveEffect", [{
@@ -261,6 +272,8 @@ import {
       result[`system.derives.fougue.mod.${this.item.type}`] = game.i18n.format('HP.EFFETS.Autre', {name:game.i18n.localize('HP.EFFETS.Fougue')});
       result[`system.derives.idee.mod.${this.item.type}`] = game.i18n.format('HP.EFFETS.Autre', {name:game.i18n.localize('HP.EFFETS.Idee')});
       result[`system.derives.pv.mod.${this.item.type}`] = game.i18n.format('HP.EFFETS.Autre', {name:game.i18n.localize('HP.EFFETS.PV')});
+      result[`system.initiative`] = game.i18n.format('HP.EFFETS.Autre', {name:game.i18n.localize('HP.EFFETS.Initiative')});
+      result[`system.options.basemaitrise`] = game.i18n.format('HP.EFFETS.Autre', {name:game.i18n.localize('HP.EFFETS.MaitriseBase')});
 
       return result;
     }

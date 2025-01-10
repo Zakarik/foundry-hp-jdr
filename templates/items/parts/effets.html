@@ -3,20 +3,32 @@
         {{log key}}
         {{#if (or (contain key 'addspe') (contain key 'custom'))}}
         <div class="line" data-index="{{@index}}">
-            <select name="system.effets.{{@index}}.key" data-index="{{@index}}">
+            <select name="system.effets.{{@index}}.key" data-index="{{@index}}" class="key">
                 {{selectOptions (prepareOptionsEffects ../item.optionseffects @index) selected=key sort=true}}
             </select>
             <input type="text" name="system.effets.{{@index}}.value" value="{{ifThen (eq value '0') '' value}}" placeholder="{{localize 'HP.Name'}}" />
             <i class="fa-solid fa-trash deleteEffets" title="{{localize "HP.Delete"}}" data-index="{{@index}}"></i>
         </div>
         {{else}}
+        {{#if (contain key 'basemaitrise')}}
+        <div class="line basemaitrise" data-index="{{@index}}">
+            <select name="system.effets.{{@index}}.key" data-index="{{@index}}" class="key">
+                {{selectOptions (prepareOptionsEffects ../item.optionseffects @index) selected=key sort=true}}
+            </select>
+            <select name="system.effets.{{@index}}.value">
+                {{selectOptions ../item.sangs selected=value sort=true localize=true}}
+            </select>
+            <i class="fa-solid fa-trash deleteEffets" title="{{localize "HP.Delete"}}" data-index="{{@index}}"></i>
+        </div>
+        {{else}}
         <div class="line" data-index="{{@index}}">
-            <select name="system.effets.{{@index}}.key">
+            <select name="system.effets.{{@index}}.key" class="key">
                 {{selectOptions (prepareOptionsEffects ../item.optionseffects @index) selected=key sort=true}}
             </select>
             <input type="number" name="system.effets.{{@index}}.value" value="{{ifThen value value 0}}" />
             <i class="fa-solid fa-trash deleteEffets" title="{{localize "HP.Delete"}}" data-index="{{@index}}"></i>
         </div>
+        {{/if}}
         {{/if}}
     {{/each}}
     <button type="action" class="addEffets">{{localize "HP.Ajouter"}}</button>

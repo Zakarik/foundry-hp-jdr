@@ -86,6 +86,10 @@
                             grid-gap: 2px;
                             align-items: center;
 
+                            &.basemaitrise {
+                                grid-template-columns: 1fr 150px max-content;
+                            }
+
                             input,
                             select {
                                 width: 100%;

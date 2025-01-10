@@ -58,7 +58,8 @@ export class SorcierDataModel extends foundry.abstract.TypeDataModel {
                     moldus:new NumberField({initial:0}),
                     sorciers:new NumberField({initial:0}),
                     scolaires:new NumberField({initial:0}),
-                })
+                }),
+                basemaitrise:new StringField({initial:null, nullable:true}),
             }),
             seuils:new SchemaField({
                 epicsuccess:new SchemaField({
@@ -71,7 +72,8 @@ export class SorcierDataModel extends foundry.abstract.TypeDataModel {
                     mod:new NumberField({initial:0}),
                     total:new NumberField({initial:0}),
                 })
-            })
+            }),
+            initiative:new NumberField({initial:0})
         }
     }
 
@@ -80,7 +82,7 @@ export class SorcierDataModel extends foundry.abstract.TypeDataModel {
     }
 
     prepareDerivedData() {
-        const sang = this.sang;
+        const sang = this.options.basemaitrise ? this.options.basemaitrise : this.sang;
         const sangpur = sang === 'sangpur' ? true : false;
         const sangmele = sang === 'sangmele' ? true : false;
         const nemoldu = sang === 'nemoldu' ? true : false;

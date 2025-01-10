@@ -4,7 +4,7 @@
     "sorcier": {}
   },
   "Item": {
-    "types": ["coupspouce", "crochepatte", "avantage", "desavantage", "sortilege", "potion", "objet", "baguette", "balai", "capacite"],
+    "types": ["coupspouce", "crochepatte", "avantage", "desavantage", "sortilege", "potion", "objet", "baguette", "balai", "capacite", "pouvoirmagique"],
     "coupspouce":{},
     "crochepatte":{},
     "avantage":{},

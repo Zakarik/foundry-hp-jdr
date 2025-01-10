@@ -32,6 +32,8 @@
 
       context.systemData = context.data.system;
 
+      console.warn(context);
+
       return context;
     }
 
@@ -184,6 +186,7 @@
       result[`system.derives.chance.mod.${this.item.type}`] = game.i18n.format('HP.EFFETS.Autre', {name:game.i18n.localize('HP.EFFETS.Chance')});
       result[`system.derives.idee.mod.${this.item.type}`] = game.i18n.format('HP.EFFETS.Autre', {name:game.i18n.localize('HP.EFFETS.Idee')});
       result[`system.derives.pv.mod.${this.item.type}`] = game.i18n.format('HP.EFFETS.Autre', {name:game.i18n.localize('HP.EFFETS.PV')});
+      result[`system.initiative`] = game.i18n.format('HP.EFFETS.Autre', {name:game.i18n.localize('HP.EFFETS.Initiative')});
 
       return result;
     }

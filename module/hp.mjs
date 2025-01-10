@@ -74,7 +74,7 @@ Hooks.once('init', async function() {
    * @type {String}
    */
   CONFIG.Combat.initiative = {
-    formula: "1D6+@caracteristiques.dexterite.total",
+    formula: "1D6+@caracteristiques.dexterite.total+@initiative",
     decimals: 2
   };
   // Define custom Document classes

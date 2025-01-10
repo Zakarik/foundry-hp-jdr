@@ -46,7 +46,8 @@ export class CreatureDataModel extends foundry.abstract.TypeDataModel {
                     mod:new NumberField({initial:0}),
                     total:new NumberField({initial:0}),
                 })
-            })
+            }),
+            initiative:new NumberField({initial:0})
         }
     }
 

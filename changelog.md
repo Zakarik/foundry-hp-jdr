@@ -1,4 +1,8 @@
 # Changelog
+## v0.11.0
+- Ajout du modificateur d'initiative parmi les effets possibles.
+- Ajout de la possibilité de modifier les maitrises de bases liées au sang.
+
 ## v0.10.0
 - Correction d'un problème pour drag & drop les objets sur les personnages.
 - Retrait du coût sur les croches pattes et les coups de pouces.

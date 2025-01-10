@@ -2142,6 +2142,9 @@
   grid-gap: 2px;
   align-items: center;
 }
+.avdv section.window-content form div.effets.active div.line.basemaitrise {
+  grid-template-columns: 1fr 150px max-content;
+}
 .avdv section.window-content form div.effets.active div.line input,
 .avdv section.window-content form div.effets.active div.line select {
   width: 100%;

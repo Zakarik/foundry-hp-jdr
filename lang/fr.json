@@ -322,7 +322,9 @@
       "DegatsDes":"Modificateur de dégâts (dés)",
       "DegatsFace":"Modificateur de dégâts (face)",
       "Reussite":"Modificateur au seuil de réussite critique",
-      "Echec":"Modificateur au seuil de maladresse"
+      "Echec":"Modificateur au seuil de maladresse",
+      "Initiative":"Modificateur d'initiative",
+      "MaitriseBase":"Modification des maitrises de base "
     },
     "ERREUR":{
       "NoActor":"Acteur introuvable"
