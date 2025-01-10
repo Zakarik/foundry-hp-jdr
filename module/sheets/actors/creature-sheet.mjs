@@ -284,6 +284,7 @@ export class CreatureActorSheet extends ActorSheet {
 
       switch(type) {
         case 'capacite':
+          i.system.description = await TextEditor.enrichHTML(i.system.description, {async: true});
           capacites.push(i);
           break;
       }

@@ -25,7 +25,7 @@ import {
     /* -------------------------------------------- */
 
     /** @inheritdoc */
-    getData() {
+    async getData() {
       const context = super.getData();
 
       context.item.optionseffects = this._setListEffects();
@@ -36,6 +36,7 @@ import {
       }
 
       context.systemData = context.data.system;
+      context.systemData.description = await TextEditor.enrichHTML(context.item.system.description, {async: true});
 
       console.warn(context);
 

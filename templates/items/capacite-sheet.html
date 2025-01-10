@@ -2,7 +2,7 @@
     <img class="profil-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" />
     <input type="text" class="name" name="name" value="{{data.name}}" placeholder="{{localize "HP.Name"}}" />
 
-    {{editor systemData.description target="system.description" engine="prosemirror" button=true owner=owner editable=editable}}
+    {{editor systemData.description target="system.description" engine="prosemirror" rollData=actor button=true owner=owner editable=editable}}
 
     {{!-- Sheet Body --}}
     <section class="body">

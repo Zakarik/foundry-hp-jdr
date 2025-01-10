@@ -10,10 +10,9 @@ export default class HooksHP {
             const isMulti = message.getFlag('harry-potter-jdr', 'multi');
             const isHP = message.getFlag('harry-potter-jdr', 'hp');
             const isInitiative = message.getFlag('core', 'initiativeRoll');
+            const isStdRoll = message.isRoll;
             const tgt = $(html);
             let actor = message.speaker;
-
-            console.warn(message);
 
             if(actor.scene && actor.token) {
                 actor = game?.scene?.get(actor.scene)?.tokens?.get(actor.token)?.actor ?? null;
@@ -126,7 +125,7 @@ export default class HooksHP {
                 tgt.addClass('hp');
             }
 
-            if(isInitiative) {
+            if(isInitiative || isStdRoll) {
                 tgt.addClass('hp initiative');
             }
         });

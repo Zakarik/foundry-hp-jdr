@@ -1192,38 +1192,47 @@ export class SorcierActorSheet extends ActorSheet {
 
       switch(type) {
         case "avantage":
+          i.system.description = await TextEditor.enrichHTML(i.system.description, {async: true});
           avantages.push(i);
           break;
 
         case "desavantage":
+          i.system.description = await TextEditor.enrichHTML(i.system.description, {async: true});
           desavantages.push(i);
           break;
 
         case "crochepatte":
+          i.system.description = await TextEditor.enrichHTML(i.system.description, {async: true});
           crochepattes.push(i);
           break;
 
         case "coupspouce":
+          i.system.description = await TextEditor.enrichHTML(i.system.description, {async: true});
           coupspouces.push(i);
           break;
 
         case "sortilege":
+          i.system.effets = await TextEditor.enrichHTML(i.system.effets, {async: true});
           sortileges.push(i);
           break;
 
         case "potion":
+          i.system.effets = await TextEditor.enrichHTML(i.system.effets, {async: true});
           potions.push(i);
           break;
 
         case "objet":
+          i.system.particularite = await TextEditor.enrichHTML(i.system.particularite, {async: true});
           inventaire.push(i);
           break;
 
         case "balai":
+          i.system.description = await TextEditor.enrichHTML(i.system.description, {async: true});
           balais.push(i);
           break;
 
         case "baguette":
+          i.system.description = await TextEditor.enrichHTML(i.system.description, {async: true});
           const tra = foundry.utils.mergeObject(CONFIG.HP.communes, CONFIG.HP.particulieres);
           let allData = i;
 

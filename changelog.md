@@ -1,4 +1,7 @@
 # Changelog
+## v0.12.0
+- Ajout de la possibilité de mettre des jets de dé dans la description de tous les objets, modificateur compris (au format [[/r 1d6 + @caracteristiques.dexterite.total]])
+
 ## v0.11.0
 - Ajout du modificateur d'initiative parmi les effets possibles.
 - Ajout de la possibilité de modifier les maitrises de bases liées au sang.

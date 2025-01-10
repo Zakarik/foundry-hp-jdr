@@ -17,12 +17,13 @@
     /* -------------------------------------------- */
 
     /** @inheritdoc */
-    getData() {
+    async getData() {
       const context = super.getData();
 
       context.item.affinite = this._getAffinites();
 
       context.systemData = context.data.system;
+      context.systemData.description = await TextEditor.enrichHTML(context.item.system.description, {async: true});
 
       return context;
     }

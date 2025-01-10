@@ -17,12 +17,13 @@
     /* -------------------------------------------- */
 
     /** @inheritdoc */
-    getData() {
+    async getData() {
       const context = super.getData();
 
       this._prepareData(context);
 
       context.systemData = context.data.system;
+      context.systemData.effets = await TextEditor.enrichHTML(context.item.system.effets, {async: true});
 
       console.warn(context);
 
