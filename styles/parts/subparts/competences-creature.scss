@@ -26,6 +26,7 @@ div {
                 grid-gap: 2px;
             }
 
+            &.specialisation,
             &.custom {
                 display: grid;
                 grid-template-columns: 1fr;

@@ -8,10 +8,13 @@
                 <span>{{localize "HP.Sexe"}}</span>
                 <input type="text" name="system.sexe" value="{{systemData.sexe}}" />
             </label>
-            <label>
-                <span>{{localize "HP.Age"}}</span>
-                <input type="text" name="system.age" value="{{systemData.age}}" />
-            </label>
+            <div class="age">
+                <label>
+                    <span>{{localize "HP.Age"}}</span>
+                    <input type="text" name="system.age" value="{{systemData.age}}" />
+                </label>
+                <button class="addModifAge">{{localize 'HP.ModificateurAge-short'}}</button>
+            </div>
             <label>
                 <span>{{localize "HP.SANG.Label"}}</span>
                 <select name="system.sang">

@@ -340,11 +340,36 @@ HP.competences = {
   }
 };
 
-HP.competencescreatures = {
+HP.competencesfamilier = {
     acrobatie:{},
     discretion:{},
     esquive:{},
     orientation:{},
+    survie:{},
+    vigilance:{},
+}
+
+HP.competencescreatures = {
+    acrobatie:{},
+    art:{
+        specialisation:true
+    },
+    artisanat:{
+        specialisation:true
+    },
+    athletisme:{},
+    camouflage:{},
+    combat:{},
+    commandement:{},
+    discretion:{},
+    dressagesoin:{},
+    empathie:{},
+    esquive:{},
+    fouille:{},
+    orientation:{},
+    persuasion:{},
+    pistage:{},
+    psychologie:{},
     survie:{},
     vigilance:{},
 }

@@ -196,24 +196,61 @@ export const listCompetences = () => {
     return competences;
 }
 
-export const listCompetencesFamilier = () => {
-    const {SchemaField, StringField, NumberField, ObjectField, ArrayField, BooleanField} = foundry.data.fields;
+export const listCompetencesCreature = () => {
+    const {SchemaField, StringField, NumberField, ObjectField, ArrayField} = foundry.data.fields;
     const listCompetence = CONFIG.HP.competencescreatures;
 
     let competences = {};
 
     for(let c in listCompetence) {
-        competences[c] = new SchemaField({
-            total:new NumberField({initial:0}),
-            mod:new ObjectField({
-                initial:{
-                    user:0,
-                    temp:0,
-                }
-            }),
-            divers:new NumberField({initial:0}),
-            base:new NumberField({initial:0}),
-        });
+        if(listCompetence[c].specialisation) {
+            const list = new ArrayField(
+                new SchemaField({
+                    id:new StringField({initial:""}),
+                    origin:new StringField({initial:""}),
+                    specialisation:new StringField({initial:""}),
+                    total:new NumberField({initial:0}),
+                    mod:new ObjectField({
+                        initial:{
+                            user:0,
+                            temp:0,
+                        }
+                    }),
+                    divers:new NumberField({initial:0}),
+                    base:new NumberField({initial:0}),
+                })
+            );
+
+            competences[c] = new SchemaField({
+                list,
+                modele:new SchemaField({
+                    id:new StringField({initial:""}),
+                    origin:new StringField({initial:""}),
+                    specialisation:new StringField({initial:""}),
+                    total:new NumberField({initial:0}),
+                    mod:new ObjectField({
+                        initial:{
+                            user:0,
+                            temp:0,
+                        }
+                    }),
+                    divers:new NumberField({initial:0}),
+                    base:new NumberField({initial:0}),
+                })
+            })
+        } else {
+            competences[c] = new SchemaField({
+                total:new NumberField({initial:0}),
+                mod:new ObjectField({
+                    initial:{
+                        user:0,
+                        temp:0,
+                    }
+                }),
+                divers:new NumberField({initial:0}),
+                base:new NumberField({initial:0}),
+            });
+        }
     }
 
     competences.custom = new ArrayField(new SchemaField({

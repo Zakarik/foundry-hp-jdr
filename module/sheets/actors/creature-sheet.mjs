@@ -5,6 +5,7 @@ import {
     prepareRollCreatureCmp,
     prepareRollCaracteristique,
     prepareRollCombat,
+    capitalizeFirstLetter,
   } from "../../helpers/common.mjs";
 
   import toggler from '../../helpers/toggler.js';
@@ -149,6 +150,30 @@ export class CreatureActorSheet extends ActorSheet {
 
       msg.setFlag('harry-potter-jdr', 'hp', true);
     });
+
+    html.find('.specialisation i.add').click(async ev => {
+      const header = $(ev.currentTarget).parents(".specialisation");
+      const key = header.data("key");
+      let list = this.actor.system.competences[key].list;
+      const add = foundry.utils.mergeObject(this.actor.system.competences[key].modele, {id:foundry.utils.randomID()});
+      list.push(add);
+
+      this.actor.update({[`system.competences.${key}.list`]:list});
+    });
+
+    html.find('.specialisation i.delete').click(async ev => {
+      const tgt = $(ev.currentTarget);
+      const header = tgt.parents(".specialisation");
+      const key = header.data("key");
+      const index = tgt.data("index");
+      let list = this.actor.system.competences[key].list;
+      list.splice(index, 1);
+
+      if(!await confirmationDialog('delete')) return;
+
+      this.actor.update({[`system.competences.${key}.list`]:list})
+    });
+
     html.find('button.addCmp').click(async ev => {
       let list = this.actor.system.competences.custom;
       let add = foundry.utils.mergeObject(this.actor.system.competences.modele, {id:foundry.utils.randomID()});
@@ -274,7 +299,9 @@ export class CreatureActorSheet extends ActorSheet {
     const items = actorData.items;
     const effects = actorData.effects;
     const data = this.actor.system;
-    const competences = data.competences;
+    const cfgCompetences = actor.type === 'familier' ? CONFIG.HP.competencesfamilier : CONFIG.HP.competencescreatures;
+    const dataCompetence = data.competences;
+    const competences = Object.keys(dataCompetence).filter(c => Object.keys(cfgCompetences).includes(c));
     let listCompetences = [];
     let capacites = [];
 
@@ -308,10 +335,13 @@ export class CreatureActorSheet extends ActorSheet {
       }
     };
 
-    listCompetences = Object.keys(competences).filter(c => c !== 'modele').map(c => ({
-      key: c,
-      label: c === 'custom' ? c : game.i18n.localize(`HP.COMPETENCES.${c.charAt(0).toUpperCase() + c.slice(1)}`),
-      data: competences[c]
+
+
+    listCompetences = Object.keys(competences).map(c => ({
+      key: competences[c],
+      label: competences[c] === 'custom' ? c : game.i18n.localize(`HP.COMPETENCES.${capitalizeFirstLetter(competences[c])}`),
+      specialisation:cfgCompetences[competences[c]]?.specialisation,
+      data: dataCompetence[competences[c]]
     })).sort((a, b) => {
       if (a.label === 'custom') return 1;
       if (b.label === 'custom') return -1;

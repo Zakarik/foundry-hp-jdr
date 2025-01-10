@@ -16,7 +16,8 @@
       "baguette":"Baguette",
       "balai":"Balai",
       "capacite":"Capacité de créature",
-      "capacitefamilier":"Capacité de familier"
+      "capacitefamilier":"Capacité de familier",
+      "pouvoirmagique":"Pouvoir magique"
     }
   },
   "HP": {
@@ -32,6 +33,8 @@
     "Modificateur-short":"Mod.",
     "ModificateurDice":"Mod. (Dés)",
     "ModificateurFace":"Mod. (Face)",
+    "ModificateurAge-short":"Mod. d'âge",
+    "ModificateurAge":"Modificateurs d'âge",
     "Temporaire":"Temporaire",
     "Temporaire-short":"Temp.",
     "TemporaireDice":"Temp. (Dés)",
@@ -137,6 +140,12 @@
       "Acrobatiequidditch": "Acrobatie/Quidditch",
       "Artisanat": "Artisanat",
       "Athletisme": "Athlétisme",
+      "Camouflage": "Camouflage",
+      "Art": "Art",
+      "Combat": "Combat/Bagarre",
+      "Persuasion": "Persuasion",
+      "Pistage": "Pistage",
+      "Fouille": "Fouille",
       "Bagarre": "Bagarre",
       "Bibliotheque": "Bibliothèque",
       "Commandement": "Commandement",

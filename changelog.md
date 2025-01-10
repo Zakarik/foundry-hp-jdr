@@ -1,4 +1,9 @@
 # Changelog
+## v0.14.0
+- Modification de la gestion des compétences des créatures / familiers, pour y inclure la liste complète pour les créatures et la version réduite pour les familiers.
+- Ajout du modificateur d'age pour les sorciers.
+- Modification du workflow pour corriger un soucis de mise à jour automatique.
+
 ## v0.13.0
 - Distinction des capacités de créature et des capacités de familier, étant donné que celles-ci ont un coût et pas les capacités des créatures.
 

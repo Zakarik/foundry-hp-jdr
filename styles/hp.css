@@ -65,6 +65,22 @@
   font-size: 18px;
   grid-column: 1/3;
 }
+.sorcier section.window-content header.main div.headerData div.age {
+  display: grid;
+  grid-template-columns: 1fr 100px;
+  grid-gap: 2px;
+}
+.sorcier section.window-content header.main div.headerData div.age button {
+  margin: 0px;
+  padding: 0px;
+  border-radius: 5px;
+  border: 1px solid #000000;
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 14px;
+  line-height: 20px;
+  background: #D3D3D3;
+}
 .sorcier section.window-content header.main div.headerData div.data {
   display: grid;
   grid-template-columns: 1fr;
@@ -1739,13 +1755,13 @@
   align-items: flex-start;
   grid-gap: 2px;
 }
-.creature section.window-content section.body div.tab.competences.active div.custom {
+.creature section.window-content section.body div.tab.competences.active div.specialisation, .creature section.window-content section.body div.tab.competences.active div.custom {
   display: grid;
   grid-template-columns: 1fr;
   align-items: flex-start;
   grid-gap: 2px;
 }
-.creature section.window-content section.body div.tab.competences.active div.custom span.mainLabel {
+.creature section.window-content section.body div.tab.competences.active div.specialisation span.mainLabel, .creature section.window-content section.body div.tab.competences.active div.custom span.mainLabel {
   padding-left: 25px;
   align-items: center;
   grid-gap: 5px;
@@ -1753,13 +1769,13 @@
   font-variant: small-caps;
   font-size: 17px;
 }
-.creature section.window-content section.body div.tab.competences.active div.custom span.mainLabel i {
+.creature section.window-content section.body div.tab.competences.active div.specialisation span.mainLabel i, .creature section.window-content section.body div.tab.competences.active div.custom span.mainLabel i {
   cursor: pointer;
 }
-.creature section.window-content section.body div.tab.competences.active div.custom span.mainLabel i:hover {
+.creature section.window-content section.body div.tab.competences.active div.specialisation span.mainLabel i:hover, .creature section.window-content section.body div.tab.competences.active div.custom span.mainLabel i:hover {
   color: white;
 }
-.creature section.window-content section.body div.tab.competences.active div.custom span.emptyLabel {
+.creature section.window-content section.body div.tab.competences.active div.specialisation span.emptyLabel, .creature section.window-content section.body div.tab.competences.active div.custom span.emptyLabel {
   text-align: left;
   border-bottom: 1px solid #000000;
   border-radius: 0px;
@@ -1769,10 +1785,10 @@
   margin-left: 3px;
   height: 17px;
 }
-.creature section.window-content section.body div.tab.competences.active div.custom div.main {
+.creature section.window-content section.body div.tab.competences.active div.specialisation div.main, .creature section.window-content section.body div.tab.competences.active div.custom div.main {
   grid-template-columns: 20px 1fr 20px max-content 150px;
 }
-.creature section.window-content section.body div.tab.competences.active div.custom div.main input {
+.creature section.window-content section.body div.tab.competences.active div.specialisation div.main input, .creature section.window-content section.body div.tab.competences.active div.custom div.main input {
   text-align: left;
   border-bottom: 1px solid #000000;
   border-radius: 0px;
@@ -1783,21 +1799,21 @@
   height: 17px;
   width: calc(100% - 3px);
 }
-.creature section.window-content section.body div.tab.competences.active div.custom div.main input[type=checkbox] {
+.creature section.window-content section.body div.tab.competences.active div.specialisation div.main input[type=checkbox], .creature section.window-content section.body div.tab.competences.active div.custom div.main input[type=checkbox] {
   width: 100%;
   margin: 0px;
   padding: 0px;
   height: 20px;
 }
-.creature section.window-content section.body div.tab.competences.active div.custom div.main i {
+.creature section.window-content section.body div.tab.competences.active div.specialisation div.main i, .creature section.window-content section.body div.tab.competences.active div.custom div.main i {
   margin-left: 3px;
   margin-right: 3px;
   cursor: pointer;
 }
-.creature section.window-content section.body div.tab.competences.active div.custom div.main i:hover {
+.creature section.window-content section.body div.tab.competences.active div.specialisation div.main i:hover, .creature section.window-content section.body div.tab.competences.active div.custom div.main i:hover {
   color: white;
 }
-.creature section.window-content section.body div.tab.competences.active div.custom div.main i.empty {
+.creature section.window-content section.body div.tab.competences.active div.specialisation div.main i.empty, .creature section.window-content section.body div.tab.competences.active div.custom div.main i.empty {
   width: 12.5px;
 }
 .creature section.window-content section.body div.tab.competences.active div.main,

@@ -1,4 +1,4 @@
-import {listCompetencesFamilier} from '../../../helpers/models.mjs'
+import {listCompetencesCreature} from '../../../helpers/models.mjs'
 import CaracteristiqueDataModel from '../parts/caracteristique.mjs'
 import ValueWithMaxDataModel from '../parts/valueWithMax.mjs'
 import ValueDataModel from '../parts/value.mjs'
@@ -34,7 +34,7 @@ export class CreatureDataModel extends foundry.abstract.TypeDataModel {
                 degats:new StringField({initial:'1'}),
                 label:new StringField({initial:''}),
             })),
-            competences:new SchemaField(listCompetencesFamilier()),
+            competences:new SchemaField(listCompetencesCreature()),
             seuils:new SchemaField({
                 epicsuccess:new SchemaField({
                     base:new NumberField({initial:5}),
@@ -63,15 +63,31 @@ export class CreatureDataModel extends foundry.abstract.TypeDataModel {
 
         for(let c in cmp) {
             const data = this.competences[c];
-            const actuelMod = Object.values(data.mod).reduce((acc, curr) => acc + (Number(curr) || 0), 0);
 
-            Object.defineProperty(data, 'divers', {
-                value: actuelMod,
-            });
+            if(data?.list) {
+                for(let l of data.list) {
+                    const actuelMod = Object.values(l.mod).reduce((acc, curr) => acc + (Number(curr) || 0), 0);
 
-            Object.defineProperty(data, 'total', {
-                value: data.base+data.divers,
-            });
+                    Object.defineProperty(l, 'divers', {
+                        value: actuelMod,
+                    });
+
+                    Object.defineProperty(l, 'total', {
+                        value: l.base+l.divers,
+                    });
+                }
+            } else {
+                const actuelMod = Object.values(data.mod).reduce((acc, curr) => acc + (Number(curr) || 0), 0);
+
+                Object.defineProperty(data, 'divers', {
+                    value: actuelMod,
+                });
+
+                Object.defineProperty(data, 'total', {
+                    value: data.base+data.divers,
+                });
+            }
+
         }
 
         for(let custom of this.competences.custom) {

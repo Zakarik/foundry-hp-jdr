@@ -450,13 +450,18 @@ export async function prepareRollSorcierCmp(id, actor) {
 
 export async function prepareRollCreatureCmp(id, actor) {
   const key = id.split('_');
-  const items = actor.items;
   const content = [];
   let label = '';
   let data;
   let total = 0;
 
   switch(key[0]) {
+    case 'specialisation':
+      data = actor.system.competences[key[1]].list.find(itm => itm.id === key[2]);
+      total = data.total;
+      label = data.specialisation;
+      break;
+
     case 'custom':
       data = actor.system.competences.custom.find(itm => itm.id === key[1]);
       total = data.total;

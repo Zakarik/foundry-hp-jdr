@@ -47,6 +47,16 @@ export class SorcierDataModel extends foundry.abstract.TypeDataModel {
             options:new SchemaField({
                 scolarise:new BooleanField({initial:true}),
                 patronus:new BooleanField({initial:false}),
+                modage:new SchemaField({
+                    force:new NumberField({initial:0}),
+                    constitution:new NumberField({initial:0}),
+                    taille:new NumberField({initial:0}),
+                    perception:new NumberField({initial:0}),
+                    intelligence:new NumberField({initial:0}),
+                    dexterite:new NumberField({initial:0}),
+                    apparence:new NumberField({initial:0}),
+                    pouvoir:new NumberField({initial:0}),
+                }),
                 maitrisesmax:new SchemaField({
                     generales:new NumberField({initial:0}),
                     moldus:new NumberField({initial:0}),
@@ -89,6 +99,13 @@ export class SorcierDataModel extends foundry.abstract.TypeDataModel {
         const listCompetences = ['generales', 'moldus', 'sorciers', 'scolaires'];
 
         for(let c in this.caracteristiques) {
+            Object.defineProperty(this.caracteristiques[c].mod, 'age', {
+                value: this.options.modage[c],
+                writable:true,
+                enumerable:true,
+                configurable:true
+            });
+
             this.caracteristiques[c].prepareData();
         }
 

@@ -202,6 +202,60 @@ export class SorcierActorSheet extends ActorSheet {
       this.actor.update({[`system.competences.${domain}.custom`]:list})
     });
 
+    html.find('button.addModifAge').click(async ev => {
+      const data = this.actor.system;
+      const listData = [];
+
+      for(let c in data.caracteristiques) {
+        listData.push(
+          {
+            key:'number',
+            label:`HP.CARACTERISTIQUES.${capitalizeFirstLetter(c)}`,
+            class:'check',
+            data:c,
+            value:data?.options?.modage?.[c] ?? 0,
+          })
+      }
+
+      const content = await renderTemplate('systems/harry-potter-jdr/templates/dialog/dialog-std-sheet.html', {
+        data:listData
+      });
+
+      let d = new Dialog({
+        title: game.i18n.localize("HP.ModificateurAge"),
+        content: content,
+        buttons: {
+          one: {
+            icon: '<i class="fas fa-check"></i>',
+            label: game.i18n.localize("HP.Sauvegarder"),
+            callback: (html) => {
+              const caracteristiques = html.find('label.check');
+              let update = {};
+
+              for(let c of caracteristiques) {
+                const tgt = $(c);
+                const carac = tgt.data('value');
+                const value = parseInt(tgt.find('input').val());
+                update[`system.options.modage.${carac}`] = value;
+              }
+
+              this.actor.update(update);
+            }
+          },
+          two: {
+            icon: '<i class="fas fa-times"></i>',
+            label: game.i18n.localize("HP.Annuler"),
+            callback: () => {}
+          }
+        },
+        render: html => {},
+        close: html => {}
+       }, {
+        classes: ["hp", "sheet", "dialog", "hp", "options", "sorcier"],
+       });
+       d.render(true);
+    });
+
     html.find('button.EvolutionMaitrise').click(async ev => {
       const data = this.actor.system;
 
