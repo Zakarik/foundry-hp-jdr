@@ -17,7 +17,9 @@ import { CapaciteItemSheet } from "./sheets/items/capacite-sheet.mjs";
 import { RegisterHandlebars } from "./helpers/handlebars.mjs";
 import { HP } from "./helpers/config.mjs";
 import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
+import { rolldataHtmlEnricher } from "./helpers/enricher.mjs";
 import { registerSystemSettings } from "./settings.mjs";
+import { TextEditorMenu } from './helpers/textEditorMenu.mjs';
 import HooksHP from "./hooks.mjs";
 import {
   prepareRollSorcierCmp,
@@ -157,6 +159,9 @@ Hooks.once('init', async function() {
   RegisterHandlebars();
 
   HooksHP.init()
+
+	CONFIG.TextEditor.enrichers.push(rolldataHtmlEnricher);
+	TextEditorMenu.initialize();
 
   // Preload Handlebars templates.
   return preloadHandlebarsTemplates();

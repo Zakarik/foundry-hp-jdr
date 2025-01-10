@@ -62,7 +62,8 @@
             }
 
             select {
-                width: 100px;
+                width: 100%;
+                min-width: 100px;
                 margin: 0px;
                 padding: 0px;
                 text-align: center;
@@ -128,6 +129,12 @@
                         border-radius: 3px;
                         font-size: var(--font-size-14);
                     }
+                }
+            }
+
+            &.left {
+                select {
+                    text-align: left;
                 }
             }
         }

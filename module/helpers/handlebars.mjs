@@ -91,6 +91,7 @@ export const RegisterHandlebars = function () {
 
         return result;
     });
+
     Handlebars.registerHelper('prepareOptionsEffects', function (object, index) {
         let result = {};
 
@@ -101,5 +102,4 @@ export const RegisterHandlebars = function () {
 
         return result;
     });
-
 }

@@ -154,7 +154,6 @@ import {
       super.close(options);
       const effects = this.item.effects.contents[0];
       const dataEffects = this.item.system.effets;
-      console.warn(dataEffects);
 
       for(let e of dataEffects) {
         if(e.key.includes('basemaitrise')) e.mode = CONST.ACTIVE_EFFECT_MODES.OVERRIDE;

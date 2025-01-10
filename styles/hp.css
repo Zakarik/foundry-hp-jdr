@@ -3521,7 +3521,8 @@
   font-size: 15px;
 }
 .dialog.hp section.window-content label select {
-  width: 100px;
+  width: 100%;
+  min-width: 100px;
   margin: 0px;
   padding: 0px;
   text-align: center;
@@ -3574,6 +3575,9 @@
   font-variant: small-caps;
   border-radius: 3px;
   font-size: var(--font-size-14);
+}
+.dialog.hp section.window-content label.left select {
+  text-align: left;
 }
 .dialog.hp section.window-content div.btnWithIconAndNumber {
   display: grid;

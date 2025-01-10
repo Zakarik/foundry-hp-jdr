@@ -4,7 +4,7 @@
         <label class="{{class}}" data-value="{{data}}">
             <span>{{localize label}}</span>
             <select>
-                {{selectOptions list selected=value localize=true}}
+                {{selectOptions list selected=value localize=(ifThen noLocalize false true) sort=(ifThen sort true false)}}
             </select>
         </label>
         {{/if}}

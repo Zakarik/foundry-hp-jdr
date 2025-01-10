@@ -9,6 +9,7 @@ import {
     prepareRollSortilege,
     prepareRollPotion,
     prepareRollDegats,
+    enrichItems,
   } from "../../helpers/common.mjs";
 
   import toggler from '../../helpers/toggler.js';
@@ -36,10 +37,10 @@ export class SorcierActorSheet extends ActorSheet {
   /* -------------------------------------------- */
 
   /** @inheritdoc */
-  getData() {
+  async getData() {
     const context = super.getData();
-
-    this._prepareCharacterItems(context);
+    await this._prepareEnriched();
+    await this._prepareCharacterItems(context);
 
     const {data} = context
     const system = data.system;
@@ -1213,6 +1214,27 @@ export class SorcierActorSheet extends ActorSheet {
 
       msg.setFlag('harry-potter-jdr', 'hp', true);
     });
+
+    html.find('a.rollCaracteristique').click(async ev => {
+      const tgt = $(ev.currentTarget);
+      const caracteristique = tgt.data("caracteristique");
+      const modifier = tgt.data("modifier");
+      const actor = this.actor;
+
+      prepareRollCaracteristique(`caracteristique_${caracteristique}`, actor, modifier);
+    });
+
+    html.find('a.rollCompetence').click(async ev => {
+      const tgt = $(ev.currentTarget);
+      const cmp = tgt.data("competence");
+      const split = cmp.split('_');
+      const modifier = tgt.data("modifier");
+      const actor = this.actor;
+
+      if(split[0] !== 'familier' && split[0] !== 'creature') {
+        await prepareRollSorcierCmp(cmp, actor, modifier);
+      }
+    });
   }
 
   async _prepareCharacterItems(actorData) {
@@ -1240,53 +1262,47 @@ export class SorcierActorSheet extends ActorSheet {
     let baguettes = [];
     let balais = [];
 
+    actor.enriched = await TextEditor.enrichHTML(actor.system.historique.historique);
+    await enrichItems(items);
+
     for (let i of items) {
       const type = i.type;
       const data = i.system;
 
       switch(type) {
         case "avantage":
-          i.system.description = await TextEditor.enrichHTML(i.system.description, {async: true});
           avantages.push(i);
           break;
 
         case "desavantage":
-          i.system.description = await TextEditor.enrichHTML(i.system.description, {async: true});
           desavantages.push(i);
           break;
 
         case "crochepatte":
-          i.system.description = await TextEditor.enrichHTML(i.system.description, {async: true});
           crochepattes.push(i);
           break;
 
         case "coupspouce":
-          i.system.description = await TextEditor.enrichHTML(i.system.description, {async: true});
           coupspouces.push(i);
           break;
 
         case "sortilege":
-          i.system.effets = await TextEditor.enrichHTML(i.system.effets, {async: true});
           sortileges.push(i);
           break;
 
         case "potion":
-          i.system.effets = await TextEditor.enrichHTML(i.system.effets, {async: true});
           potions.push(i);
           break;
 
         case "objet":
-          i.system.particularite = await TextEditor.enrichHTML(i.system.particularite, {async: true});
           inventaire.push(i);
           break;
 
         case "balai":
-          i.system.description = await TextEditor.enrichHTML(i.system.description, {async: true});
           balais.push(i);
           break;
 
         case "baguette":
-          i.system.description = await TextEditor.enrichHTML(i.system.description, {async: true});
           const tra = foundry.utils.mergeObject(CONFIG.HP.communes, CONFIG.HP.particulieres);
           let allData = i;
 
@@ -1551,5 +1567,9 @@ export class SorcierActorSheet extends ActorSheet {
     const itemCreate = await this.actor.createEmbeddedDocuments("Item", itemData);
 
     return itemCreate;
+  }
+
+  async _prepareEnriched() {
+    const actor = this.actor.items;
   }
 }

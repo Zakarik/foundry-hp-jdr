@@ -48,7 +48,7 @@
 
                 <div class="block">
                     <span>{{localize 'HP.HISTORIQUE.Label'}}</span>
-                    {{editor systemData.historique.historique target="system.historique.historique" engine="prosemirror" button=true owner=owner editable=editable}}
+                    {{editor actor.enriched target="system.historique.historique" engine="prosemirror" button=true owner=owner editable=editable}}
                 </div>
             </div>
         </div>
@@ -74,7 +74,7 @@
                         </div>
                     </header>
 
-                    <span class="description">{{{system.description}}}</span>
+                    <span class="description">{{{enriched}}}</span>
                 </div>
                 {{/each}}
             </div>
@@ -99,7 +99,7 @@
                         </div>
                     </header>
 
-                    <span class="description">{{{system.description}}}</span>
+                    <span class="description">{{{enriched}}}</span>
                 </div>
                 {{/each}}
             </div>
@@ -126,7 +126,7 @@
                         </div>
                     </header>
 
-                    <span class="description">{{{system.description}}}</span>
+                    <span class="description">{{{enriched}}}</span>
                 </div>
                 {{/each}}
             </div>
@@ -151,7 +151,7 @@
                         </div>
                     </header>
 
-                    <span class="description">{{{system.description}}}</span>
+                    <span class="description">{{{enriched}}}</span>
                 </div>
                 {{/each}}
             </div>

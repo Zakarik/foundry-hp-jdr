@@ -82,6 +82,7 @@
     "Attaque":"Attaque",
     "AddCombat":"Ajouter une attaque",
     "Prix":"Prix",
+    "Inserer":"Insérer",
     "CAPACITES":{
       "Label":"Capacités"
     },
@@ -105,6 +106,7 @@
     },
     "CARACTERISTIQUES":{
       "Label":"Caractéristiques",
+      "Caracteristique":"Caractéristique",
       "Force":"Force",
       "Constitution":"Constitution",
       "Taille":"Taille",
@@ -116,6 +118,7 @@
     },
     "COMPETENCES":{
       "Label":"Compétences",
+      "Competence":"Compétence",
       "MaitriseMaxPeutEvoluer":"La maitrise maximale peut évoluer",
       "EvolutionBase":"Evolution des maîtrises de base",
       "EvolutionMaitrise":"Evolution des maîtrises max",
@@ -125,7 +128,6 @@
       "CompetencesMoldus":"Compétences Moldus",
       "CompetencesSorciers":"Compétences Sorciers",
       "CompetencesScolaires":"Compétences Scolaires",
-      "Competence":"Compétence",
       "CompetenceGenerales":"Compétence Générale",
       "CompetenceMoldus":"Compétence Moldu",
       "CompetenceSorciers":"Compétence Sorcier",
@@ -343,6 +345,11 @@
     },
     "ERREUR":{
       "NoActor":"Acteur introuvable"
+    },
+    "TEXTEDITOR":{
+      "Menu":"Commandes du système",
+      "RollCaracteristique":"Jet de caractéristique",
+      "RollCompetence":"Jet de compétence"
     }
   }
 }

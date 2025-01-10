@@ -1,4 +1,7 @@
 # Changelog
+## v0.16.0
+- Ajout de la possibilité de rajouter des boutons de jets dans les zones de description, pour des jets de caractéristique et des jets de compétence.
+
 ## v0.15.0
 - Ajout des pouvoirs magiques pour les créatures / familier (ce sont les sortilèges, en réalité - glisser - déposer un sortilège l'ajoutera à une créature).
 Pouvoir x3 est utilisé pour le jet.

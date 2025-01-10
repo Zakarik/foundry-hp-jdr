@@ -9,6 +9,7 @@ import {
     splitArrayInHalf,
     localizeScolaire,
     prepareRollSortilegeCreature,
+    enrichItems,
   } from "../../helpers/common.mjs";
 
   import toggler from '../../helpers/toggler.js';
@@ -35,10 +36,10 @@ export class CreatureActorSheet extends ActorSheet {
   /* -------------------------------------------- */
 
   /** @inheritdoc */
-  getData() {
+  async getData() {
     const context = super.getData();
 
-    this._prepareCharacterItems(context);
+    await this._prepareCharacterItems(context);
 
     const {data} = context
     const system = data.system;
@@ -370,6 +371,27 @@ export class CreatureActorSheet extends ActorSheet {
 
       this.actor.items.get(id).update({['system.malus.fe.appris']:result});
     });
+
+    html.find('a.rollCaracteristique').click(async ev => {
+      const tgt = $(ev.currentTarget);
+      const caracteristique = tgt.data("caracteristique");
+      const modifier = tgt.data("modifier");
+      const actor = this.actor;
+
+      prepareRollCaracteristique(`caracteristique_${caracteristique}`, actor, modifier);
+    });
+
+    html.find('a.rollCompetence').click(async ev => {
+      const tgt = $(ev.currentTarget);
+      const cmp = tgt.data("competence");
+      const split = cmp.split('_');
+      const modifier = tgt.data("modifier");
+      const actor = this.actor;
+
+      if(split[0].includes(actor.type)) {
+        await prepareRollCreatureCmp(split[1], actor, modifier);
+      }
+    });
   }
 
   async _prepareCharacterItems(actorData) {
@@ -384,6 +406,9 @@ export class CreatureActorSheet extends ActorSheet {
     let capacites = [];
     let sortilege = [];
 
+    actor.enriched = await TextEditor.enrichHTML(actor.system.description);
+    await enrichItems(items);
+
     for (let i of items) {
       const type = i.type;
       const data = i.system;
@@ -391,7 +416,6 @@ export class CreatureActorSheet extends ActorSheet {
       switch(type) {
         case 'capacite':
         case 'capacitefamilier':
-          i.system.description = await TextEditor.enrichHTML(i.system.description, {async: true});
           capacites.push(i);
           break;
 

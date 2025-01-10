@@ -316,7 +316,7 @@ export function localizeScolaire(string) {
   return isSetting ? game.settings.get('harry-potter-jdr', string) : game.i18n.localize(`HP.COMPETENCES.${capitalizeFirstLetter(string)}`)
 }
 
-export async function prepareRollSorcierCmp(id, actor) {
+export async function prepareRollSorcierCmp(id, actor, modifier=0) {
   const key = id.split('_');
   const items = actor.items;
   const balai = items.find(itm => itm.system.wear && itm.type === 'balai');
@@ -355,7 +355,7 @@ export async function prepareRollSorcierCmp(id, actor) {
     label:"HP.ROLL.Modificateur",
     class:'mod bonus',
     data:game.i18n.localize("HP.ROLL.Modificateur"),
-    value:0,
+    value:modifier,
   });
 
   if(baguette) {
@@ -457,7 +457,7 @@ export async function prepareRollSorcierCmp(id, actor) {
   }
 }
 
-export async function prepareRollCreatureCmp(id, actor) {
+export async function prepareRollCreatureCmp(id, actor, modifier=0) {
   const key = id.split('_');
   const content = [];
   let label = '';
@@ -490,7 +490,7 @@ export async function prepareRollCreatureCmp(id, actor) {
     label:"HP.ROLL.Modificateur",
     class:'mod bonus',
     data:game.i18n.localize("HP.ROLL.Modificateur"),
-    value:0,
+    value:modifier,
   });
 
   const dialog = await rollDialog(`${label} : ${game.i18n.localize('HP.ROLL.Modificateurs')}`, content);
@@ -538,7 +538,7 @@ export async function prepareRollCreatureCmp(id, actor) {
   const roll = await doRoll(actor, {label, total, bonus, tags})
 }
 
-export async function prepareRollCaracteristique(id, actor) {
+export async function prepareRollCaracteristique(id, actor, modifier=0) {
   const items = actor.items;
   const balai = items.find(itm => itm.system.wear && itm.type === 'balai');
   const baguette = items.find(itm => itm.system.wear && itm.type === 'baguette');
@@ -563,7 +563,7 @@ export async function prepareRollCaracteristique(id, actor) {
     label:"HP.ROLL.Modificateur",
     class:'mod bonus',
     data:game.i18n.localize("HP.ROLL.Modificateur"),
-    value:0,
+    value:modifier,
   });
 
   if(baguette) {
@@ -1294,4 +1294,19 @@ export async function prepareRollCombat(id, actor) {
 export function splitArrayInHalf(array) {
   const midIndex = Math.ceil(array.length / 2);
   return [array.slice(0, midIndex), array.slice(midIndex)];
+}
+
+export async function enrichItems(items) {
+  const listDescription = ["avantage", "desavantage", "coupspouce", "crochepatte", "capacite"];
+  const listEffets = ["potion", "sortilege"];
+
+  for(let d of items) {
+    if(listDescription.includes(d.type)) {
+      d.enriched = await TextEditor.enrichHTML(d.system.description);
+    } else if(listEffets.includes(d.type)) {
+      d.enriched = await TextEditor.enrichHTML(d.system.effets);
+    } else if(d.type === 'objet') {
+      d.enriched = await TextEditor.enrichHTML(d.system.particularite);
+    }
+  }
 }
