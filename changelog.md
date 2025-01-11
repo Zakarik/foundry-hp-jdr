@@ -1,4 +1,7 @@
 # Changelog
+## v0.19.0
+- Correction de l'icône des protections.
+
 ## v0.18.0
 - Ajout des icônes pour les armes et protections.
 

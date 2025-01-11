@@ -63,8 +63,8 @@ export function getDefaultImg(type) {
       img = "systems/harry-potter-jdr/assets/icons/arme.svg";
       break;
 
-    case "armure":
-      img = "systems/harry-potter-jdr/assets/icons/armure.svg";
+    case "protection":
+      img = "systems/harry-potter-jdr/assets/icons/protection.svg";
       break;
   }
 
