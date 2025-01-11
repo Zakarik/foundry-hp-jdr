@@ -1,4 +1,8 @@
 # Changelog
+## v0.17.0
+- Ajout des armes et des protections.
+- Ajout d'un compteur de points de création pour les avantages / désavantages, et d'un paramètre permettant de définir les points de base.
+
 ## v0.16.0
 - Ajout de la possibilité de rajouter des boutons de jets dans les zones de description, pour des jets de caractéristique et des jets de compétence.
 

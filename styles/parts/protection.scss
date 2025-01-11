@@ -1,0 +1,133 @@
+.protection {
+    section.window-content {
+        background:$background;
+
+        span,
+        input {
+            color: $black;
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: 200px 1fr 1fr;
+            grid-template-rows: max-content;
+            align-items: flex-start;
+            align-content: flex-start;
+            grid-gap: 2px;
+
+            header {
+                grid-column: 2 / 4;
+                display: grid;
+                grid-template-columns: 1fr 100px;
+                column-gap: 2px;
+                align-items: flex-start;
+
+                input {
+                    width: 100%;
+                    border-radius: 0px;
+                    border-left: 0px;
+                    border-right: 0px;
+                    border-top: 0px;
+                    border-bottom: 1px solid;
+                    text-align: center;
+                    background: transparent;
+                    font-variant: small-caps;
+                    font-size: 18px;
+                    border-radius: 0px;
+                }
+            }
+
+            img.profil-img {
+                width: 100%;
+                object-fit: contain;
+                grid-row: 1 / 5;
+            }
+
+            button.checkbouclier {
+                width: calc(100% - 5px);
+                border: 1px solid $black;
+                border-radius: 5px;
+                padding: 2px;
+                margin: 0px;
+                font-variant: small-caps;
+                font-weight: bold;
+                line-height: 20px;
+                display: grid;
+                grid-template-columns: 1fr max-content;
+                grid-gap: 2px;
+                text-align: left;
+                font-size: 16px;
+
+                i {
+                    color: $unvalide;
+                }
+
+                &:hover {
+                    background: $black;
+                    color: $white;
+                }
+
+                &.checked {
+                    background: $backgroundClair;
+
+                    i {
+                        color: $valide;
+                    }
+                }
+            }
+
+            label {
+                display: grid;
+                grid-template-columns: 1fr 100px;
+                grid-gap: 2px;
+                font-size: 16px;
+                font-weight: bold;
+                font-variant: small-caps;
+                align-items: flex-end;
+                align-content: flex-end;
+
+                input{
+                    width: 100%;
+                    border-top: 0px;
+                    border-left: 0px;
+                    border-right: 0px;
+                    border-radius: 0px;
+                    padding: 0px;
+                    margin: 0px;
+                    border-color: $black;
+                    color: $black;
+                    text-align: center;
+                    background: transparent;
+                    font-size: 14px;
+                }
+            }
+
+            div {
+                &.block {
+                    grid-column: 2 / 4;
+
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    border: 1px solid $black;
+                    border-radius: 5px;
+                    padding: 2px;
+                    background: $backgroundClair;
+                }
+            }
+
+            div.editor {
+                min-height: 164px;
+
+                menu {
+                    border-radius: 0px;
+                }
+
+                >div.editor-content {
+                    padding-left: 5px;
+                    padding-right: 5px;
+                    padding-bottom: 5px;
+                }
+            }
+        }
+    }
+}

@@ -60,7 +60,7 @@ function enricher(text, options) {
             }
 
             if(modifier > 0) label += ` + ${modifier}`;
-            else if(modifier < 0) label += ` - ${modifier}`;
+            else if(modifier < 0) label += ` - ${-modifier}`;
 
             a = document.createElement('a');
             a.className = 'inline-roll rollCompetence';

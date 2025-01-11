@@ -67,6 +67,92 @@
         {{/each}}
     </div>
 
+    <div class="listEqp">
+        <div class="wpn">
+            <header>
+                <span>{{localize "HP.ARMES.Label"}}</span>
+                <a class="item-create" data-type="arme">
+                    <i class="fa-solid fa-plus" title="{{localize 'HP.Ajouter'}}"></i>
+                </a>
+            </header>
+            {{#each actor.armes}}
+            <div class="line summary" data-item-id="{{_id}}">
+                <header class="name js-toggler">
+                    <i class="far fa-plus-square"></i>
+                    <span>{{name}}</span>
+
+                    <span class="eqp {{ifThen system.wear 'wear' ''}}">
+                        <i class="fa-solid {{ifThen system.wear 'fa-check' 'fa-xmark'}}"></i>
+                        {{localize (ifThen system.wear 'HP.Equipe' 'HP.NonEquipe')}}
+                    </span>
+
+                    <i class="fa-solid fa-dice-d20 roll draggable" data-id="itm_{{_id}}"></i>
+                    <i class="fa-solid fa-pen-to-square item-edit clickable" title="{{localize 'HP.Edit'}}"></i>
+                    <i class="fa-solid fa-trash item-delete clickable" title="{{localize 'HP.Supprimer'}}"></i>
+                </header>
+                <div class="sub" style="display:none;">
+                    <label>
+                        <span class="label">{{localize "HP.DERIVES.Degats"}} :</span>
+                        <span class="score">{{system.degats.value}} {{#if (gt system.degats.adddmg 0)}}{{ifThen (eq system.degats.adddmg 0.5) (concat '+ ' (localize "HP.DemiDegats")) (concat '+ ' (localize "HP.DERIVES.Degats"))}}{{/if}}</span>
+                    </label>
+
+                    {{#if system.distance}}
+                    <label class="portee">
+                        <span class="label">{{localize "HP.ARMES.Portee"}} :</span>
+                        <span class="score">{{system.portee}}</span>
+                    </label>
+                    {{/if}}
+
+                    {{#if system.description}}
+                    <span class="description">{{{enriched}}}</span>
+                    {{/if}}
+                </div>
+            </div>
+            {{/each}}
+        </div>
+
+        <div class="protection">
+            <header>
+                <span class="first"><b>{{localize "HP.DERIVES.Armure"}}</b> : {{ifThen (eq actor.type 'sorcier') systemData.armure systemData.derives.armure.total}}</span>
+                <span>{{localize "HP.PROTECTIONS.Label"}}</span>
+                <span class="last">
+                    <a class="item-create" data-type="protection">
+                        <i class="fa-solid fa-plus" title="{{localize 'HP.Ajouter'}}"></i>
+                    </a>
+                </span>
+            </header>
+            {{#each actor.protections}}
+            <div class="line summary" data-item-id="{{_id}}">
+                <header class="name js-toggler">
+                    <i class="far fa-plus-square"></i>
+                    <span>{{ifThen system.bouclier (localize "HP.PROTECTIONS.Bouclier") (localize "HP.DERIVES.Armure")}} : {{name}}</span>
+
+                    <span class="eqp {{ifThen system.wear 'wear' ''}}">
+                        <i class="fa-solid {{ifThen system.wear 'fa-check' 'fa-xmark'}}"></i>
+                        {{localize (ifThen system.wear 'HP.Equipe' 'HP.NonEquipe')}}
+                    </span>
+
+                    <i class="fa-solid fa-comment-dots clickable sendchat" title="{{localize "HP.SendChat"}}" data-label="{{name}}" data-id="{{_id}}"></i>
+                    <i class="fa-solid fa-pen-to-square item-edit clickable" title="{{localize 'HP.Edit'}}"></i>
+                    <i class="fa-solid fa-trash item-delete clickable" title="{{localize 'HP.Supprimer'}}"></i>
+                </header>
+                <div class="sub" style="display:none;">
+                    {{#if (gt system.armure 0)}}
+                    <label>
+                        <span class="label">{{localize "HP.DERIVES.Armure"}} :</span>
+                        <span class="score">{{system.armure}}</span>
+                    </label>
+                    {{/if}}
+
+                    {{#if system.description}}
+                    <span class="description">{{{enriched}}}</span>
+                    {{/if}}
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+
     <div class="liste">
         <header>
             <span>{{localize "HP.INVENTAIRE.Label"}}</span>

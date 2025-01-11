@@ -38,3 +38,20 @@
 <h4 class="formula" title="{{ifThen degats.base degats.base '0'}}{{ifThen degats.bonus (concat ' + ' degats.bonus) ''}}">{{localize "HP.DERIVES.Degats"}} : {{degats.value}}</h4>
 {{#if degats.tooltip}}{{{degats.tooltip}}}{{/if}}
 {{/if}}
+{{#if arme}}
+<div class="arme">
+    <span class="mid-first"><b>{{localize "HP.DERIVES.Degats"}}</b> : {{arme.degats}}</span>
+    {{#if arme.distance}}
+    <span class="mid-second"><b>{{localize "HP.ARMES.Portee"}}</b> : {{arme.portee}}</span>
+    {{/if}}
+    <span class="description">{{{arme.description}}}</span>
+</div>
+{{/if}}
+{{#if protection}}
+<div class="protection">
+    {{#if (gt protection.armure 0)}}
+    <span class="mid-first"><b>{{localize "HP.DERIVES.Armure"}}</b> : {{protection.armure}}</span>
+    {{/if}}
+    <span class="description">{{{protection.description}}}</span>
+</div>
+{{/if}}

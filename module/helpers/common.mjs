@@ -843,7 +843,7 @@ export async function prepareRollSortilege(id, actor) {
     niveau:itmSortilege.system.niveau,
     type:localizeScolaire(sortilegeType),
     malus:malus,
-    description:itmSortilege.system.effets
+    description:await enrichDescription(itmSortilege)
   }
 
   const roll = await doRoll(actor, {label, total, bonus, tags, sortilege})
@@ -1030,7 +1030,7 @@ export async function prepareRollSortilegeCreature(id, actor) {
     niveau:itmSortilege.system.niveau,
     type:localizeScolaire(sortilegeType),
     malus:malus,
-    description:itmSortilege.system.effets
+    description:await enrichDescription(itmSortilege)
   }
 
   const roll = await doRoll(actor, {label, total, bonus, tags, sortilege})
@@ -1157,7 +1157,7 @@ export async function prepareRollPotion(id, actor) {
     malus:itmPotion.system.malus,
     ingredients:game.i18n.localize(`HP.${capitalizeFirstLetter(itmPotion.system.ingredients.type)}`),
     listingredients:itmPotion.system.ingredients.liste.join(' / '),
-    description:itmPotion.system.effets
+    description:await enrichDescription(itmPotion),
   }
 
   const roll = await doRoll(actor, {label, total, bonus, tags, potion:dataPotion})
@@ -1172,14 +1172,33 @@ export async function prepareRollPotion(id, actor) {
   }
 }
 
-export async function prepareRollDegats(actor) {
+export async function prepareRollDegats(actor, id=null) {
   const chatRollMode = game.settings.get("core", "rollMode");
-  const value = actor.system.derives.degats.total;
-  const label = game.i18n.localize('HP.DERIVES.Degats');
-  let roll = {total:value}
+  const value = actor?.system?.derives?.degats?.total ?? '0';
+  let label = game.i18n.localize('HP.DERIVES.Degats');
+  let base;
+  let multi;
+  let wpn;
 
-  if(value != '0') {
-    roll = new Roll(value);
+  if(id) {
+    const items = actor.items;
+    wpn = items.get(id);
+
+    label = wpn.name;
+    base = wpn.system.degats.value;
+    multi = wpn.system.degats.adddmg;
+  }
+  let formula;
+
+  if(!base) formula = value;
+  else formula = base;
+
+  if(multi && value !== '0') formula += ` + (${value}*${multi})`;
+
+  let roll = {total:formula}
+
+  if(formula != '0') {
+    roll = new Roll(formula);
     await roll.evaluate();
   }
 
@@ -1188,7 +1207,18 @@ export async function prepareRollDegats(actor) {
     label:` ${roll.total} `,
   }
 
-  if(value != '0') main.tooltip = await roll.getTooltip();
+  if(formula != '0') main.tooltip = await roll.getTooltip();
+
+  if(wpn) {
+    main.arme = {};
+    main.arme.degats = wpn.system.degats.value;
+    main.arme.description = await enrichDescription(wpn);
+
+    if(wpn.system.distance) {
+      main.arme.distance = true;
+      main.arme.portee = wpn.system.portee;
+    }
+  }
 
   let chatData = {
       user:game.user.id,
@@ -1203,7 +1233,9 @@ export async function prepareRollDegats(actor) {
       rollMode:chatRollMode,
   };
 
-  if(value != '0') chatData.rolls = [roll];
+  if(formula != '0') chatData.rolls = [roll];
+
+  console.warn(chatData);
 
   const msg = await ChatMessage.create(chatData);
 
@@ -1297,7 +1329,7 @@ export function splitArrayInHalf(array) {
 }
 
 export async function enrichItems(items) {
-  const listDescription = ["avantage", "desavantage", "coupspouce", "crochepatte", "capacite"];
+  const listDescription = ["avantage", "desavantage", "coupspouce", "crochepatte", "capacite", "arme", "protection"];
   const listEffets = ["potion", "sortilege"];
 
   for(let d of items) {
@@ -1309,4 +1341,20 @@ export async function enrichItems(items) {
       d.enriched = await TextEditor.enrichHTML(d.system.particularite);
     }
   }
+}
+
+export async function enrichDescription(item) {
+  const listDescription = ["avantage", "desavantage", "coupspouce", "crochepatte", "capacite", "arme", "protection"];
+  const listEffets = ["potion", "sortilege"];
+  let enriched = "";
+
+  if(listDescription.includes(item.type)) {
+    enriched = await TextEditor.enrichHTML(item.system.description);
+  } else if(listEffets.includes(item.type)) {
+    enriched = await TextEditor.enrichHTML(item.system.effets);
+  } else if(item.type === 'objet') {
+    enriched = await TextEditor.enrichHTML(item.system.particularite);
+  }
+
+  return enriched;
 }

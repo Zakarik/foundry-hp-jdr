@@ -14,6 +14,8 @@ export class SorcierDataModel extends foundry.abstract.TypeDataModel {
             age:new StringField({initial:""}),
             sang:new StringField({initial:"sangpur"}),
             argent:new StringField({initial:""}),
+            armure:new NumberField({initial:0}),
+            pointscreations:new NumberField({initial:0}),
             historique:new SchemaField({
                 scolarite:new StringField({initial:""}),
                 maison:new SchemaField({
@@ -108,6 +110,16 @@ export class SorcierDataModel extends foundry.abstract.TypeDataModel {
         const sangmele = sang === 'sangmele' ? true : false;
         const nemoldu = sang === 'nemoldu' ? true : false;
         const listCompetences = ['generales', 'moldus', 'sorciers', 'scolaires'];
+        const pcBase = game.settings.get('harry-potter-jdr', `pc-initiaux`);
+        let pc = 0;
+
+        for(let ad of this.parent.items.filter(itm => itm.type === 'avantage' || itm.type === 'desavantage')) {
+            pc += ad.system.cout;
+        }
+
+        Object.defineProperty(this, 'pointscreations', {
+            value: pcBase-pc,
+        });
 
         for(let c in this.caracteristiques) {
             Object.defineProperty(this.caracteristiques[c].mod, 'age', {
@@ -347,6 +359,16 @@ export class SorcierDataModel extends foundry.abstract.TypeDataModel {
 
         Object.defineProperty(this.seuils.epicfail, 'total', {
             value: this.seuils.epicfail.base+this.seuils.epicfail.mod,
+        });
+
+        let armure = 0;
+
+        for(let p of this.parent.items.filter(itm => itm.type === 'protection' && itm.system.armure > 0 && itm.system.wear)) {
+            armure += p.system.armure;
+        }
+
+        Object.defineProperty(this, 'armure', {
+            value: armure,
         });
     }
 }

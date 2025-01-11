@@ -405,7 +405,7 @@ HP.balai = {
 }
 
 HP.ItemsInterdits = {
-    'familier':["coupspouce", "crochepatte", "avantage", "desavantage", "potion", "objet", "baguette", "balai"],
-    'creature':["coupspouce", "crochepatte", "avantage", "desavantage", "potion", "objet", "baguette", "balai"],
+    'familier':["coupspouce", "crochepatte", "avantage", "desavantage", "potion"],
+    'creature':["coupspouce", "crochepatte", "avantage", "desavantage", "potion"],
     'sorcier':["capacite", "capacitefamilier"]
 }

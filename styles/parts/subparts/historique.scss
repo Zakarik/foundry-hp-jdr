@@ -78,6 +78,38 @@ div {
                         display: grid;
                         grid-template-columns: 1fr 1fr;
                         grid-gap: 2px;
+                        align-content: flex-start;
+                    }
+                }
+
+                &.avdv {
+                    span {
+                        &.pc {
+                            font-size: 15px;
+
+                            b {
+                                font-variant: small-caps;
+                                font-weight: bold;
+                            }
+
+                            p {
+                                display: contents;
+                                margin: 0px;
+                                padding: 0px;
+                            }
+
+                            &.valide {
+                                p {
+                                    color: $valide;
+                                }
+                            }
+
+                            &.unvalide {
+                                p {
+                                    color: $unvalide;
+                                }
+                            }
+                        }
                     }
                 }
             }

@@ -102,6 +102,19 @@ export class CreatureDataModel extends foundry.abstract.TypeDataModel {
             });
         }
 
+        let armure = 0;
+
+        for(let p of this.parent.items.filter(itm => itm.type === 'protection' && itm.system.armure > 0 && itm.system.wear)) {
+            armure += p.system.armure;
+        }
+
+        Object.defineProperty(this.derives.armure.mod, 'protection', {
+            value: armure,
+            writable:true,
+            enumerable:true,
+            configurable:true
+        });
+
         for(let d in this.derives) {
             if(d === 'pv') {
                 const mod = Object.values(this.derives[d].mod).reduce((acc, curr) => acc + (Number(curr) || 0), 0);

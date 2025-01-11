@@ -15,7 +15,7 @@
 
                 button {
                     &.ModSeuil {
-                        grid-column: 5;
+                        grid-column: 6;
                         width: calc(100% - 5px);
                         border: 1px solid $black;
                         border-radius: 5px;
@@ -40,6 +40,7 @@
                 @import "subparts/competences-creature.scss";
                 @import "subparts/combat.scss";
                 @import "subparts/capacites.scss";
+                @import "subparts/inventaire.scss";
             }
         }
     }

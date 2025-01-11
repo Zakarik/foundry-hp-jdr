@@ -16,7 +16,9 @@
       "baguette":"Baguette",
       "balai":"Balai",
       "capacite":"Capacité de créature",
-      "capacitefamilier":"Capacité de familier"
+      "capacitefamilier":"Capacité de familier",
+      "arme":"Arme",
+      "protection":"Protection"
     }
   },
   "HP": {
@@ -83,6 +85,21 @@
     "AddCombat":"Ajouter une attaque",
     "Prix":"Prix",
     "Inserer":"Insérer",
+    "DegatsSupplmentaire":"Dégâts supplémentaires",
+    "NoDegatsSupplmentaire":"Aucun dégâts supplémentaires",
+    "DemiDegatsSupplmentaire":"Dégâts supplémentaires divisés par 2",
+    "TotalDegatsSupplmentaire":"Dégâts supplémentaires complets",
+    "DemiDegats":"Demi-dégâts",
+    "PointsCreationRestant":"Points de créations restant",
+    "ARMES":{
+      "Label":"Armes",
+      "Distance":"Arme à distance",
+      "Portee":"Portée"
+    },
+    "PROTECTIONS":{
+      "Label":"Protections",
+      "Bouclier":"Bouclier"
+    },
     "CAPACITES":{
       "Label":"Capacités"
     },
@@ -295,7 +312,9 @@
       "RenameCmpHint":"Permet de renommer les compétences scolaires par défaut.",
       "RenameCmp":"Renommer",
       "ImgMaison":"Logo des maisons",
-      "ImgMaisonHint":"Ajoute un champ image pour le logo des maisons sur les fiches"
+      "ImgMaisonHint":"Ajoute un champ image pour le logo des maisons sur les fiches",
+      "PointsCreation":"Points de créations initiaux",
+      "PointsCreationHint":"Points de créations disponibles pour les joueurs"
     },
     "ROLL":{
       "Modificateurs":"Modificateurs",

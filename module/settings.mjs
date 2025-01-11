@@ -11,6 +11,7 @@ export const registerSystemSettings = async function () {
         restricted: true,
         requiresReload: true,
 	});
+
     game.settings.register("harry-potter-jdr", "imgmaison", {
         name: "HP.SETTINGS.ImgMaison",
         hint: "HP.SETTINGS.ImgMaisonHint",
@@ -19,6 +20,16 @@ export const registerSystemSettings = async function () {
         default: true,
         requiresReload: true,
         type: Boolean
+    });
+
+    game.settings.register("harry-potter-jdr", "pc-initiaux", {
+        name: "HP.SETTINGS.PointsCreation",
+        hint: "HP.SETTINGS.PointsCreationHint",
+        scope: "world",
+        config: true,
+        default: 6,
+        requiresReload: true,
+        type: new foundry.data.fields.NumberField({nullable: false, min: 0})
     });
 
     for(let s in config) {

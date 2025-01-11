@@ -1,0 +1,22 @@
+<form class="mainFlex {{cssClass}}" autocomplete="off">
+    <img class="profil-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" />
+    <header>
+        <input type="text" class="name" name="name" value="{{data.name}}" placeholder="{{localize "HP.Name"}}" />
+        <input type="text" name="system.prix" value="{{systemData.prix}}" placeholder="{{localize "HP.Prix"}}" title="{{localize "HP.Prix"}}" />
+    </header>
+
+    <label>
+        <span>{{localize "HP.DERIVES.Armure"}} :</span>
+        <input type="text" name="system.armure" value="{{systemData.armure}}" />
+    </label>
+
+    <button type="action" class="checkbouclier {{ifThen systemData.bouclier 'checked' ''}}">
+        {{localize "HP.PROTECTIONS.Bouclier"}}
+
+        <i class="fa-solid {{ifThen systemData.bouclier 'fa-check' 'fa-xmark'}}"></i>
+    </button>
+
+    <div class="block">
+        {{editor systemData.description target="system.description" engine="prosemirror" button=true owner=owner editable=editable}}
+    </div>
+</form>

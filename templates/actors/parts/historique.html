@@ -106,6 +106,8 @@
         </div>
 
         <div class="tab avdv" data-group="historiques" data-tab="avdv">
+            <span class="pc {{#if (gt systemData.pointscreations 0)}}valide{{/if}}{{#if (lt systemData.pointscreations 0)}}unvalide{{/if}}"><b>{{localize "HP.PointsCreationRestant"}}</b> : <p>{{systemData.pointscreations}}</p></span>
+            <span></span>
             <div class="col">
                 <header class="clHeader">
                     <span>{{localize "HP.DETAILS.Avantages"}}</span>

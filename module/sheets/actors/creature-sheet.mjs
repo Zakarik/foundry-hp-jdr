@@ -10,6 +10,8 @@ import {
     localizeScolaire,
     prepareRollSortilegeCreature,
     enrichItems,
+    prepareRollDegats,
+    enrichDescription,
   } from "../../helpers/common.mjs";
 
   import toggler from '../../helpers/toggler.js';
@@ -134,7 +136,7 @@ export class CreatureActorSheet extends ActorSheet {
 
       let main = {
         header:label,
-        msg:itm.system.description,
+        msg:await enrichDescription(itm),
         class:'justify'
       }
 
@@ -334,7 +336,7 @@ export class CreatureActorSheet extends ActorSheet {
         niveau:itmSortilege.system.niveau,
         type:localizeScolaire(sortilegeType),
         malus:malus,
-        description:itmSortilege.system.effets
+        description:await enrichDescription(itmSortilege)
       }
 
       const chatRollMode = game.settings.get("core", "rollMode");
@@ -392,6 +394,75 @@ export class CreatureActorSheet extends ActorSheet {
         await prepareRollCreatureCmp(split[1], actor, modifier);
       }
     });
+
+    html.find('.wpn i.roll').click(async ev => {
+      const tgt = $(ev.currentTarget);
+      const id = tgt.data("id").split('_')[1];
+
+      prepareRollDegats(this.actor, id);
+    });
+
+    html.find('.protection span.eqp').click(async ev => {
+      const header = $(ev.currentTarget).parents(".summary");
+      const id = header.data("item-id");
+      const item = this.actor.items.get(id);
+      const wear = item.system.wear;
+      const newValue = wear ? false : true;
+      let update = [];
+
+      update.push({
+        _id:id,
+        'system.wear':newValue,
+      });
+
+      if(newValue) {
+        for(let itm of this.actor.items.filter(itm => itm.type === 'protection' && itm._id !== id && itm.system.wear && itm.system.bouclier === item.system.bouclier)) {
+          update.push({
+            _id:itm._id,
+            'system.wear':false,
+          });
+        }
+      }
+
+      this.actor.updateEmbeddedDocuments('Item', update);
+    });
+
+    html.find('.protection i.sendchat').click(async ev => {
+      const tgt = $(ev.currentTarget);
+      const id = tgt.data("id");
+      const actor = this.actor;
+      const items = actor.items;
+      const itm = items.get(id);
+
+      const data = {
+        armure:itm.system.armure,
+        description:await enrichDescription(itm)
+      }
+
+      const chatRollMode = game.settings.get("core", "rollMode");
+
+      let main = {
+        header:itm.name,
+        protection:data
+      }
+
+      let chatData = {
+          user:game.user.id,
+          speaker: {
+              actor: actor?.id ?? null,
+              token: actor?.token ?? null,
+              alias: actor?.name ?? null,
+              scene: actor?.token?.parent?.id ?? null
+          },
+          content:await renderTemplate('systems/harry-potter-jdr/templates/roll/std.html', main),
+          sound: CONFIG.sounds.dice,
+          rollMode:chatRollMode,
+      };
+
+      const msg = await ChatMessage.create(chatData);
+
+      msg.setFlag('harry-potter-jdr', 'roll', true);
+    });
   }
 
   async _prepareCharacterItems(actorData) {
@@ -405,6 +476,11 @@ export class CreatureActorSheet extends ActorSheet {
     let listCompetences = [];
     let capacites = [];
     let sortilege = [];
+    let inventaire = [];
+    let baguettes = [];
+    let balais = [];
+    let armes = [];
+    let protections = [];
 
     actor.enriched = await TextEditor.enrichHTML(actor.system.description);
     await enrichItems(items);
@@ -422,6 +498,31 @@ export class CreatureActorSheet extends ActorSheet {
         case 'sortilege':
           sortilege.push(i);
           break;
+
+          case "objet":
+            inventaire.push(i);
+            break;
+
+          case "balai":
+            balais.push(i);
+            break;
+
+          case "arme":
+            armes.push(i);
+            break;
+
+          case "protection":
+            protections.push(i);
+            break;
+
+          case "baguette":
+            const tra = foundry.utils.mergeObject(CONFIG.HP.communes, CONFIG.HP.particulieres);
+            let allData = i;
+
+            allData.system.affinite.label = allData.system.affinite.key ? `${game.i18n.localize(tra[allData.system.affinite.key])} (${allData.system.affinite.value}%)` : '';
+
+            baguettes.push(allData);
+            break;
       }
     };
 
@@ -460,6 +561,11 @@ export class CreatureActorSheet extends ActorSheet {
     actor.listCombat = data.combat;
     actor.capacites = capacites;
     actor.sortileges = sortilege;
+    actor.inventaire = inventaire;
+    actor.baguettes = baguettes;
+    actor.balais = balais;
+    actor.armes = armes;
+    actor.protections = protections;
   }
 
   /* -------------------------------------------- */
@@ -468,8 +574,9 @@ export class CreatureActorSheet extends ActorSheet {
     const header = event.currentTarget;
     // Get the type of item to create.
     const type = header.dataset.type;
+    const filtre = this.actor.type === 'familier' ? CONFIG.HP.ItemsInterdits.familier : CONFIG.HP.ItemsInterdits.creature
 
-    if(CONFIG.HP.ItemsInterdits.familier.includes(type)) return
+    if(filtre.includes(type)) return
     // Grab any data associated with this control.
     const data = duplicate(header.dataset);
     // Initialize a default name.

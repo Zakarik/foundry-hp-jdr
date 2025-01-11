@@ -12,6 +12,8 @@ import { ObjetItemSheet } from "./sheets/items/objet-sheet.mjs";
 import { BaguetteItemSheet } from "./sheets/items/baguette-sheet.mjs";
 import { BalaiItemSheet } from "./sheets/items/balai-sheet.mjs";
 import { CapaciteItemSheet } from "./sheets/items/capacite-sheet.mjs";
+import { ArmeItemSheet } from "./sheets/items/arme-sheet.mjs";
+import { ProtectionItemSheet } from "./sheets/items/protection-sheet.mjs";
 
 // Import helper/utility classes and constants.
 import { RegisterHandlebars } from "./helpers/handlebars.mjs";
@@ -41,6 +43,8 @@ import { ObjetDataModel } from "./documents/models/items/objet-data-model.mjs";
 import { BaguetteDataModel } from "./documents/models/items/baguette-data-model.mjs";
 import { BalaiDataModel } from "./documents/models/items/balai-data-model.mjs";
 import { CapaciteDataModel } from "./documents/models/items/capacite-data-model.mjs";
+import { ArmeDataModel } from "./documents/models/items/arme-data-model.mjs";
+import { ProtectionDataModel } from "./documents/models/items/protection-data-model.mjs";
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
@@ -60,6 +64,8 @@ Hooks.once('init', async function() {
       BaguetteItemSheet,
       BalaiItemSheet,
       CapaciteItemSheet,
+      ArmeItemSheet,
+      ProtectionItemSheet,
     },
     documents:{
       HPActor,
@@ -101,6 +107,8 @@ Hooks.once('init', async function() {
     balai:BalaiDataModel,
     capacite:CapaciteDataModel,
     capacitefamilier:CapaciteDataModel,
+    arme:ArmeDataModel,
+    protection:ProtectionDataModel,
   };
 
   // Register sheet application classes
@@ -149,6 +157,16 @@ Hooks.once('init', async function() {
 
   Items.registerSheet("harry-potter-jdr", CapaciteItemSheet, {
     types: ["capacite", "capacitefamilier"],
+    makeDefault: true
+  });
+
+  Items.registerSheet("harry-potter-jdr", ArmeItemSheet, {
+    types: ["arme"],
+    makeDefault: true
+  });
+
+  Items.registerSheet("harry-potter-jdr", ProtectionItemSheet, {
+    types: ["protection"],
     makeDefault: true
   });
 
@@ -224,6 +242,7 @@ async function RollMacro(actorId, sceneId, tokenId, id, event) {
 
       if(item.type === 'sortilege') prepareRollSortilege(id.split('_')[1], actor);
       else if(item.type === 'potion') prepareRollPotion(id.split('_')[1], actor);
+      else if(item.type === 'arme') prepareRollDegats(actor, id.split('_')[1]);
       break;
 
     default:

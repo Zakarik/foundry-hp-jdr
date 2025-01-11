@@ -1,0 +1,36 @@
+<form class="mainFlex {{cssClass}}" autocomplete="off">
+    <img class="profil-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" />
+    <header>
+        <input type="text" class="name" name="name" value="{{data.name}}" placeholder="{{localize "HP.Name"}}" />
+        <input type="text" name="system.prix" value="{{systemData.prix}}" placeholder="{{localize "HP.Prix"}}" title="{{localize "HP.Prix"}}" />
+    </header>
+
+    <label>
+        <span>{{localize "HP.DERIVES.Degats"}} :</span>
+        <input type="text" name="system.degats.value" value="{{systemData.degats.value}}" />
+    </label>
+
+    <label class="select">
+        <span>{{localize "HP.DegatsSupplmentaire"}} :</span>
+        <select name="system.degats.adddmg">
+            {{selectOptions item.adddmg selected=systemData.degats.adddmg localize=true}}
+        </select>
+    </label>
+
+    <button type="action" class="checkdistance {{ifThen systemData.distance 'checked' ''}}">
+        {{localize "HP.ARMES.Distance"}}
+
+        <i class="fa-solid {{ifThen systemData.distance 'fa-check' 'fa-xmark'}}"></i>
+    </button>
+
+    {{#if systemData.distance}}
+    <label class="portee">
+        <span>{{localize "HP.ARMES.Portee"}} :</span>
+        <input type="text" name="system.portee" value="{{systemData.portee}}" />
+    </label>
+    {{/if}}
+
+    <div class="block">
+        {{editor systemData.description target="system.description" engine="prosemirror" button=true owner=owner editable=editable}}
+    </div>
+</form>

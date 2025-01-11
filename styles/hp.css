@@ -221,7 +221,7 @@
 }
 .sorcier section.window-content section.body nav.tabs {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   grid-gap: 5px;
   border: 0px;
   font-size: 16px;
@@ -319,6 +319,25 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 2px;
+  align-content: flex-start;
+}
+.sorcier section.window-content section.body div.tab.historique.active div.tab.avdv span.pc {
+  font-size: 15px;
+}
+.sorcier section.window-content section.body div.tab.historique.active div.tab.avdv span.pc b {
+  font-variant: small-caps;
+  font-weight: bold;
+}
+.sorcier section.window-content section.body div.tab.historique.active div.tab.avdv span.pc p {
+  display: contents;
+  margin: 0px;
+  padding: 0px;
+}
+.sorcier section.window-content section.body div.tab.historique.active div.tab.avdv span.pc.valide p {
+  color: #228B22;
+}
+.sorcier section.window-content section.body div.tab.historique.active div.tab.avdv span.pc.unvalide p {
+  color: #8b2222;
 }
 .sorcier section.window-content section.body div.tab.historique.active div.col {
   display: grid;
@@ -1434,6 +1453,173 @@
 .sorcier section.window-content section.body div.tab.inventaire.active div.liste div.line span.particularite {
   border-top: 1px solid #000000;
 }
+.sorcier section.window-content section.body div.tab.inventaire.active div.listEqp {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2px;
+  align-items: flex-start;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.listEqp div.wpn {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: flex-start;
+  align-content: flex-start;
+  background: #A9A9A9;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 5px;
+  grid-gap: 2px;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.listEqp div.wpn > header {
+  grid-column: 1;
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 20px;
+  align-items: flex-start;
+  text-align: center;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.listEqp div.wpn div.line {
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 5px;
+  background: #D3D3D3;
+  cursor: context-menu;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.listEqp div.wpn div.line header {
+  display: grid;
+  grid-template-columns: max-content 1fr 90px max-content max-content max-content;
+  align-items: center;
+  grid-gap: 2px;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 15px;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.listEqp div.wpn div.line header i {
+  cursor: pointer;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.listEqp div.wpn div.line header i:hover {
+  color: white;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.listEqp div.wpn div.line div.sub {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2px;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.listEqp div.wpn div.line label span.label {
+  font-weight: bold;
+  font-size: 17px;
+  font-variant: small-caps;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.listEqp div.wpn div.line span.description {
+  grid-column: 1/3;
+  border-top: 1px solid #000000;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.listEqp div.wpn div.line span.eqp {
+  font-size: 15px;
+  font-variant: small-caps;
+  cursor: pointer;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.listEqp div.wpn div.line span.eqp i {
+  color: #8b2222;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.listEqp div.wpn div.line span.eqp.wear i {
+  color: #228B22;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.listEqp div.wpn div.line span.eqp:hover {
+  color: white;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.listEqp div.wpn div.line span.eqp:hover i {
+  color: white;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.listEqp div.protection {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: flex-start;
+  align-content: flex-start;
+  background: #A9A9A9;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 5px;
+  grid-gap: 2px;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.listEqp div.protection > header {
+  grid-column: 1;
+  display: grid;
+  grid-template-columns: 100px 1fr 100px;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 20px;
+  align-items: flex-start;
+  text-align: center;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.listEqp div.protection > header span.first {
+  font-size: 15px;
+  font-variant: small-caps;
+  text-align: left;
+  margin-top: auto;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.listEqp div.protection > header span.last {
+  text-align: right;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.listEqp div.protection div.line {
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 5px;
+  background: #D3D3D3;
+  cursor: context-menu;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.listEqp div.protection div.line header {
+  display: grid;
+  grid-template-columns: max-content 1fr 90px max-content max-content max-content;
+  align-items: center;
+  grid-gap: 2px;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 15px;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.listEqp div.protection div.line header i {
+  cursor: pointer;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.listEqp div.protection div.line header i:hover {
+  color: white;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.listEqp div.protection div.line div.sub {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2px;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.listEqp div.protection div.line label span.label {
+  font-weight: bold;
+  font-size: 17px;
+  font-variant: small-caps;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.listEqp div.protection div.line span.description {
+  grid-column: 1/3;
+  border-top: 1px solid #000000;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.listEqp div.protection div.line span.eqp {
+  font-size: 15px;
+  font-variant: small-caps;
+  cursor: pointer;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.listEqp div.protection div.line span.eqp i {
+  color: #8b2222;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.listEqp div.protection div.line span.eqp.wear i {
+  color: #228B22;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.listEqp div.protection div.line span.eqp:hover {
+  color: white;
+}
+.sorcier section.window-content section.body div.tab.inventaire.active div.listEqp div.protection div.line span.eqp:hover i {
+  color: white;
+}
 
 .creature section.window-content {
   background: #A9A9A9;
@@ -1658,7 +1844,7 @@
 }
 .creature section.window-content section.body nav.tabs {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   grid-gap: 5px;
   border: 0px;
   font-size: 16px;
@@ -1688,7 +1874,7 @@
   border-bottom: 0px;
 }
 .creature section.window-content section.body button.ModSeuil {
-  grid-column: 5;
+  grid-column: 6;
   width: calc(100% - 5px);
   border: 1px solid #000000;
   border-radius: 5px;
@@ -2245,6 +2431,458 @@
   line-height: 20px;
   background: #A9A9A9;
 }
+.creature section.window-content section.body div.tab.inventaire.active {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: flex-start;
+  column-gap: 5px;
+  background: #D3D3D3;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border: 1px solid;
+  margin-top: -2px;
+  padding: 5px;
+  z-index: 0;
+  grid-gap: 2px;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.baguette {
+  display: grid;
+  grid-template-columns: 1fr;
+  background: #A9A9A9;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 5px;
+  grid-gap: 5px;
+  align-items: flex-start;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.baguette > header {
+  grid-column: 1;
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 20px;
+  align-items: flex-start;
+  text-align: center;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.baguette div.line {
+  display: grid;
+  grid-template-columns: 50px repeat(5, 1fr);
+  background: #D3D3D3;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 2px;
+  cursor: context-menu;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.baguette div.line img {
+  grid-row: 2/4;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.baguette div.line header {
+  grid-column: 1/7;
+  display: grid;
+  grid-template-columns: 90px 1fr max-content max-content;
+  align-items: center;
+  grid-gap: 2px;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 15px;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.baguette div.line header span.eqp {
+  font-size: 15px;
+  font-variant: small-caps;
+  cursor: pointer;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.baguette div.line header span.eqp i {
+  color: #8b2222;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.baguette div.line header span.eqp.wear i {
+  color: #228B22;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.baguette div.line header span.eqp:hover {
+  color: white;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.baguette div.line header span.eqp:hover i {
+  color: white;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.baguette div.line header span.name {
+  text-align: center;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 20px;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.baguette div.line header i {
+  cursor: pointer;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.baguette div.line header i:hover {
+  color: white;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.baguette div.line span {
+  line-height: 22px;
+  height: 100%;
+  min-height: 22px;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.baguette div.line span.bois, .creature section.window-content section.body div.tab.inventaire.active div.baguette div.line span.coeur, .creature section.window-content section.body div.tab.inventaire.active div.baguette div.line span.taille, .creature section.window-content section.body div.tab.inventaire.active div.baguette div.line span.affinite {
+  border-left: 1px solid #000000;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.baguette div.line span.visuel, .creature section.window-content section.body div.tab.inventaire.active div.baguette div.line span.taille {
+  text-align: justify;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.baguette div.line span.bois, .creature section.window-content section.body div.tab.inventaire.active div.baguette div.line span.coeur, .creature section.window-content section.body div.tab.inventaire.active div.baguette div.line span.affinite {
+  text-align: center;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.baguette div.line span.label {
+  text-align: center;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 15px;
+  border-bottom: 1px dotted #A9A9A9;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.balai {
+  display: grid;
+  grid-template-columns: 1fr;
+  background: #A9A9A9;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 5px;
+  grid-gap: 5px;
+  align-items: flex-start;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.balai > header {
+  grid-column: 1;
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 20px;
+  align-items: flex-start;
+  text-align: center;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.balai div.line {
+  display: grid;
+  grid-template-columns: 50px 1fr 150px 1fr;
+  background: #D3D3D3;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 2px;
+  cursor: context-menu;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.balai div.line img {
+  grid-row: 2/4;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.balai div.line header {
+  grid-column: 1/45;
+  display: grid;
+  grid-template-columns: 90px 1fr max-content max-content;
+  align-items: center;
+  grid-gap: 2px;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 15px;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.balai div.line header span.eqp {
+  font-size: 15px;
+  font-variant: small-caps;
+  cursor: pointer;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.balai div.line header span.eqp i {
+  color: #8b2222;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.balai div.line header span.eqp.wear i {
+  color: #228B22;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.balai div.line header span.eqp:hover {
+  color: white;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.balai div.line header span.eqp:hover i {
+  color: white;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.balai div.line header span.name {
+  text-align: center;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 20px;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.balai div.line header i {
+  cursor: pointer;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.balai div.line header i:hover {
+  color: white;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.balai div.line span {
+  line-height: 22px;
+  height: 100%;
+  min-height: 22px;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.balai div.line span.visuel.value {
+  grid-column: 2;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.balai div.line span.marque.value {
+  grid-column: 3;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.balai div.line span.marque, .creature section.window-content section.body div.tab.inventaire.active div.balai div.line span.bonus {
+  border-left: 1px solid #000000;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.balai div.line span.visuel {
+  text-align: justify;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.balai div.line span.marque {
+  text-align: center;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.balai div.line span.label {
+  text-align: center;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 15px;
+  border-bottom: 1px dotted #A9A9A9;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.balai div.line div.bonus {
+  border-left: 1px solid #000000;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.balai div.line div.bonus span {
+  padding: 2px;
+  font-variant: small-caps;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.balai div.line div.bonus.value {
+  grid-column: 4;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.liste {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #A9A9A9;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 5px;
+  grid-gap: 5px;
+  align-items: flex-start;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.liste > header {
+  grid-column: 1/3;
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 20px;
+  align-items: flex-start;
+  text-align: center;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.liste button {
+  grid-column: 1/3;
+  margin: 0px;
+  padding: 0px;
+  border-radius: 5px;
+  border: 1px solid #000000;
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 14px;
+  line-height: 20px;
+  background: #A9A9A9;
+  margin-top: 5px;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.liste div.line {
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 5px;
+  background: #D3D3D3;
+  cursor: context-menu;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.liste div.line header {
+  display: grid;
+  grid-template-columns: max-content 1fr max-content max-content max-content;
+  align-items: center;
+  grid-gap: 2px;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 15px;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.liste div.line header i {
+  cursor: pointer;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.liste div.line header i:hover {
+  color: white;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.liste div.line span.particularite {
+  border-top: 1px solid #000000;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.listEqp {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2px;
+  align-items: flex-start;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.listEqp div.wpn {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: flex-start;
+  align-content: flex-start;
+  background: #A9A9A9;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 5px;
+  grid-gap: 2px;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.listEqp div.wpn > header {
+  grid-column: 1;
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 20px;
+  align-items: flex-start;
+  text-align: center;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.listEqp div.wpn div.line {
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 5px;
+  background: #D3D3D3;
+  cursor: context-menu;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.listEqp div.wpn div.line header {
+  display: grid;
+  grid-template-columns: max-content 1fr 90px max-content max-content max-content;
+  align-items: center;
+  grid-gap: 2px;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 15px;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.listEqp div.wpn div.line header i {
+  cursor: pointer;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.listEqp div.wpn div.line header i:hover {
+  color: white;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.listEqp div.wpn div.line div.sub {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2px;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.listEqp div.wpn div.line label span.label {
+  font-weight: bold;
+  font-size: 17px;
+  font-variant: small-caps;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.listEqp div.wpn div.line span.description {
+  grid-column: 1/3;
+  border-top: 1px solid #000000;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.listEqp div.wpn div.line span.eqp {
+  font-size: 15px;
+  font-variant: small-caps;
+  cursor: pointer;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.listEqp div.wpn div.line span.eqp i {
+  color: #8b2222;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.listEqp div.wpn div.line span.eqp.wear i {
+  color: #228B22;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.listEqp div.wpn div.line span.eqp:hover {
+  color: white;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.listEqp div.wpn div.line span.eqp:hover i {
+  color: white;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.listEqp div.protection {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: flex-start;
+  align-content: flex-start;
+  background: #A9A9A9;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 5px;
+  grid-gap: 2px;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.listEqp div.protection > header {
+  grid-column: 1;
+  display: grid;
+  grid-template-columns: 100px 1fr 100px;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 20px;
+  align-items: flex-start;
+  text-align: center;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.listEqp div.protection > header span.first {
+  font-size: 15px;
+  font-variant: small-caps;
+  text-align: left;
+  margin-top: auto;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.listEqp div.protection > header span.last {
+  text-align: right;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.listEqp div.protection div.line {
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 5px;
+  background: #D3D3D3;
+  cursor: context-menu;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.listEqp div.protection div.line header {
+  display: grid;
+  grid-template-columns: max-content 1fr 90px max-content max-content max-content;
+  align-items: center;
+  grid-gap: 2px;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 15px;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.listEqp div.protection div.line header i {
+  cursor: pointer;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.listEqp div.protection div.line header i:hover {
+  color: white;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.listEqp div.protection div.line div.sub {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2px;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.listEqp div.protection div.line label span.label {
+  font-weight: bold;
+  font-size: 17px;
+  font-variant: small-caps;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.listEqp div.protection div.line span.description {
+  grid-column: 1/3;
+  border-top: 1px solid #000000;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.listEqp div.protection div.line span.eqp {
+  font-size: 15px;
+  font-variant: small-caps;
+  cursor: pointer;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.listEqp div.protection div.line span.eqp i {
+  color: #8b2222;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.listEqp div.protection div.line span.eqp.wear i {
+  color: #228B22;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.listEqp div.protection div.line span.eqp:hover {
+  color: white;
+}
+.creature section.window-content section.body div.tab.inventaire.active div.listEqp div.protection div.line span.eqp:hover i {
+  color: white;
+}
 
 .avdv section.window-content {
   background: #A9A9A9;
@@ -2263,7 +2901,7 @@
 }
 .avdv section.window-content form nav.tabs {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   grid-gap: 5px;
   border: 0px;
   font-size: 16px;
@@ -2413,7 +3051,7 @@
 }
 .capacite section.window-content form nav.tabs {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   grid-gap: 5px;
   border: 0px;
   font-size: 16px;
@@ -3468,6 +4106,239 @@
   padding-bottom: 5px;
 }
 
+.arme section.window-content {
+  background: #A9A9A9;
+}
+.arme section.window-content span,
+.arme section.window-content input {
+  color: #000000;
+}
+.arme section.window-content form {
+  display: grid;
+  grid-template-columns: 200px 200px 1fr;
+  grid-template-rows: max-content;
+  align-items: flex-start;
+  align-content: flex-start;
+  grid-gap: 2px;
+}
+.arme section.window-content form header {
+  grid-column: 2/4;
+  display: grid;
+  grid-template-columns: 1fr 100px;
+  column-gap: 2px;
+  align-items: flex-start;
+}
+.arme section.window-content form header input {
+  width: 100%;
+  border-radius: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-top: 0px;
+  border-bottom: 1px solid;
+  text-align: center;
+  background: transparent;
+  font-variant: small-caps;
+  font-size: 18px;
+  border-radius: 0px;
+}
+.arme section.window-content form img.profil-img {
+  width: 100%;
+  object-fit: contain;
+  grid-row: 1/5;
+}
+.arme section.window-content form button.checkdistance {
+  width: calc(100% - 5px);
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 2px;
+  margin: 0px;
+  font-variant: small-caps;
+  font-weight: bold;
+  line-height: 20px;
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  grid-gap: 2px;
+  text-align: left;
+  font-size: 16px;
+}
+.arme section.window-content form button.checkdistance i {
+  color: #8b2222;
+}
+.arme section.window-content form button.checkdistance:hover {
+  background: #000000;
+  color: white;
+}
+.arme section.window-content form button.checkdistance.checked {
+  background: #D3D3D3;
+}
+.arme section.window-content form button.checkdistance.checked i {
+  color: #228B22;
+}
+.arme section.window-content form label {
+  display: grid;
+  grid-template-columns: 1fr 100px;
+  grid-gap: 2px;
+  font-size: 16px;
+  font-weight: bold;
+  font-variant: small-caps;
+  align-items: flex-end;
+  align-content: flex-end;
+}
+.arme section.window-content form label input,
+.arme section.window-content form label select {
+  width: 100%;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-radius: 0px;
+  padding: 0px;
+  margin: 0px;
+  border-color: #000000;
+  color: #000000;
+  text-align: center;
+  background: transparent;
+  font-size: 14px;
+}
+.arme section.window-content form label.select {
+  grid-template-columns: 1fr max-content;
+}
+.arme section.window-content form label.portee {
+  grid-template-columns: 1fr 250px;
+}
+.arme section.window-content form div.block {
+  grid-column: 2/4;
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 2px;
+  background: #D3D3D3;
+}
+.arme section.window-content form div.editor {
+  min-height: 164px;
+}
+.arme section.window-content form div.editor menu {
+  border-radius: 0px;
+}
+.arme section.window-content form div.editor > div.editor-content {
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 5px;
+}
+
+.protection section.window-content {
+  background: #A9A9A9;
+}
+.protection section.window-content span,
+.protection section.window-content input {
+  color: #000000;
+}
+.protection section.window-content form {
+  display: grid;
+  grid-template-columns: 200px 1fr 1fr;
+  grid-template-rows: max-content;
+  align-items: flex-start;
+  align-content: flex-start;
+  grid-gap: 2px;
+}
+.protection section.window-content form header {
+  grid-column: 2/4;
+  display: grid;
+  grid-template-columns: 1fr 100px;
+  column-gap: 2px;
+  align-items: flex-start;
+}
+.protection section.window-content form header input {
+  width: 100%;
+  border-radius: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-top: 0px;
+  border-bottom: 1px solid;
+  text-align: center;
+  background: transparent;
+  font-variant: small-caps;
+  font-size: 18px;
+  border-radius: 0px;
+}
+.protection section.window-content form img.profil-img {
+  width: 100%;
+  object-fit: contain;
+  grid-row: 1/5;
+}
+.protection section.window-content form button.checkbouclier {
+  width: calc(100% - 5px);
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 2px;
+  margin: 0px;
+  font-variant: small-caps;
+  font-weight: bold;
+  line-height: 20px;
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  grid-gap: 2px;
+  text-align: left;
+  font-size: 16px;
+}
+.protection section.window-content form button.checkbouclier i {
+  color: #8b2222;
+}
+.protection section.window-content form button.checkbouclier:hover {
+  background: #000000;
+  color: white;
+}
+.protection section.window-content form button.checkbouclier.checked {
+  background: #D3D3D3;
+}
+.protection section.window-content form button.checkbouclier.checked i {
+  color: #228B22;
+}
+.protection section.window-content form label {
+  display: grid;
+  grid-template-columns: 1fr 100px;
+  grid-gap: 2px;
+  font-size: 16px;
+  font-weight: bold;
+  font-variant: small-caps;
+  align-items: flex-end;
+  align-content: flex-end;
+}
+.protection section.window-content form label input {
+  width: 100%;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-radius: 0px;
+  padding: 0px;
+  margin: 0px;
+  border-color: #000000;
+  color: #000000;
+  text-align: center;
+  background: transparent;
+  font-size: 14px;
+}
+.protection section.window-content form div.block {
+  grid-column: 2/4;
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 2px;
+  background: #D3D3D3;
+}
+.protection section.window-content form div.editor {
+  min-height: 164px;
+}
+.protection section.window-content form div.editor menu {
+  border-radius: 0px;
+}
+.protection section.window-content form div.editor > div.editor-content {
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 5px;
+}
+
 .dialog.hp section.window-content {
   background: #A9A9A9;
 }
@@ -3686,7 +4557,7 @@ li.hp.roll div.message-content div.result.success {
 li.hp.roll div.message-content div.result.fail {
   color: #8b2222;
 }
-li.hp.roll div.message-content div.sortilege, li.hp.roll div.message-content div.potion {
+li.hp.roll div.message-content div.sortilege, li.hp.roll div.message-content div.potion, li.hp.roll div.message-content div.arme, li.hp.roll div.message-content div.armure {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 5px;
@@ -3698,28 +4569,28 @@ li.hp.roll div.message-content div.sortilege, li.hp.roll div.message-content div
   font-variant: small-caps;
   font-size: 15px;
 }
-li.hp.roll div.message-content div.sortilege span, li.hp.roll div.message-content div.potion span {
+li.hp.roll div.message-content div.sortilege span, li.hp.roll div.message-content div.potion span, li.hp.roll div.message-content div.arme span, li.hp.roll div.message-content div.armure span {
   grid-column: 1/3;
   text-align: left;
 }
-li.hp.roll div.message-content div.sortilege span.mid-first, li.hp.roll div.message-content div.potion span.mid-first {
+li.hp.roll div.message-content div.sortilege span.mid-first, li.hp.roll div.message-content div.potion span.mid-first, li.hp.roll div.message-content div.arme span.mid-first, li.hp.roll div.message-content div.armure span.mid-first {
   grid-column: 1;
 }
-li.hp.roll div.message-content div.sortilege span.mid-second, li.hp.roll div.message-content div.potion span.mid-second {
+li.hp.roll div.message-content div.sortilege span.mid-second, li.hp.roll div.message-content div.potion span.mid-second, li.hp.roll div.message-content div.arme span.mid-second, li.hp.roll div.message-content div.armure span.mid-second {
   grid-column: 2;
 }
-li.hp.roll div.message-content div.sortilege span.tri-row, li.hp.roll div.message-content div.potion span.tri-row {
+li.hp.roll div.message-content div.sortilege span.tri-row, li.hp.roll div.message-content div.potion span.tri-row, li.hp.roll div.message-content div.arme span.tri-row, li.hp.roll div.message-content div.armure span.tri-row {
   grid-row: 1/4;
 }
-li.hp.roll div.message-content div.sortilege span.description, li.hp.roll div.message-content div.potion span.description {
+li.hp.roll div.message-content div.sortilege span.description, li.hp.roll div.message-content div.potion span.description, li.hp.roll div.message-content div.arme span.description, li.hp.roll div.message-content div.armure span.description {
   text-align: justify;
   font-variant: normal;
   font-size: 13px;
 }
-li.hp.roll div.message-content div.sortilege span p, li.hp.roll div.message-content div.potion span p {
+li.hp.roll div.message-content div.sortilege span p, li.hp.roll div.message-content div.potion span p, li.hp.roll div.message-content div.arme span p, li.hp.roll div.message-content div.armure span p {
   display: contents;
 }
-li.hp.roll div.message-content div.sortilege span b.title, li.hp.roll div.message-content div.potion span b.title {
+li.hp.roll div.message-content div.sortilege span b.title, li.hp.roll div.message-content div.potion span b.title, li.hp.roll div.message-content div.arme span b.title, li.hp.roll div.message-content div.armure span b.title {
   text-transform: uppercase;
   font-size: 15px;
 }
