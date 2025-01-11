@@ -58,6 +58,14 @@ export function getDefaultImg(type) {
     case "sortilege":
       img = "systems/harry-potter-jdr/assets/icons/sortilege.svg";
       break;
+
+    case "arme":
+      img = "systems/harry-potter-jdr/assets/icons/arme.svg";
+      break;
+
+    case "armure":
+      img = "systems/harry-potter-jdr/assets/icons/armure.svg";
+      break;
   }
 
   return img;

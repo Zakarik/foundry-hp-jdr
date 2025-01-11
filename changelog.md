@@ -1,4 +1,7 @@
 # Changelog
+## v0.18.0
+- Ajout des icônes pour les armes et protections.
+
 ## v0.17.0
 - Ajout des armes et des protections.
 - Ajout d'un compteur de points de création pour les avantages / désavantages, et d'un paramètre permettant de définir les points de base.
