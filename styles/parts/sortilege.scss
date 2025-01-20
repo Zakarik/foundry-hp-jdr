@@ -88,6 +88,41 @@
                                 background: transparent;
                             }
                         }
+
+                        &.incantation {
+                            display: grid;
+                            grid-template-columns: 1fr;
+                            grid-gap: 2px;
+                            background: $backgroundClair;
+                            border: 1px solid $black;
+                            border-radius: 5px;
+                            align-items: center;
+                            justify-items: center;
+                            grid-gap: 2px;
+                            padding: 5px;
+
+                            span {
+                                font-weight: bold;
+                                font-variant: small-caps;
+                                font-size: 15px;
+                                white-space: nowrap;
+                            }
+
+                            input {
+                                width: 100%;
+                                border-top: 0px;
+                                border-left: 0px;
+                                border-right: 0px;
+                                border-radius: 0px;
+                                padding: 0px;
+                                margin: 0px;
+                                border-color: $black;
+                                color: $black;
+                                text-align: center;
+                                background: transparent;
+                                font-size: 14px;
+                            }
+                        }
                     }
 
                     div {
@@ -299,9 +334,11 @@
                     border: 1px solid $black;
                     border-radius: 5px;
                     padding: 2px;
+                    background: $backgroundClair;
                 }
 
                 &.editor {
+
                     min-height: 300px;
 
                     menu {

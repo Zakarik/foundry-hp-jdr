@@ -946,9 +946,20 @@
 }
 .sorcier section.window-content section.body div.tab.sortileges.active div.line {
   display: grid;
-  grid-template-columns: 1fr 100px 50px 150px 150px;
+  grid-template-columns: 1fr;
+}
+.sorcier section.window-content section.body div.tab.sortileges.active div.line div.header {
+  display: grid;
+  grid-template-columns: max-content 1fr 100px 50px 150px 150px;
   align-items: center;
   cursor: context-menu;
+}
+.sorcier section.window-content section.body div.tab.sortileges.active div.line div.header > i {
+  margin-right: 5px;
+  cursor: pointer;
+}
+.sorcier section.window-content section.body div.tab.sortileges.active div.line div.header > i:hover {
+  color: white;
 }
 .sorcier section.window-content section.body div.tab.sortileges.active div.line span.niveau, .sorcier section.window-content section.body div.tab.sortileges.active div.line span.type, .sorcier section.window-content section.body div.tab.sortileges.active div.line span.cibles, .sorcier section.window-content section.body div.tab.sortileges.active div.line span.malus,
 .sorcier section.window-content section.body div.tab.sortileges.active div.line div.niveau,
@@ -982,7 +993,7 @@
   display: grid;
   grid-template-columns: 1fr 15px;
   grid-gap: 2px;
-  width: 200px;
+  width: 250px;
   padding-left: 5px;
   padding-right: 5px;
   align-items: center;
@@ -1014,6 +1025,28 @@
 .sorcier section.window-content section.body div.tab.sortileges.active div.line div.text {
   grid-column: 1/6;
   border-top: 1px dotted #A9A9A9;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.sorcier section.window-content section.body div.tab.sortileges.active div.line span.text a.extend,
+.sorcier section.window-content section.body div.tab.sortileges.active div.line div.text a.extend {
+  text-align: center;
+  font-size: 15px;
+  border-bottom: 1px solid #000000;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-left: 1px solid #000000;
+  border-right: 1px solid #000000;
+}
+.sorcier section.window-content section.body div.tab.sortileges.active div.line span.text a.extend i:hover,
+.sorcier section.window-content section.body div.tab.sortileges.active div.line div.text a.extend i:hover {
+  text-shadow: none;
+  box-shadow: none;
+}
+.sorcier section.window-content section.body div.tab.sortileges.active div.line span.text a.extend:hover,
+.sorcier section.window-content section.body div.tab.sortileges.active div.line div.text a.extend:hover {
+  background: #000000;
+  color: white;
 }
 .sorcier section.window-content section.body div.tab.sortileges.active div.line span.roll,
 .sorcier section.window-content section.body div.tab.sortileges.active div.line div.roll {
@@ -1087,9 +1120,20 @@
 }
 .sorcier section.window-content section.body div.tab.potions.active div.line {
   display: grid;
-  grid-template-columns: 1fr 100px 100px 150px 150px;
+  grid-template-columns: 1fr;
+}
+.sorcier section.window-content section.body div.tab.potions.active div.line div.header {
+  display: grid;
+  grid-template-columns: max-content 1fr 100px 100px 150px 150px;
   align-items: center;
   cursor: context-menu;
+}
+.sorcier section.window-content section.body div.tab.potions.active div.line div.header > i.far {
+  margin-right: 5px;
+  cursor: pointer;
+}
+.sorcier section.window-content section.body div.tab.potions.active div.line div.header > i.far:hover {
+  color: white;
 }
 .sorcier section.window-content section.body div.tab.potions.active div.line span.niveau, .sorcier section.window-content section.body div.tab.potions.active div.line span.ingredientstype, .sorcier section.window-content section.body div.tab.potions.active div.line span.cibles, .sorcier section.window-content section.body div.tab.potions.active div.line span.malus,
 .sorcier section.window-content section.body div.tab.potions.active div.line div.niveau,
@@ -1823,7 +1867,7 @@
   color: white;
 }
 .creature section.window-content header.main div.caracteristiques div span.value {
-  background: #F5F5F5;
+  background: white;
   border-radius: 5px;
   border: 1px solid;
   text-align: center;
@@ -1841,6 +1885,80 @@
   background: #F5F5F5;
   height: 20px;
   font-size: 15px;
+}
+.creature section.window-content header.main div.caracteristiques button.generation {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 5px;
+  margin: 0px;
+  color: #000000;
+  font-variant: small-caps;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  font-weight: bold;
+  background: #A9A9A9;
+  text-align: left;
+  align-items: center;
+  font-size: 15px;
+  line-height: 22px;
+  height: 25px;
+}
+.creature section.window-content header.main div.caracteristiques button.generation i.fa-hexagon-check {
+  color: #228B22;
+}
+.creature section.window-content header.main div.caracteristiques button.generation i.fa-xmark {
+  color: #8b2222;
+}
+.creature section.window-content header.main div.caracteristiques button.generation:hover {
+  background: white;
+  box-shadow: none;
+}
+.creature section.window-content header.main div.caracteristiques.generation div.main {
+  grid-template-columns: 20px 1fr 50px 90px;
+}
+.creature section.window-content header.main div.caracteristiques.generation div.jet {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  grid-gap: 2px;
+  background: white;
+  border-radius: 5px;
+  border: 1px solid;
+  text-align: center;
+  font-size: 15px;
+  align-items: center;
+}
+.creature section.window-content header.main div.caracteristiques.generation div.jet input {
+  border-radius: 0px;
+  background: transparent;
+  width: 100%;
+  color: #000000;
+  border: 0px;
+  padding: 0px;
+  margin: 0px;
+  height: 18px;
+}
+.creature section.window-content header.main div.caracteristiques.generation div.jet i {
+  color: #000000;
+  cursor: pointer;
+}
+.creature section.window-content header.main div.caracteristiques.generation div.jet i:hover {
+  color: #A9A9A9;
+}
+.creature section.window-content header.main div.caracteristiques.generation button.generation {
+  background: white;
+}
+.creature section.window-content header.main div.caracteristiques.generation button.generation:hover {
+  background: #A9A9A9;
+  box-shadow: none;
+}
+.creature section.window-content header.main.generation {
+  grid-template-columns: 200px 1fr 280px;
+}
+.creature section.window-content section.body {
+  padding-top: 8px;
 }
 .creature section.window-content section.body nav.tabs {
   display: grid;
@@ -1875,7 +1993,7 @@
 }
 .creature section.window-content section.body button.ModSeuil {
   grid-column: 6;
-  width: calc(100% - 5px);
+  width: 100%;
   border: 1px solid #000000;
   border-radius: 5px;
   padding: 2px;
@@ -2319,9 +2437,20 @@
 }
 .creature section.window-content section.body div.tab.capacites.active div.tab.listpouvoirs.active div.line {
   display: grid;
-  grid-template-columns: 1fr 100px 150px 150px;
+  grid-template-columns: 1fr;
+}
+.creature section.window-content section.body div.tab.capacites.active div.tab.listpouvoirs.active div.line div.header {
+  display: grid;
+  grid-template-columns: max-content 1fr 100px 150px 150px;
   align-items: center;
   cursor: context-menu;
+}
+.creature section.window-content section.body div.tab.capacites.active div.tab.listpouvoirs.active div.line div.header > i {
+  margin-right: 5px;
+  cursor: pointer;
+}
+.creature section.window-content section.body div.tab.capacites.active div.tab.listpouvoirs.active div.line div.header > i:hover {
+  color: white;
 }
 .creature section.window-content section.body div.tab.capacites.active div.tab.listpouvoirs.active div.line span.niveau, .creature section.window-content section.body div.tab.capacites.active div.tab.listpouvoirs.active div.line span.cibles, .creature section.window-content section.body div.tab.capacites.active div.tab.listpouvoirs.active div.line span.malus,
 .creature section.window-content section.body div.tab.capacites.active div.tab.listpouvoirs.active div.line div.niveau,
@@ -3257,6 +3386,38 @@
   margin: 0px;
   background: transparent;
 }
+.sortilege section.window-content form div.data label.incantation {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2px;
+  background: #D3D3D3;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  align-items: center;
+  justify-items: center;
+  grid-gap: 2px;
+  padding: 5px;
+}
+.sortilege section.window-content form div.data label.incantation span {
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 15px;
+  white-space: nowrap;
+}
+.sortilege section.window-content form div.data label.incantation input {
+  width: 100%;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-radius: 0px;
+  padding: 0px;
+  margin: 0px;
+  border-color: #000000;
+  color: #000000;
+  text-align: center;
+  background: transparent;
+  font-size: 14px;
+}
 .sortilege section.window-content form div.data div.cible {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -3426,6 +3587,7 @@
   border: 1px solid #000000;
   border-radius: 5px;
   padding: 2px;
+  background: #D3D3D3;
 }
 .sortilege section.window-content form div.editor {
   min-height: 300px;
@@ -3645,6 +3807,7 @@
   border: 1px solid #000000;
   border-radius: 5px;
   padding: 2px;
+  background: #D3D3D3;
 }
 .potion section.window-content form div.editor {
   min-height: 300px;
@@ -4496,7 +4659,6 @@ li.hp.roll div.message-content {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 2px;
-  cursor: pointer;
 }
 li.hp.roll div.message-content > header {
   text-align: center;
@@ -4525,6 +4687,11 @@ li.hp.roll div.message-content span.part-total {
   border-top: 1px solid #000000;
   border-left: 1px solid #000000;
   border-right: 1px solid #000000;
+}
+li.hp.roll div.message-content div.blockRoll {
+  display: grid;
+  grid-gap: 2px;
+  cursor: pointer;
 }
 li.hp.roll div.message-content div.bonus {
   display: flex;
@@ -4576,19 +4743,25 @@ li.hp.roll div.message-content div.sortilege span, li.hp.roll div.message-conten
 li.hp.roll div.message-content div.sortilege span.mid-first, li.hp.roll div.message-content div.potion span.mid-first, li.hp.roll div.message-content div.arme span.mid-first, li.hp.roll div.message-content div.armure span.mid-first {
   grid-column: 1;
 }
+li.hp.roll div.message-content div.sortilege span.mid-first p, li.hp.roll div.message-content div.potion span.mid-first p, li.hp.roll div.message-content div.arme span.mid-first p, li.hp.roll div.message-content div.armure span.mid-first p {
+  display: contents;
+}
 li.hp.roll div.message-content div.sortilege span.mid-second, li.hp.roll div.message-content div.potion span.mid-second, li.hp.roll div.message-content div.arme span.mid-second, li.hp.roll div.message-content div.armure span.mid-second {
   grid-column: 2;
 }
+li.hp.roll div.message-content div.sortilege span.mid-second p, li.hp.roll div.message-content div.potion span.mid-second p, li.hp.roll div.message-content div.arme span.mid-second p, li.hp.roll div.message-content div.armure span.mid-second p {
+  display: contents;
+}
 li.hp.roll div.message-content div.sortilege span.tri-row, li.hp.roll div.message-content div.potion span.tri-row, li.hp.roll div.message-content div.arme span.tri-row, li.hp.roll div.message-content div.armure span.tri-row {
   grid-row: 1/4;
+}
+li.hp.roll div.message-content div.sortilege span.tri-row p, li.hp.roll div.message-content div.potion span.tri-row p, li.hp.roll div.message-content div.arme span.tri-row p, li.hp.roll div.message-content div.armure span.tri-row p {
+  display: contents;
 }
 li.hp.roll div.message-content div.sortilege span.description, li.hp.roll div.message-content div.potion span.description, li.hp.roll div.message-content div.arme span.description, li.hp.roll div.message-content div.armure span.description {
   text-align: justify;
   font-variant: normal;
   font-size: 13px;
-}
-li.hp.roll div.message-content div.sortilege span p, li.hp.roll div.message-content div.potion span p, li.hp.roll div.message-content div.arme span p, li.hp.roll div.message-content div.armure span p {
-  display: contents;
 }
 li.hp.roll div.message-content div.sortilege span b.title, li.hp.roll div.message-content div.potion span b.title, li.hp.roll div.message-content div.arme span b.title, li.hp.roll div.message-content div.armure span b.title {
   text-transform: uppercase;
@@ -4696,6 +4869,18 @@ li.hp div.message-content span.msg.justify {
   text-align: justify;
   padding-left: 2px;
   padding-right: 2px;
+}
+li.hp div.message-content a.rollCaracteristique, li.hp div.message-content a.rollCompetence {
+  background: #DDD;
+  padding: 1px 4px;
+  border: 1px solid var(--color-border-dark-tertiary);
+  border-radius: 2px;
+  white-space: nowrap;
+  word-break: break-all;
+}
+li.hp div.message-content a.rollCaracteristique i, li.hp div.message-content a.rollCompetence i {
+  color: var(--color-text-dark-inactive);
+  margin-right: 0.25em;
 }
 
 li.hp.initiative div.message-content, li.hp.initiative div.dice-result {

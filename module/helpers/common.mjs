@@ -252,8 +252,7 @@ export async function doRoll(actor, data) {
   if(!foundry.utils.isEmpty(sortilege)) main.sortilege = sortilege;
   if(!foundry.utils.isEmpty(potion)) main.potion = potion;
   if(!foundry.utils.isEmpty(dataDgts)) {
-    console.warn(dataDgts);
-    if (/^\d{1,2}d\d{1,2}$/i.test(dataDgts.value)) {
+    if (/^\d{1,2}d\d{1,2}/i.test(dataDgts.value)) {
       degats.base = dataDgts.value;
       if(dataDgts.bonus != '0') {
         dataDgts.value += ` + ${dataDgts.bonus}`;
@@ -268,7 +267,7 @@ export async function doRoll(actor, data) {
       rolls.push(rollDgts);
     } else {
       if(dataDgts.bonus) {
-        if (/^\d{1,2}d\d{1,2}$/i.test(dataDgts.bonus)) {
+        if (/^\d{1,2}d\d{1,2}/i.test(dataDgts.bonus)) {
           const rollDgts = new Roll(`${dataDgts.bonus} + ${dataDgts.value}`);
           await rollDgts.evaluate();
 
@@ -300,13 +299,16 @@ export async function doRoll(actor, data) {
       content:await renderTemplate('systems/harry-potter-jdr/templates/roll/std.html', main),
       sound: CONFIG.sounds.dice,
       rolls:rolls,
+      flags:{
+        'harry-potter-jdr':{
+          roll:true,
+          resultRoll:resultRoll
+        }
+      },
       rollMode:chatRollMode,
   };
 
   const msg = await ChatMessage.create(chatData);
-
-  msg.setFlag('harry-potter-jdr', 'roll', true);
-  msg.setFlag('harry-potter-jdr', 'resultRoll', resultRoll);
 
   return {
     chatData:main,
@@ -1239,15 +1241,16 @@ export async function prepareRollDegats(actor, id=null) {
       content:await renderTemplate('systems/harry-potter-jdr/templates/roll/std.html', main),
       sound: CONFIG.sounds.dice,
       rollMode:chatRollMode,
+      flags:{
+        'harry-potter-jdr':{
+          roll:true,
+        }
+      }
   };
 
   if(formula != '0') chatData.rolls = [roll];
 
-  console.warn(chatData);
-
   const msg = await ChatMessage.create(chatData);
-
-  msg.setFlag('harry-potter-jdr', 'roll', true);
 }
 
 export async function prepareRollCombat(id, actor) {
@@ -1332,7 +1335,9 @@ export async function prepareRollCombat(id, actor) {
 }
 
 export function splitArrayInHalf(array) {
-  const midIndex = Math.ceil(array.length / 2);
+  const customEntry = array.find(entry => entry.key === "custom");
+  const midIndex = Math.ceil((array.length-1 + (customEntry ? customEntry.data.length : 0)) / 2);
+
   return [array.slice(0, midIndex), array.slice(midIndex)];
 }
 

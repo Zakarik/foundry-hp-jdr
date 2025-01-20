@@ -22,7 +22,6 @@ li.hp.roll {
             display: grid;
             grid-template-columns: 1fr;
             grid-gap: 2px;
-            cursor: pointer;
 
             >header {
                 text-align: center;
@@ -64,6 +63,12 @@ li.hp.roll {
             }
 
             div {
+                &.blockRoll {
+                    display: grid;
+                    grid-gap: 2px;
+                    cursor: pointer;
+                }
+
                 &.bonus {
                     display: flex;
                     justify-content: space-between;
@@ -121,24 +126,32 @@ li.hp.roll {
 
                         &.mid-first {
                             grid-column: 1;
+
+                            p {
+                                display: contents;
+                            }
                         }
 
                         &.mid-second {
                             grid-column: 2;
+
+                            p {
+                                display: contents;
+                            }
                         }
 
                         &.tri-row {
                             grid-row: 1 / 4;
+
+                            p {
+                                display: contents;
+                            }
                         }
 
                         &.description {
                             text-align: justify;
                             font-variant: normal;
                             font-size: 13px;
-                        }
-
-                        p {
-                            display: contents;
                         }
 
                         b {
@@ -279,6 +292,23 @@ li.hp {
                         text-align: justify;
                         padding-left: 2px;
                         padding-right: 2px;
+                    }
+                }
+            }
+
+            a {
+                &.rollCaracteristique,
+                &.rollCompetence {
+                    background: #DDD;
+                    padding: 1px 4px;
+                    border: 1px solid var(--color-border-dark-tertiary);
+                    border-radius: 2px;
+                    white-space: nowrap;
+                    word-break: break-all;
+
+                    i {
+                        color: var(--color-text-dark-inactive);
+                        margin-right: 0.25em;
                     }
                 }
             }

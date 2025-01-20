@@ -91,6 +91,23 @@
     "TotalDegatsSupplmentaire":"Dégâts supplémentaires complets",
     "DemiDegats":"Demi-dégâts",
     "PointsCreationRestant":"Points de créations restant",
+    "ModeCreation":"Mode création",
+    "GenerationForce":"Génération de la Force",
+    "GenerationConstitution":"Génération de la Constitution",
+    "GenerationTaille":"Génération de la Taille",
+    "GenerationPerception":"Génération de la Perception",
+    "GenerationIntelligence":"Génération de l'Intelligence",
+    "GenerationDexterite":"Génération de la Dextérité",
+    "GenerationApparence":"Génération de l'Apparence",
+    "GenerationPouvoir":"Génération du Pouvoir",
+    "SetBaseForce":"Base de Force : {value}",
+    "SetBaseConstitution":"Base de Constitution : {value}",
+    "SetBaseTaille":"Base de Taille : {value}",
+    "SetBasePerception":"Base de Perception : {value}",
+    "SetBaseIntelligence":"Base d'Intelligence : {value}",
+    "SetBaseDexterite":"Base de Dextérité : {value}",
+    "SetBaseApparence":"Base d'Apparence : {value}",
+    "SetBasePouvoir":"Base de Pouvoir : {value}",
     "ARMES":{
       "Label":"Armes",
       "Distance":"Arme à distance",
@@ -170,6 +187,7 @@
       "Bagarre": "Bagarre",
       "Bibliotheque": "Bibliothèque",
       "Commandement": "Commandement",
+      "Connaissances": "Connaissance",
       "Connaissancescolaire": "Connaissance scolaire (S-M)",
       "Deguisement": "Déguisement",
       "Discretion": "Discrétion",
@@ -226,7 +244,9 @@
       "Musiquemoldue": "Musique moldue",
       "Potion": "Potion",
       "Soinsdescreaturesmagiques": "Soins des créatures magiques",
-      "Volenbalai": "Vol en balai"
+      "Volenbalai": "Vol en balai",
+      "Imitation": "Imitation",
+      "Equitation": "Équitation"
     },
     "SORTILEGES":{
       "Label":"Sortilèges",
@@ -240,7 +260,8 @@
       "FormuleExtremeApprise":"Formule extrême apprise",
       "FormuleExtremeApprise-short":"FE apprise",
       "ApprisMaison":"Appris avant la scolarisation",
-      "PouvoirUtilise":"Pouvoir x3 utilisé"
+      "PouvoirUtilise":"Pouvoir x3 utilisé",
+      "Incantation":"Incantation"
     },
     "POTIONS":{
       "Label":"Potions",

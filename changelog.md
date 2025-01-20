@@ -1,4 +1,16 @@
 # Changelog
+## v0.20.0
+- Ajout de la possibilité de générer les statistiques des créatures, comme indiqué dans l'encyclopédie des êtres et des non-êtres.
+- Ajout du champ "Incantation" qui avait été oublié dans les sortilèges.
+- Ajout de la possibilité de mettre des compétences personnalisées sur les créatures.
+- Ajout de la possibilité réduire les potions et sortilèges.
+- Ajout de la première partie du compendium.
+- Correction d'un bug de duplication de certains jets de dés.
+- Correction d'un problème de jets non fonctionnels lorsqu'ils étaient dans le tchat.
+- Correction d'un problème pour le jet de combat des créatures.
+- Correction du calcul pour la division en colonne des compétences des créatures / familiers.
+- Correction d'un bug d'affichage de certains boutons.
+
 ## v0.19.0
 - Correction de l'icône des protections.
 

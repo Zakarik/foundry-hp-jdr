@@ -12,11 +12,12 @@
         section {
             &.body {
                 @import "subparts/menu.scss";
+                padding-top: 8px;
 
                 button {
                     &.ModSeuil {
                         grid-column: 6;
-                        width: calc(100% - 5px);
+                        width: 100%;
                         border: 1px solid $black;
                         border-radius: 5px;
                         padding: 2px;

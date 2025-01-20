@@ -8,12 +8,16 @@
     {{/each}}
 </div>
 {{/if}}
-{{#if label}}
-<h4 class="formula">{{label}}</h4>
-{{/if}}
-{{#if tooltip}}{{{tooltip}}}{{/if}}
-{{#if result}}
-<div class="result {{ifThen success 'success' 'fail'}}">{{result}}</div>
+{{#if (or tooltip label resulkt)}}
+<div class="blockRoll">
+    {{#if label}}
+    <h4 class="formula">{{label}}</h4>
+    {{/if}}
+    {{#if tooltip}}{{{tooltip}}}{{/if}}
+    {{#if result}}
+    <div class="result {{ifThen success 'success' 'fail'}}">{{result}}</div>
+    {{/if}}
+</div>
 {{/if}}
 {{#if sortilege}}
 <div class="sortilege">

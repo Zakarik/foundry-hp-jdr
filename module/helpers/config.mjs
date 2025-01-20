@@ -370,6 +370,11 @@ HP.competencescreatures = {
     langueetrangere:{
         specialisation:true
     },
+    connaissances:{
+        specialisation:true
+    },
+    equitation:{},
+    imitation:{},
     orientation:{},
     persuasionbaratin:{},
     pistage:{},

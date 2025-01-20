@@ -1,0 +1,12 @@
+2025/01/20-13:08:29.076 1940 Recovering log #14
+2025/01/20-13:08:29.083 1940 Delete type=0 #3
+2025/01/20-13:08:29.083 1940 Delete type=2 #5
+2025/01/20-13:08:29.084 1940 Delete type=0 #6
+2025/01/20-13:08:29.084 1940 Delete type=0 #14
+2025/01/20-13:08:29.084 1940 Delete type=3 #2
+2025/01/20-13:08:29.084 1940 Delete type=3 #4
+2025/01/20-13:08:29.084 1940 Delete type=3 #7
+2025/01/20-13:11:09.656 3660 Level-0 table #20: started
+2025/01/20-13:11:09.656 3660 Level-0 table #20: 0 bytes OK
+2025/01/20-13:11:09.660 3660 Delete type=0 #18
+2025/01/20-13:11:09.669 3660 Manual compaction at level-0 from '!items!BpquEF3yCd1rapJk' @ 72057594037927935 : 1 .. '!items.effects!xqTITvmQYkD5Gxj9.guI4cIZfRiusAWbx' @ 0 : 0; will stop at (end)

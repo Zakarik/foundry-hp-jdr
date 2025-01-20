@@ -162,9 +162,25 @@ div {
                     div {
                         &.line {
                             display: grid;
-                            grid-template-columns: 1fr 100px 150px 150px;
-                            align-items: center;
-                            cursor: context-menu;
+                            grid-template-columns: 1fr;
+
+                            div {
+                                &.header {
+                                    display: grid;
+                                    grid-template-columns: max-content 1fr 100px 150px 150px;
+                                    align-items: center;
+                                    cursor: context-menu;
+
+                                    >i {
+                                        margin-right: 5px;
+                                        cursor: pointer;
+
+                                        &:hover {
+                                            color: $white;
+                                        }
+                                    }
+                                }
+                            }
 
                             span,
                             div {

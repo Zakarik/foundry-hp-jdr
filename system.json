@@ -29,7 +29,93 @@
     "minimum": "12",
     "verified": "12"
   },
-  "packs": [],
+  "packs": [
+    {
+      "name":"armes",
+      "label":"Armes",
+      "type":"Item"
+    },
+    {
+      "name":"armures",
+      "label":"Armures",
+      "type":"Item"
+    },
+    {
+      "name":"avantages",
+      "label":"Avantages",
+      "type":"Item"
+    },
+    {
+      "name":"desavantages",
+      "label":"Désavantages",
+      "type":"Item"
+    },
+    {
+      "name":"capacites-de-familier",
+      "label":"Capacités de familier",
+      "type":"Item"
+    },
+    {
+      "name":"coups-de-pouce-du-destin",
+      "label":"Coups de pouce du destin",
+      "type":"Item"
+    },
+    {
+      "name":"croche-pattes-du-destin",
+      "label":"Croche pattes du destin",
+      "type":"Item"
+    },
+    {
+      "name":"journaux",
+      "label":"Journaux",
+      "type":"JournalEntry"
+    },
+    {
+      "name":"livres",
+      "label":"Livres",
+      "type":"Item"
+    },
+    {
+      "name":"objets",
+      "label":"Objets",
+      "type":"Item"
+    },
+    {
+      "name":"objets-magiques",
+      "label":"Objets magiques",
+      "type":"Item"
+    },
+    {
+      "name":"objets-magiques-mineurs",
+      "label":"Objets magiques mineurs",
+      "type":"Item"
+    },
+    {
+      "name":"tables-aleatoires",
+      "label":"Tables aléatoires",
+      "type":"RollTable"
+    }
+  ],
+  "packFolders":[
+    {
+      "name":"Harry Potter JDR",
+      "packs":[
+        "armes",
+        "armures",
+        "avantages",
+        "desavantages",
+        "capacites-de-familier",
+        "coups-de-pouce-du-destin",
+        "croche-pattes-du-destin",
+        "journaux",
+        "livres",
+        "objets",
+        "objets-magiques",
+        "objets-magiques-mineurs",
+        "tables-aleatoires"
+      ]
+    }
+  ],
   "grid": {
     "distance": 5,
     "units": "m"

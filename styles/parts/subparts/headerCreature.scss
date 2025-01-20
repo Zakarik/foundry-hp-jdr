@@ -237,7 +237,7 @@ header.main {
                     }
 
                     &.value {
-                        background: $casse;
+                        background: $white;
                         border-radius: 5px;
                         border: 1px solid;
                         text-align: center;
@@ -260,6 +260,99 @@ header.main {
                     }
                 }
             }
+
+            button {
+                &.generation {
+                    display: grid;
+                    grid-template-columns: 1fr max-content;
+                    padding-top: 0px;
+                    padding-right: 0px;
+                    padding-bottom: 0px;
+                    padding-left: 5px;
+                    margin: 0px;
+                    color: $black;
+                    font-variant: small-caps;
+                    border: 1px solid $black;
+                    border-radius: 5px;
+                    font-weight: bold;
+                    background: $background;
+                    text-align: left;
+                    align-items: center;
+                    font-size: 15px;
+                    line-height: 22px;
+                    height: 25px;
+
+                    i {
+                        &.fa-hexagon-check {
+                            color: $valide;
+                        }
+
+                        &.fa-xmark {
+                            color: $unvalide;
+                        }
+                    }
+
+                    &:hover {
+                        background: $white;
+                        box-shadow: none;
+                    }
+                }
+            }
+
+            &.generation {
+                div {
+                    &.main {
+                        grid-template-columns: 20px 1fr 50px 90px;
+                    }
+
+                    &.jet {
+                        display: grid;
+                        grid-template-columns: 1fr max-content;
+                        grid-gap: 2px;
+                        background: $white;
+                        border-radius: 5px;
+                        border: 1px solid;
+                        text-align: center;
+                        font-size: 15px;
+                        align-items: center;
+
+                        input {
+                            border-radius: 0px;
+                            background: transparent;
+                            width: 100%;
+                            color: $black;
+                            border: 0px;
+                            padding: 0px;
+                            margin: 0px;
+                            height: 18px;
+                        }
+
+                        i {
+                            color: $black;
+                            cursor: pointer;
+
+                            &:hover {
+                                color: $background;
+                            }
+                        }
+                    }
+                }
+
+                button {
+                    &.generation {
+                        background: $white;
+
+                        &:hover {
+                            background: $background;
+                            box-shadow: none;
+                        }
+                    }
+                }
+            }
         }
+    }
+
+    &.generation {
+        grid-template-columns: 200px 1fr 280px;
     }
 }

@@ -952,12 +952,15 @@ export class SorcierActorSheet extends ActorSheet {
           sound: CONFIG.sounds.dice,
           rolls:allRoll,
           rollMode:chatRollMode,
+          flags:{
+            'harry-potter-jdr':{
+              roll:true,
+              multi:true
+            }
+          }
       };
 
       const msg = await ChatMessage.create(chatData);
-
-      msg.setFlag('harry-potter-jdr', 'roll', true);
-      msg.setFlag('harry-potter-jdr', 'multi', true);
     });
 
     html.find('a.toggleEvolutionCmp').click(async ev => {
@@ -1042,7 +1045,7 @@ export class SorcierActorSheet extends ActorSheet {
       prepareRollDegats(actor);
     });
 
-    html.find('div.sortileges .roll').click(async ev => {
+    html.find('div.sortileges span.roll').click(async ev => {
       const tgt = $(ev.currentTarget);
       const id = tgt.data("id");
       const label = tgt.data("label");
@@ -1099,11 +1102,14 @@ export class SorcierActorSheet extends ActorSheet {
           content:await renderTemplate('systems/harry-potter-jdr/templates/roll/std.html', main),
           sound: CONFIG.sounds.dice,
           rollMode:chatRollMode,
+          flags:{
+            'harry-potter-jdr':{
+              roll:true,
+            }
+          }
       };
 
       const msg = await ChatMessage.create(chatData);
-
-      msg.setFlag('harry-potter-jdr', 'roll', true);
     });
 
     html.find('.fe-appris').click(async ev => {
@@ -1126,7 +1132,7 @@ export class SorcierActorSheet extends ActorSheet {
       this.actor.items.get(id).update({['system.apprismaison']:result});
     });
 
-    html.find('div.potions .roll').click(async ev => {
+    html.find('div.potions span.roll').click(async ev => {
       const tgt = $(ev.currentTarget);
       const id = tgt.data("id");
       const label = tgt.data("label");
@@ -1177,11 +1183,14 @@ export class SorcierActorSheet extends ActorSheet {
           content:await renderTemplate('systems/harry-potter-jdr/templates/roll/std.html', main),
           sound: CONFIG.sounds.dice,
           rollMode:chatRollMode,
+          flags:{
+            'harry-potter-jdr':{
+              roll:true,
+            }
+          }
       };
 
       const msg = await ChatMessage.create(chatData);
-
-      msg.setFlag('harry-potter-jdr', 'roll', true);
     });
 
     html.find('div.liste .sendchat').click(async ev => {
@@ -1209,11 +1218,14 @@ export class SorcierActorSheet extends ActorSheet {
           content:await renderTemplate('systems/harry-potter-jdr/templates/roll/msg.html', main),
           sound: CONFIG.sounds.dice,
           rollMode:chatRollMode,
+          flags:{
+            'harry-potter-jdr':{
+              roll:true,
+            }
+          }
       };
 
       const msg = await ChatMessage.create(chatData);
-
-      msg.setFlag('harry-potter-jdr', 'hp', true);
     });
 
     html.find('a.rollCaracteristique').click(async ev => {
@@ -1324,11 +1336,14 @@ export class SorcierActorSheet extends ActorSheet {
           content:await renderTemplate('systems/harry-potter-jdr/templates/roll/std.html', main),
           sound: CONFIG.sounds.dice,
           rollMode:chatRollMode,
+          flags:{
+            'harry-potter-jdr':{
+              roll:true,
+            }
+          }
       };
 
       const msg = await ChatMessage.create(chatData);
-
-      msg.setFlag('harry-potter-jdr', 'roll', true);
     });
   }
 

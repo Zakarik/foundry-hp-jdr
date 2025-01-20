@@ -1,5 +1,5 @@
 import {listCompetencesCreature} from '../../../helpers/models.mjs'
-import CaracteristiqueDataModel from '../parts/caracteristique.mjs'
+import CaracteristiqueCreatureDataModel from '../parts/caracteristiqueCreature.mjs'
 import ValueWithMaxDataModel from '../parts/valueWithMax.mjs'
 import ValueDataModel from '../parts/value.mjs'
 
@@ -11,6 +11,7 @@ export class CreatureDataModel extends foundry.abstract.TypeDataModel {
             nom:new StringField({initial:""}),
             description:new HTMLField({initial:""}),
             lien:new StringField({initial:""}),
+            generation:new BooleanField({initial:true}),
             derives:new SchemaField({
                 pv:new EmbeddedDataField(ValueWithMaxDataModel),
                 idee:new EmbeddedDataField(ValueDataModel),
@@ -19,14 +20,14 @@ export class CreatureDataModel extends foundry.abstract.TypeDataModel {
                 mouvement:new EmbeddedDataField(ValueDataModel),
             }),
             caracteristiques:new SchemaField({
-                force:new EmbeddedDataField(CaracteristiqueDataModel),
-                constitution:new EmbeddedDataField(CaracteristiqueDataModel),
-                taille:new EmbeddedDataField(CaracteristiqueDataModel),
-                perception:new EmbeddedDataField(CaracteristiqueDataModel),
-                intelligence:new EmbeddedDataField(CaracteristiqueDataModel),
-                dexterite:new EmbeddedDataField(CaracteristiqueDataModel),
-                apparence:new EmbeddedDataField(CaracteristiqueDataModel),
-                pouvoir:new EmbeddedDataField(CaracteristiqueDataModel),
+                force:new EmbeddedDataField(CaracteristiqueCreatureDataModel),
+                constitution:new EmbeddedDataField(CaracteristiqueCreatureDataModel),
+                taille:new EmbeddedDataField(CaracteristiqueCreatureDataModel),
+                perception:new EmbeddedDataField(CaracteristiqueCreatureDataModel),
+                intelligence:new EmbeddedDataField(CaracteristiqueCreatureDataModel),
+                dexterite:new EmbeddedDataField(CaracteristiqueCreatureDataModel),
+                apparence:new EmbeddedDataField(CaracteristiqueCreatureDataModel),
+                pouvoir:new EmbeddedDataField(CaracteristiqueCreatureDataModel),
             }),
             combat:new ArrayField(new SchemaField({
                 id:new StringField({initial:""}),

@@ -14,7 +14,7 @@
     </header>
     {{#each actor.listCombat}}
         <input type="hidden" name="system.combat.{{@index}}.id" value="{{id}}" />
-        <div class="line {{ifThen (isImpair @index) 'margin'}}">
+        <div class="line {{ifThen (isImpair @index) 'margin' ''}}">
             <input type="text" class="label" name="system.combat.{{@index}}.label" value="{{label}}" />
             <input type="number" name="system.combat.{{@index}}.attaque" value="{{attaque}}" min="0" />
             <input type="text" name="system.combat.{{@index}}.degats" value="{{degats}}" placeholder="1D6" />

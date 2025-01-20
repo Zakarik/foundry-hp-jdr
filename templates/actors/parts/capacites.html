@@ -39,30 +39,33 @@
             </header>
             {{#each actor.sortileges}}
                 <div class="line summary draggable {{ifThen (gte @index 1) 'bordertop' ''}}" data-item-id="{{_id}}">
-                    <div class="name">
-                        <span class="roll draggable" data-id="itm_{{_id}}" data-label="{{name}}">
-                            <i class="fa-solid fa-dice-d20"></i>
-                            {{name}}
-                        </span>
-                        <i class="fa-solid fa-comment-dots clickable sendchat" title="{{localize "HP.SendChat"}}" data-label="{{name}}" data-id="{{_id}}"></i>
-                        <i class="fa-solid fa-pen-to-square item-edit clickable" title="{{localize 'HP.Edit'}}"></i>
-                        <i class="fa-solid fa-trash item-delete clickable" title="{{localize 'HP.Supprimer'}}"></i>
-                        {{#if system.malus.fe.has}}
-                        <div class="btn">
-                            <button type="action" class="fe-appris {{ifThen system.malus.fe.appris 'check' ''}}" data-id="{{_id}}" data-value="{{system.malus.fe.appris}}">
-                                <span>{{localize "HP.SORTILEGES.FormuleExtremeApprise"}}</span>
-                                <i class="fa-solid {{ifThen system.malus.fe.appris 'fa-check' 'fa-xmark'}}"></i>
-                            </button>
+                    <div class="header js-toggler">
+                        <i class="far fa-minus-square"></i>
+                        <div class="name">
+                            <span class="roll draggable" data-id="itm_{{_id}}" data-label="{{name}}">
+                                <i class="fa-solid fa-dice-d20"></i>
+                                {{name}}
+                            </span>
+                            <i class="fa-solid fa-comment-dots clickable sendchat" title="{{localize "HP.SendChat"}}" data-label="{{name}}" data-id="{{_id}}"></i>
+                            <i class="fa-solid fa-pen-to-square item-edit clickable" title="{{localize 'HP.Edit'}}"></i>
+                            <i class="fa-solid fa-trash item-delete clickable" title="{{localize 'HP.Supprimer'}}"></i>
+                            {{#if system.malus.fe.has}}
+                            <div class="btn">
+                                <button type="action" class="fe-appris {{ifThen system.malus.fe.appris 'check' ''}}" data-id="{{_id}}" data-value="{{system.malus.fe.appris}}">
+                                    <span>{{localize "HP.SORTILEGES.FormuleExtremeApprise"}}</span>
+                                    <i class="fa-solid {{ifThen system.malus.fe.appris 'fa-check' 'fa-xmark'}}"></i>
+                                </button>
+                            </div>
+                            {{/if}}
                         </div>
-                        {{/if}}
-                    </div>
-                    <span class="niveau">{{system.niveau}}</span>
-                    <span class="cibles">{{cibles system.cibles}}</span>
-                    <div class="malus">
-                        <span>{{localize "HP.SORTILEGES.FormuleClassique-short"}} : {{ifThen (and system.malus.fe.appris system.malus.fe.fc.reduction) (concat system.malus.fe.fc.malus '%') (concat system.malus.fc '%')}}</span>
-                        {{#if system.malus.fe.has}}
-                        <span>{{localize "HP.SORTILEGES.FormuleExtreme-short"}} : {{ifThen (and system.malus.fe.fc.reduction (not system.malus.fe.appris)) (concat system.malus.fe.fc.malus '% / ') ''}}{{system.malus.fe.malus}}%</span>
-                        {{/if}}
+                        <span class="niveau">{{system.niveau}}</span>
+                        <span class="cibles">{{cibles system.cibles}}</span>
+                        <div class="malus">
+                            <span>{{localize "HP.SORTILEGES.FormuleClassique-short"}} : {{ifThen (and system.malus.fe.appris system.malus.fe.fc.reduction) (concat system.malus.fe.fc.malus '%') (concat system.malus.fc '%')}}</span>
+                            {{#if system.malus.fe.has}}
+                            <span>{{localize "HP.SORTILEGES.FormuleExtreme-short"}} : {{ifThen (and system.malus.fe.fc.reduction (not system.malus.fe.appris)) (concat system.malus.fe.fc.malus '% / ') ''}}{{system.malus.fe.malus}}%</span>
+                            {{/if}}
+                        </div>
                     </div>
                     <div class="text">
                         {{{enriched}}}

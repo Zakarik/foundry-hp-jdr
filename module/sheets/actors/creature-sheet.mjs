@@ -12,6 +12,7 @@ import {
     enrichItems,
     prepareRollDegats,
     enrichDescription,
+    doRoll,
   } from "../../helpers/common.mjs";
 
   import toggler from '../../helpers/toggler.js';
@@ -151,11 +152,14 @@ export class CreatureActorSheet extends ActorSheet {
           content:await renderTemplate('systems/harry-potter-jdr/templates/roll/msg.html', main),
           sound: CONFIG.sounds.dice,
           rollMode:chatRollMode,
+          flags:{
+            'harry-potter-jdr':{
+              roll:true,
+            }
+          }
       };
 
       const msg = await ChatMessage.create(chatData);
-
-      msg.setFlag('harry-potter-jdr', 'hp', true);
     });
 
     html.find('.specialisation i.add').click(async ev => {
@@ -357,11 +361,14 @@ export class CreatureActorSheet extends ActorSheet {
           content:await renderTemplate('systems/harry-potter-jdr/templates/roll/std.html', main),
           sound: CONFIG.sounds.dice,
           rollMode:chatRollMode,
+          flags:{
+            'harry-potter-jdr':{
+              roll:true,
+            }
+          }
       };
 
       const msg = await ChatMessage.create(chatData);
-
-      msg.setFlag('harry-potter-jdr', 'roll', true);
     });
 
     html.find('.fe-appris').click(async ev => {
@@ -457,12 +464,62 @@ export class CreatureActorSheet extends ActorSheet {
           content:await renderTemplate('systems/harry-potter-jdr/templates/roll/std.html', main),
           sound: CONFIG.sounds.dice,
           rollMode:chatRollMode,
+          flags:{
+            'harry-potter-jdr':{
+              roll:true,
+            }
+          }
       };
 
       const msg = await ChatMessage.create(chatData);
-
-      msg.setFlag('harry-potter-jdr', 'roll', true);
     });
+
+    html.find('button.generation').click(async ev => {
+      const tgt = $(ev.currentTarget);
+      const value = tgt.data("value") ? false : true;
+
+      this.actor.update({[`system.generation`]:value})
+    });
+
+    html.find('i.rollGenerationCaracteristique').click(async ev => {
+      const chatRollMode = game.settings.get("core", "rollMode");
+      const tgt = $(ev.currentTarget);
+      const jet = tgt.data("jet");
+      const key = tgt.data("key");
+      const actor = this.actor;
+      const roll = new Roll(jet);
+      await roll.evaluate();
+      let rollTotal = roll.total;
+
+      let main = {
+        header:game.i18n.localize(`HP.Generation${capitalizeFirstLetter(key)}`),
+        tooltip:await roll.getTooltip(),
+        label:game.i18n.format(`HP.SetBase${capitalizeFirstLetter(key)}`, {value:rollTotal}),
+      }
+
+      let chatData = {
+        user:game.user.id,
+        speaker: {
+            actor: actor?.id ?? null,
+            token: actor?.token ?? null,
+            alias: actor?.name ?? null,
+            scene: actor?.token?.parent?.id ?? null
+        },
+        content:await renderTemplate('systems/harry-potter-jdr/templates/roll/std.html', main),
+        sound: CONFIG.sounds.dice,
+        rolls:[roll],
+        flags:{
+          'harry-potter-jdr':{
+            roll:true,
+          }
+        },
+        rollMode:chatRollMode,
+    };
+
+    const msg = await ChatMessage.create(chatData);
+
+    actor.update({[`system.caracteristiques.${key}.base`]:rollTotal});
+  });
   }
 
   async _prepareCharacterItems(actorData) {
@@ -472,7 +529,7 @@ export class CreatureActorSheet extends ActorSheet {
     const data = this.actor.system;
     const cfgCompetences = actor.type === 'familier' ? CONFIG.HP.competencesfamilier : CONFIG.HP.competencescreatures;
     const dataCompetence = data.competences;
-    const competences = Object.keys(dataCompetence).filter(c => Object.keys(cfgCompetences).includes(c));
+    const competences = Object.keys(dataCompetence).filter(c => Object.keys(cfgCompetences).includes(c) || c === 'custom');
     let listCompetences = [];
     let capacites = [];
     let sortilege = [];
@@ -549,8 +606,8 @@ export class CreatureActorSheet extends ActorSheet {
       specialisation:cfgCompetences[competences[c]]?.specialisation,
       data: dataCompetence[competences[c]]
     })).sort((a, b) => {
-      if (a.label === 'custom') return 1;
-      if (b.label === 'custom') return -1;
+      if (a.key === 'custom') return 1;
+      if (b.key === 'custom') return -1;
       return a.label.localeCompare(b.label);
     });
 
