@@ -12,6 +12,7 @@ export class SortilegeDataModel extends foundry.abstract.TypeDataModel {
                 o:new BooleanField({initial:false}),
                 p:new BooleanField({initial:false}),
                 v:new BooleanField({initial:false}),
+                s:new BooleanField({initial:false}),
             }),
             effets:new HTMLField({initial:""}),
             malus:new SchemaField({

@@ -1,4 +1,7 @@
 # Changelog
+## v0.21.0
+- Ajout de la cible "S" / "Sortilège" pour les sortilèges.
+
 ## v0.20.0
 - Ajout de la possibilité de générer les statistiques des créatures, comme indiqué dans l'encyclopédie des êtres et des non-êtres.
 - Ajout du champ "Incantation" qui avait été oublié dans les sortilèges.
