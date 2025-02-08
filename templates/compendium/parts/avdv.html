@@ -1,0 +1,62 @@
+<div class="tab avdv {{ifThen (or (eq specialType 'coupspouce') (eq specialType 'crochepatte') (eq specialType 'capacite')) 'simple' ''}} {{specialType}}" data-group="primary" data-tab="{{specialType}}">
+
+    <div class="submenu">
+        <label class="recherche">
+            <span>{{localize "HP.COMPENDIUM.Recherche"}}</span>
+            <input type="text" class="search" value="{{special.search}}" data-type="{{specialType}}" data-subtype="search" />
+        </label>
+
+        {{#if (gt (length submenu) 1)}}
+        <div class="filter">
+            <span class="header">{{localize "HP.COMPENDIUM.Filtres"}}</span>
+            {{#each submenu}}
+                <button type="action" class="{{ifThen checked 'checked' ''}}" data-type="{{specialType}}" data-key="{{key}}">{{label}} <i class="fa-solid {{ifThen checked 'fa-check' 'fa-xmark'}}"></i></button>
+            {{/each}}
+        </div>
+        {{/if}}
+    </div>
+
+    <div class="data">
+        <header>
+            <span class="name">
+                {{localize "HP.Name"}}
+                <i class="fa-solid fa-arrow-up tri {{ifThen (eq special.sort.label 'asc') 'valide' ''}}" data-type="{{specialType}}" data-tri="label" data-value="asc" title="{{localize "HP.COMPENDIUM.TriAscendant"}}"></i>
+                <i class="fa-solid fa-arrow-down tri {{ifThen (eq special.sort.label 'desc') 'valide' ''}}" data-type="{{specialType}}" data-tri="label" data-value="desc" title="{{localize "HP.COMPENDIUM.TriDescendant"}}"></i>
+            </span>
+            {{#if (or (eq specialType 'avantage') (eq specialType 'desavantage') (eq specialType 'capacitefamilier'))}}
+            <span class="cout">
+                {{localize "HP.Cout"}}
+                <i class="fa-solid fa-arrow-up tri {{ifThen (eq special.sort.cout 'asc') 'valide' ''}}" data-type="{{specialType}}" data-tri="cout" data-value="asc" title="{{localize "HP.COMPENDIUM.TriAscendant"}}"></i>
+                <i class="fa-solid fa-arrow-down tri {{ifThen (eq special.sort.cout 'desc') 'valide' ''}}" data-type="{{specialType}}" data-tri="cout" data-value="desc" title="{{localize "HP.COMPENDIUM.TriDescendant"}}"></i>
+            </span>
+            {{/if}}
+        </header>
+
+        {{#each (getPage special.data special.pages.actuel)}}
+            <div class="block draggable" data-uuid="{{uuid}}" data-type="{{type}}">
+                <div class="main js-toggler">
+                    <i class="far fa-plus-square"></i>
+                    <span class="label">
+                        {{all.name}}
+                    </span>
+                    {{#if (or (eq ../specialType 'avantage') (eq ../specialType 'desavantage') (eq ../specialType 'capacitefamilier'))}}
+                    <span class="cout">{{all.system.cout}}</span>
+                    {{/if}}
+                </div>
+                <div class="sub" style="display:none;">
+                    {{{all.enriched}}}
+                </div>
+            </div>
+        {{/each}}
+
+        <div class="pages">
+            <span>{{localize "HP.COMPENDIUM.Pages"}}</span>
+            {{#unless (eq special.pages.actuel 1)}}<a data-type="objet" data-page="previous" class="page"><</a>{{/unless}}
+            {{#each (numerotation special.pages.total)}}
+                <a data-type="{{../specialType}}" data-page="{{this}}" class="page {{ifThen (eq this ../special.pages.actuel) 'bold' ''}}">{{this}}</a>
+            {{/each}}
+            {{#unless (or (eq special.pages.actuel special.pages.total) (eq special.pages.total 0))}}<a data-type="{{specialType}}" data-page="next" class="page">></a>{{/unless}}
+            {{#if (eq special.pages.total 0)}}<p>0</p>{{/if}}
+        </div>
+    </div>
+</div>

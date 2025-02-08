@@ -23,6 +23,14 @@ export const preloadHandlebarsTemplates = async function() {
       `${base}/actors/parts/inventaire.html`,
       `${base}/actors/parts/capacites.html`,
       `${base}/items/parts/effets.html`,
+      `${base}/compendium/parts/objet.html`,
+      `${base}/compendium/parts/arme.html`,
+      `${base}/compendium/parts/protection.html`,
+      `${base}/compendium/parts/avdv.html`,
+      `${base}/compendium/parts/sortilege.html`,
+      `${base}/compendium/parts/potion.html`,
+      `${base}/compendium/parts/baguette.html`,
+      `${base}/compendium/parts/balai.html`,
     ];
 
     const subparts = [

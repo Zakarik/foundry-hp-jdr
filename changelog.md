@@ -1,4 +1,13 @@
 # Changelog
+## v0.22.0
+- Ajout de la cible "F" / "Fantôme" pour les sortilèges.
+- Ajout de la première partie du compendium.
+- Ajout d'un navigateur de compendium.
+
+- Correction des sortilèges et potions pour pouvoir inscrire "5+" dans les niveaux.
+- Correction de l'affichage des compétences personnalisées des créatures, le score total n'était pas en gras lorsque supérieur à 0.
+- Divers corrections de bugs mineurs.
+
 ## v0.21.0
 - Ajout de la cible "S" / "Sortilège" pour les sortilèges.
 

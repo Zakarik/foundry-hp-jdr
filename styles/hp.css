@@ -3420,7 +3420,7 @@
 }
 .sortilege section.window-content form div.data div.cible {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   grid-gap: 2px;
   background: #D3D3D3;
   border: 1px solid #000000;
@@ -3431,7 +3431,7 @@
   padding: 5px;
 }
 .sortilege section.window-content form div.data div.cible span.header {
-  grid-column: 1/6;
+  grid-column: 1/7;
   text-align: center;
   font-variant: small-caps;
   font-weight: bold;
@@ -4502,6 +4502,1662 @@
   padding-bottom: 5px;
 }
 
+.compendium section.window-content {
+  background: #A9A9A9;
+}
+.compendium section.window-content span,
+.compendium section.window-content input {
+  color: #000000;
+}
+.compendium section.window-content section.body nav.tabs {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 5px;
+  border: 0px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+.compendium section.window-content section.body nav.tabs a {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  font-variant: small-caps;
+  border-radius: 5px;
+  background: #D3D3D3;
+  border: 1px solid;
+  text-align: left;
+  letter-spacing: 1px;
+  align-items: center;
+  margin-bottom: 5px;
+  z-index: 1;
+}
+.compendium section.window-content section.body nav.tabs a.active {
+  text-shadow: none;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  margin-bottom: 0px;
+  padding-bottom: 13px;
+  border-bottom: 0px;
+}
+.compendium section.window-content section.body nav.tabs a.active {
+  border-radius: 5px;
+  border: 1px solid #000000;
+  margin-bottom: 5px;
+  padding: 8px 12px;
+}
+.compendium section.window-content section.body div.objet.active {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: 1fr;
+  grid-gap: 2px;
+  align-items: flex-start;
+  align-content: flex-start;
+  background: #D3D3D3;
+  height: max-content;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  margin-top: -2px;
+}
+.compendium section.window-content section.body div.objet.active div.submenu {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2px;
+  padding: 2px;
+  height: 100%;
+  border-right: 1px solid #000000;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+.compendium section.window-content section.body div.objet.active div.submenu div.filter {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2px;
+}
+.compendium section.window-content section.body div.objet.active div.submenu div.filter span.header {
+  width: 100%;
+  font-variant: small-caps;
+  font-size: 17px;
+  font-weight: bold;
+  text-align: center;
+}
+.compendium section.window-content section.body div.objet.active div.submenu div.filter button {
+  width: 100%;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 2px;
+  margin: 0px;
+  font-variant: small-caps;
+  font-weight: bold;
+  line-height: 20px;
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  grid-gap: 2px;
+  text-align: left;
+  font-size: 16px;
+  align-items: center;
+}
+.compendium section.window-content section.body div.objet.active div.submenu div.filter button.checked {
+  background: #D3D3D3;
+}
+.compendium section.window-content section.body div.objet.active div.submenu div.filter button i.fa-xmark {
+  color: #8b2222;
+}
+.compendium section.window-content section.body div.objet.active div.submenu div.filter button i.fa-check {
+  color: #228B22;
+}
+.compendium section.window-content section.body div.objet.active div.submenu div.filter button:hover {
+  box-shadow: none;
+  text-shadow: none;
+  background: white;
+}
+.compendium section.window-content section.body div.objet.active div.data {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2px;
+}
+.compendium section.window-content section.body div.objet.active div.data header {
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  grid-gap: 2px;
+}
+.compendium section.window-content section.body div.objet.active div.data header span {
+  font-variant: small-caps;
+  font-size: 18px;
+  font-weight: bold;
+}
+.compendium section.window-content section.body div.objet.active div.data header span.name {
+  display: grid;
+  grid-template-columns: max-content max-content max-content;
+  grid-gap: 2px;
+  align-items: center;
+}
+.compendium section.window-content section.body div.objet.active div.data header span.name i {
+  cursor: pointer;
+  font-size: 13px;
+}
+.compendium section.window-content section.body div.objet.active div.data header span.name i.valide {
+  color: #228B22;
+}
+.compendium section.window-content section.body div.objet.active div.data header span.name i:hover {
+  color: white;
+}
+.compendium section.window-content section.body div.objet.active div.data header span.prix {
+  text-align: center;
+  border-left: 1px solid #000000;
+}
+.compendium section.window-content section.body div.objet.active div.data div.block {
+  display: grid;
+  grid-gap: 2px;
+}
+.compendium section.window-content section.body div.objet.active div.data div.block span {
+  font-variant: small-caps;
+  font-size: 15px;
+}
+.compendium section.window-content section.body div.objet.active div.data div.block span.label {
+  cursor: pointer;
+}
+.compendium section.window-content section.body div.objet.active div.data div.block span.label:hover {
+  color: white;
+}
+.compendium section.window-content section.body div.objet.active div.data div.block span.prix {
+  text-align: center;
+  border-left: 1px solid #000000;
+  display: grid;
+  align-items: center;
+  height: 100%;
+}
+.compendium section.window-content section.body div.objet.active div.data div.main {
+  display: grid;
+  grid-template-columns: max-content 1fr 200px;
+  grid-gap: 2px;
+  align-items: center;
+}
+.compendium section.window-content section.body div.objet.active div.data div.main i {
+  cursor: pointer;
+}
+.compendium section.window-content section.body div.objet.active div.data div.main i:hover {
+  color: white;
+}
+.compendium section.window-content section.body div.objet.active div.data div.sub {
+  padding-right: 2px;
+}
+.compendium section.window-content section.body div.objet.active div.data div.pages {
+  display: flex;
+  grid-gap: 5px;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+  border-top: 1px solid #000000;
+  padding-top: 2px;
+  margin-top: 2px;
+}
+.compendium section.window-content section.body div.objet.active div.data div.pages span {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 15px;
+  font-variant: small-caps;
+  font-weight: bold;
+}
+.compendium section.window-content section.body div.objet.active div.data div.pages a.bold {
+  font-weight: bold;
+}
+.compendium section.window-content section.body div.objet.active div.data div.pages p {
+  font-weight: bold;
+  padding: 0px;
+  margin: 0px;
+  display: contents;
+}
+.compendium section.window-content section.body div.objet.active div label.recherche {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: flex-start;
+  align-content: flex-start;
+  border-bottom: 1px solid #000000;
+  padding-bottom: 5px;
+  height: max-content;
+}
+.compendium section.window-content section.body div.objet.active div label.recherche span {
+  text-align: center;
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 15px;
+}
+.compendium section.window-content section.body div.objet.active div label.recherche input {
+  border: 1px solid #000000;
+  border-radius: 5px;
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+}
+.compendium section.window-content section.body div.avdv.active {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: 1fr;
+  grid-gap: 2px;
+  align-items: flex-start;
+  align-content: flex-start;
+  background: #D3D3D3;
+  height: max-content;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  margin-top: -2px;
+}
+.compendium section.window-content section.body div.avdv.active div.submenu {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2px;
+  padding: 2px;
+  height: 100%;
+  border-right: 1px solid #000000;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+.compendium section.window-content section.body div.avdv.active div.submenu div.filter {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2px;
+}
+.compendium section.window-content section.body div.avdv.active div.submenu div.filter span.header {
+  width: 100%;
+  font-variant: small-caps;
+  font-size: 17px;
+  font-weight: bold;
+  text-align: center;
+}
+.compendium section.window-content section.body div.avdv.active div.submenu div.filter button {
+  width: 100%;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 2px;
+  margin: 0px;
+  font-variant: small-caps;
+  font-weight: bold;
+  line-height: 20px;
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  grid-gap: 2px;
+  text-align: left;
+  font-size: 16px;
+  align-items: center;
+}
+.compendium section.window-content section.body div.avdv.active div.submenu div.filter button.checked {
+  background: #D3D3D3;
+}
+.compendium section.window-content section.body div.avdv.active div.submenu div.filter button i.fa-xmark {
+  color: #8b2222;
+}
+.compendium section.window-content section.body div.avdv.active div.submenu div.filter button i.fa-check {
+  color: #228B22;
+}
+.compendium section.window-content section.body div.avdv.active div.submenu div.filter button:hover {
+  box-shadow: none;
+  text-shadow: none;
+  background: white;
+}
+.compendium section.window-content section.body div.avdv.active div.data {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2px;
+}
+.compendium section.window-content section.body div.avdv.active div.data header {
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  grid-gap: 2px;
+}
+.compendium section.window-content section.body div.avdv.active div.data header span {
+  font-variant: small-caps;
+  font-size: 18px;
+  font-weight: bold;
+}
+.compendium section.window-content section.body div.avdv.active div.data header span.name {
+  display: grid;
+  grid-template-columns: max-content max-content max-content;
+  grid-gap: 2px;
+  align-items: center;
+}
+.compendium section.window-content section.body div.avdv.active div.data header span.name i {
+  cursor: pointer;
+  font-size: 13px;
+}
+.compendium section.window-content section.body div.avdv.active div.data header span.name i.valide {
+  color: #228B22;
+}
+.compendium section.window-content section.body div.avdv.active div.data header span.name i:hover {
+  color: white;
+}
+.compendium section.window-content section.body div.avdv.active div.data header span.cout {
+  display: grid;
+  grid-template-columns: max-content max-content max-content;
+  grid-gap: 2px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  border-left: 1px solid #000000;
+}
+.compendium section.window-content section.body div.avdv.active div.data header span.cout i {
+  cursor: pointer;
+  font-size: 13px;
+}
+.compendium section.window-content section.body div.avdv.active div.data header span.cout i.valide {
+  color: #228B22;
+}
+.compendium section.window-content section.body div.avdv.active div.data header span.cout i:hover {
+  color: white;
+}
+.compendium section.window-content section.body div.avdv.active div.data div.block {
+  display: grid;
+  grid-gap: 2px;
+}
+.compendium section.window-content section.body div.avdv.active div.data div.block span {
+  font-variant: small-caps;
+  font-size: 15px;
+}
+.compendium section.window-content section.body div.avdv.active div.data div.block span.label {
+  cursor: pointer;
+}
+.compendium section.window-content section.body div.avdv.active div.data div.block span.label:hover {
+  color: white;
+}
+.compendium section.window-content section.body div.avdv.active div.data div.block span.cout {
+  text-align: center;
+  border-left: 1px solid #000000;
+  display: grid;
+  align-items: center;
+  height: 100%;
+}
+.compendium section.window-content section.body div.avdv.active div.data div.main {
+  display: grid;
+  grid-template-columns: max-content 1fr 200px;
+  grid-gap: 2px;
+  align-items: center;
+}
+.compendium section.window-content section.body div.avdv.active div.data div.main i {
+  cursor: pointer;
+}
+.compendium section.window-content section.body div.avdv.active div.data div.main i:hover {
+  color: white;
+}
+.compendium section.window-content section.body div.avdv.active div.data div.sub {
+  padding-right: 2px;
+}
+.compendium section.window-content section.body div.avdv.active div.data div.pages {
+  display: flex;
+  grid-gap: 5px;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+  border-top: 1px solid #000000;
+  padding-top: 2px;
+  margin-top: 2px;
+}
+.compendium section.window-content section.body div.avdv.active div.data div.pages span {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 15px;
+  font-variant: small-caps;
+  font-weight: bold;
+}
+.compendium section.window-content section.body div.avdv.active div.data div.pages a.bold {
+  font-weight: bold;
+}
+.compendium section.window-content section.body div.avdv.active div.data div.pages p {
+  font-weight: bold;
+  padding: 0px;
+  margin: 0px;
+  display: contents;
+}
+.compendium section.window-content section.body div.avdv.active div label.recherche {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: flex-start;
+  align-content: flex-start;
+  border-bottom: 1px solid #000000;
+  padding-bottom: 5px;
+  height: max-content;
+}
+.compendium section.window-content section.body div.avdv.active div label.recherche span {
+  text-align: center;
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 15px;
+}
+.compendium section.window-content section.body div.avdv.active div label.recherche input {
+  border: 1px solid #000000;
+  border-radius: 5px;
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+}
+.compendium section.window-content section.body div.avdv.active.simple.data header {
+  grid-template-columns: 1fr;
+}
+.compendium section.window-content section.body div.avdv.active.simple.main {
+  grid-template-columns: max-content 1fr;
+}
+.compendium section.window-content section.body div.arme.active {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: 1fr;
+  grid-gap: 2px;
+  align-items: flex-start;
+  align-content: flex-start;
+  background: #D3D3D3;
+  height: max-content;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  margin-top: -2px;
+}
+.compendium section.window-content section.body div.arme.active div.submenu {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2px;
+  padding: 2px;
+  height: 100%;
+  border-right: 1px solid #000000;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+.compendium section.window-content section.body div.arme.active div.submenu div.filter {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2px;
+}
+.compendium section.window-content section.body div.arme.active div.submenu div.filter span.header {
+  width: 100%;
+  font-variant: small-caps;
+  font-size: 17px;
+  font-weight: bold;
+  text-align: center;
+}
+.compendium section.window-content section.body div.arme.active div.submenu div.filter button {
+  width: 100%;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 2px;
+  margin: 0px;
+  font-variant: small-caps;
+  font-weight: bold;
+  line-height: 20px;
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  grid-gap: 2px;
+  text-align: left;
+  font-size: 16px;
+  align-items: center;
+}
+.compendium section.window-content section.body div.arme.active div.submenu div.filter button.checked {
+  background: #D3D3D3;
+}
+.compendium section.window-content section.body div.arme.active div.submenu div.filter button i.fa-xmark {
+  color: #8b2222;
+}
+.compendium section.window-content section.body div.arme.active div.submenu div.filter button i.fa-check {
+  color: #228B22;
+}
+.compendium section.window-content section.body div.arme.active div.submenu div.filter button:hover {
+  box-shadow: none;
+  text-shadow: none;
+  background: white;
+}
+.compendium section.window-content section.body div.arme.active div.data {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2px;
+}
+.compendium section.window-content section.body div.arme.active div.data header {
+  display: grid;
+  grid-template-columns: 1fr 100px 200px 100px 200px;
+  grid-gap: 2px;
+}
+.compendium section.window-content section.body div.arme.active div.data header span {
+  font-variant: small-caps;
+  font-size: 18px;
+  font-weight: bold;
+}
+.compendium section.window-content section.body div.arme.active div.data header span.name {
+  display: grid;
+  grid-template-columns: max-content max-content max-content;
+  grid-gap: 2px;
+  align-items: center;
+}
+.compendium section.window-content section.body div.arme.active div.data header span.type, .compendium section.window-content section.body div.arme.active div.data header span.degats, .compendium section.window-content section.body div.arme.active div.data header span.portee, .compendium section.window-content section.body div.arme.active div.data header span.prix {
+  text-align: center;
+  border-left: 1px solid #000000;
+}
+.compendium section.window-content section.body div.arme.active div.data header span i {
+  cursor: pointer;
+  font-size: 13px;
+}
+.compendium section.window-content section.body div.arme.active div.data header span i.valide {
+  color: #228B22;
+}
+.compendium section.window-content section.body div.arme.active div.data header span i:hover {
+  color: white;
+}
+.compendium section.window-content section.body div.arme.active div.data div.block {
+  display: grid;
+  grid-gap: 2px;
+}
+.compendium section.window-content section.body div.arme.active div.data div.block span {
+  font-variant: small-caps;
+  font-size: 15px;
+}
+.compendium section.window-content section.body div.arme.active div.data div.block span.label {
+  cursor: pointer;
+}
+.compendium section.window-content section.body div.arme.active div.data div.block span.label:hover {
+  color: white;
+}
+.compendium section.window-content section.body div.arme.active div.data div.block span.type, .compendium section.window-content section.body div.arme.active div.data div.block span.degats, .compendium section.window-content section.body div.arme.active div.data div.block span.portee, .compendium section.window-content section.body div.arme.active div.data div.block span.prix {
+  text-align: center;
+  border-left: 1px solid #000000;
+  display: grid;
+  align-items: center;
+  height: 100%;
+}
+.compendium section.window-content section.body div.arme.active div.data div.main {
+  display: grid;
+  grid-template-columns: max-content 1fr 100px 200px 100px 200px;
+  grid-gap: 2px;
+  align-items: center;
+}
+.compendium section.window-content section.body div.arme.active div.data div.main i {
+  cursor: pointer;
+}
+.compendium section.window-content section.body div.arme.active div.data div.main i:hover {
+  color: white;
+}
+.compendium section.window-content section.body div.arme.active div.data div.sub {
+  padding-right: 2px;
+}
+.compendium section.window-content section.body div.arme.active div.data div.pages {
+  display: flex;
+  grid-gap: 5px;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+  border-top: 1px solid #000000;
+  padding-top: 2px;
+  margin-top: 2px;
+}
+.compendium section.window-content section.body div.arme.active div.data div.pages span {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 15px;
+  font-variant: small-caps;
+  font-weight: bold;
+}
+.compendium section.window-content section.body div.arme.active div.data div.pages a.bold {
+  font-weight: bold;
+}
+.compendium section.window-content section.body div.arme.active div.data div.pages p {
+  font-weight: bold;
+  padding: 0px;
+  margin: 0px;
+  display: contents;
+}
+.compendium section.window-content section.body div.arme.active div label.recherche {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: flex-start;
+  align-content: flex-start;
+  border-bottom: 1px solid #000000;
+  padding-bottom: 5px;
+  height: max-content;
+}
+.compendium section.window-content section.body div.arme.active div label.recherche span {
+  text-align: center;
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 15px;
+}
+.compendium section.window-content section.body div.arme.active div label.recherche input {
+  border: 1px solid #000000;
+  border-radius: 5px;
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+}
+.compendium section.window-content section.body div.protection.active {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: 1fr;
+  grid-gap: 2px;
+  align-items: flex-start;
+  align-content: flex-start;
+  background: #D3D3D3;
+  height: max-content;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  margin-top: -2px;
+}
+.compendium section.window-content section.body div.protection.active div.submenu {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2px;
+  padding: 2px;
+  height: 100%;
+  border-right: 1px solid #000000;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+.compendium section.window-content section.body div.protection.active div.submenu div.filter {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2px;
+}
+.compendium section.window-content section.body div.protection.active div.submenu div.filter span.header {
+  width: 100%;
+  font-variant: small-caps;
+  font-size: 17px;
+  font-weight: bold;
+  text-align: center;
+}
+.compendium section.window-content section.body div.protection.active div.submenu div.filter button {
+  width: 100%;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 2px;
+  margin: 0px;
+  font-variant: small-caps;
+  font-weight: bold;
+  line-height: 20px;
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  grid-gap: 2px;
+  text-align: left;
+  font-size: 16px;
+  align-items: center;
+}
+.compendium section.window-content section.body div.protection.active div.submenu div.filter button.checked {
+  background: #D3D3D3;
+}
+.compendium section.window-content section.body div.protection.active div.submenu div.filter button i.fa-xmark {
+  color: #8b2222;
+}
+.compendium section.window-content section.body div.protection.active div.submenu div.filter button i.fa-check {
+  color: #228B22;
+}
+.compendium section.window-content section.body div.protection.active div.submenu div.filter button:hover {
+  box-shadow: none;
+  text-shadow: none;
+  background: white;
+}
+.compendium section.window-content section.body div.protection.active div.data {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2px;
+}
+.compendium section.window-content section.body div.protection.active div.data header {
+  display: grid;
+  grid-template-columns: 1fr 100px 100px 200px;
+  grid-gap: 2px;
+}
+.compendium section.window-content section.body div.protection.active div.data header span {
+  font-variant: small-caps;
+  font-size: 18px;
+  font-weight: bold;
+}
+.compendium section.window-content section.body div.protection.active div.data header span.name {
+  display: grid;
+  grid-template-columns: max-content max-content max-content;
+  grid-gap: 2px;
+  align-items: center;
+}
+.compendium section.window-content section.body div.protection.active div.data header span.type, .compendium section.window-content section.body div.protection.active div.data header span.armure, .compendium section.window-content section.body div.protection.active div.data header span.prix {
+  text-align: center;
+  border-left: 1px solid #000000;
+}
+.compendium section.window-content section.body div.protection.active div.data header span i {
+  cursor: pointer;
+  font-size: 13px;
+}
+.compendium section.window-content section.body div.protection.active div.data header span i.valide {
+  color: #228B22;
+}
+.compendium section.window-content section.body div.protection.active div.data header span i:hover {
+  color: white;
+}
+.compendium section.window-content section.body div.protection.active div.data div.block {
+  display: grid;
+  grid-gap: 2px;
+}
+.compendium section.window-content section.body div.protection.active div.data div.block span {
+  font-variant: small-caps;
+  font-size: 15px;
+}
+.compendium section.window-content section.body div.protection.active div.data div.block span.label {
+  cursor: pointer;
+}
+.compendium section.window-content section.body div.protection.active div.data div.block span.label:hover {
+  color: white;
+}
+.compendium section.window-content section.body div.protection.active div.data div.block span.type, .compendium section.window-content section.body div.protection.active div.data div.block span.armure, .compendium section.window-content section.body div.protection.active div.data div.block span.prix {
+  text-align: center;
+  border-left: 1px solid #000000;
+  display: grid;
+  align-items: center;
+  height: 100%;
+}
+.compendium section.window-content section.body div.protection.active div.data div.main {
+  display: grid;
+  grid-template-columns: max-content 1fr 100px 100px 200px;
+  grid-gap: 2px;
+  align-items: center;
+}
+.compendium section.window-content section.body div.protection.active div.data div.main i {
+  cursor: pointer;
+}
+.compendium section.window-content section.body div.protection.active div.data div.main i:hover {
+  color: white;
+}
+.compendium section.window-content section.body div.protection.active div.data div.sub {
+  padding-right: 2px;
+}
+.compendium section.window-content section.body div.protection.active div.data div.pages {
+  display: flex;
+  grid-gap: 5px;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+  border-top: 1px solid #000000;
+  padding-top: 2px;
+  margin-top: 2px;
+}
+.compendium section.window-content section.body div.protection.active div.data div.pages span {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 15px;
+  font-variant: small-caps;
+  font-weight: bold;
+}
+.compendium section.window-content section.body div.protection.active div.data div.pages a.bold {
+  font-weight: bold;
+}
+.compendium section.window-content section.body div.protection.active div.data div.pages p {
+  font-weight: bold;
+  padding: 0px;
+  margin: 0px;
+  display: contents;
+}
+.compendium section.window-content section.body div.protection.active div label.recherche {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: flex-start;
+  align-content: flex-start;
+  border-bottom: 1px solid #000000;
+  padding-bottom: 5px;
+  height: max-content;
+}
+.compendium section.window-content section.body div.protection.active div label.recherche span {
+  text-align: center;
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 15px;
+}
+.compendium section.window-content section.body div.protection.active div label.recherche input {
+  border: 1px solid #000000;
+  border-radius: 5px;
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+}
+.compendium section.window-content section.body div.sortilege.active {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  grid-template-rows: 1fr;
+  grid-gap: 2px;
+  align-items: flex-start;
+  align-content: flex-start;
+  background: #D3D3D3;
+  height: max-content;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  margin-top: -2px;
+}
+.compendium section.window-content section.body div.sortilege.active div.submenu {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2px;
+  padding: 2px;
+  height: 100%;
+  border-right: 1px solid #000000;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+.compendium section.window-content section.body div.sortilege.active div.submenu div.filter {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2px;
+}
+.compendium section.window-content section.body div.sortilege.active div.submenu div.filter span.header {
+  width: 100%;
+  font-variant: small-caps;
+  font-size: 17px;
+  font-weight: bold;
+  text-align: center;
+}
+.compendium section.window-content section.body div.sortilege.active div.submenu div.filter button {
+  width: 100%;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 2px;
+  margin: 0px;
+  font-variant: small-caps;
+  font-weight: bold;
+  line-height: 20px;
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  grid-gap: 2px;
+  text-align: left;
+  font-size: 16px;
+  align-items: center;
+}
+.compendium section.window-content section.body div.sortilege.active div.submenu div.filter button.checked {
+  background: #D3D3D3;
+}
+.compendium section.window-content section.body div.sortilege.active div.submenu div.filter button i.fa-xmark {
+  color: #8b2222;
+}
+.compendium section.window-content section.body div.sortilege.active div.submenu div.filter button i.fa-check {
+  color: #228B22;
+}
+.compendium section.window-content section.body div.sortilege.active div.submenu div.filter button:hover {
+  box-shadow: none;
+  text-shadow: none;
+  background: white;
+}
+.compendium section.window-content section.body div.sortilege.active div.data {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2px;
+}
+.compendium section.window-content section.body div.sortilege.active div.data header {
+  display: grid;
+  grid-template-columns: 1fr 100px 200px 150px 100px 150px;
+  grid-gap: 2px;
+}
+.compendium section.window-content section.body div.sortilege.active div.data header span {
+  font-variant: small-caps;
+  font-size: 18px;
+  font-weight: bold;
+}
+.compendium section.window-content section.body div.sortilege.active div.data header span.name {
+  display: grid;
+  grid-template-columns: max-content max-content max-content;
+  grid-gap: 2px;
+  align-items: center;
+}
+.compendium section.window-content section.body div.sortilege.active div.data header span.incantation, .compendium section.window-content section.body div.sortilege.active div.data header span.type, .compendium section.window-content section.body div.sortilege.active div.data header span.cible, .compendium section.window-content section.body div.sortilege.active div.data header span.malus, .compendium section.window-content section.body div.sortilege.active div.data header span.niveau {
+  text-align: center;
+  border-left: 1px solid #000000;
+}
+.compendium section.window-content section.body div.sortilege.active div.data header span i {
+  cursor: pointer;
+  font-size: 13px;
+}
+.compendium section.window-content section.body div.sortilege.active div.data header span i.valide {
+  color: #228B22;
+}
+.compendium section.window-content section.body div.sortilege.active div.data header span i:hover {
+  color: white;
+}
+.compendium section.window-content section.body div.sortilege.active div.data div.block {
+  display: grid;
+  grid-gap: 2px;
+}
+.compendium section.window-content section.body div.sortilege.active div.data div.block span {
+  font-variant: small-caps;
+  font-size: 15px;
+}
+.compendium section.window-content section.body div.sortilege.active div.data div.block span.label {
+  cursor: pointer;
+}
+.compendium section.window-content section.body div.sortilege.active div.data div.block span.label:hover {
+  color: white;
+}
+.compendium section.window-content section.body div.sortilege.active div.data div.block span.incantation, .compendium section.window-content section.body div.sortilege.active div.data div.block span.type, .compendium section.window-content section.body div.sortilege.active div.data div.block span.cible, .compendium section.window-content section.body div.sortilege.active div.data div.block span.malus, .compendium section.window-content section.body div.sortilege.active div.data div.block span.niveau {
+  text-align: center;
+  border-left: 1px solid #000000;
+  display: grid;
+  align-items: center;
+  height: 100%;
+}
+.compendium section.window-content section.body div.sortilege.active div.data div.block span.malus.space {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.compendium section.window-content section.body div.sortilege.active div.data div.block span.malus p {
+  margin: 0px;
+}
+.compendium section.window-content section.body div.sortilege.active div.data div.main {
+  display: grid;
+  grid-template-columns: max-content 1fr 100px 200px 150px 100px 150px;
+  grid-gap: 2px;
+  align-items: center;
+}
+.compendium section.window-content section.body div.sortilege.active div.data div.main i {
+  cursor: pointer;
+}
+.compendium section.window-content section.body div.sortilege.active div.data div.main i:hover {
+  color: white;
+}
+.compendium section.window-content section.body div.sortilege.active div.data div.sub {
+  padding-right: 2px;
+}
+.compendium section.window-content section.body div.sortilege.active div.data div.pages {
+  display: flex;
+  grid-gap: 5px;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+  border-top: 1px solid #000000;
+  padding-top: 2px;
+  margin-top: 2px;
+}
+.compendium section.window-content section.body div.sortilege.active div.data div.pages span {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 15px;
+  font-variant: small-caps;
+  font-weight: bold;
+}
+.compendium section.window-content section.body div.sortilege.active div.data div.pages a.bold {
+  font-weight: bold;
+}
+.compendium section.window-content section.body div.sortilege.active div.data div.pages p {
+  font-weight: bold;
+  padding: 0px;
+  margin: 0px;
+  display: contents;
+}
+.compendium section.window-content section.body div.sortilege.active div label.recherche {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: flex-start;
+  align-content: flex-start;
+  border-bottom: 1px solid #000000;
+  padding-bottom: 5px;
+  height: max-content;
+}
+.compendium section.window-content section.body div.sortilege.active div label.recherche span {
+  text-align: center;
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 15px;
+}
+.compendium section.window-content section.body div.sortilege.active div label.recherche input {
+  border: 1px solid #000000;
+  border-radius: 5px;
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+}
+.compendium section.window-content section.body div.sortilege.active div label.malus, .compendium section.window-content section.body div.sortilege.active div label.niveau {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  align-content: center;
+  border-bottom: 1px solid #000000;
+  padding-bottom: 2px;
+  height: max-content;
+}
+.compendium section.window-content section.body div.sortilege.active div label.malus span, .compendium section.window-content section.body div.sortilege.active div label.niveau span {
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 15px;
+}
+.compendium section.window-content section.body div.sortilege.active div label.malus input, .compendium section.window-content section.body div.sortilege.active div label.niveau input {
+  border: 1px solid #000000;
+  border-radius: 5px;
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+}
+.compendium section.window-content section.body div.potion.active {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  grid-template-rows: 1fr;
+  grid-gap: 2px;
+  align-items: flex-start;
+  align-content: flex-start;
+  background: #D3D3D3;
+  height: max-content;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  margin-top: -2px;
+}
+.compendium section.window-content section.body div.potion.active div.submenu {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2px;
+  padding: 2px;
+  height: 100%;
+  border-right: 1px solid #000000;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+.compendium section.window-content section.body div.potion.active div.submenu div.filter {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2px;
+}
+.compendium section.window-content section.body div.potion.active div.submenu div.filter span.header {
+  width: 100%;
+  font-variant: small-caps;
+  font-size: 17px;
+  font-weight: bold;
+  text-align: center;
+}
+.compendium section.window-content section.body div.potion.active div.submenu div.filter button {
+  width: 100%;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 2px;
+  margin: 0px;
+  font-variant: small-caps;
+  font-weight: bold;
+  line-height: 20px;
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  grid-gap: 2px;
+  text-align: left;
+  font-size: 16px;
+  align-items: center;
+}
+.compendium section.window-content section.body div.potion.active div.submenu div.filter button.checked {
+  background: #D3D3D3;
+}
+.compendium section.window-content section.body div.potion.active div.submenu div.filter button i.fa-xmark {
+  color: #8b2222;
+}
+.compendium section.window-content section.body div.potion.active div.submenu div.filter button i.fa-check {
+  color: #228B22;
+}
+.compendium section.window-content section.body div.potion.active div.submenu div.filter button:hover {
+  box-shadow: none;
+  text-shadow: none;
+  background: white;
+}
+.compendium section.window-content section.body div.potion.active div.data {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2px;
+}
+.compendium section.window-content section.body div.potion.active div.data header {
+  display: grid;
+  grid-template-columns: 1fr 100px 200px 80px;
+  grid-gap: 2px;
+}
+.compendium section.window-content section.body div.potion.active div.data header span {
+  font-variant: small-caps;
+  font-size: 18px;
+  font-weight: bold;
+}
+.compendium section.window-content section.body div.potion.active div.data header span.name {
+  display: grid;
+  grid-template-columns: max-content max-content max-content;
+  grid-gap: 2px;
+  align-items: center;
+}
+.compendium section.window-content section.body div.potion.active div.data header span.incantation, .compendium section.window-content section.body div.potion.active div.data header span.type, .compendium section.window-content section.body div.potion.active div.data header span.cible, .compendium section.window-content section.body div.potion.active div.data header span.malus, .compendium section.window-content section.body div.potion.active div.data header span.niveau {
+  text-align: center;
+  border-left: 1px solid #000000;
+}
+.compendium section.window-content section.body div.potion.active div.data header span i {
+  cursor: pointer;
+  font-size: 13px;
+}
+.compendium section.window-content section.body div.potion.active div.data header span i.valide {
+  color: #228B22;
+}
+.compendium section.window-content section.body div.potion.active div.data header span i:hover {
+  color: white;
+}
+.compendium section.window-content section.body div.potion.active div.data div.block {
+  display: grid;
+  grid-gap: 2px;
+}
+.compendium section.window-content section.body div.potion.active div.data div.block span {
+  font-variant: small-caps;
+  font-size: 15px;
+}
+.compendium section.window-content section.body div.potion.active div.data div.block span.label {
+  cursor: pointer;
+}
+.compendium section.window-content section.body div.potion.active div.data div.block span.label:hover {
+  color: white;
+}
+.compendium section.window-content section.body div.potion.active div.data div.block span.incantation, .compendium section.window-content section.body div.potion.active div.data div.block span.type, .compendium section.window-content section.body div.potion.active div.data div.block span.cible, .compendium section.window-content section.body div.potion.active div.data div.block span.malus, .compendium section.window-content section.body div.potion.active div.data div.block span.niveau {
+  text-align: center;
+  border-left: 1px solid #000000;
+  display: grid;
+  align-items: center;
+  height: 100%;
+}
+.compendium section.window-content section.body div.potion.active div.data div.block span.malus.space {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.compendium section.window-content section.body div.potion.active div.data div.block span.malus p {
+  margin: 0px;
+}
+.compendium section.window-content section.body div.potion.active div.data div.main {
+  display: grid;
+  grid-template-columns: max-content 1fr 100px 200px 80px;
+  grid-gap: 2px;
+  align-items: center;
+}
+.compendium section.window-content section.body div.potion.active div.data div.main i {
+  cursor: pointer;
+}
+.compendium section.window-content section.body div.potion.active div.data div.main i:hover {
+  color: white;
+}
+.compendium section.window-content section.body div.potion.active div.data div.sub {
+  padding-right: 2px;
+}
+.compendium section.window-content section.body div.potion.active div.data div.pages {
+  display: flex;
+  grid-gap: 5px;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+  border-top: 1px solid #000000;
+  padding-top: 2px;
+  margin-top: 2px;
+}
+.compendium section.window-content section.body div.potion.active div.data div.pages span {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 15px;
+  font-variant: small-caps;
+  font-weight: bold;
+}
+.compendium section.window-content section.body div.potion.active div.data div.pages a.bold {
+  font-weight: bold;
+}
+.compendium section.window-content section.body div.potion.active div.data div.pages p {
+  font-weight: bold;
+  padding: 0px;
+  margin: 0px;
+  display: contents;
+}
+.compendium section.window-content section.body div.potion.active div label.recherche {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: flex-start;
+  align-content: flex-start;
+  border-bottom: 1px solid #000000;
+  padding-bottom: 5px;
+  height: max-content;
+}
+.compendium section.window-content section.body div.potion.active div label.recherche span {
+  text-align: center;
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 15px;
+}
+.compendium section.window-content section.body div.potion.active div label.recherche input {
+  border: 1px solid #000000;
+  border-radius: 5px;
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+}
+.compendium section.window-content section.body div.potion.active div label.malus, .compendium section.window-content section.body div.potion.active div label.niveau {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  align-content: center;
+  border-bottom: 1px solid #000000;
+  padding-bottom: 2px;
+  height: max-content;
+}
+.compendium section.window-content section.body div.potion.active div label.malus span, .compendium section.window-content section.body div.potion.active div label.niveau span {
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 15px;
+}
+.compendium section.window-content section.body div.potion.active div label.malus input, .compendium section.window-content section.body div.potion.active div label.niveau input {
+  border: 1px solid #000000;
+  border-radius: 5px;
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+}
+.compendium section.window-content section.body div.baguette.active {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: 1fr;
+  grid-gap: 2px;
+  align-items: flex-start;
+  align-content: flex-start;
+  background: #D3D3D3;
+  height: max-content;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  margin-top: -2px;
+}
+.compendium section.window-content section.body div.baguette.active div.submenu {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2px;
+  padding: 2px;
+  height: 100%;
+  border-right: 1px solid #000000;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+.compendium section.window-content section.body div.baguette.active div.submenu div.filter {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2px;
+}
+.compendium section.window-content section.body div.baguette.active div.submenu div.filter span.header {
+  width: 100%;
+  font-variant: small-caps;
+  font-size: 17px;
+  font-weight: bold;
+  text-align: center;
+}
+.compendium section.window-content section.body div.baguette.active div.submenu div.filter button {
+  width: 100%;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 2px;
+  margin: 0px;
+  font-variant: small-caps;
+  font-weight: bold;
+  line-height: 20px;
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  grid-gap: 2px;
+  text-align: left;
+  font-size: 16px;
+  align-items: center;
+}
+.compendium section.window-content section.body div.baguette.active div.submenu div.filter button.checked {
+  background: #D3D3D3;
+}
+.compendium section.window-content section.body div.baguette.active div.submenu div.filter button i.fa-xmark {
+  color: #8b2222;
+}
+.compendium section.window-content section.body div.baguette.active div.submenu div.filter button i.fa-check {
+  color: #228B22;
+}
+.compendium section.window-content section.body div.baguette.active div.submenu div.filter button:hover {
+  box-shadow: none;
+  text-shadow: none;
+  background: white;
+}
+.compendium section.window-content section.body div.baguette.active div.data {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2px;
+}
+.compendium section.window-content section.body div.baguette.active div.data header {
+  display: grid;
+  grid-template-columns: 1fr 125px 125px 125px 250px;
+  grid-gap: 2px;
+}
+.compendium section.window-content section.body div.baguette.active div.data header span {
+  font-variant: small-caps;
+  font-size: 18px;
+  font-weight: bold;
+}
+.compendium section.window-content section.body div.baguette.active div.data header span.name {
+  display: grid;
+  grid-template-columns: max-content max-content max-content;
+  grid-gap: 2px;
+  align-items: center;
+}
+.compendium section.window-content section.body div.baguette.active div.data header span.taille, .compendium section.window-content section.body div.baguette.active div.data header span.bois, .compendium section.window-content section.body div.baguette.active div.data header span.coeur, .compendium section.window-content section.body div.baguette.active div.data header span.affinite {
+  text-align: center;
+  border-left: 1px solid #000000;
+}
+.compendium section.window-content section.body div.baguette.active div.data header span i {
+  cursor: pointer;
+  font-size: 13px;
+}
+.compendium section.window-content section.body div.baguette.active div.data header span i.valide {
+  color: #228B22;
+}
+.compendium section.window-content section.body div.baguette.active div.data header span i:hover {
+  color: white;
+}
+.compendium section.window-content section.body div.baguette.active div.data div.block {
+  display: grid;
+  grid-gap: 2px;
+}
+.compendium section.window-content section.body div.baguette.active div.data div.block span {
+  font-variant: small-caps;
+  font-size: 15px;
+}
+.compendium section.window-content section.body div.baguette.active div.data div.block span.label {
+  cursor: pointer;
+}
+.compendium section.window-content section.body div.baguette.active div.data div.block span.label:hover {
+  color: white;
+}
+.compendium section.window-content section.body div.baguette.active div.data div.block span.taille, .compendium section.window-content section.body div.baguette.active div.data div.block span.bois, .compendium section.window-content section.body div.baguette.active div.data div.block span.coeur, .compendium section.window-content section.body div.baguette.active div.data div.block span.affinite {
+  text-align: center;
+  border-left: 1px solid #000000;
+  display: grid;
+  align-items: center;
+  height: 100%;
+}
+.compendium section.window-content section.body div.baguette.active div.data div.main {
+  display: grid;
+  grid-template-columns: max-content 1fr 125px 125px 125px 250px;
+  grid-gap: 2px;
+  align-items: center;
+}
+.compendium section.window-content section.body div.baguette.active div.data div.main i {
+  cursor: pointer;
+}
+.compendium section.window-content section.body div.baguette.active div.data div.main i:hover {
+  color: white;
+}
+.compendium section.window-content section.body div.baguette.active div.data div.sub {
+  padding-right: 2px;
+}
+.compendium section.window-content section.body div.baguette.active div.data div.pages {
+  display: flex;
+  grid-gap: 5px;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+  border-top: 1px solid #000000;
+  padding-top: 2px;
+  margin-top: 2px;
+}
+.compendium section.window-content section.body div.baguette.active div.data div.pages span {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 15px;
+  font-variant: small-caps;
+  font-weight: bold;
+}
+.compendium section.window-content section.body div.baguette.active div.data div.pages a.bold {
+  font-weight: bold;
+}
+.compendium section.window-content section.body div.baguette.active div.data div.pages p {
+  font-weight: bold;
+  padding: 0px;
+  margin: 0px;
+  display: contents;
+}
+.compendium section.window-content section.body div.baguette.active div label.recherche {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: flex-start;
+  align-content: flex-start;
+  border-bottom: 1px solid #000000;
+  padding-bottom: 5px;
+  height: max-content;
+}
+.compendium section.window-content section.body div.baguette.active div label.recherche span {
+  text-align: center;
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 15px;
+}
+.compendium section.window-content section.body div.baguette.active div label.recherche input {
+  border: 1px solid #000000;
+  border-radius: 5px;
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+}
+.compendium section.window-content section.body div.baguette.active div label.malus {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  align-content: center;
+  border-bottom: 1px solid #000000;
+  padding-bottom: 5px;
+  height: max-content;
+}
+.compendium section.window-content section.body div.baguette.active div label.malus span {
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 15px;
+}
+.compendium section.window-content section.body div.baguette.active div label.malus input {
+  border: 1px solid #000000;
+  border-radius: 5px;
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+}
+.compendium section.window-content section.body div.balai.active {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: 1fr;
+  grid-gap: 2px;
+  align-items: flex-start;
+  align-content: flex-start;
+  background: #D3D3D3;
+  height: max-content;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  margin-top: -2px;
+}
+.compendium section.window-content section.body div.balai.active div.submenu {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2px;
+  padding: 2px;
+  height: 100%;
+  border-right: 1px solid #000000;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+.compendium section.window-content section.body div.balai.active div.submenu div.filter {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2px;
+}
+.compendium section.window-content section.body div.balai.active div.submenu div.filter span.header {
+  width: 100%;
+  font-variant: small-caps;
+  font-size: 17px;
+  font-weight: bold;
+  text-align: center;
+}
+.compendium section.window-content section.body div.balai.active div.submenu div.filter button {
+  width: 100%;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 2px;
+  margin: 0px;
+  font-variant: small-caps;
+  font-weight: bold;
+  line-height: 20px;
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  grid-gap: 2px;
+  text-align: left;
+  font-size: 16px;
+  align-items: center;
+}
+.compendium section.window-content section.body div.balai.active div.submenu div.filter button.checked {
+  background: #D3D3D3;
+}
+.compendium section.window-content section.body div.balai.active div.submenu div.filter button i.fa-xmark {
+  color: #8b2222;
+}
+.compendium section.window-content section.body div.balai.active div.submenu div.filter button i.fa-check {
+  color: #228B22;
+}
+.compendium section.window-content section.body div.balai.active div.submenu div.filter button:hover {
+  box-shadow: none;
+  text-shadow: none;
+  background: white;
+}
+.compendium section.window-content section.body div.balai.active div.data {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2px;
+}
+.compendium section.window-content section.body div.balai.active div.data header {
+  display: grid;
+  grid-template-columns: 1fr 150px;
+  grid-gap: 2px;
+}
+.compendium section.window-content section.body div.balai.active div.data header span {
+  font-variant: small-caps;
+  font-size: 18px;
+  font-weight: bold;
+}
+.compendium section.window-content section.body div.balai.active div.data header span.name {
+  display: grid;
+  grid-template-columns: max-content max-content max-content;
+  grid-gap: 2px;
+  align-items: center;
+}
+.compendium section.window-content section.body div.balai.active div.data header span.marque {
+  text-align: center;
+  border-left: 1px solid #000000;
+}
+.compendium section.window-content section.body div.balai.active div.data header span i {
+  cursor: pointer;
+  font-size: 13px;
+}
+.compendium section.window-content section.body div.balai.active div.data header span i.valide {
+  color: #228B22;
+}
+.compendium section.window-content section.body div.balai.active div.data header span i:hover {
+  color: white;
+}
+.compendium section.window-content section.body div.balai.active div.data div.block {
+  display: grid;
+  grid-gap: 2px;
+}
+.compendium section.window-content section.body div.balai.active div.data div.block span {
+  font-variant: small-caps;
+  font-size: 15px;
+}
+.compendium section.window-content section.body div.balai.active div.data div.block span.label {
+  cursor: pointer;
+}
+.compendium section.window-content section.body div.balai.active div.data div.block span.label:hover {
+  color: white;
+}
+.compendium section.window-content section.body div.balai.active div.data div.block span.marque {
+  text-align: center;
+  border-left: 1px solid #000000;
+  display: grid;
+  align-items: center;
+  height: 100%;
+}
+.compendium section.window-content section.body div.balai.active div.data div.main {
+  display: grid;
+  grid-template-columns: max-content 1fr 150px;
+  grid-gap: 2px;
+  align-items: center;
+}
+.compendium section.window-content section.body div.balai.active div.data div.main i {
+  cursor: pointer;
+}
+.compendium section.window-content section.body div.balai.active div.data div.main i:hover {
+  color: white;
+}
+.compendium section.window-content section.body div.balai.active div.data div.sub {
+  padding-right: 2px;
+}
+.compendium section.window-content section.body div.balai.active div.data div.pages {
+  display: flex;
+  grid-gap: 5px;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+  border-top: 1px solid #000000;
+  padding-top: 2px;
+  margin-top: 2px;
+}
+.compendium section.window-content section.body div.balai.active div.data div.pages span {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 15px;
+  font-variant: small-caps;
+  font-weight: bold;
+}
+.compendium section.window-content section.body div.balai.active div.data div.pages a.bold {
+  font-weight: bold;
+}
+.compendium section.window-content section.body div.balai.active div.data div.pages p {
+  font-weight: bold;
+  padding: 0px;
+  margin: 0px;
+  display: contents;
+}
+.compendium section.window-content section.body div.balai.active div label.recherche {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: flex-start;
+  align-content: flex-start;
+  border-bottom: 1px solid #000000;
+  padding-bottom: 5px;
+  height: max-content;
+}
+.compendium section.window-content section.body div.balai.active div label.recherche span {
+  text-align: center;
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 15px;
+}
+.compendium section.window-content section.body div.balai.active div label.recherche input {
+  border: 1px solid #000000;
+  border-radius: 5px;
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+}
+.compendium section.window-content section.body div.balai.active div label.malus {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  align-content: center;
+  border-bottom: 1px solid #000000;
+  padding-bottom: 5px;
+  height: max-content;
+}
+.compendium section.window-content section.body div.balai.active div label.malus span {
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 15px;
+}
+.compendium section.window-content section.body div.balai.active div label.malus input {
+  border: 1px solid #000000;
+  border-radius: 5px;
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+}
+
 .dialog.hp section.window-content {
   background: #A9A9A9;
 }
@@ -4915,4 +6571,10 @@ li.hp.initiative div span.part-total {
   border-top: 1px solid #000000;
   border-left: 1px solid #000000;
   border-right: 1px solid #000000;
+}
+
+footer.action-buttons button.compendium {
+  font-variant: small-caps;
+  font-size: 20px;
+  font-weight: bold;
 }

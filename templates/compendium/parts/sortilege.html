@@ -1,0 +1,108 @@
+<div class="tab sortilege" data-group="primary" data-tab="sortilege">
+    <div class="submenu">
+        <label class="recherche">
+            <span>{{localize "HP.COMPENDIUM.Recherche"}}</span>
+            <input type="text" class="search" value="{{sortilege.search}}" data-type="sortilege" data-subtype="search" />
+        </label>
+
+        {{#if (or (gt (length submenu.sortilege) 1) (gt (length sortilege.filtres.cibles) 0))}}
+        <div class="filter">
+            <span class="header">{{localize "HP.COMPENDIUM.Filtres"}}</span>
+
+            <label class="niveau">
+                <span>{{localize "HP.Niveau"}}</span>
+                <input type="text" class="niveau" value="{{sortilege.niveau}}" data-type="sortilege" data-subtype="niveau" />
+            </label>
+
+            <label class="malus">
+                <span>{{localize "HP.Malus"}}</span>
+                <input type="number" class="malus" value="{{sortilege.malus}}" data-type="sortilege" data-subtype="malus" />
+            </label>
+
+            {{#each submenu.sortilege}}
+                <button type="action" class="{{ifThen checked 'checked' ''}}" data-type="sortilege" data-key="{{key}}">{{label}} <i class="fa-solid {{ifThen checked 'fa-check' 'fa-xmark'}}"></i></button>
+            {{/each}}
+
+            {{#if (gt (length sortilege.filtres.cibles) 0)}}
+                {{#each sortilege.filtres.cibles}}
+                    <button type="action" class="{{ifThen checked 'checked' ''}}" data-type="sortilege" data-key="{{key}}" data-special="{{special}}">{{label}} <i class="fa-solid {{ifThen checked 'fa-check' 'fa-xmark'}}"></i></button>
+                {{/each}}
+            {{/if}}
+        </div>
+        {{/if}}
+    </div>
+
+
+    <div class="data">
+        <header>
+            <span class="name">
+                {{localize "HP.Name"}}
+                <i class="fa-solid fa-arrow-up tri {{ifThen (eq sortilege.sort.label 'asc') 'valide' ''}}" data-type="sortilege" data-tri="label" data-value="asc" title="{{localize "HP.COMPENDIUM.TriAscendant"}}"></i>
+                <i class="fa-solid fa-arrow-down tri {{ifThen (eq sortilege.sort.label 'desc') 'valide' ''}}" data-type="sortilege" data-tri="label" data-value="desc" title="{{localize "HP.COMPENDIUM.TriDescendant"}}"></i>
+            </span>
+            <span class="niveau">
+                {{localize "HP.Niveau"}}
+                <i class="fa-solid fa-arrow-up tri {{ifThen (eq sortilege.sort.niveau 'asc') 'valide' ''}}" data-type="sortilege" data-tri="niveau" data-value="asc" title="{{localize "HP.COMPENDIUM.TriAscendant"}}"></i>
+                <i class="fa-solid fa-arrow-down tri {{ifThen (eq sortilege.sort.niveau 'desc') 'valide' ''}}" data-type="sortilege" data-tri="niveau" data-value="desc" title="{{localize "HP.COMPENDIUM.TriDescendant"}}"></i>
+            </span>
+            <span class="incantation">
+                {{localize "HP.SORTILEGES.Incantation"}}
+                <i class="fa-solid fa-arrow-up tri {{ifThen (eq sortilege.sort.incantation 'asc') 'valide' ''}}" data-type="sortilege" data-tri="incantation" data-value="asc" title="{{localize "HP.COMPENDIUM.TriAscendant"}}"></i>
+                <i class="fa-solid fa-arrow-down tri {{ifThen (eq sortilege.sort.incantation 'desc') 'valide' ''}}" data-type="sortilege" data-tri="incantation" data-value="desc" title="{{localize "HP.COMPENDIUM.TriDescendant"}}"></i>
+            </span>
+            <span class="type">
+                {{localize "HP.Type"}}
+                <i class="fa-solid fa-arrow-up tri {{ifThen (eq sortilege.sort.type 'asc') 'valide' ''}}" data-type="sortilege" data-tri="type" data-value="asc" title="{{localize "HP.COMPENDIUM.TriAscendant"}}"></i>
+                <i class="fa-solid fa-arrow-down tri {{ifThen (eq sortilege.sort.type 'desc') 'valide' ''}}" data-type="sortilege" data-tri="type" data-value="desc" title="{{localize "HP.COMPENDIUM.TriDescendant"}}"></i>
+            </span>
+            <span class="cible">
+                {{localize "HP.Cibles"}}
+                <i class="fa-solid fa-arrow-up tri {{ifThen (eq sortilege.sort.cible 'asc') 'valide' ''}}" data-type="sortilege" data-tri="cible" data-value="asc" title="{{localize "HP.COMPENDIUM.TriAscendant"}}"></i>
+                <i class="fa-solid fa-arrow-down tri {{ifThen (eq sortilege.sort.cible 'desc') 'valide' ''}}" data-type="sortilege" data-tri="cible" data-value="desc" title="{{localize "HP.COMPENDIUM.TriDescendant"}}"></i>
+            </span>
+            <span class="malus">
+                {{localize "HP.Malus"}}
+                <i class="fa-solid fa-arrow-up tri {{ifThen (eq sortilege.sort.malus 'asc') 'valide' ''}}" data-type="sortilege" data-tri="malus" data-value="asc" title="{{localize "HP.COMPENDIUM.TriAscendant"}}"></i>
+                <i class="fa-solid fa-arrow-down tri {{ifThen (eq sortilege.sort.malus 'desc') 'valide' ''}}" data-type="sortilege" data-tri="malus" data-value="desc" title="{{localize "HP.COMPENDIUM.TriDescendant"}}"></i>
+            </span>
+        </header>
+
+        {{#each (getPage sortilege.data sortilege.pages.actuel)}}
+            <div class="block draggable" data-uuid="{{uuid}}" data-type="{{type}}">
+                <div class="main js-toggler">
+                    <i class="far fa-plus-square"></i>
+                    <span class="label">
+                        {{all.name}}
+                    </span>
+                    <span class="niveau">{{all.system.niveau}}</span>
+                    <span class="incantation">
+                        {{all.system.incantation}}
+                    </span>
+                    <span class="type">{{full all.system.type}} ({{abreviation all.system.type}})</span>
+                    <span class="cible">{{{cibles all.system.cibles}}}</span>
+                    <span class="malus {{ifThen (or all.system.malus.fe.fc.reduction all.system.malus.fe.has) 'space' ''}}">
+                        <p>{{localize "HP.SORTILEGES.FormuleClassique-short"}} : {{concat all.system.malus.fc '%'}}</p>
+                        {{#if all.system.malus.fe.has}}
+                        <p>{{localize "HP.SORTILEGES.FormuleExtreme-short"}} :
+                            {{ifThen all.system.malus.fe.fc.reduction (concat all.system.malus.fe.fc.malus '% / ') ''}}{{concat all.system.malus.fe.malus '%'}}
+                        </p>
+                        {{/if}}
+                    </span>
+                </div>
+                <div class="sub" style="display:none;">
+                    {{{all.enriched}}}
+                </div>
+            </div>
+        {{/each}}
+
+        <div class="pages">
+            <span>{{localize "HP.COMPENDIUM.Pages"}}</span>
+            {{#unless (eq sortilege.pages.actuel 1)}}<a data-type="sortilege" data-page="previous" class="page"><</a>{{/unless}}
+            {{#each (numerotation sortilege.pages.total)}}
+                <a data-type="sortilege" data-page="{{this}}" class="page {{ifThen (eq this ../sortilege.pages.actuel) 'bold' ''}}">{{this}}</a>
+            {{/each}}
+            {{#unless (or (eq sortilege.pages.actuel sortilege.pages.total) (eq sortilege.pages.total 0))}}<a data-type="sortilege" data-page="next" class="page">></a>{{/unless}}
+            {{#if (eq sortilege.pages.total 0)}}<p>0</p>{{/if}}
+        </div>
+    </div>
+</div>

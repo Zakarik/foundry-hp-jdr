@@ -1689,6 +1689,36 @@ export class SorcierActorSheet extends ActorSheet {
     return itemCreate;
   }
 
+  async _onDrop(event) {
+    const data = TextEditor.getDragEventData(event);
+    const actor = this.actor;
+
+    /**
+     * A hook event that fires when some useful data is dropped onto an ActorSheet.
+     * @function dropActorSheetData
+     * @memberof hookEvents
+     * @param {Actor} actor      The Actor
+     * @param {ActorSheet} sheet The ActorSheet application
+     * @param {object} data      The data that has been dropped onto the sheet
+     */
+    const allowed = Hooks.call("dropActorSheetData", actor, this, data);
+    console.warn(allowed);
+    console.warn(data);
+    if ( allowed === false ) return;
+
+    // Handle different data types
+    switch ( data.type ) {
+      case "ActiveEffect":
+        return this._onDropActiveEffect(event, data);
+      case "Actor":
+        return this._onDropActor(event, data);
+      case "Item":
+        return this._onDropItem(event, data);
+      case "Folder":
+        return this._onDropFolder(event, data);
+    }
+  }
+
   async _prepareEnriched() {
     const actor = this.actor.items;
   }

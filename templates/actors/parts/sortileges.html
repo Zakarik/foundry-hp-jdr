@@ -33,7 +33,7 @@
                 </div>
                 <span class="niveau">{{system.niveau}}</span>
                 <span class="type">{{abreviation system.type}}</span>
-                <span class="cibles">{{cibles system.cibles}}</span>
+                <span class="cibles">{{{cibles system.cibles}}}</span>
                 <div class="malus">
                     <span>{{localize "HP.SORTILEGES.FormuleClassique-short"}} : {{ifThen (and system.malus.fe.appris system.malus.fe.fc.reduction) (concat system.malus.fe.fc.malus '%') (concat system.malus.fc '%')}}</span>
                     {{#if system.malus.fe.has}}

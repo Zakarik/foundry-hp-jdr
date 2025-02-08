@@ -1,0 +1,54 @@
+<div class="tab objet" data-group="primary" data-tab="objet">
+
+    <div class="submenu">
+        <label class="recherche">
+            <span>{{localize "HP.COMPENDIUM.Recherche"}}</span>
+            <input type="text" class="search" value="{{objet.search}}" data-type="objet" data-subtype="search" />
+        </label>
+
+        {{#if (gt (length submenu.objet) 1)}}
+        <div class="filter">
+            <span class="header">{{localize "HP.COMPENDIUM.Filtres"}}</span>
+            {{#each submenu.objet}}
+                <button type="action" class="{{ifThen checked 'checked' ''}}" data-type="objet" data-key="{{key}}">{{label}} <i class="fa-solid {{ifThen checked 'fa-check' 'fa-xmark'}}"></i></button>
+            {{/each}}
+        </div>
+        {{/if}}
+    </div>
+
+    <div class="data">
+        <header>
+            <span class="name">
+                {{localize "HP.Name"}}
+                <i class="fa-solid fa-arrow-up tri {{ifThen (eq objet.sort.label 'asc') 'valide' ''}}" data-type="objet" data-tri="label" data-value="asc" title="{{localize "HP.COMPENDIUM.TriAscendant"}}"></i>
+                <i class="fa-solid fa-arrow-down tri {{ifThen (eq objet.sort.label 'desc') 'valide' ''}}" data-type="objet" data-tri="label" data-value="desc" title="{{localize "HP.COMPENDIUM.TriDescendant"}}"></i>
+            </span>
+            <span class="prix">{{localize "HP.Prix"}}</span>
+        </header>
+
+        {{#each (getPage objet.data objet.pages.actuel)}}
+            <div class="block draggable" data-uuid="{{uuid}}" data-type="{{type}}">
+                <div class="main js-toggler">
+                    <i class="far fa-plus-square"></i>
+                    <span class="label">
+                        {{all.name}}
+                    </span>
+                    <span class="prix">{{all.system.prix}}</span>
+                </div>
+                <div class="sub" style="display:none;">
+                    {{{all.enriched}}}
+                </div>
+            </div>
+        {{/each}}
+
+        <div class="pages">
+            <span>{{localize "HP.COMPENDIUM.Pages"}}</span>
+            {{#unless (eq objet.pages.actuel 1)}}<a data-type="objet" data-page="previous" class="page"><</a>{{/unless}}
+            {{#each (numerotation objet.pages.total)}}
+                <a data-type="objet" data-page="{{this}}" class="page {{ifThen (eq this ../objet.pages.actuel) 'bold' ''}}">{{this}}</a>
+            {{/each}}
+            {{#unless (or (eq objet.pages.actuel objet.pages.total) (eq objet.pages.total 0))}}<a data-type="objet" data-page="next" class="page">></a>{{/unless}}
+            {{#if (eq objet.pages.total 0)}}<p>0</p>{{/if}}
+        </div>
+    </div>
+</div>

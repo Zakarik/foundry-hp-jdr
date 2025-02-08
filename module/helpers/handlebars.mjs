@@ -26,11 +26,15 @@ export const RegisterHandlebars = function () {
         if(label) {
             switch(key) {
                 case 'caracteristique':
-                    result = game.i18n.localize(CONFIG.HP.caracteristiques[label])
+                    result = CONFIG.HP.caracteristiques?.[label] ? game.i18n.localize(CONFIG.HP.caracteristiques[label]) : ''
                     break;
 
                 case 'competence':
                     result = `${game.i18n.localize(`HP.COMPETENCES.Competence${capitalizeFirstLetter(label.split('_')[1])}`)} : ${localizeScolaire(label.split('_')[2])}`;
+                    break;
+
+                case 'autre':
+                    result = label;
                     break;
             }
         }
@@ -62,8 +66,20 @@ export const RegisterHandlebars = function () {
         return result;
     });
 
+    Handlebars.registerHelper('full', function (string) {
+        let translate;
+        let result = '';
+        if(string === 'e') translate = 'enchantements';
+        else if(string === 's') translate = 'mauvaisorts';
+        else if(string === 'm') translate = 'metamorphose';
+
+        result = game.settings.get('harry-potter-jdr', `${translate}`) ? game.settings.get('harry-potter-jdr', `${translate}`) : game.i18n.localize(`HP.COMPETENCES.${translate.charAt(0).toUpperCase() + translate.slice(1)}`);
+
+        return result;
+    });
+
     Handlebars.registerHelper('cibles', function (object) {
-        let ciblesActives = Object.keys(object).filter(key => object[key]).map(key => game.i18n.localize(`HP.${key.toUpperCase()}`));
+        let ciblesActives = Object.keys(object).filter(key => object[key]).map(key => `<p style='display:contents' title='${game.i18n.localize(`HP.${key.toUpperCase()}Full`)}'>${game.i18n.localize(`HP.${key.toUpperCase()}`)}</p>`);
         let result = ciblesActives.join(' / ');
         return result;
     });
@@ -101,5 +117,53 @@ export const RegisterHandlebars = function () {
         }
 
         return result;
+    });
+
+    Handlebars.registerHelper('getPage', function (data, page) {
+        const startIndex = (page - 1) * 20;
+        const endIndex = startIndex + 20;
+
+        return data.slice(startIndex, endIndex);
+    });
+
+    Handlebars.registerHelper('numerotation', function (page) {
+        return Array.from({length: page}, (_, index) => index + 1);
+    });
+
+    Handlebars.registerHelper('length', function (array) {
+        return array ? array.length : 0;
+    });
+
+    Handlebars.registerHelper('affinite', function (affinite) {
+        const communes = CONFIG.HP.communes;
+        const particulieres = CONFIG.HP.particulieres;
+        let list = {};
+
+        for(let c in communes) {
+          const name = communes[c];
+          const isCmp = c.split('_')[0] === 'competence' ? true : false;
+          const cmp = c.split('_')[1];
+          let finalName = '';
+
+          if(isCmp) finalName = game.settings.get('harry-potter-jdr', `${cmp}`) ? game.settings.get('harry-potter-jdr', `${cmp}`) : game.i18n.localize(name);
+          else finalName = game.i18n.localize(name);
+
+          let string = '';
+
+          string = `${game.i18n.localize('HP.BAGUETTES.Commune')} : ${finalName}`;
+
+          list[c] = string;
+        }
+
+        for(let c in particulieres) {
+          const name = particulieres[c];
+          let string = '';
+
+          string = `${game.i18n.localize('HP.BAGUETTES.Particuliere')} : ${game.i18n.localize(name)}`;
+
+          list[c] = string;
+        }
+
+        return `${list[affinite.key]} ${affinite.value}`;
     });
 }

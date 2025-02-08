@@ -1,0 +1,79 @@
+<div class="tab baguette" data-group="primary" data-tab="baguette">
+
+    <div class="submenu">
+        <label class="recherche">
+            <span>{{localize "HP.COMPENDIUM.Recherche"}}</span>
+            <input type="text" class="search" value="{{baguette.search}}" data-type="baguette" data-subtype="search" />
+        </label>
+
+        {{#if (gt (length submenu.objet) 1)}}
+        <div class="filter">
+            <span class="header">{{localize "HP.COMPENDIUM.Filtres"}}</span>
+            {{#each submenu.objet}}
+                <button type="action" class="{{ifThen checked 'checked' ''}}" data-type="baguette" data-key="{{key}}">{{label}} <i class="fa-solid {{ifThen checked 'fa-check' 'fa-xmark'}}"></i></button>
+            {{/each}}
+        </div>
+        {{/if}}
+    </div>
+
+    <div class="data">
+        <header>
+            <span class="name">
+                {{localize "HP.Name"}}
+                <i class="fa-solid fa-arrow-up tri {{ifThen (eq baguette.sort.label 'asc') 'valide' ''}}" data-type="baguette" data-tri="label" data-value="asc" title="{{localize "HP.COMPENDIUM.TriAscendant"}}"></i>
+                <i class="fa-solid fa-arrow-down tri {{ifThen (eq baguette.sort.label 'desc') 'valide' ''}}" data-type="baguette" data-tri="label" data-value="desc" title="{{localize "HP.COMPENDIUM.TriDescendant"}}"></i>
+            </span>
+            <span class="taille">
+                {{localize "HP.BAGUETTES.Taille"}}
+                <i class="fa-solid fa-arrow-up tri {{ifThen (eq baguette.sort.taille 'asc') 'valide' ''}}" data-type="baguette" data-tri="taille" data-value="asc" title="{{localize "HP.COMPENDIUM.TriAscendant"}}"></i>
+                <i class="fa-solid fa-arrow-down tri {{ifThen (eq baguette.sort.taille 'desc') 'valide' ''}}" data-type="baguette" data-tri="taille" data-value="desc" title="{{localize "HP.COMPENDIUM.TriDescendant"}}"></i>
+            </span>
+            <span class="bois">
+                {{localize "HP.BAGUETTES.Bois"}}
+                <i class="fa-solid fa-arrow-up tri {{ifThen (eq baguette.sort.bois 'asc') 'valide' ''}}" data-type="baguette" data-tri="bois" data-value="asc" title="{{localize "HP.COMPENDIUM.TriAscendant"}}"></i>
+                <i class="fa-solid fa-arrow-down tri {{ifThen (eq baguette.sort.bois 'desc') 'valide' ''}}" data-type="baguette" data-tri="bois" data-value="desc" title="{{localize "HP.COMPENDIUM.TriDescendant"}}"></i>
+            </span>
+            <span class="coeur">
+                {{localize "HP.BAGUETTES.Coeur"}}
+                <i class="fa-solid fa-arrow-up tri {{ifThen (eq baguette.sort.coeur 'asc') 'valide' ''}}" data-type="baguette" data-tri="coeur" data-value="asc" title="{{localize "HP.COMPENDIUM.TriAscendant"}}"></i>
+                <i class="fa-solid fa-arrow-down tri {{ifThen (eq baguette.sort.coeur 'desc') 'valide' ''}}" data-type="baguette" data-tri="coeur" data-value="desc" title="{{localize "HP.COMPENDIUM.TriDescendant"}}"></i>
+            </span>
+            <span class="affinite">
+                {{localize "HP.BAGUETTES.Affinite"}}
+                <i class="fa-solid fa-arrow-up tri {{ifThen (eq baguette.sort.affinite 'asc') 'valide' ''}}" data-type="baguette" data-tri="affinite" data-value="asc" title="{{localize "HP.COMPENDIUM.TriAscendant"}}"></i>
+                <i class="fa-solid fa-arrow-down tri {{ifThen (eq baguette.sort.affinite 'desc') 'valide' ''}}" data-type="baguette" data-tri="affinite" data-value="desc" title="{{localize "HP.COMPENDIUM.TriDescendant"}}"></i>
+            </span>
+        </header>
+
+        {{#each (getPage baguette.data baguette.pages.actuel)}}
+            <div class="block draggable" data-uuid="{{uuid}}" data-type="{{type}}">
+                <div class="main js-toggler">
+                    <i class="far fa-plus-square"></i>
+                    <span class="label">
+                        {{all.name}}
+                    </span>
+                    <span class="taille">{{all.system.taille}}</span>
+                    <span class="bois" title="{{all.system.bois.description}}">{{all.system.bois.name}}</span>
+                    <span class="coeur" title="{{all.system.coeur.description}}">{{all.system.coeur.name}}</span>
+                    <span class="affinite">{{affinite all.system.affinite}}</span>
+                </div>
+                <div class="sub" style="display:none;">
+                    <b>{{localize "HP.Visuel"}} : </b>{{{all.system.visuel}}}
+                </div>
+                <div class="sub" style="display:none;">
+                    {{{all.enriched}}}
+                </div>
+            </div>
+        {{/each}}
+
+        <div class="pages">
+            <span>{{localize "HP.COMPENDIUM.Pages"}}</span>
+            {{#unless (eq baguette.pages.actuel 1)}}<a data-type="baguette" data-page="previous" class="page"><</a>{{/unless}}
+            {{#each (numerotation baguette.pages.total)}}
+                <a data-type="baguette" data-page="{{this}}" class="page {{ifThen (eq this ../baguette.pages.actuel) 'bold' ''}}">{{this}}</a>
+            {{/each}}
+            {{#unless (or (eq baguette.pages.actuel baguette.pages.total) (eq baguette.pages.total 0))}}<a data-type="baguette" data-page="next" class="page">></a>{{/unless}}
+            {{#if (eq baguette.pages.total 0)}}<p>0</p>{{/if}}
+        </div>
+    </div>
+</div>

@@ -14,6 +14,7 @@ import { BalaiItemSheet } from "./sheets/items/balai-sheet.mjs";
 import { CapaciteItemSheet } from "./sheets/items/capacite-sheet.mjs";
 import { ArmeItemSheet } from "./sheets/items/arme-sheet.mjs";
 import { ProtectionItemSheet } from "./sheets/items/protection-sheet.mjs";
+import { compendium } from "./sheets/compendium-sheet.mjs";
 
 // Import helper/utility classes and constants.
 import { RegisterHandlebars } from "./helpers/handlebars.mjs";
@@ -31,6 +32,7 @@ import {
   prepareRollDegats,
   prepareRollCreatureCmp,
   prepareRollCombat,
+  generateNavigator,
 } from "./helpers/common.mjs";
 
 // MODELS
@@ -187,6 +189,44 @@ Hooks.once('init', async function() {
 
 Hooks.once("ready", async function() {
   Hooks.on("hotbarDrop", (bar, data, slot) => createMacro(bar, data, slot));
+
+  if (game.modules.get("babele")?.active && game.i18n.lang !== "fr") {
+    Hooks.once("babele.ready", async function () {
+      Hooks.on('updateCompendium', async function () {
+        await generateNavigator();
+      });
+    });
+  } else {
+    Hooks.on('updateCompendium', async function () {
+      await generateNavigator();
+    });
+  }
+});
+
+Hooks.on('renderItemDirectory', async function () {
+  if (game.modules.get("babele")?.active && game.i18n.lang !== "fr") {
+    Hooks.once("babele.ready", async function () {
+      await generateNavigator();
+
+      $("section#items footer.action-buttons button.compendium").remove();
+      $("section#items footer.action-buttons").append(`<button class='compendium'>${game.i18n.localize('HP.COMPENDIUM.Label')}</button>`);
+
+      $("section#items footer.action-buttons button.compendium").on( "click", async function() {
+        const dial = new compendium();
+        dial.render(true);
+      });
+    });
+  } else {
+    await generateNavigator();
+
+    $("section#items footer.action-buttons button.compendium").remove();
+    $("section#items footer.action-buttons").append(`<button class='compendium'>${game.i18n.localize('HP.COMPENDIUM.Label')}</button>`);
+
+    $("section#items footer.action-buttons button.compendium").on( "click", async function() {
+      const dial = new compendium();
+      dial.render(true);
+    });
+  }
 });
 
 async function createMacro(bar, data, slot) {

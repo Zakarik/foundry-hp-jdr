@@ -58,17 +58,26 @@
     "Malus":"Malus",
     "ConfirmationSuppression":"Êtes vous sûre de vouloir supprimer cet objet ?",
     "Confirmation":"Êtes vous sûre ?",
+    "Cible":"Cible",
     "Cibles":"Cibles",
     "A":"A",
     "O":"O",
     "P":"P",
     "V":"V",
     "S":"S",
+    "F":"F",
+    "AFull":"Animal",
+    "OFull":"Objet",
+    "PFull":"Personne",
+    "VFull":"Végétaux et plantes",
+    "SFull":"Sortilège",
+    "FFull":"Fantome",
     "Animal":"Animal",
     "Objet":"Objet",
     "Personne":"Personne",
     "Vegetaux":"Végétaux et plantes",
     "Sortilege":"Sortilège",
+    "Fantome":"Fantome",
     "Communs":"Communs",
     "Rares":"Rares",
     "Rarissimes":"Rarissimes",
@@ -113,11 +122,14 @@
     "ARMES":{
       "Label":"Armes",
       "Distance":"Arme à distance",
+      "Contact-short":"Contact",
+      "Distance-short":"Distance",
       "Portee":"Portée"
     },
     "PROTECTIONS":{
       "Label":"Protections",
-      "Bouclier":"Bouclier"
+      "Bouclier":"Bouclier",
+      "Armure":"Armure"
     },
     "CAPACITES":{
       "Label":"Capacités"
@@ -392,6 +404,14 @@
       "Menu":"Commandes du système",
       "RollCaracteristique":"Jet de caractéristique",
       "RollCompetence":"Jet de compétence"
+    },
+    "COMPENDIUM":{
+      "Label":"Navigateur de compendium",
+      "Recherche":"Recherche",
+      "Pages":"Pages",
+      "TriDescendant":"Trier par ordre descendant",
+      "TriAscendant":"Trier par ordre ascendant",
+      "Filtres":"Filtres"
     }
   }
 }

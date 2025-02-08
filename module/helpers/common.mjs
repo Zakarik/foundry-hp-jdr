@@ -317,7 +317,10 @@ export async function doRoll(actor, data) {
 }
 
 export function capitalizeFirstLetter(string) {
-  return string.charAt(0).toUpperCase() + string.slice(1);
+  const first = (string?.charAt(0) ?? '').toUpperCase();
+  const rest = string?.slice(1) ?? '';
+
+  return first + rest;
 }
 
 export function localizeScolaire(string) {
@@ -1342,7 +1345,7 @@ export function splitArrayInHalf(array) {
 }
 
 export async function enrichItems(items) {
-  const listDescription = ["avantage", "desavantage", "coupspouce", "crochepatte", "capacite", "arme", "protection"];
+  const listDescription = ["avantage", "desavantage", "coupspouce", "crochepatte", "capacite", "capacitefamilier", "arme", "protection"];
   const listEffets = ["potion", "sortilege"];
 
   for(let d of items) {
@@ -1357,7 +1360,7 @@ export async function enrichItems(items) {
 }
 
 export async function enrichDescription(item) {
-  const listDescription = ["avantage", "desavantage", "coupspouce", "crochepatte", "capacite", "arme", "protection"];
+  const listDescription = ["avantage", "desavantage", "coupspouce", "crochepatte", "capacite", "capacitefamilier", "arme", "protection", 'baguette'];
   const listEffets = ["potion", "sortilege"];
   let enriched = "";
 
@@ -1370,4 +1373,534 @@ export async function enrichDescription(item) {
   }
 
   return enriched;
+}
+
+export async function generateNavigator() {
+  const packs = game.packs.contents;
+  const arme = [];
+  const armure = [];
+  const avantage = [];
+  const desavantage = [];
+  const crochepatte = [];
+  const coupspouce = [];
+  const capacite = [];
+  const capacitefamilier = [];
+  const sortilege = [];
+  const sortilegeCibles = [];
+  const potion = [];
+  const potionCibles = [];
+  const objet = [];
+  const baguette = [];
+  const balai = [];
+  const menu = [];
+  const submenu = {};
+
+  for(let p of packs) {
+    if(p.visible) {
+      const list = p.index.contents;
+
+      for(let l of list) {
+        const type = l.type;
+        const uuid = l.uuid;
+        const itm = 'Item';
+        let rData;
+        let data = {};
+        data = {
+          uuid:uuid,
+          type:itm,
+          all:{}
+        };
+
+        switch(type) {
+          case 'arme':
+            rData = await fromUuid(uuid);
+            rData.submenu = p.collection;
+            rData.enriched = await enrichDescription(rData);
+            data.all = rData;
+
+            if(!menu.find(itm => itm.key === type)) menu.push({key:type, label:game.i18n.localize(`TYPES.Item.${type}`)});
+
+            if(!submenu?.[type]) {
+              submenu[type] = [];
+            }
+
+            if(!submenu[type].find(itm => itm.key === `${p.collection}.`)) submenu[type].push({key:`${p.collection}.`, label:p.title, checked:true});
+
+            arme.push(data);
+            break;
+
+          case 'protection':
+            rData = await fromUuid(uuid);
+            rData.submenu = p.collection;
+            rData.enriched = await enrichDescription(rData);
+            data.all = rData;
+
+            if(!menu.find(itm => itm.key === type)) menu.push({key:type, label:game.i18n.localize(`TYPES.Item.${type}`)});
+
+            if(!submenu?.[type]) {
+              submenu[type] = [];
+            }
+
+            if(!submenu[type].find(itm => itm.key === `${p.collection}.`)) submenu[type].push({key:`${p.collection}.`, label:p.title, checked:true});
+
+            armure.push(data);
+            break;
+
+          case 'avantage':
+            rData = await fromUuid(uuid);
+            rData.submenu = p.collection;
+            rData.enriched = await enrichDescription(rData);
+            data.all = rData;
+
+            if(!menu.find(itm => itm.key === type)) menu.push({key:type, label:game.i18n.localize(`TYPES.Item.${type}`)});
+
+            if(!submenu?.[type]) {
+              submenu[type] = [];
+            }
+
+            if(!submenu[type].find(itm => itm.key === `${p.collection}.`)) submenu[type].push({key:`${p.collection}.`, label:p.title, checked:true});
+
+            avantage.push(data);
+            break;
+
+          case 'desavantage':
+            rData = await fromUuid(uuid);
+            rData.submenu = p.collection;
+            rData.enriched = await enrichDescription(rData);
+            data.all = rData;
+
+            if(!menu.find(itm => itm.key === type)) menu.push({key:type, label:game.i18n.localize(`TYPES.Item.${type}`)});
+
+            if(!submenu?.[type]) {
+              submenu[type] = [];
+            }
+
+            if(!submenu[type].find(itm => itm.key === `${p.collection}.`)) submenu[type].push({key:`${p.collection}.`, label:p.title, checked:true});
+
+            desavantage.push(data);
+            break;
+
+          case 'crochepatte':
+            rData = await fromUuid(uuid);
+            rData.submenu = p.collection;
+            rData.enriched = await enrichDescription(rData);
+            data.all = rData;
+
+            if(!menu.find(itm => itm.key === type)) menu.push({key:type, label:game.i18n.localize(`TYPES.Item.${type}`)});
+
+            if(!submenu?.[type]) {
+              submenu[type] = [];
+            }
+
+            if(!submenu[type].find(itm => itm.key === `${p.collection}.`)) submenu[type].push({key:`${p.collection}.`, label:p.title, checked:true});
+
+            crochepatte.push(data);
+            break;
+
+          case 'coupspouce':
+            rData = await fromUuid(uuid);
+            rData.submenu = p.collection;
+            rData.enriched = await enrichDescription(rData);
+            data.all = rData;
+
+            if(!menu.find(itm => itm.key === type)) menu.push({key:type, label:game.i18n.localize(`TYPES.Item.${type}`)});
+
+            if(!submenu?.[type]) {
+              submenu[type] = [];
+            }
+
+            if(!submenu[type].find(itm => itm.key === `${p.collection}.`)) submenu[type].push({key:`${p.collection}.`, label:p.title, checked:true});
+
+            coupspouce.push(data);
+            break;
+
+          case 'objet':
+            rData = await fromUuid(uuid);
+            rData.submenu = p.collection;
+            rData.enriched = await enrichDescription(rData);
+            data.all = rData;
+
+            if(!menu.find(itm => itm.key === type)) menu.push({key:type, label:game.i18n.localize(`TYPES.Item.${type}`)});
+
+            if(!submenu?.[type]) {
+              submenu[type] = [];
+            }
+
+            if(!submenu[type].find(itm => itm.key === `${p.collection}.`)) submenu[type].push({key:`${p.collection}.`, label:p.title, checked:true});
+
+            objet.push(data);
+            break;
+
+          case 'capacite':
+            rData = await fromUuid(uuid);
+            rData.submenu = p.collection;
+            rData.enriched = await enrichDescription(rData);
+            data.all = rData;
+
+            if(!menu.find(itm => itm.key === type)) menu.push({key:type, label:game.i18n.localize(`TYPES.Item.${type}`)});
+
+            if(!submenu?.[type]) {
+              submenu[type] = [];
+            }
+
+            if(!submenu[type].find(itm => itm.key === `${p.collection}.`)) submenu[type].push({key:`${p.collection}.`, label:p.title, checked:true});
+
+            capacite.push(data);
+            break;
+
+          case 'capacitefamilier':
+            rData = await fromUuid(uuid);
+            rData.submenu = p.collection;
+            rData.enriched = await enrichDescription(rData);
+            data.all = rData;
+
+            if(!menu.find(itm => itm.key === type)) menu.push({key:type, label:game.i18n.localize(`TYPES.Item.${type}`)});
+
+            if(!submenu?.[type]) {
+              submenu[type] = [];
+            }
+
+            if(!submenu[type].find(itm => itm.key === `${p.collection}.`)) submenu[type].push({key:`${p.collection}.`, label:p.title, checked:true});
+
+            capacitefamilier.push(data);
+            break;
+
+          case 'sortilege':
+            rData = await fromUuid(uuid);
+            rData.submenu = p.collection;
+            rData.enriched = await enrichDescription(rData);
+            data.all = rData;
+
+            if(!menu.find(itm => itm.key === type)) menu.push({key:type, label:game.i18n.localize(`TYPES.Item.${type}`)});
+
+            if(!submenu?.[type]) {
+              submenu[type] = [];
+            }
+
+            if(!submenu[type].find(itm => itm.key === `${p.collection}.`)) submenu[type].push({key:`${p.collection}.`, label:p.title, checked:true});
+
+            for(let c in rData.system.cibles) {
+              if(!rData.system.cibles[c]) continue;
+
+              if(!sortilegeCibles.find(item => item.key === `cibles_${c}`)) {
+                sortilegeCibles.push({
+                  key: `cibles_${c}`,
+                  label: `${game.i18n.localize('HP.Cible')} : ${game.i18n.localize(`HP.${c.toUpperCase()}`)} (${game.i18n.localize(`HP.${c.toUpperCase()}Full`)})`,
+                  checked:true,
+                  special:true,
+                });
+              }
+            }
+
+            sortilegeCibles.sort((a, b) => {
+              const labelComparison = a.label.localeCompare(b.label);
+              const sortOrder = 1;
+              return labelComparison * sortOrder;
+            });
+
+            sortilege.push(data);
+            break;
+
+          case 'potion':
+            rData = await fromUuid(uuid);
+            rData.submenu = p.collection;
+            rData.enriched = await enrichDescription(rData);
+            data.all = rData;
+
+            if(!menu.find(itm => itm.key === type)) menu.push({key:type, label:game.i18n.localize(`TYPES.Item.${type}`)});
+
+            if(!submenu?.[type]) {
+              submenu[type] = [];
+            }
+
+            if(!submenu[type].find(itm => itm.key === `${p.collection}.`)) submenu[type].push({key:`${p.collection}.`, label:p.title, checked:true});
+
+            for(let c in rData.system.cibles) {
+              if(!rData.system.cibles[c]) continue;
+
+              if(!potionCibles.find(item => item.key === `cible_${c}`)) {
+                potionCibles.push({
+                  key: `cibles_${c}`,
+                  label: `${game.i18n.localize('HP.Cible')} : ${game.i18n.localize(`HP.${c.toUpperCase()}`)} (${game.i18n.localize(`HP.${c.toUpperCase()}Full`)})`,
+                  checked:true,
+                  special:true,
+                });
+              }
+            }
+
+            potionCibles.sort((a, b) => {
+              const labelComparison = a.label.localeCompare(b.label);
+              const sortOrder = 1;
+              return labelComparison * sortOrder;
+            });
+
+            potion.push(data);
+            break;
+
+          case 'baguette':
+            rData = await fromUuid(uuid);
+            rData.submenu = p.collection;
+            rData.enriched = await enrichDescription(rData);
+            data.all = rData;
+
+            if(!menu.find(itm => itm.key === type)) menu.push({key:type, label:game.i18n.localize(`TYPES.Item.${type}`)});
+
+            if(!submenu?.[type]) {
+              submenu[type] = [];
+            }
+
+            if(!submenu[type].find(itm => itm.key === `${p.collection}.`)) submenu[type].push({key:`${p.collection}.`, label:p.title, checked:true});
+
+            baguette.push(data);
+            break;
+
+          case 'balai':
+            rData = await fromUuid(uuid);
+            rData.submenu = p.collection;
+            rData.enriched = await enrichDescription(rData);
+            data.all = rData;
+
+            if(!menu.find(itm => itm.key === type)) menu.push({key:type, label:game.i18n.localize(`TYPES.Item.${type}`)});
+
+            if(!submenu?.[type]) {
+              submenu[type] = [];
+            }
+
+            if(!submenu[type].find(itm => itm.key === `${p.collection}.`)) submenu[type].push({key:`${p.collection}.`, label:p.title, checked:true});
+
+            balai.push(data);
+            break;
+        }
+      }
+    }
+  }
+
+  menu.sort((a, b) => a.label.localeCompare(b.label));
+
+  CONFIG.HPCOMPENDIUM = {
+    menu,
+    submenu,
+    objet:{
+      all:objet,
+      data:objet.sort((a, b) => {
+        const nameComparison = a.all.name.localeCompare(b.all.name);
+        const sortOrder = 1;
+        return nameComparison * sortOrder;
+      }),
+      pages:{
+        total:Math.ceil(objet.length / 20),
+        actuel:1,
+      },
+      sort:{
+        label:'desc'
+      },
+      search:""
+    },
+    arme:{
+      all:arme,
+      data:arme.sort((a, b) => {
+        return a.all.name.localeCompare(b.all.name);
+      }),
+      pages:{
+        total:Math.ceil(arme.length / 20),
+        actuel:1,
+      },
+      sort:{
+        label:'desc',
+        type:false,
+        portee:false,
+      },
+      search:""
+    },
+    protection:{
+      all:armure,
+      data:armure.sort((a, b) => {
+        return a.all.name.localeCompare(b.all.name);
+      }),
+      pages:{
+        total:Math.ceil(armure.length / 20),
+        actuel:1,
+      },
+      sort:{
+        label:'desc',
+        type:false,
+        armure:false,
+      },
+      search:""
+    },
+    avantage:{
+      all:avantage,
+      data:avantage.sort((a, b) => {
+        return a.all.name.localeCompare(b.all.name);
+      }),
+      pages:{
+        total:Math.ceil(avantage.length / 20),
+        actuel:1,
+      },
+      sort:{
+        label:'desc',
+        cout:false,
+      },
+      search:""
+    },
+    desavantage:{
+      all:desavantage,
+      data:desavantage.sort((a, b) => {
+        return a.all.name.localeCompare(b.all.name);
+      }),
+      pages:{
+        total:Math.ceil(desavantage.length / 20),
+        actuel:1,
+      },
+      sort:{
+        label:'desc',
+        cout:false,
+      },
+      search:""
+    },
+    crochepatte:{
+      all:crochepatte,
+      data:crochepatte.sort((a, b) => {
+        return a.all.name.localeCompare(b.all.name);
+      }),
+      pages:{
+        total:Math.ceil(crochepatte.length / 20),
+        actuel:1,
+      },
+      sort:{
+        label:'desc',
+      },
+      search:""
+    },
+    coupspouce:{
+      all:coupspouce,
+      data:coupspouce.sort((a, b) => {
+        return a.all.name.localeCompare(b.all.name);
+      }),
+      pages:{
+        total:Math.ceil(coupspouce.length / 20),
+        actuel:1,
+      },
+      sort:{
+        label:'desc',
+      },
+      search:""
+    },
+    capacitefamilier:{
+      all:capacitefamilier,
+      data:capacitefamilier.sort((a, b) => {
+        return a.all.name.localeCompare(b.all.name);
+      }),
+      pages:{
+        total:Math.ceil(capacitefamilier.length / 20),
+        actuel:1,
+      },
+      sort:{
+        label:'desc',
+        cout:false,
+      },
+      search:""
+    },
+    capacite:{
+      all:capacite,
+      data:capacite.sort((a, b) => {
+        const nameComparison = a.all.name.localeCompare(b.all.name);
+        const sortOrder = 1;
+        return nameComparison * sortOrder;
+      }),
+      pages:{
+        total:Math.ceil(capacite.length / 20),
+        actuel:1,
+      },
+      sort:{
+        label:'desc'
+      },
+      search:""
+    },
+    sortilege:{
+      all:sortilege,
+      data:sortilege.sort((a, b) => {
+        const nameComparison = a.all.name.localeCompare(b.all.name);
+        const sortOrder = 1;
+        return nameComparison * sortOrder;
+      }),
+      pages:{
+        total:Math.ceil(sortilege.length / 20),
+        actuel:1,
+      },
+      filtres:{
+        cibles:sortilegeCibles,
+      },
+      sort:{
+        label:'desc',
+        type:false,
+        niveau:false,
+        incantation:false,
+        cible:false,
+      },
+      search:"",
+      malus:"",
+      niveau:""
+    },
+    potion:{
+      all:potion,
+      data:potion.sort((a, b) => {
+        const nameComparison = a.all.name.localeCompare(b.all.name);
+        const sortOrder = 1;
+        return nameComparison * sortOrder;
+      }),
+      pages:{
+        total:Math.ceil(potion.length / 20),
+        actuel:1,
+      },
+      filtres:{
+        cibles:potionCibles,
+      },
+      sort:{
+        label:'desc',
+        niveau:false,
+        cible:false,
+      },
+      search:"",
+      malus:"",
+      niveau:""
+    },
+    baguette:{
+      all:baguette,
+      data:baguette.sort((a, b) => {
+        const nameComparison = a.all.name.localeCompare(b.all.name);
+        const sortOrder = 1;
+        return nameComparison * sortOrder;
+      }),
+      pages:{
+        total:Math.ceil(baguette.length / 20),
+        actuel:1,
+      },
+      sort:{
+        label:'desc',
+        taille:false,
+        bois:false,
+        coeur:false,
+        affinite:false,
+      },
+      search:""
+    },
+    balai:{
+      all:balai,
+      data:balai.sort((a, b) => {
+        const nameComparison = a.all.name.localeCompare(b.all.name);
+        const sortOrder = 1;
+        return nameComparison * sortOrder;
+      }),
+      pages:{
+        total:Math.ceil(baguette.length / 20),
+        actuel:1,
+      },
+      sort:{
+        label:'desc',
+        marque:false,
+      },
+      search:""
+    }
+  };
 }

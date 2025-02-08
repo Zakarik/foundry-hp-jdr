@@ -1,0 +1,67 @@
+<div class="tab balai" data-group="primary" data-tab="balai">
+
+    <div class="submenu">
+        <label class="recherche">
+            <span>{{localize "HP.COMPENDIUM.Recherche"}}</span>
+            <input type="text" class="search" value="{{balai.search}}" data-type="balai" data-subtype="search" />
+        </label>
+
+        {{#if (gt (length submenu.objet) 1)}}
+        <div class="filter">
+            <span class="header">{{localize "HP.COMPENDIUM.Filtres"}}</span>
+            {{#each submenu.objet}}
+                <button type="action" class="{{ifThen checked 'checked' ''}}" data-type="balai" data-key="{{key}}">{{label}} <i class="fa-solid {{ifThen checked 'fa-check' 'fa-xmark'}}"></i></button>
+            {{/each}}
+        </div>
+        {{/if}}
+    </div>
+
+    <div class="data">
+        <header>
+            <span class="name">
+                {{localize "HP.Name"}}
+                <i class="fa-solid fa-arrow-up tri {{ifThen (eq balai.sort.label 'asc') 'valide' ''}}" data-type="balai" data-tri="label" data-value="asc" title="{{localize "HP.COMPENDIUM.TriAscendant"}}"></i>
+                <i class="fa-solid fa-arrow-down tri {{ifThen (eq balai.sort.label 'desc') 'valide' ''}}" data-type="balai" data-tri="label" data-value="desc" title="{{localize "HP.COMPENDIUM.TriDescendant"}}"></i>
+            </span>
+            <span class="marque">
+                {{localize "HP.BALAIS.Marque"}}
+                <i class="fa-solid fa-arrow-up tri {{ifThen (eq balai.sort.taille 'asc') 'valide' ''}}" data-type="balai" data-tri="marque" data-value="asc" title="{{localize "HP.COMPENDIUM.TriAscendant"}}"></i>
+                <i class="fa-solid fa-arrow-down tri {{ifThen (eq balai.sort.taille 'desc') 'valide' ''}}" data-type="balai" data-tri="marque" data-value="desc" title="{{localize "HP.COMPENDIUM.TriDescendant"}}"></i>
+            </span>
+        </header>
+
+        {{#each (getPage balai.data balai.pages.actuel)}}
+            <div class="block draggable" data-uuid="{{uuid}}" data-type="{{type}}">
+                <div class="main js-toggler">
+                    <i class="far fa-plus-square"></i>
+                    <span class="label">
+                        {{all.name}}
+                    </span>
+                    <span class="marque">{{all.system.marque}}</span>
+                </div>
+                <div class="sub" style="display:none;">
+                    <b>{{localize "HP.Visuel"}} : </b>{{{all.system.visuel}}}
+                </div>
+                <div class="sub" style="display:none;">
+                    <b>{{localize "HP.Bonus"}} : </b>
+                    {{#each all.system.bonus.liste}}
+                        <p style="display:contents;" title="{{description}}">{{#if (gte @index 1)}} / {{/if}}{{getBalaiBonusLocalization this}}{{#unless (eq key 'autre')}} ({{value}}){{/unless}}</p>
+                    {{/each}}
+                </div>
+                <div class="sub" style="display:none;">
+                    {{{all.enriched}}}
+                </div>
+            </div>
+        {{/each}}
+
+        <div class="pages">
+            <span>{{localize "HP.COMPENDIUM.Pages"}}</span>
+            {{#unless (eq balai.pages.actuel 1)}}<a data-type="balai" data-page="previous" class="page"><</a>{{/unless}}
+            {{#each (numerotation balai.pages.total)}}
+                <a data-type="balai" data-page="{{this}}" class="page {{ifThen (eq this ../balai.pages.actuel) 'bold' ''}}">{{this}}</a>
+            {{/each}}
+            {{#unless (or (eq balai.pages.actuel balai.pages.total) (eq balai.pages.total 0))}}<a data-type="balai" data-page="next" class="page">></a>{{/unless}}
+            {{#if (eq balai.pages.total 0)}}<p>0</p>{{/if}}
+        </div>
+    </div>
+</div>

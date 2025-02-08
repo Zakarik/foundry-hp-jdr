@@ -2,7 +2,7 @@
     <img class="profil-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" />
 
     <input type="text" class="name" name="name" value="{{data.name}}" placeholder="{{localize "HP.Name"}}" />
-    <input type="number" class="niveau" name="system.niveau" value="{{systemData.niveau}}" title="{{localize "HP.Niveau"}}" min="0" />
+    <input type="text" class="niveau" name="system.niveau" value="{{systemData.niveau}}" title="{{localize "HP.Niveau"}}" />
 
     <div class="data">
         <label class="type">
@@ -64,6 +64,10 @@
             <div class="{{ifThen systemData.cibles.s 'checked' ''}}" data-cible="s" title="{{localize "HP.Sortilege"}}">
                 <i class="fa-solid {{ifThen systemData.cibles.s 'fa-check' 'fa-xmark'}}"></i>
                 <span>{{localize "HP.S"}}</span>
+            </div>
+            <div class="{{ifThen systemData.cibles.f 'checked' ''}}" data-cible="f" title="{{localize "HP.Fantome"}}">
+                <i class="fa-solid {{ifThen systemData.cibles.f 'fa-check' 'fa-xmark'}}"></i>
+                <span>{{localize "HP.F"}}</span>
             </div>
         </div>
 

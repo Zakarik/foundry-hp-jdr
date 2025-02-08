@@ -94,6 +94,11 @@
       "name":"tables-aleatoires",
       "label":"Tables aléatoires",
       "type":"RollTable"
+    },
+    {
+      "name":"sortileges",
+      "label":"Sortilèges",
+      "type":"Item"
     }
   ],
   "packFolders":[
@@ -112,7 +117,8 @@
         "objets",
         "objets-magiques",
         "objets-magiques-mineurs",
-        "tables-aleatoires"
+        "tables-aleatoires",
+        "sortileges"
       ]
     }
   ],

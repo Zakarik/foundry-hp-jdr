@@ -77,7 +77,7 @@
                                 {{else}}
                                     <i class="empty"></i>
                                 {{/unless}}
-                                <span class="score">{{total}}</span>
+                                <span class="score {{ifThen (gt total 0) 'bold' ''}}">{{total}}</span>
                             </div>
                             <div class="sub" style="display:none;">
                                 <span class="label"></span>
@@ -224,7 +224,7 @@
                                 {{else}}
                                     <i class="empty"></i>
                                 {{/unless}}
-                                <span class="score">{{total}}</span>
+                                <span class="score {{ifThen (gt total 0) 'bold' ''}}">{{total}}</span>
                             </div>
                             <div class="sub" style="display:none;">
                                 <span class="label"></span>

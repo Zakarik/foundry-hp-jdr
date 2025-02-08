@@ -10,5 +10,18 @@
 @import "parts/balai";
 @import "parts/arme";
 @import "parts/protection";
+@import "parts/compendium";
 @import "parts/dialog";
 @import "parts/roll";
+
+footer {
+    &.action-buttons {
+        button {
+            &.compendium {
+                font-variant: small-caps;
+                font-size: 20px;
+                font-weight: bold;
+            }
+        }
+    }
+}

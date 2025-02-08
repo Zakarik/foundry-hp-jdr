@@ -1,0 +1,87 @@
+<div class="tab potion" data-group="primary" data-tab="potion">
+    <div class="submenu">
+        <label class="recherche">
+            <span>{{localize "HP.COMPENDIUM.Recherche"}}</span>
+            <input type="text" class="search" value="{{potion.search}}" data-type="potion" data-subtype="search" />
+        </label>
+
+        {{#if (or (gt (length submenu.potion) 1) (gt (length potion.filtres.cibles) 0))}}
+        <div class="filter">
+            <span class="header">{{localize "HP.COMPENDIUM.Filtres"}}</span>
+
+            <label class="niveau">
+                <span>{{localize "HP.Niveau"}}</span>
+                <input type="text" class="niveau" value="{{potion.niveau}}" data-type="potion" data-subtype="niveau" />
+            </label>
+
+            <label class="malus">
+                <span>{{localize "HP.Malus"}}</span>
+                <input type="number" class="malus" value="{{potion.malus}}" data-type="potion" data-subtype="malus" />
+            </label>
+
+            {{#each submenu.potion}}
+                <button type="action" class="{{ifThen checked 'checked' ''}}" data-type="potion" data-key="{{key}}">{{label}} <i class="fa-solid {{ifThen checked 'fa-check' 'fa-xmark'}}"></i></button>
+            {{/each}}
+
+            {{#if (gt (length potion.filtres.cibles) 0)}}
+                {{#each potion.filtres.cibles}}
+                    <button type="action" class="{{ifThen checked 'checked' ''}}" data-type="potion" data-key="{{key}}" data-special="{{special}}">{{label}} <i class="fa-solid {{ifThen checked 'fa-check' 'fa-xmark'}}"></i></button>
+                {{/each}}
+            {{/if}}
+        </div>
+        {{/if}}
+    </div>
+
+
+    <div class="data">
+        <header>
+            <span class="name">
+                {{localize "HP.Name"}}
+                <i class="fa-solid fa-arrow-up tri {{ifThen (eq potion.sort.label 'asc') 'valide' ''}}" data-type="potion" data-tri="label" data-value="asc" title="{{localize "HP.COMPENDIUM.TriAscendant"}}"></i>
+                <i class="fa-solid fa-arrow-down tri {{ifThen (eq potion.sort.label 'desc') 'valide' ''}}" data-type="potion" data-tri="label" data-value="desc" title="{{localize "HP.COMPENDIUM.TriDescendant"}}"></i>
+            </span>
+            <span class="niveau">
+                {{localize "HP.Niveau"}}
+                <i class="fa-solid fa-arrow-up tri {{ifThen (eq potion.sort.niveau 'asc') 'valide' ''}}" data-type="potion" data-tri="niveau" data-value="asc" title="{{localize "HP.COMPENDIUM.TriAscendant"}}"></i>
+                <i class="fa-solid fa-arrow-down tri {{ifThen (eq potion.sort.niveau 'desc') 'valide' ''}}" data-type="potion" data-tri="niveau" data-value="desc" title="{{localize "HP.COMPENDIUM.TriDescendant"}}"></i>
+            </span>
+            <span class="cible">
+                {{localize "HP.Cibles"}}
+                <i class="fa-solid fa-arrow-up tri {{ifThen (eq potion.sort.cible 'asc') 'valide' ''}}" data-type="potion" data-tri="cible" data-value="asc" title="{{localize "HP.COMPENDIUM.TriAscendant"}}"></i>
+                <i class="fa-solid fa-arrow-down tri {{ifThen (eq potion.sort.cible 'desc') 'valide' ''}}" data-type="potion" data-tri="cible" data-value="desc" title="{{localize "HP.COMPENDIUM.TriDescendant"}}"></i>
+            </span>
+            <span class="malus">
+                {{localize "HP.Malus"}}
+                <i class="fa-solid fa-arrow-up tri {{ifThen (eq potion.sort.malus 'asc') 'valide' ''}}" data-type="potion" data-tri="malus" data-value="asc" title="{{localize "HP.COMPENDIUM.TriAscendant"}}"></i>
+                <i class="fa-solid fa-arrow-down tri {{ifThen (eq potion.sort.malus 'desc') 'valide' ''}}" data-type="potion" data-tri="malus" data-value="desc" title="{{localize "HP.COMPENDIUM.TriDescendant"}}"></i>
+            </span>
+        </header>
+
+        {{#each (getPage potion.data potion.pages.actuel)}}
+            <div class="block draggable" data-uuid="{{uuid}}" data-type="{{type}}">
+                <div class="main js-toggler">
+                    <i class="far fa-plus-square"></i>
+                    <span class="label">
+                        {{all.name}}
+                    </span>
+                    <span class="niveau">{{all.system.niveau}}</span>
+                    <span class="cible">{{{cibles all.system.cibles}}}</span>
+                    <span class="malus">{{concat all.system.malus '%'}}</span>
+                </div>
+                <div class="sub" style="display:none;">
+                    {{{all.enriched}}}
+                </div>
+            </div>
+        {{/each}}
+
+        <div class="pages">
+            <span>{{localize "HP.COMPENDIUM.Pages"}}</span>
+            {{#unless (eq potion.pages.actuel 1)}}<a data-type="potion" data-page="previous" class="page"><</a>{{/unless}}
+            {{#each (numerotation potion.pages.total)}}
+                <a data-type="potion" data-page="{{this}}" class="page {{ifThen (eq this ../potion.pages.actuel) 'bold' ''}}">{{this}}</a>
+            {{/each}}
+            {{#unless (or (eq potion.pages.actuel potion.pages.total) (eq potion.pages.total 0))}}<a data-type="potion" data-page="next" class="page">></a>{{/unless}}
+            {{#if (eq potion.pages.total 0)}}<p>0</p>{{/if}}
+        </div>
+    </div>
+</div>

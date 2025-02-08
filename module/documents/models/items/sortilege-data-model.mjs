@@ -4,7 +4,7 @@ export class SortilegeDataModel extends foundry.abstract.TypeDataModel {
 
         return {
             apprismaison:new BooleanField({initial:false}),
-            niveau:new NumberField({initial:0}),
+            niveau:new StringField({initial:"0"}),
             type:new StringField({initial:"e", choices:['e', 's', 'm']}),
             incantation:new StringField({initial:"-"}),
             cibles:new SchemaField({
@@ -13,6 +13,7 @@ export class SortilegeDataModel extends foundry.abstract.TypeDataModel {
                 p:new BooleanField({initial:false}),
                 v:new BooleanField({initial:false}),
                 s:new BooleanField({initial:false}),
+                f:new BooleanField({initial:false}),
             }),
             effets:new HTMLField({initial:""}),
             malus:new SchemaField({

@@ -1,0 +1,2088 @@
+.compendium {
+    section.window-content {
+        background:$background;
+
+        span,
+        input {
+            color: $black;
+        }
+
+        section {
+            &.body {
+                @import "subparts/menu.scss";
+
+                nav.tabs a.active {
+                    border-radius: 5px;
+                    border: 1px solid $black;
+                    margin-bottom: 5px;
+                    padding: 8px 12px;
+                }
+
+                div {
+                    &.objet.active {
+                        display: grid;
+                        grid-template-columns: 200px 1fr;
+                        grid-template-rows: 1fr;
+                        grid-gap: 2px;
+                        align-items: flex-start;
+                        align-content: flex-start;
+                        background:$backgroundClair;
+                        height: max-content;
+                        border: 1px solid $black;
+                        border-radius: 5px;
+                        margin-top: -2px;
+
+                        div {
+                            &.submenu {
+                                display: grid;
+                                grid-template-columns: 1fr;
+                                grid-gap: 2px;
+                                padding: 2px;
+                                height: 100%;
+                                border-right: 1px solid $black;
+                                align-items: flex-start;
+                                align-content: flex-start;
+
+                                div {
+                                    &.filter {
+                                        display: grid;
+                                        grid-template-columns: 1fr;
+                                        grid-gap: 2px;
+
+                                        span {
+                                            &.header {
+                                                width: 100%;
+                                                font-variant: small-caps;
+                                                font-size: 17px;
+                                                font-weight: bold;
+                                                text-align: center;
+                                            }
+                                        }
+
+                                        button {
+                                            width: 100%;
+                                            border: 1px solid $black;
+                                            border-radius: 5px;
+                                            padding: 2px;
+                                            margin: 0px;
+                                            font-variant: small-caps;
+                                            font-weight: bold;
+                                            line-height: 20px;
+                                            display: grid;
+                                            grid-template-columns: 1fr max-content;
+                                            grid-gap: 2px;
+                                            text-align: left;
+                                            font-size: 16px;
+                                            align-items: center;
+
+                                            &.checked {
+                                                background: $backgroundClair;
+                                            }
+
+                                            i {
+                                                &.fa-xmark {
+                                                    color: $unvalide;
+                                                }
+
+                                                &.fa-check {
+                                                    color: $valide;
+                                                }
+                                            }
+
+                                            &:hover {
+                                                box-shadow: none;
+                                                text-shadow: none;
+
+                                                background: $white;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            &.data {
+                                display: grid;
+                                grid-template-columns: 1fr;
+                                grid-gap: 2px;
+
+                                header {
+                                    display: grid;
+                                    grid-template-columns: 1fr 200px;
+                                    grid-gap: 2px;
+
+                                    span {
+                                        font-variant: small-caps;
+                                        font-size: 18px;
+                                        font-weight: bold;
+
+                                        &.name {
+                                            display: grid;
+                                            grid-template-columns: max-content max-content max-content;
+                                            grid-gap: 2px;
+                                            align-items: center;
+
+                                            i {
+                                                cursor: pointer;
+                                                font-size: 13px;
+
+                                                &.valide {
+                                                    color: $valide;
+                                                }
+
+                                                &:hover {
+                                                    color: $white;
+                                                }
+                                            }
+                                        }
+
+                                        &.prix {
+                                            text-align: center;
+                                            border-left: 1px solid $black;
+                                        }
+                                    }
+
+                                }
+
+                                div {
+                                    &.block {
+                                        display: grid;
+                                        grid-gap: 2px;
+
+                                        span {
+                                            font-variant: small-caps;
+                                            font-size: 15px;
+
+                                            &.label {
+                                                cursor: pointer;
+
+                                                &:hover {
+                                                    color: $white;
+                                                }
+                                            }
+
+                                            &.prix {
+                                                text-align: center;
+                                                border-left: 1px solid $black;
+                                                display: grid;
+                                                align-items: center;
+                                                height: 100%;
+                                            }
+                                        }
+                                    }
+
+                                    &.main {
+                                        display: grid;
+                                        grid-template-columns: max-content 1fr 200px;;
+                                        grid-gap: 2px;
+                                        align-items: center;
+
+                                        i {
+                                            cursor: pointer;
+
+                                            &:hover {
+                                                color: $white;
+                                            }
+                                        }
+                                    }
+
+                                    &.sub {
+                                        padding-right: 2px;
+                                    }
+
+                                    &.pages {
+                                        display: flex;
+                                        grid-gap: 5px;
+                                        justify-content: center;
+                                        text-align: center;
+                                        flex-wrap: wrap;
+                                        border-top: 1px solid $black;
+                                        padding-top: 2px;
+                                        margin-top: 2px;
+
+                                        span {
+                                            display: block;
+                                            width: 100%;
+                                            text-align: center;
+                                            font-size: 15px;
+                                            font-variant: small-caps;
+                                            font-weight: bold;
+                                        }
+
+                                        a {
+                                            &.bold {
+                                                font-weight: bold;
+                                            }
+                                        }
+
+                                        p {
+                                            font-weight: bold;
+                                            padding: 0px;
+                                            margin: 0px;
+                                            display: contents;
+                                        }
+                                    }
+                                }
+                            }
+
+                            label {
+                                &.recherche {
+                                    display: grid;
+                                    grid-template-columns: 1fr;
+                                    align-items: flex-start;
+                                    align-content: flex-start;
+                                    border-bottom: 1px solid $black;
+                                    padding-bottom: 5px;
+                                    height: max-content;
+
+                                    span {
+                                        text-align: center;
+                                        font-weight: bold;
+                                        font-variant: small-caps;
+                                        font-size: 15px;
+                                    }
+
+                                    input {
+                                        border: 1px solid $black;
+                                        border-radius: 5px;
+                                        text-align: center;
+                                        padding: 0px;
+                                        margin: 0px;
+                                        width: 100%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.avdv.active {
+                        display: grid;
+                        grid-template-columns: 200px 1fr;
+                        grid-template-rows: 1fr;
+                        grid-gap: 2px;
+                        align-items: flex-start;
+                        align-content: flex-start;
+                        background:$backgroundClair;
+                        height: max-content;
+                        border: 1px solid $black;
+                        border-radius: 5px;
+                        margin-top: -2px;
+
+                        div {
+                            &.submenu {
+                                display: grid;
+                                grid-template-columns: 1fr;
+                                grid-gap: 2px;
+                                padding: 2px;
+                                height: 100%;
+                                border-right: 1px solid $black;
+                                align-items: flex-start;
+                                align-content: flex-start;
+
+                                div {
+                                    &.filter {
+                                        display: grid;
+                                        grid-template-columns: 1fr;
+                                        grid-gap: 2px;
+
+                                        span {
+                                            &.header {
+                                                width: 100%;
+                                                font-variant: small-caps;
+                                                font-size: 17px;
+                                                font-weight: bold;
+                                                text-align: center;
+                                            }
+                                        }
+
+                                        button {
+                                            width: 100%;
+                                            border: 1px solid $black;
+                                            border-radius: 5px;
+                                            padding: 2px;
+                                            margin: 0px;
+                                            font-variant: small-caps;
+                                            font-weight: bold;
+                                            line-height: 20px;
+                                            display: grid;
+                                            grid-template-columns: 1fr max-content;
+                                            grid-gap: 2px;
+                                            text-align: left;
+                                            font-size: 16px;
+                                            align-items: center;
+
+                                            &.checked {
+                                                background: $backgroundClair;
+                                            }
+
+                                            i {
+                                                &.fa-xmark {
+                                                    color: $unvalide;
+                                                }
+
+                                                &.fa-check {
+                                                    color: $valide;
+                                                }
+                                            }
+
+                                            &:hover {
+                                                box-shadow: none;
+                                                text-shadow: none;
+
+                                                background: $white;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            &.data {
+                                display: grid;
+                                grid-template-columns: 1fr;
+                                grid-gap: 2px;
+
+                                header {
+                                    display: grid;
+                                    grid-template-columns: 1fr 200px;
+                                    grid-gap: 2px;
+
+                                    span {
+                                        font-variant: small-caps;
+                                        font-size: 18px;
+                                        font-weight: bold;
+
+                                        &.name {
+                                            display: grid;
+                                            grid-template-columns: max-content max-content max-content;
+                                            grid-gap: 2px;
+                                            align-items: center;
+
+                                            i {
+                                                cursor: pointer;
+                                                font-size: 13px;
+
+                                                &.valide {
+                                                    color: $valide;
+                                                }
+
+                                                &:hover {
+                                                    color: $white;
+                                                }
+                                            }
+                                        }
+
+                                        &.cout {
+                                            display: grid;
+                                            grid-template-columns: max-content max-content max-content;
+                                            grid-gap: 2px;
+                                            align-items: center;
+                                            text-align: center;
+                                            justify-content: center;
+                                            border-left: 1px solid $black;
+
+                                            i {
+                                                cursor: pointer;
+                                                font-size: 13px;
+
+                                                &.valide {
+                                                    color: $valide;
+                                                }
+
+                                                &:hover {
+                                                    color: $white;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                div {
+                                    &.block {
+                                        display: grid;
+                                        grid-gap: 2px;
+
+                                        span {
+                                            font-variant: small-caps;
+                                            font-size: 15px;
+
+                                            &.label {
+                                                cursor: pointer;
+
+                                                &:hover {
+                                                    color: $white;
+                                                }
+                                            }
+
+                                            &.cout {
+                                                text-align: center;
+                                                border-left: 1px solid $black;
+                                                display: grid;
+                                                align-items: center;
+                                                height: 100%;
+                                            }
+                                        }
+                                    }
+
+                                    &.main {
+                                        display: grid;
+                                        grid-template-columns: max-content 1fr 200px;;
+                                        grid-gap: 2px;
+                                        align-items: center;
+
+                                        i {
+                                            cursor: pointer;
+
+                                            &:hover {
+                                                color: $white;
+                                            }
+                                        }
+                                    }
+
+                                    &.sub {
+                                        padding-right: 2px;
+                                    }
+
+                                    &.pages {
+                                        display: flex;
+                                        grid-gap: 5px;
+                                        justify-content: center;
+                                        text-align: center;
+                                        flex-wrap: wrap;
+                                        border-top: 1px solid $black;
+                                        padding-top: 2px;
+                                        margin-top: 2px;
+
+                                        span {
+                                            display: block;
+                                            width: 100%;
+                                            text-align: center;
+                                            font-size: 15px;
+                                            font-variant: small-caps;
+                                            font-weight: bold;
+                                        }
+
+                                        a {
+                                            &.bold {
+                                                font-weight: bold;
+                                            }
+                                        }
+
+                                        p {
+                                            font-weight: bold;
+                                            padding: 0px;
+                                            margin: 0px;
+                                            display: contents;
+                                        }
+                                    }
+                                }
+                            }
+
+                            label {
+                                &.recherche {
+                                    display: grid;
+                                    grid-template-columns: 1fr;
+                                    align-items: flex-start;
+                                    align-content: flex-start;
+                                    border-bottom: 1px solid $black;
+                                    padding-bottom: 5px;
+                                    height: max-content;
+
+                                    span {
+                                        text-align: center;
+                                        font-weight: bold;
+                                        font-variant: small-caps;
+                                        font-size: 15px;
+                                    }
+
+                                    input {
+                                        border: 1px solid $black;
+                                        border-radius: 5px;
+                                        text-align: center;
+                                        padding: 0px;
+                                        margin: 0px;
+                                        width: 100%;
+                                    }
+                                }
+                            }
+                        }
+
+                        &.simple {
+
+                            &.data {
+                                header {
+                                    grid-template-columns: 1fr;
+                                }
+                            }
+
+                            &.main {
+                                grid-template-columns: max-content 1fr;
+                            }
+                        }
+                    }
+
+                    &.arme.active {
+                        display: grid;
+                        grid-template-columns: 200px 1fr;
+                        grid-template-rows: 1fr;
+                        grid-gap: 2px;
+                        align-items: flex-start;
+                        align-content: flex-start;
+                        background:$backgroundClair;
+                        height: max-content;
+                        border: 1px solid $black;
+                        border-radius: 5px;
+                        margin-top: -2px;
+
+                        div {
+                            &.submenu {
+                                display: grid;
+                                grid-template-columns: 1fr;
+                                grid-gap: 2px;
+                                padding: 2px;
+                                height: 100%;
+                                border-right: 1px solid $black;
+                                align-items: flex-start;
+                                align-content: flex-start;
+
+                                div {
+                                    &.filter {
+                                        display: grid;
+                                        grid-template-columns: 1fr;
+                                        grid-gap: 2px;
+
+                                        span {
+                                            &.header {
+                                                width: 100%;
+                                                font-variant: small-caps;
+                                                font-size: 17px;
+                                                font-weight: bold;
+                                                text-align: center;
+                                            }
+                                        }
+
+                                        button {
+                                            width: 100%;
+                                            border: 1px solid $black;
+                                            border-radius: 5px;
+                                            padding: 2px;
+                                            margin: 0px;
+                                            font-variant: small-caps;
+                                            font-weight: bold;
+                                            line-height: 20px;
+                                            display: grid;
+                                            grid-template-columns: 1fr max-content;
+                                            grid-gap: 2px;
+                                            text-align: left;
+                                            font-size: 16px;
+                                            align-items: center;
+
+                                            &.checked {
+                                                background: $backgroundClair;
+                                            }
+
+                                            i {
+                                                &.fa-xmark {
+                                                    color: $unvalide;
+                                                }
+
+                                                &.fa-check {
+                                                    color: $valide;
+                                                }
+                                            }
+
+                                            &:hover {
+                                                box-shadow: none;
+                                                text-shadow: none;
+
+                                                background: $white;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            &.data {
+                                display: grid;
+                                grid-template-columns: 1fr;
+                                grid-gap: 2px;
+
+                                header {
+                                    display: grid;
+                                    grid-template-columns: 1fr 100px 200px 100px 200px;
+                                    grid-gap: 2px;
+
+                                    span {
+                                        font-variant: small-caps;
+                                        font-size: 18px;
+                                        font-weight: bold;
+
+                                        &.name {
+                                            display: grid;
+                                            grid-template-columns: max-content max-content max-content;
+                                            grid-gap: 2px;
+                                            align-items: center;
+                                        }
+
+                                        &.type,
+                                        &.degats,
+                                        &.portee,
+                                        &.prix {
+                                            text-align: center;
+                                            border-left: 1px solid $black;
+                                        }
+
+                                        i {
+                                            cursor: pointer;
+                                            font-size: 13px;
+
+                                            &.valide {
+                                                color: $valide;
+                                            }
+
+                                            &:hover {
+                                                color: $white;
+                                            }
+                                        }
+                                    }
+
+                                }
+
+                                div {
+                                    &.block {
+                                        display: grid;
+                                        grid-gap: 2px;
+
+                                        span {
+                                            font-variant: small-caps;
+                                            font-size: 15px;
+
+                                            &.label {
+                                                cursor: pointer;
+
+                                                &:hover {
+                                                    color: $white;
+                                                }
+                                            }
+
+                                            &.type,
+                                            &.degats,
+                                            &.portee,
+                                            &.prix {
+                                                text-align: center;
+                                                border-left: 1px solid $black;
+                                                display: grid;
+                                                align-items: center;
+                                                height: 100%;
+                                            }
+                                        }
+                                    }
+
+                                    &.main {
+                                        display: grid;
+                                        grid-template-columns: max-content 1fr 100px 200px 100px 200px;
+                                        grid-gap: 2px;
+                                        align-items: center;
+
+                                        i {
+                                            cursor: pointer;
+
+                                            &:hover {
+                                                color: $white;
+                                            }
+                                        }
+                                    }
+
+                                    &.sub {
+                                        padding-right: 2px;
+                                    }
+
+                                    &.pages {
+                                        display: flex;
+                                        grid-gap: 5px;
+                                        justify-content: center;
+                                        text-align: center;
+                                        flex-wrap: wrap;
+                                        border-top: 1px solid $black;
+                                        padding-top: 2px;
+                                        margin-top: 2px;
+
+                                        span {
+                                            display: block;
+                                            width: 100%;
+                                            text-align: center;
+                                            font-size: 15px;
+                                            font-variant: small-caps;
+                                            font-weight: bold;
+                                        }
+
+                                        a {
+                                            &.bold {
+                                                font-weight: bold;
+                                            }
+                                        }
+
+                                        p {
+                                            font-weight: bold;
+                                            padding: 0px;
+                                            margin: 0px;
+                                            display: contents;
+                                        }
+                                    }
+                                }
+                            }
+
+                            label {
+                                &.recherche {
+                                    display: grid;
+                                    grid-template-columns: 1fr;
+                                    align-items: flex-start;
+                                    align-content: flex-start;
+                                    border-bottom: 1px solid $black;
+                                    padding-bottom: 5px;
+                                    height: max-content;
+
+                                    span {
+                                        text-align: center;
+                                        font-weight: bold;
+                                        font-variant: small-caps;
+                                        font-size: 15px;
+                                    }
+
+                                    input {
+                                        border: 1px solid $black;
+                                        border-radius: 5px;
+                                        text-align: center;
+                                        padding: 0px;
+                                        margin: 0px;
+                                        width: 100%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.protection.active {
+                        display: grid;
+                        grid-template-columns: 200px 1fr;
+                        grid-template-rows: 1fr;
+                        grid-gap: 2px;
+                        align-items: flex-start;
+                        align-content: flex-start;
+                        background:$backgroundClair;
+                        height: max-content;
+                        border: 1px solid $black;
+                        border-radius: 5px;
+                        margin-top: -2px;
+
+                        div {
+                            &.submenu {
+                                display: grid;
+                                grid-template-columns: 1fr;
+                                grid-gap: 2px;
+                                padding: 2px;
+                                height: 100%;
+                                border-right: 1px solid $black;
+                                align-items: flex-start;
+                                align-content: flex-start;
+
+                                div {
+                                    &.filter {
+                                        display: grid;
+                                        grid-template-columns: 1fr;
+                                        grid-gap: 2px;
+
+                                        span {
+                                            &.header {
+                                                width: 100%;
+                                                font-variant: small-caps;
+                                                font-size: 17px;
+                                                font-weight: bold;
+                                                text-align: center;
+                                            }
+                                        }
+
+                                        button {
+                                            width: 100%;
+                                            border: 1px solid $black;
+                                            border-radius: 5px;
+                                            padding: 2px;
+                                            margin: 0px;
+                                            font-variant: small-caps;
+                                            font-weight: bold;
+                                            line-height: 20px;
+                                            display: grid;
+                                            grid-template-columns: 1fr max-content;
+                                            grid-gap: 2px;
+                                            text-align: left;
+                                            font-size: 16px;
+                                            align-items: center;
+
+                                            &.checked {
+                                                background: $backgroundClair;
+                                            }
+
+                                            i {
+                                                &.fa-xmark {
+                                                    color: $unvalide;
+                                                }
+
+                                                &.fa-check {
+                                                    color: $valide;
+                                                }
+                                            }
+
+                                            &:hover {
+                                                box-shadow: none;
+                                                text-shadow: none;
+
+                                                background: $white;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            &.data {
+                                display: grid;
+                                grid-template-columns: 1fr;
+                                grid-gap: 2px;
+
+                                header {
+                                    display: grid;
+                                    grid-template-columns: 1fr 100px 100px 200px;
+                                    grid-gap: 2px;
+
+                                    span {
+                                        font-variant: small-caps;
+                                        font-size: 18px;
+                                        font-weight: bold;
+
+                                        &.name {
+                                            display: grid;
+                                            grid-template-columns: max-content max-content max-content;
+                                            grid-gap: 2px;
+                                            align-items: center;
+                                        }
+
+                                        &.type,
+                                        &.armure,
+                                        &.prix {
+                                            text-align: center;
+                                            border-left: 1px solid $black;
+                                        }
+
+                                        i {
+                                            cursor: pointer;
+                                            font-size: 13px;
+
+                                            &.valide {
+                                                color: $valide;
+                                            }
+
+                                            &:hover {
+                                                color: $white;
+                                            }
+                                        }
+                                    }
+
+                                }
+
+                                div {
+                                    &.block {
+                                        display: grid;
+                                        grid-gap: 2px;
+
+                                        span {
+                                            font-variant: small-caps;
+                                            font-size: 15px;
+
+                                            &.label {
+                                                cursor: pointer;
+
+                                                &:hover {
+                                                    color: $white;
+                                                }
+                                            }
+
+                                            &.type,
+                                            &.armure,
+                                            &.prix {
+                                                text-align: center;
+                                                border-left: 1px solid $black;
+                                                display: grid;
+                                                align-items: center;
+                                                height: 100%;
+                                            }
+                                        }
+                                    }
+
+                                    &.main {
+                                        display: grid;
+                                        grid-template-columns: max-content 1fr 100px 100px 200px;
+                                        grid-gap: 2px;
+                                        align-items: center;
+
+                                        i {
+                                            cursor: pointer;
+
+                                            &:hover {
+                                                color: $white;
+                                            }
+                                        }
+                                    }
+
+                                    &.sub {
+                                        padding-right: 2px;
+                                    }
+
+                                    &.pages {
+                                        display: flex;
+                                        grid-gap: 5px;
+                                        justify-content: center;
+                                        text-align: center;
+                                        flex-wrap: wrap;
+                                        border-top: 1px solid $black;
+                                        padding-top: 2px;
+                                        margin-top: 2px;
+
+                                        span {
+                                            display: block;
+                                            width: 100%;
+                                            text-align: center;
+                                            font-size: 15px;
+                                            font-variant: small-caps;
+                                            font-weight: bold;
+                                        }
+
+                                        a {
+                                            &.bold {
+                                                font-weight: bold;
+                                            }
+                                        }
+
+                                        p {
+                                            font-weight: bold;
+                                            padding: 0px;
+                                            margin: 0px;
+                                            display: contents;
+                                        }
+                                    }
+                                }
+                            }
+
+                            label {
+                                &.recherche {
+                                    display: grid;
+                                    grid-template-columns: 1fr;
+                                    align-items: flex-start;
+                                    align-content: flex-start;
+                                    border-bottom: 1px solid $black;
+                                    padding-bottom: 5px;
+                                    height: max-content;
+
+                                    span {
+                                        text-align: center;
+                                        font-weight: bold;
+                                        font-variant: small-caps;
+                                        font-size: 15px;
+                                    }
+
+                                    input {
+                                        border: 1px solid $black;
+                                        border-radius: 5px;
+                                        text-align: center;
+                                        padding: 0px;
+                                        margin: 0px;
+                                        width: 100%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.sortilege.active {
+                        display: grid;
+                        grid-template-columns: 240px 1fr;
+                        grid-template-rows: 1fr;
+                        grid-gap: 2px;
+                        align-items: flex-start;
+                        align-content: flex-start;
+                        background:$backgroundClair;
+                        height: max-content;
+                        border: 1px solid $black;
+                        border-radius: 5px;
+                        margin-top: -2px;
+
+                        div {
+                            &.submenu {
+                                display: grid;
+                                grid-template-columns: 1fr;
+                                grid-gap: 2px;
+                                padding: 2px;
+                                height: 100%;
+                                border-right: 1px solid $black;
+                                align-items: flex-start;
+                                align-content: flex-start;
+
+                                div {
+                                    &.filter {
+                                        display: grid;
+                                        grid-template-columns: 1fr;
+                                        grid-gap: 2px;
+
+                                        span {
+                                            &.header {
+                                                width: 100%;
+                                                font-variant: small-caps;
+                                                font-size: 17px;
+                                                font-weight: bold;
+                                                text-align: center;
+                                            }
+                                        }
+
+                                        button {
+                                            width: 100%;
+                                            border: 1px solid $black;
+                                            border-radius: 5px;
+                                            padding: 2px;
+                                            margin: 0px;
+                                            font-variant: small-caps;
+                                            font-weight: bold;
+                                            line-height: 20px;
+                                            display: grid;
+                                            grid-template-columns: 1fr max-content;
+                                            grid-gap: 2px;
+                                            text-align: left;
+                                            font-size: 16px;
+                                            align-items: center;
+
+                                            &.checked {
+                                                background: $backgroundClair;
+                                            }
+
+                                            i {
+                                                &.fa-xmark {
+                                                    color: $unvalide;
+                                                }
+
+                                                &.fa-check {
+                                                    color: $valide;
+                                                }
+                                            }
+
+                                            &:hover {
+                                                box-shadow: none;
+                                                text-shadow: none;
+
+                                                background: $white;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            &.data {
+                                display: grid;
+                                grid-template-columns: 1fr;
+                                grid-gap: 2px;
+
+                                header {
+                                    display: grid;
+                                    grid-template-columns: 1fr 100px 200px 150px 100px 150px;
+                                    grid-gap: 2px;
+
+                                    span {
+                                        font-variant: small-caps;
+                                        font-size: 18px;
+                                        font-weight: bold;
+
+                                        &.name {
+                                            display: grid;
+                                            grid-template-columns: max-content max-content max-content;
+                                            grid-gap: 2px;
+                                            align-items: center;
+                                        }
+
+                                        &.incantation,
+                                        &.type,
+                                        &.cible,
+                                        &.malus,
+                                        &.niveau {
+                                            text-align: center;
+                                            border-left: 1px solid $black;
+                                        }
+
+                                        i {
+                                            cursor: pointer;
+                                            font-size: 13px;
+
+                                            &.valide {
+                                                color: $valide;
+                                            }
+
+                                            &:hover {
+                                                color: $white;
+                                            }
+                                        }
+                                    }
+
+                                }
+
+                                div {
+                                    &.block {
+                                        display: grid;
+                                        grid-gap: 2px;
+
+                                        span {
+                                            font-variant: small-caps;
+                                            font-size: 15px;
+
+                                            &.label {
+                                                cursor: pointer;
+
+                                                &:hover {
+                                                    color: $white;
+                                                }
+                                            }
+
+                                            &.incantation,
+                                            &.type,
+                                            &.cible,
+                                            &.malus,
+                                            &.niveau {
+                                                text-align: center;
+                                                border-left: 1px solid $black;
+                                                display: grid;
+                                                align-items: center;
+                                                height: 100%;
+                                            }
+
+                                            &.malus {
+                                                &.space {
+                                                    padding-top: 5px;
+                                                    padding-bottom: 5px;
+                                                }
+
+                                                p {
+                                                    margin: 0px;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    &.main {
+                                        display: grid;
+                                        grid-template-columns: max-content 1fr 100px 200px 150px 100px 150px;
+                                        grid-gap: 2px;
+                                        align-items: center;
+
+                                        i {
+                                            cursor: pointer;
+
+                                            &:hover {
+                                                color: $white;
+                                            }
+                                        }
+                                    }
+
+                                    &.sub {
+                                        padding-right: 2px;
+                                    }
+
+                                    &.pages {
+                                        display: flex;
+                                        grid-gap: 5px;
+                                        justify-content: center;
+                                        text-align: center;
+                                        flex-wrap: wrap;
+                                        border-top: 1px solid $black;
+                                        padding-top: 2px;
+                                        margin-top: 2px;
+
+                                        span {
+                                            display: block;
+                                            width: 100%;
+                                            text-align: center;
+                                            font-size: 15px;
+                                            font-variant: small-caps;
+                                            font-weight: bold;
+                                        }
+
+                                        a {
+                                            &.bold {
+                                                font-weight: bold;
+                                            }
+                                        }
+
+                                        p {
+                                            font-weight: bold;
+                                            padding: 0px;
+                                            margin: 0px;
+                                            display: contents;
+                                        }
+                                    }
+                                }
+                            }
+
+                            label {
+                                &.recherche {
+                                    display: grid;
+                                    grid-template-columns: 1fr;
+                                    align-items: flex-start;
+                                    align-content: flex-start;
+                                    border-bottom: 1px solid $black;
+                                    padding-bottom: 5px;
+                                    height: max-content;
+
+                                    span {
+                                        text-align: center;
+                                        font-weight: bold;
+                                        font-variant: small-caps;
+                                        font-size: 15px;
+                                    }
+
+                                    input {
+                                        border: 1px solid $black;
+                                        border-radius: 5px;
+                                        text-align: center;
+                                        padding: 0px;
+                                        margin: 0px;
+                                        width: 100%;
+                                    }
+                                }
+
+                                &.malus,
+                                &.niveau {
+                                    display: grid;
+                                    grid-template-columns: 1fr 1fr;
+                                    align-items: center;
+                                    align-content: center;
+                                    border-bottom: 1px solid $black;
+                                    padding-bottom: 2px;
+                                    height: max-content;
+
+                                    span {
+                                        font-weight: bold;
+                                        font-variant: small-caps;
+                                        font-size: 15px;
+                                    }
+
+                                    input {
+                                        border: 1px solid $black;
+                                        border-radius: 5px;
+                                        text-align: center;
+                                        padding: 0px;
+                                        margin: 0px;
+                                        width: 100%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.potion.active {
+                        display: grid;
+                        grid-template-columns: 240px 1fr;
+                        grid-template-rows: 1fr;
+                        grid-gap: 2px;
+                        align-items: flex-start;
+                        align-content: flex-start;
+                        background:$backgroundClair;
+                        height: max-content;
+                        border: 1px solid $black;
+                        border-radius: 5px;
+                        margin-top: -2px;
+
+                        div {
+                            &.submenu {
+                                display: grid;
+                                grid-template-columns: 1fr;
+                                grid-gap: 2px;
+                                padding: 2px;
+                                height: 100%;
+                                border-right: 1px solid $black;
+                                align-items: flex-start;
+                                align-content: flex-start;
+
+                                div {
+                                    &.filter {
+                                        display: grid;
+                                        grid-template-columns: 1fr;
+                                        grid-gap: 2px;
+
+                                        span {
+                                            &.header {
+                                                width: 100%;
+                                                font-variant: small-caps;
+                                                font-size: 17px;
+                                                font-weight: bold;
+                                                text-align: center;
+                                            }
+                                        }
+
+                                        button {
+                                            width: 100%;
+                                            border: 1px solid $black;
+                                            border-radius: 5px;
+                                            padding: 2px;
+                                            margin: 0px;
+                                            font-variant: small-caps;
+                                            font-weight: bold;
+                                            line-height: 20px;
+                                            display: grid;
+                                            grid-template-columns: 1fr max-content;
+                                            grid-gap: 2px;
+                                            text-align: left;
+                                            font-size: 16px;
+                                            align-items: center;
+
+                                            &.checked {
+                                                background: $backgroundClair;
+                                            }
+
+                                            i {
+                                                &.fa-xmark {
+                                                    color: $unvalide;
+                                                }
+
+                                                &.fa-check {
+                                                    color: $valide;
+                                                }
+                                            }
+
+                                            &:hover {
+                                                box-shadow: none;
+                                                text-shadow: none;
+
+                                                background: $white;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            &.data {
+                                display: grid;
+                                grid-template-columns: 1fr;
+                                grid-gap: 2px;
+
+                                header {
+                                    display: grid;
+                                    grid-template-columns: 1fr 100px 200px 80px;
+                                    grid-gap: 2px;
+
+                                    span {
+                                        font-variant: small-caps;
+                                        font-size: 18px;
+                                        font-weight: bold;
+
+                                        &.name {
+                                            display: grid;
+                                            grid-template-columns: max-content max-content max-content;
+                                            grid-gap: 2px;
+                                            align-items: center;
+                                        }
+
+                                        &.incantation,
+                                        &.type,
+                                        &.cible,
+                                        &.malus,
+                                        &.niveau {
+                                            text-align: center;
+                                            border-left: 1px solid $black;
+                                        }
+
+                                        i {
+                                            cursor: pointer;
+                                            font-size: 13px;
+
+                                            &.valide {
+                                                color: $valide;
+                                            }
+
+                                            &:hover {
+                                                color: $white;
+                                            }
+                                        }
+                                    }
+
+                                }
+
+                                div {
+                                    &.block {
+                                        display: grid;
+                                        grid-gap: 2px;
+
+                                        span {
+                                            font-variant: small-caps;
+                                            font-size: 15px;
+
+                                            &.label {
+                                                cursor: pointer;
+
+                                                &:hover {
+                                                    color: $white;
+                                                }
+                                            }
+
+                                            &.incantation,
+                                            &.type,
+                                            &.cible,
+                                            &.malus,
+                                            &.niveau {
+                                                text-align: center;
+                                                border-left: 1px solid $black;
+                                                display: grid;
+                                                align-items: center;
+                                                height: 100%;
+                                            }
+
+                                            &.malus {
+                                                &.space {
+                                                    padding-top: 5px;
+                                                    padding-bottom: 5px;
+                                                }
+
+                                                p {
+                                                    margin: 0px;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    &.main {
+                                        display: grid;
+                                        grid-template-columns: max-content 1fr 100px 200px 80px;
+                                        grid-gap: 2px;
+                                        align-items: center;
+
+                                        i {
+                                            cursor: pointer;
+
+                                            &:hover {
+                                                color: $white;
+                                            }
+                                        }
+                                    }
+
+                                    &.sub {
+                                        padding-right: 2px;
+                                    }
+
+                                    &.pages {
+                                        display: flex;
+                                        grid-gap: 5px;
+                                        justify-content: center;
+                                        text-align: center;
+                                        flex-wrap: wrap;
+                                        border-top: 1px solid $black;
+                                        padding-top: 2px;
+                                        margin-top: 2px;
+
+                                        span {
+                                            display: block;
+                                            width: 100%;
+                                            text-align: center;
+                                            font-size: 15px;
+                                            font-variant: small-caps;
+                                            font-weight: bold;
+                                        }
+
+                                        a {
+                                            &.bold {
+                                                font-weight: bold;
+                                            }
+                                        }
+
+                                        p {
+                                            font-weight: bold;
+                                            padding: 0px;
+                                            margin: 0px;
+                                            display: contents;
+                                        }
+                                    }
+                                }
+                            }
+
+                            label {
+                                &.recherche {
+                                    display: grid;
+                                    grid-template-columns: 1fr;
+                                    align-items: flex-start;
+                                    align-content: flex-start;
+                                    border-bottom: 1px solid $black;
+                                    padding-bottom: 5px;
+                                    height: max-content;
+
+                                    span {
+                                        text-align: center;
+                                        font-weight: bold;
+                                        font-variant: small-caps;
+                                        font-size: 15px;
+                                    }
+
+                                    input {
+                                        border: 1px solid $black;
+                                        border-radius: 5px;
+                                        text-align: center;
+                                        padding: 0px;
+                                        margin: 0px;
+                                        width: 100%;
+                                    }
+                                }
+                                &.malus,
+                                &.niveau {
+                                    display: grid;
+                                    grid-template-columns: 1fr 1fr;
+                                    align-items: center;
+                                    align-content: center;
+                                    border-bottom: 1px solid $black;
+                                    padding-bottom: 2px;
+                                    height: max-content;
+
+                                    span {
+                                        font-weight: bold;
+                                        font-variant: small-caps;
+                                        font-size: 15px;
+                                    }
+
+                                    input {
+                                        border: 1px solid $black;
+                                        border-radius: 5px;
+                                        text-align: center;
+                                        padding: 0px;
+                                        margin: 0px;
+                                        width: 100%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.baguette.active {
+                        display: grid;
+                        grid-template-columns: 200px 1fr;
+                        grid-template-rows: 1fr;
+                        grid-gap: 2px;
+                        align-items: flex-start;
+                        align-content: flex-start;
+                        background:$backgroundClair;
+                        height: max-content;
+                        border: 1px solid $black;
+                        border-radius: 5px;
+                        margin-top: -2px;
+
+                        div {
+                            &.submenu {
+                                display: grid;
+                                grid-template-columns: 1fr;
+                                grid-gap: 2px;
+                                padding: 2px;
+                                height: 100%;
+                                border-right: 1px solid $black;
+                                align-items: flex-start;
+                                align-content: flex-start;
+
+                                div {
+                                    &.filter {
+                                        display: grid;
+                                        grid-template-columns: 1fr;
+                                        grid-gap: 2px;
+
+                                        span {
+                                            &.header {
+                                                width: 100%;
+                                                font-variant: small-caps;
+                                                font-size: 17px;
+                                                font-weight: bold;
+                                                text-align: center;
+                                            }
+                                        }
+
+                                        button {
+                                            width: 100%;
+                                            border: 1px solid $black;
+                                            border-radius: 5px;
+                                            padding: 2px;
+                                            margin: 0px;
+                                            font-variant: small-caps;
+                                            font-weight: bold;
+                                            line-height: 20px;
+                                            display: grid;
+                                            grid-template-columns: 1fr max-content;
+                                            grid-gap: 2px;
+                                            text-align: left;
+                                            font-size: 16px;
+                                            align-items: center;
+
+                                            &.checked {
+                                                background: $backgroundClair;
+                                            }
+
+                                            i {
+                                                &.fa-xmark {
+                                                    color: $unvalide;
+                                                }
+
+                                                &.fa-check {
+                                                    color: $valide;
+                                                }
+                                            }
+
+                                            &:hover {
+                                                box-shadow: none;
+                                                text-shadow: none;
+
+                                                background: $white;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            &.data {
+                                display: grid;
+                                grid-template-columns: 1fr;
+                                grid-gap: 2px;
+
+                                header {
+                                    display: grid;
+                                    grid-template-columns: 1fr 125px 125px 125px 250px;
+                                    grid-gap: 2px;
+
+                                    span {
+                                        font-variant: small-caps;
+                                        font-size: 18px;
+                                        font-weight: bold;
+
+                                        &.name {
+                                            display: grid;
+                                            grid-template-columns: max-content max-content max-content;
+                                            grid-gap: 2px;
+                                            align-items: center;
+                                        }
+
+                                        &.taille,
+                                        &.bois,
+                                        &.coeur,
+                                        &.affinite {
+                                            text-align: center;
+                                            border-left: 1px solid $black;
+                                        }
+
+                                        i {
+                                            cursor: pointer;
+                                            font-size: 13px;
+
+                                            &.valide {
+                                                color: $valide;
+                                            }
+
+                                            &:hover {
+                                                color: $white;
+                                            }
+                                        }
+                                    }
+
+                                }
+
+                                div {
+                                    &.block {
+                                        display: grid;
+                                        grid-gap: 2px;
+
+                                        span {
+                                            font-variant: small-caps;
+                                            font-size: 15px;
+
+                                            &.label {
+                                                cursor: pointer;
+
+                                                &:hover {
+                                                    color: $white;
+                                                }
+                                            }
+
+                                            &.taille,
+                                            &.bois,
+                                            &.coeur,
+                                            &.affinite {
+                                                text-align: center;
+                                                border-left: 1px solid $black;
+                                                display: grid;
+                                                align-items: center;
+                                                height: 100%;
+                                            }
+                                        }
+                                    }
+
+                                    &.main {
+                                        display: grid;
+                                        grid-template-columns: max-content 1fr 125px 125px 125px 250px;
+                                        grid-gap: 2px;
+                                        align-items: center;
+
+                                        i {
+                                            cursor: pointer;
+
+                                            &:hover {
+                                                color: $white;
+                                            }
+                                        }
+                                    }
+
+                                    &.sub {
+                                        padding-right: 2px;
+                                    }
+
+                                    &.pages {
+                                        display: flex;
+                                        grid-gap: 5px;
+                                        justify-content: center;
+                                        text-align: center;
+                                        flex-wrap: wrap;
+                                        border-top: 1px solid $black;
+                                        padding-top: 2px;
+                                        margin-top: 2px;
+
+                                        span {
+                                            display: block;
+                                            width: 100%;
+                                            text-align: center;
+                                            font-size: 15px;
+                                            font-variant: small-caps;
+                                            font-weight: bold;
+                                        }
+
+                                        a {
+                                            &.bold {
+                                                font-weight: bold;
+                                            }
+                                        }
+
+                                        p {
+                                            font-weight: bold;
+                                            padding: 0px;
+                                            margin: 0px;
+                                            display: contents;
+                                        }
+                                    }
+                                }
+                            }
+
+                            label {
+                                &.recherche {
+                                    display: grid;
+                                    grid-template-columns: 1fr;
+                                    align-items: flex-start;
+                                    align-content: flex-start;
+                                    border-bottom: 1px solid $black;
+                                    padding-bottom: 5px;
+                                    height: max-content;
+
+                                    span {
+                                        text-align: center;
+                                        font-weight: bold;
+                                        font-variant: small-caps;
+                                        font-size: 15px;
+                                    }
+
+                                    input {
+                                        border: 1px solid $black;
+                                        border-radius: 5px;
+                                        text-align: center;
+                                        padding: 0px;
+                                        margin: 0px;
+                                        width: 100%;
+                                    }
+                                }
+                                &.malus {
+                                    display: grid;
+                                    grid-template-columns: 1fr 1fr;
+                                    align-items: center;
+                                    align-content: center;
+                                    border-bottom: 1px solid $black;
+                                    padding-bottom: 5px;
+                                    height: max-content;
+
+                                    span {
+                                        font-weight: bold;
+                                        font-variant: small-caps;
+                                        font-size: 15px;
+                                    }
+
+                                    input {
+                                        border: 1px solid $black;
+                                        border-radius: 5px;
+                                        text-align: center;
+                                        padding: 0px;
+                                        margin: 0px;
+                                        width: 100%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.balai.active {
+                        display: grid;
+                        grid-template-columns: 200px 1fr;
+                        grid-template-rows: 1fr;
+                        grid-gap: 2px;
+                        align-items: flex-start;
+                        align-content: flex-start;
+                        background:$backgroundClair;
+                        height: max-content;
+                        border: 1px solid $black;
+                        border-radius: 5px;
+                        margin-top: -2px;
+
+                        div {
+                            &.submenu {
+                                display: grid;
+                                grid-template-columns: 1fr;
+                                grid-gap: 2px;
+                                padding: 2px;
+                                height: 100%;
+                                border-right: 1px solid $black;
+                                align-items: flex-start;
+                                align-content: flex-start;
+
+                                div {
+                                    &.filter {
+                                        display: grid;
+                                        grid-template-columns: 1fr;
+                                        grid-gap: 2px;
+
+                                        span {
+                                            &.header {
+                                                width: 100%;
+                                                font-variant: small-caps;
+                                                font-size: 17px;
+                                                font-weight: bold;
+                                                text-align: center;
+                                            }
+                                        }
+
+                                        button {
+                                            width: 100%;
+                                            border: 1px solid $black;
+                                            border-radius: 5px;
+                                            padding: 2px;
+                                            margin: 0px;
+                                            font-variant: small-caps;
+                                            font-weight: bold;
+                                            line-height: 20px;
+                                            display: grid;
+                                            grid-template-columns: 1fr max-content;
+                                            grid-gap: 2px;
+                                            text-align: left;
+                                            font-size: 16px;
+                                            align-items: center;
+
+                                            &.checked {
+                                                background: $backgroundClair;
+                                            }
+
+                                            i {
+                                                &.fa-xmark {
+                                                    color: $unvalide;
+                                                }
+
+                                                &.fa-check {
+                                                    color: $valide;
+                                                }
+                                            }
+
+                                            &:hover {
+                                                box-shadow: none;
+                                                text-shadow: none;
+
+                                                background: $white;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            &.data {
+                                display: grid;
+                                grid-template-columns: 1fr;
+                                grid-gap: 2px;
+
+                                header {
+                                    display: grid;
+                                    grid-template-columns: 1fr 150px;
+                                    grid-gap: 2px;
+
+                                    span {
+                                        font-variant: small-caps;
+                                        font-size: 18px;
+                                        font-weight: bold;
+
+                                        &.name {
+                                            display: grid;
+                                            grid-template-columns: max-content max-content max-content;
+                                            grid-gap: 2px;
+                                            align-items: center;
+                                        }
+
+                                        &.marque {
+                                            text-align: center;
+                                            border-left: 1px solid $black;
+                                        }
+
+                                        i {
+                                            cursor: pointer;
+                                            font-size: 13px;
+
+                                            &.valide {
+                                                color: $valide;
+                                            }
+
+                                            &:hover {
+                                                color: $white;
+                                            }
+                                        }
+                                    }
+
+                                }
+
+                                div {
+                                    &.block {
+                                        display: grid;
+                                        grid-gap: 2px;
+
+                                        span {
+                                            font-variant: small-caps;
+                                            font-size: 15px;
+
+                                            &.label {
+                                                cursor: pointer;
+
+                                                &:hover {
+                                                    color: $white;
+                                                }
+                                            }
+
+                                            &.marque {
+                                                text-align: center;
+                                                border-left: 1px solid $black;
+                                                display: grid;
+                                                align-items: center;
+                                                height: 100%;
+                                            }
+                                        }
+                                    }
+
+                                    &.main {
+                                        display: grid;
+                                        grid-template-columns: max-content 1fr 150px;
+                                        grid-gap: 2px;
+                                        align-items: center;
+
+                                        i {
+                                            cursor: pointer;
+
+                                            &:hover {
+                                                color: $white;
+                                            }
+                                        }
+                                    }
+
+                                    &.sub {
+                                        padding-right: 2px;
+                                    }
+
+                                    &.pages {
+                                        display: flex;
+                                        grid-gap: 5px;
+                                        justify-content: center;
+                                        text-align: center;
+                                        flex-wrap: wrap;
+                                        border-top: 1px solid $black;
+                                        padding-top: 2px;
+                                        margin-top: 2px;
+
+                                        span {
+                                            display: block;
+                                            width: 100%;
+                                            text-align: center;
+                                            font-size: 15px;
+                                            font-variant: small-caps;
+                                            font-weight: bold;
+                                        }
+
+                                        a {
+                                            &.bold {
+                                                font-weight: bold;
+                                            }
+                                        }
+
+                                        p {
+                                            font-weight: bold;
+                                            padding: 0px;
+                                            margin: 0px;
+                                            display: contents;
+                                        }
+                                    }
+                                }
+                            }
+
+                            label {
+                                &.recherche {
+                                    display: grid;
+                                    grid-template-columns: 1fr;
+                                    align-items: flex-start;
+                                    align-content: flex-start;
+                                    border-bottom: 1px solid $black;
+                                    padding-bottom: 5px;
+                                    height: max-content;
+
+                                    span {
+                                        text-align: center;
+                                        font-weight: bold;
+                                        font-variant: small-caps;
+                                        font-size: 15px;
+                                    }
+
+                                    input {
+                                        border: 1px solid $black;
+                                        border-radius: 5px;
+                                        text-align: center;
+                                        padding: 0px;
+                                        margin: 0px;
+                                        width: 100%;
+                                    }
+                                }
+                                &.malus {
+                                    display: grid;
+                                    grid-template-columns: 1fr 1fr;
+                                    align-items: center;
+                                    align-content: center;
+                                    border-bottom: 1px solid $black;
+                                    padding-bottom: 5px;
+                                    height: max-content;
+
+                                    span {
+                                        font-weight: bold;
+                                        font-variant: small-caps;
+                                        font-size: 15px;
+                                    }
+
+                                    input {
+                                        border: 1px solid $black;
+                                        border-radius: 5px;
+                                        text-align: center;
+                                        padding: 0px;
+                                        margin: 0px;
+                                        width: 100%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
