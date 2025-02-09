@@ -12,15 +12,30 @@
             </select>
             <div class="liste">
                 {{#each systemData.ingredients.liste}}
-                    <div class="{{ifThen (isImpair @index) 'impair' 'pair'}}">
-                        {{#unless (isImpair @index)}}
-                            <i class="fa-solid fa-trash delete clickable" data-index="{{@index}}" title="{{localize 'HP.Supprimer'}}"></i>
-                        {{/unless}}
-                        <input type="text" name="system.ingredients.liste.{{@index}}" value="{{this}}" />
-                        {{#if (isImpair @index)}}
-                            <i class="fa-solid fa-trash delete clickable" data-index="{{@index}}" title="{{localize 'HP.Supprimer'}}"></i>
-                        {{/if}}
-                    </div>
+
+                    {{#if (ingredientData ../item this '_id')}}
+                        <input type="hidden" name="system.ingredients.items.{{ingredientIndex ../item this}}._id" value="{{ingredientData ../item this '_id'}}" />
+                        <input type="hidden" name="system.ingredients.items.{{ingredientIndex ../item this}}.img" value="{{ingredientData ../item this 'img'}}" />
+                        <input type="hidden" name="system.ingredients.items.{{ingredientIndex ../item this}}.system.rarete" value="{{ingredientData ../item this 'rarete'}}" />
+                        <input type="hidden" name="system.ingredients.items.{{ingredientIndex ../item this}}.system.description" value="{{ingredientData ../item this 'description'}}" />
+                        <input type="hidden" name="system.ingredients.items.{{ingredientIndex ../item this}}.system.enriched" value="{{ingredientData ../item this 'enriched'}}" />
+
+                        <div class="main {{ifThen (isImpair @index) 'impair' 'pair'}}">
+                            {{#unless (isImpair @index)}}
+                                <i class="fa-solid fa-trash delete clickable" data-id="{{this}}" title="{{localize 'HP.Supprimer'}}"></i>
+                                <i class="fa-solid fa-pen-to-square edit clickable" title="{{localize 'HP.Edit'}}" data-id="{{this}}"></i>
+                            {{/unless}}
+                            <input type="text" name="system.ingredients.items.{{ingredientIndex ../item this}}.name" value="{{ingredientData ../item this 'name'}}" />
+                            {{#if (isImpair @index)}}
+                                <i class="fa-solid fa-pen-to-square edit clickable" title="{{localize 'HP.Edit'}}" data-id="{{this}}"></i>
+                                <i class="fa-solid fa-trash delete clickable" data-id="{{this}}" data-index="{{@index}}" title="{{localize 'HP.Supprimer'}}"></i>
+                            {{/if}}
+                            <div class="hovered">
+                                <span class="rarete"><b>{{localize "HP.Rarete"}} :</b> {{ingredientData ../item this 'rarete'}}</span>
+                                <div class="description">{{{ingredientData ../item this 'enriched'}}}</div>
+                            </div>
+                        </div>
+                    {{/if}}
                 {{/each}}
             </div>
             <button type="action" class="addIngredient">{{localize "HP.Add"}}</button>

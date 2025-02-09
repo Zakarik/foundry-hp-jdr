@@ -88,10 +88,25 @@ export const RegisterHandlebars = function () {
         console.warn(str);
         return game.i18n.localize(`HP.${str.charAt(0).toUpperCase() + str.slice(1)}`);
     });
+    Handlebars.registerHelper('ingredientsliste', function (liste, items) {
+        let array = [];
 
-    Handlebars.registerHelper('ingredientsliste', function (ingredients) {
-        let result = ingredients.join(' / ');
-        return result;
+        for(let l of liste) {
+            const find = items.find(itm => itm._id === l);
+            let string = ``;
+
+            string += `<div class='main'>`;
+            string += `${find.name}`;
+            string += `<div class="hovered">`;
+            string += `<span class="rarete"><b>${game.i18n.localize("HP.Rarete")} :</b> ${find.system.rarete}</span>`;
+            string += `<div class="description">${find.system.enriched}</div>`;
+            string += `</div>`;
+            string += `</div>`;
+
+            array.push(string);
+        }
+
+        return array.join(' / ');
     });
 
     Handlebars.registerHelper('textarea', function (string) {
@@ -165,5 +180,32 @@ export const RegisterHandlebars = function () {
         }
 
         return `${list[affinite.key]} ${affinite.value}`;
+    });
+
+    Handlebars.registerHelper('ingredientData', function (item, id, data) {
+        const itm = item.system.ingredients.items.find(itm => itm._id === id);
+
+        if(!itm) return undefined;
+
+        let result = '';
+        switch(data) {
+            case 'name':
+            case 'img':
+            case '_id':
+                result = itm[data];
+                break
+
+            case 'rarete':
+            case 'description':
+            case 'enriched':
+                result = itm.system[data];
+                break
+        }
+
+        return result;
+    });
+
+    Handlebars.registerHelper('ingredientIndex', function (item, id) {
+        return item.system.ingredients.items.findIndex(itm => itm._id === id);
     });
 }

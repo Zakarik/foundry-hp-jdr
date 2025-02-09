@@ -18,7 +18,8 @@
       "capacite":"Capacité de créature",
       "capacitefamilier":"Capacité de familier",
       "arme":"Arme",
-      "protection":"Protection"
+      "protection":"Protection",
+      "ingredient":"Ingrédient"
     }
   },
   "HP": {
@@ -119,6 +120,7 @@
     "SetBaseDexterite":"Base de Dextérité : {value}",
     "SetBaseApparence":"Base d'Apparence : {value}",
     "SetBasePouvoir":"Base de Pouvoir : {value}",
+    "Rarete":"Rareté",
     "ARMES":{
       "Label":"Armes",
       "Distance":"Arme à distance",
@@ -412,6 +414,9 @@
       "TriDescendant":"Trier par ordre descendant",
       "TriAscendant":"Trier par ordre ascendant",
       "Filtres":"Filtres"
+    },
+    "INGREDIENT":{
+      "Label":"Ingrédients"
     }
   }
 }

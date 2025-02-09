@@ -114,6 +114,31 @@ div {
                     &.ingredientsliste {
                         padding-top:2px;
                         padding-bottom:2px;
+
+                        div.main {
+                            display: inline-block;
+                            position: relative;
+
+                            div.hovered {
+                                display:none;
+                                position: absolute;
+                                grid-template-columns: 1fr;
+                                border: 1px solid $black;
+                                padding: 5px;
+                                border-radius: 5px;
+                                background: $background;
+                                width: 280px;
+                                height: max-content;
+                                max-height: 200px;
+                                top: 17px;
+                                overflow: auto;
+                                z-index: 99;
+
+                                &.show {
+                                    display:grid;
+                                }
+                            }
+                        }
                     }
                 }
 

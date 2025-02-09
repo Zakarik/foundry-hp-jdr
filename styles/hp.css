@@ -1189,6 +1189,31 @@
   padding-top: 2px;
   padding-bottom: 2px;
 }
+.sorcier section.window-content section.body div.tab.potions.active div.line span.ingredientsliste div.main,
+.sorcier section.window-content section.body div.tab.potions.active div.line div.ingredientsliste div.main {
+  display: inline-block;
+  position: relative;
+}
+.sorcier section.window-content section.body div.tab.potions.active div.line span.ingredientsliste div.main div.hovered,
+.sorcier section.window-content section.body div.tab.potions.active div.line div.ingredientsliste div.main div.hovered {
+  display: none;
+  position: absolute;
+  grid-template-columns: 1fr;
+  border: 1px solid #000000;
+  padding: 5px;
+  border-radius: 5px;
+  background: #A9A9A9;
+  width: 280px;
+  height: max-content;
+  max-height: 200px;
+  top: 17px;
+  overflow: auto;
+  z-index: 99;
+}
+.sorcier section.window-content section.body div.tab.potions.active div.line span.ingredientsliste div.main div.hovered.show,
+.sorcier section.window-content section.body div.tab.potions.active div.line div.ingredientsliste div.main div.hovered.show {
+  display: grid;
+}
 .sorcier section.window-content section.body div.tab.potions.active div.line i.clickable {
   cursor: pointer;
 }
@@ -3713,30 +3738,55 @@
   grid-gap: 5px;
   margin-bottom: 5px;
 }
-.potion section.window-content form div.data div.ingredients div.liste div {
+.potion section.window-content form div.data div.ingredients div.liste div.main {
   display: grid;
   align-items: center;
+  position: relative;
   grid-gap: 2px;
   border-bottom: 1px solid #000000;
 }
-.potion section.window-content form div.data div.ingredients div.liste div.pair {
-  grid-template-columns: 18px 1fr;
+.potion section.window-content form div.data div.ingredients div.liste div.main.pair {
+  grid-template-columns: 18px 18px 1fr;
 }
-.potion section.window-content form div.data div.ingredients div.liste div.impair {
-  grid-template-columns: 1fr 18px;
+.potion section.window-content form div.data div.ingredients div.liste div.main.pair div.hovered {
+  left: 36px;
 }
-.potion section.window-content form div.data div.ingredients div.liste div input {
+.potion section.window-content form div.data div.ingredients div.liste div.main.impair {
+  grid-template-columns: 1fr 18px 18px;
+}
+.potion section.window-content form div.data div.ingredients div.liste div.main.impair div.hovered {
+  right: 40px;
+}
+.potion section.window-content form div.data div.ingredients div.liste div.main input {
   border: 0px;
   margin: 0px;
   padding: 0px;
   background: transparent;
   text-align: center;
 }
-.potion section.window-content form div.data div.ingredients div.liste div i {
+.potion section.window-content form div.data div.ingredients div.liste div.main i {
   cursor: pointer;
 }
-.potion section.window-content form div.data div.ingredients div.liste div i:hover {
+.potion section.window-content form div.data div.ingredients div.liste div.main i:hover {
   color: white;
+}
+.potion section.window-content form div.data div.ingredients div.liste div.hovered {
+  display: none;
+  position: absolute;
+  grid-template-columns: 1fr;
+  border: 1px solid #000000;
+  padding: 5px;
+  border-radius: 5px;
+  background: #A9A9A9;
+  width: 280px;
+  height: max-content;
+  max-height: 200px;
+  top: 27px;
+  overflow: auto;
+  z-index: 99;
+}
+.potion section.window-content form div.data div.ingredients div.liste div.hovered.show {
+  display: grid;
 }
 .potion section.window-content form div.data div.ingredients button {
   grid-column: 1/6;
@@ -3870,6 +3920,61 @@
   border-radius: 0px;
 }
 .objet section.window-content form div.editor > div.editor-content {
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 5px;
+}
+
+.ingredient section.window-content {
+  background: #A9A9A9;
+}
+.ingredient section.window-content span,
+.ingredient section.window-content input {
+  color: #000000;
+}
+.ingredient section.window-content form {
+  display: grid;
+  grid-template-columns: 200px 1fr 150px;
+  grid-template-rows: max-content 1fr;
+  align-items: flex-start;
+  column-gap: 2px;
+  row-gap: 5px;
+}
+.ingredient section.window-content form input,
+.ingredient section.window-content form select {
+  width: 100%;
+  border-radius: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-top: 0px;
+  border-bottom: 1px solid;
+  text-align: center;
+  background: transparent;
+  font-variant: small-caps;
+  font-size: 18px;
+  border-radius: 0px;
+}
+.ingredient section.window-content form img.profil-img {
+  width: 100%;
+  object-fit: contain;
+  grid-row: 1/3;
+}
+.ingredient section.window-content form div.block {
+  grid-column: 2/4;
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 2px;
+  background: #D3D3D3;
+}
+.ingredient section.window-content form div.editor {
+  min-height: 164px;
+}
+.ingredient section.window-content form div.editor menu {
+  border-radius: 0px;
+}
+.ingredient section.window-content form div.editor > div.editor-content {
   padding-left: 5px;
   padding-right: 5px;
   padding-bottom: 5px;

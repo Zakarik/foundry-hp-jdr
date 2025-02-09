@@ -66,6 +66,10 @@ export function getDefaultImg(type) {
     case "protection":
       img = "systems/harry-potter-jdr/assets/icons/protection.svg";
       break;
+
+    case "ingredient":
+      img = "systems/harry-potter-jdr/assets/icons/ingredient.svg";
+      break;
   }
 
   return img;
@@ -569,7 +573,6 @@ export async function prepareRollCaracteristique(id, actor, modifier=0) {
     data:game.i18n.localize("HP.ROLL.Multiplicateur"),
     value:3,
     min:1,
-    max:5,
   },
   {
     key:'number',
@@ -1345,7 +1348,7 @@ export function splitArrayInHalf(array) {
 }
 
 export async function enrichItems(items) {
-  const listDescription = ["avantage", "desavantage", "coupspouce", "crochepatte", "capacite", "capacitefamilier", "arme", "protection"];
+  const listDescription = ["avantage", "desavantage", "coupspouce", "crochepatte", "capacite", "capacitefamilier", "arme", "protection", "ingredient"];
   const listEffets = ["potion", "sortilege"];
 
   for(let d of items) {
@@ -1360,7 +1363,7 @@ export async function enrichItems(items) {
 }
 
 export async function enrichDescription(item) {
-  const listDescription = ["avantage", "desavantage", "coupspouce", "crochepatte", "capacite", "capacitefamilier", "arme", "protection", 'baguette'];
+  const listDescription = ["avantage", "desavantage", "coupspouce", "crochepatte", "capacite", "capacitefamilier", "arme", "protection", 'baguette', "ingredient"];
   const listEffets = ["potion", "sortilege"];
   let enriched = "";
 

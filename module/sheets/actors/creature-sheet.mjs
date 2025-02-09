@@ -538,6 +538,7 @@ export class CreatureActorSheet extends ActorSheet {
     let balais = [];
     let armes = [];
     let protections = [];
+    let ingredients = [];
 
     actor.enriched = await TextEditor.enrichHTML(actor.system.description);
     await enrichItems(items);
@@ -579,6 +580,10 @@ export class CreatureActorSheet extends ActorSheet {
             allData.system.affinite.label = allData.system.affinite.key ? `${game.i18n.localize(tra[allData.system.affinite.key])} (${allData.system.affinite.value}%)` : '';
 
             baguettes.push(allData);
+            break;
+
+          case 'ingredient':
+            ingredients.push(i);
             break;
       }
     };
@@ -623,6 +628,7 @@ export class CreatureActorSheet extends ActorSheet {
     actor.balais = balais;
     actor.armes = armes;
     actor.protections = protections;
+    actor.ingredients = ingredients;
   }
 
   /* -------------------------------------------- */

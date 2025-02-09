@@ -131,33 +131,64 @@
                                     margin-bottom: 5px;
 
                                     div {
-                                        display: grid;
-                                        align-items: center;
+                                        &.main {
+                                            display: grid;
+                                            align-items: center;
+                                            position: relative;
 
-                                        &.pair {
-                                            grid-template-columns: 18px 1fr;
+                                            &.pair {
+                                                grid-template-columns: 18px 18px 1fr;
+
+                                                div.hovered {
+                                                    left: 36px;
+                                                }
+                                            }
+
+                                            &.impair {
+                                                grid-template-columns: 1fr 18px 18px;
+
+                                                div.hovered {
+                                                    right: 40px;
+                                                }
+                                            }
+
+                                            grid-gap: 2px;
+                                            border-bottom: 1px solid $black;
+
+                                            input {
+                                                border: 0px;
+                                                margin: 0px;
+                                                padding: 0px;
+                                                background: transparent;
+                                                text-align: center;
+                                            }
+
+                                            i {
+                                                cursor: pointer;
+
+                                                &:hover {
+                                                    color: $white;
+                                                }
+                                            }
                                         }
 
-                                        &.impair {
-                                            grid-template-columns: 1fr 18px;
-                                        }
+                                        &.hovered {
+                                            display:none;
+                                            position: absolute;
+                                            grid-template-columns: 1fr;
+                                            border: 1px solid $black;
+                                            padding: 5px;
+                                            border-radius: 5px;
+                                            background: $background;
+                                            width: 280px;
+                                            height: max-content;
+                                            max-height: 200px;
+                                            top: 27px;
+                                            overflow: auto;
+                                            z-index: 99;
 
-                                        grid-gap: 2px;
-                                        border-bottom: 1px solid $black;
-
-                                        input {
-                                            border: 0px;
-                                            margin: 0px;
-                                            padding: 0px;
-                                            background: transparent;
-                                            text-align: center;
-                                        }
-
-                                        i {
-                                            cursor: pointer;
-
-                                            &:hover {
-                                                color: $white;
+                                            &.show {
+                                                display:grid;
                                             }
                                         }
                                     }

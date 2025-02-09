@@ -1,3 +1,5 @@
+import { getDefaultImg } from "../../helpers/common.mjs";
+
   /**
    * @extends {ItemSheet}
    */
@@ -59,29 +61,98 @@
       });
 
       html.find('.addIngredient').click(async ev => {
-        let list = this.item.system.ingredients.liste;
-        list.push('')
+        const id = foundry.utils.randomID();
+        const itm = this.item.system.ingredients.items;
+        itm.push({
+          _id:id,
+          img:getDefaultImg('ingredient'),
+          name:game.i18n.localize('TYPES.Item.ingredient'),
+          system:{
+            type:'communs',
+            description:'',
+            enriched:'',
+          }
+        });
 
-        this.item.update({[`system.ingredients.liste`]:list})
+        this.item.update({[`system.ingredients.items`]:itm});
+      });
+
+      html.find('i.edit').click(async ev => {
+        const tgt = $(ev.currentTarget);
+        const id = tgt.data("id");
+        const itm = new game.hp.documents.HPItem(foundry.utils.mergeObject({
+          ownership:this.item.ownership,
+          type:'ingredient',
+          flags:{
+            'harry-potter-jdr':{
+              'parent':this.item.uuid
+            }
+          }
+        }, this.item.system.ingredients.items.find(itm => itm._id === id)));
+
+        itm.sheet.render(true);
       });
 
       html.find('i.delete').click(async ev => {
         const tgt = $(ev.currentTarget);
-        const index = tgt.data("index");
-        let list = this.item.system.ingredients.liste;
-        list.splice(index, 1);
+        const id = tgt.data("id");
+        let item = this.item.system.ingredients.items;
+        let itmIndex = item.findIndex(itm => itm._id === id);
+        item.splice(itmIndex, 1);
+        let update = {};
+        update[`system.ingredients.items`] = item;
 
-        this.item.update({[`system.ingredients.liste`]:list})
+        await this.item.update(update)
+      });
+
+      html.find('div.ingredients div.liste div.main, div.ingredients div.liste div.hovered').on("mouseenter", ev => {
+        $(ev.currentTarget).find('.hovered').addClass('show');
+      });
+
+      html.find('div.ingredients div.liste div.main, div.ingredients div.liste div.hovered').on("mouseleave", ev => {
+        $(ev.currentTarget).find('.hovered').removeClass('show');
       });
     }
 
     async _prepareData(itemData) {
       const item = itemData.item;
+      const ingredients = item.system.ingredients.items;
 
       item.listtypeingredients = {
         'communs':`HP.Communs`,
         'rares':`HP.Rares`,
         'rarissimes':`HP.Rarissimes`,
       };
+
+      for(let i of ingredients) {
+        i.system.enriched = await TextEditor.enrichHTML(i.system.description);
+      }
+    }
+
+    /**
+    * Event handler for the drop portion of a drag-and-drop event.
+    * @param {DragEvent} event  The drag event being dropped onto the canvas
+    * @private
+    */
+    async _onDrop(event) {
+      event.preventDefault();
+      const data = TextEditor.getDragEventData(event);
+      if ( !data.type ) return;
+      if ( data.type !== 'Item') return;
+      const itm = await fromUuid(data.uuid);
+      const id = foundry.utils.randomID();
+      const listItm = this.item.system.ingredients.items;
+      listItm.push({
+        _id:id,
+        img:itm.img,
+        name:itm.name,
+        system:{
+          type:itm.system.type,
+          description:itm.system.description,
+          enriched:'',
+        }
+      });
+
+      this.item.update({[`system.ingredients.items`]:listItm});
     }
   }

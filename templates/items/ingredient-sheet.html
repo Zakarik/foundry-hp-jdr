@@ -1,0 +1,11 @@
+<form class="mainFlex {{cssClass}}" autocomplete="off">
+    <img class="profil-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" />
+    <input type="text" class="name" name="name" value="{{data.name}}" placeholder="{{localize "HP.Name"}}" />
+    <select name="system.rarete">
+        {{selectOptions item.listrarete selected=systemData.rarete localize=true}}
+    </select>
+
+    <div class="block">
+        {{editor systemData.description target="system.description" engine="prosemirror" button=true owner=owner editable=editable}}
+    </div>
+</form>

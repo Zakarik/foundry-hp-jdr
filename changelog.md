@@ -1,4 +1,10 @@
 # Changelog
+## v0.23.0
+- Ajout des ingrédients comme items à par entière.
+Ils peuvent être glissé-déposé sur les potions et sur les sorciers.
+
+- Retrait du maximum dans les multiplicateurs de caractéristique, étant donné que dans certains cas rares, il peut être supérieur à 5.
+
 ## v0.22.0
 - Ajout de la cible "F" / "Fantôme" pour les sortilèges.
 - Ajout de la première partie du compendium.

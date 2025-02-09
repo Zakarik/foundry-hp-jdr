@@ -14,6 +14,7 @@ import { BalaiItemSheet } from "./sheets/items/balai-sheet.mjs";
 import { CapaciteItemSheet } from "./sheets/items/capacite-sheet.mjs";
 import { ArmeItemSheet } from "./sheets/items/arme-sheet.mjs";
 import { ProtectionItemSheet } from "./sheets/items/protection-sheet.mjs";
+import { IngredientItemSheet } from "./sheets/items/ingredient-sheet.mjs";
 import { compendium } from "./sheets/compendium-sheet.mjs";
 
 // Import helper/utility classes and constants.
@@ -47,6 +48,7 @@ import { BalaiDataModel } from "./documents/models/items/balai-data-model.mjs";
 import { CapaciteDataModel } from "./documents/models/items/capacite-data-model.mjs";
 import { ArmeDataModel } from "./documents/models/items/arme-data-model.mjs";
 import { ProtectionDataModel } from "./documents/models/items/protection-data-model.mjs";
+import { IngredientDataModel } from "./documents/models/items/ingredient-data-model.mjs";
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
@@ -68,6 +70,7 @@ Hooks.once('init', async function() {
       CapaciteItemSheet,
       ArmeItemSheet,
       ProtectionItemSheet,
+      IngredientItemSheet,
     },
     documents:{
       HPActor,
@@ -111,6 +114,7 @@ Hooks.once('init', async function() {
     capacitefamilier:CapaciteDataModel,
     arme:ArmeDataModel,
     protection:ProtectionDataModel,
+    ingredient:IngredientDataModel,
   };
 
   // Register sheet application classes
@@ -169,6 +173,11 @@ Hooks.once('init', async function() {
 
   Items.registerSheet("harry-potter-jdr", ProtectionItemSheet, {
     types: ["protection"],
+    makeDefault: true
+  });
+
+  Items.registerSheet("harry-potter-jdr", IngredientItemSheet, {
+    types: ["ingredient"],
     makeDefault: true
   });
 

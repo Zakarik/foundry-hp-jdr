@@ -1345,6 +1345,14 @@ export class SorcierActorSheet extends ActorSheet {
 
       const msg = await ChatMessage.create(chatData);
     });
+
+    html.find('div.potions div.ingredientsliste div.main, div.potions div.ingredientsliste div.main div.hovered').on("mouseenter", ev => {
+      $(ev.currentTarget).find('.hovered').addClass('show');
+    });
+
+    html.find('div.potions div.ingredientsliste div.main, div.potions div.ingredientsliste div.main div.hovered').on("mouseleave", ev => {
+      $(ev.currentTarget).find('.hovered').removeClass('show');
+    });
   }
 
   async _prepareCharacterItems(actorData) {
@@ -1373,6 +1381,7 @@ export class SorcierActorSheet extends ActorSheet {
     let balais = [];
     let armes = [];
     let protections = [];
+    let ingredients = [];
 
     actor.enriched = await TextEditor.enrichHTML(actor.system.historique.historique);
     await enrichItems(items);
@@ -1403,6 +1412,10 @@ export class SorcierActorSheet extends ActorSheet {
           break;
 
         case "potion":
+          for(let ing of data.ingredients.items) {
+            ing.system.enriched = await TextEditor.enrichHTML(ing.system.description);
+          }
+
           potions.push(i);
           break;
 
@@ -1429,6 +1442,10 @@ export class SorcierActorSheet extends ActorSheet {
           allData.system.affinite.label = allData.system.affinite.key ? `${game.i18n.localize(tra[allData.system.affinite.key])} (${allData.system.affinite.value}%)` : '';
 
           baguettes.push(allData);
+          break;
+
+        case 'ingredient':
+          ingredients.push(i);
           break;
       }
     };
@@ -1546,6 +1563,7 @@ export class SorcierActorSheet extends ActorSheet {
     actor.balais = balais;
     actor.armes = armes;
     actor.protections = protections;
+    actor.ingredients = ingredients;
   }
 
   /* -------------------------------------------- */
@@ -1702,8 +1720,6 @@ export class SorcierActorSheet extends ActorSheet {
      * @param {object} data      The data that has been dropped onto the sheet
      */
     const allowed = Hooks.call("dropActorSheetData", actor, this, data);
-    console.warn(allowed);
-    console.warn(data);
     if ( allowed === false ) return;
 
     // Handle different data types

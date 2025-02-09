@@ -29,7 +29,7 @@
                 <span class="malus">{{system.malus}}%</span>
                 {{#if system.ingredients.liste}}
                 <div class="ingredientsliste" title="{{localize "HP.POTIONS.Ingredients"}}">
-                    {{ingredientsliste system.ingredients.liste}}
+                    {{{ingredientsliste system.ingredients.liste system.ingredients.items}}}
                 </div>
                 {{/if}}
             </div>
