@@ -1,5 +1,5 @@
 <form class="mainFlex {{cssClass}}" autocomplete="off">
-    <header class="main {{ifThen (and systemData.generation (eq actor.type 'creature')) 'generation' ''}}">
+    <header class="main {{ifThen systemData.generation 'generation' ''}}">
         <img class="profil-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" />
 
         <div class="headerData">
@@ -46,20 +46,18 @@
             {{/if}}
         </div>
 
-        <div class="caracteristiques {{ifThen (and systemData.generation (eq actor.type 'creature')) 'generation' ''}}">
-            {{#if (eq actor.type 'creature')}}
+        <div class="caracteristiques {{ifThen systemData.generation 'generation' ''}}">
             <button type="action" class="generation" data-value="{{systemData.generation}}">
                 {{localize "HP.ModeCreation"}}
                 <i class="fa-solid {{ifThen systemData.generation 'fa-hexagon-check' 'fa-xmark'}}"></i>
             </button>
-            {{/if}}
             {{#each systemData.caracteristiques as |data key|}}
                 <div class="data">
                     <div class="main js-simpletoggler">
                         <img class="options" src="systems/harry-potter-jdr/assets/icons/optionBlack.svg" />
                         <span class="label roll draggable" data-id="caracteristique_{{key}}" data-key="{{key}}" data-label="{{localize (getLocalization 'caracteristiques' key)}}" data-value="{{data.total}}">{{localize (getLocalization 'caracteristiques' key)}} <i class="fa-solid fa-dice-d20"></i></span>
                         <span class="value" title="{{data.base}} + {{data.divers}}">{{data.total}}</span>
-                        {{#if (and ../systemData.generation (eq ../actor.type 'creature'))}}
+                        {{#if ../systemData.generation}}
                         <div class="jet">
                             <input type="text" name="system.caracteristiques.{{key}}.jet" value="{{data.jet}}" />
                             <i class="fa-solid fa-dice-d20 rollGenerationCaracteristique" data-key="{{key}}" data-jet="{{data.jet}}"></i>

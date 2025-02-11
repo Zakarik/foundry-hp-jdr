@@ -1,4 +1,7 @@
 # Changelog
+## v0.24.0
+- Ajout des jets pour déterminer les caractéristiques pour les familiers (concerne certains familiers du bestiaire)
+
 ## v0.23.0
 - Ajout des ingrédients comme items à par entière.
 Ils peuvent être glissé-déposé sur les potions et sur les sorciers.
