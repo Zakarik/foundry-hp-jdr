@@ -1,4 +1,7 @@
 # Changelog
+## v0.26.1
+- Correction du texte de la rareté des ingrédients, pour y passer au singulier.
+
 ## v0.26.0
 - Ajout de cibles manquantes pour les potions.
 - Ajout de type d'ingrédients manquants pour les potions.

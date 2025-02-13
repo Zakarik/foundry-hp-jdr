@@ -52,9 +52,9 @@
       const item = itemData.item;
 
       item.listrarete = {
-        'communs':`HP.Communs`,
-        'rares':`HP.Rares`,
-        'rarissimes':`HP.Rarissimes`,
+        'commun':`HP.Commun`,
+        'rare':`HP.Rare`,
+        'rarissime':`HP.Rarissime`,
       };
     }
 
