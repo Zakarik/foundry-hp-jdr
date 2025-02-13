@@ -1,4 +1,7 @@
 # Changelog
+## v0.25.1
+- Correction de liens cassés.
+
 ## v0.25.0
 - Ajout des compendiums pour le Bestiaire, l'Encyclopedie des esprits, êtres et non-êtres, les capacités de créature, quelques journaux.
 

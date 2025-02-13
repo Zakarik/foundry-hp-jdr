@@ -1,3 +1,26 @@
-2025/02/12-11:11:42.760954 7f67cba9cb38 Recovering log #4
-2025/02/12-11:11:42.897045 7f67cba9cb38 Delete type=3 #2
-2025/02/12-11:11:42.897097 7f67cba9cb38 Delete type=0 #4
+2025/02/13-16:49:45.789 1db4 Recovering log #7
+2025/02/13-16:49:45.791 1db4 Level-0 table #9: started
+2025/02/13-16:49:45.798 1db4 Level-0 table #9: 249817 bytes OK
+2025/02/13-16:49:45.798 1db4 Recovering log #10
+2025/02/13-16:49:45.805 1db4 Delete type=0 #7
+2025/02/13-16:49:45.805 1db4 Delete type=0 #10
+2025/02/13-16:49:45.806 1db4 Delete type=3 #6
+2025/02/13-16:49:46.083 7290 Moved #9 to level-1 249817 bytes OK: files[ 0 1 1 0 0 0 0 ]
+2025/02/13-16:49:46.095 7290 Compacting 1@1 + 1@2 files
+2025/02/13-16:49:46.107 7290 Generated table #12@1: 781 keys, 343892 bytes
+2025/02/13-16:49:46.107 7290 Compacted 1@1 + 1@2 files => 343892 bytes
+2025/02/13-16:49:46.109 7290 compacted to: files[ 0 0 1 0 0 0 0 ]
+2025/02/13-16:49:46.110 7290 Delete type=2 #5
+2025/02/13-16:49:46.110 7290 Delete type=2 #9
+2025/02/13-17:31:55.518 7290 Level-0 table #14: started
+2025/02/13-17:31:55.521 7290 Level-0 table #14: 75858 bytes OK
+2025/02/13-17:31:55.523 7290 Delete type=0 #11
+2025/02/13-17:31:55.531 7290 Manual compaction at level-0 from '!actors!0eDNz6Pi6Q4eEBqE' @ 72057594037927935 : 1 .. '!folders!udrGajrPCR1VivF8' @ 0 : 0; will stop at (end)
+2025/02/13-17:31:55.552 7290 Manual compaction at level-1 from '!actors!0eDNz6Pi6Q4eEBqE' @ 72057594037927935 : 1 .. '!folders!udrGajrPCR1VivF8' @ 0 : 0; will stop at '!actors!yD8SiyXFC4R4ybUE' @ 1827 : 1
+2025/02/13-17:31:55.552 7290 Compacting 1@1 + 1@2 files
+2025/02/13-17:31:55.562 7290 Generated table #15@1: 781 keys, 344315 bytes
+2025/02/13-17:31:55.562 7290 Compacted 1@1 + 1@2 files => 344315 bytes
+2025/02/13-17:31:55.564 7290 compacted to: files[ 0 0 1 0 0 0 0 ]
+2025/02/13-17:31:55.564 7290 Delete type=2 #12
+2025/02/13-17:31:55.564 7290 Delete type=2 #14
+2025/02/13-17:31:55.570 7290 Manual compaction at level-1 from '!actors!yD8SiyXFC4R4ybUE' @ 1827 : 1 .. '!folders!udrGajrPCR1VivF8' @ 0 : 0; will stop at (end)
