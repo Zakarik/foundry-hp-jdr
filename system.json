@@ -99,6 +99,21 @@
       "name":"sortileges",
       "label":"Sortilèges",
       "type":"Item"
+    },
+    {
+      "name":"capacites-de-creature",
+      "label":"Capacités de créature",
+      "type":"Item"
+    },
+    {
+      "name":"encyclopedie-des-esprits-etres-et-non-etres",
+      "label":"Encyclopedie des esprits, êtres et non-êtres",
+      "type":"Actor"
+    },
+    {
+      "name":"bestiaire",
+      "label":"Bestiaire",
+      "type":"Actor"
     }
   ],
   "packFolders":[
@@ -118,7 +133,10 @@
         "objets-magiques",
         "objets-magiques-mineurs",
         "tables-aleatoires",
-        "sortileges"
+        "sortileges",
+        "capacites-de-creature",
+        "encyclopedie-des-esprits-etres-et-non-etres",
+        "bestiaire"
       ]
     }
   ],

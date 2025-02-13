@@ -1,4 +1,7 @@
 # Changelog
+## v0.25.0
+- Ajout des compendiums pour le Bestiaire, l'Encyclopedie des esprits, êtres et non-êtres, les capacités de créature, quelques journaux.
+
 ## v0.24.0
 - Ajout des jets pour déterminer les caractéristiques pour les familiers (concerne certains familiers du bestiaire)
 
