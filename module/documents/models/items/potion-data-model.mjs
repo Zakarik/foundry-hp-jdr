@@ -10,7 +10,7 @@ export class PotionDataModel extends foundry.abstract.TypeDataModel {
             version:new NumberField({initial:0}),
             niveau:new NumberField({initial:0}),
             ingredients:new SchemaField({
-                type:new StringField({initial:"communs", choices:['communs', 'rares', 'rarissimes']}),
+                type:new StringField({initial:"communs", choices:['communs', 'rares', 'rarissimes', 'rarissimes_special', 'special', 'varie']}),
                 items:new ArrayField(new SchemaField({
                     _id:new StringField({initial:""}),
                     name:new StringField({initial:""}),
@@ -28,9 +28,11 @@ export class PotionDataModel extends foundry.abstract.TypeDataModel {
                 o:new BooleanField({initial:false}),
                 p:new BooleanField({initial:false}),
                 v:new BooleanField({initial:false}),
+                potion:new BooleanField({initial:false}),
+                varie:new BooleanField({initial:false}),
             }),
             effets:new HTMLField({initial:""}),
-            malus:new NumberField({initial:0}),
+            malus:new StringField({initial:"0"}),
         }
     }
 

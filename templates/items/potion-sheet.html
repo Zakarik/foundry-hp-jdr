@@ -43,7 +43,7 @@
 
         <label class="malus">
             <span>{{localize "HP.Malus"}}</span>
-            {{numberInput systemData.malus name="system.malus" min=0}}
+            <input type="text" name="system.malus" value="{{systemData.malus}}" />
         </label>
 
         <div class="cible">
@@ -63,6 +63,14 @@
             <div class="{{ifThen systemData.cibles.v 'checked' ''}}" data-cible="v" title="{{localize "HP.Vegetaux"}}">
                 <i class="fa-solid {{ifThen systemData.cibles.v 'fa-check' 'fa-xmark'}}"></i>
                 <span>{{localize "HP.V"}}</span>
+            </div>
+            <div class="large {{ifThen systemData.cibles.potion 'checked' ''}}" data-cible="potion" title="{{localize "HP.Potion"}}">
+                <i class="fa-solid {{ifThen systemData.cibles.potion 'fa-check' 'fa-xmark'}}"></i>
+                <span>{{localize "HP.Potion"}}</span>
+            </div>
+            <div class="large {{ifThen systemData.cibles.varie 'checked' ''}}" data-cible="varie" title="{{localize "HP.Varie"}}">
+                <i class="fa-solid {{ifThen systemData.cibles.varie 'fa-check' 'fa-xmark'}}"></i>
+                <span>{{localize "HP.Varie"}}</span>
             </div>
         </div>
     </div>

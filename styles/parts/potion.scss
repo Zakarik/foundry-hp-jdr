@@ -261,6 +261,11 @@
                                     }
                                 }
 
+                                &.large {
+                                    grid-column: 1 / 3;
+                                    width: max-content;
+                                }
+
                                 &:hover {
                                     background: $black;
 

@@ -122,6 +122,9 @@ import { getDefaultImg } from "../../helpers/common.mjs";
         'communs':`HP.Communs`,
         'rares':`HP.Rares`,
         'rarissimes':`HP.Rarissimes`,
+        'rarissimes_special':`HP.RarissimesSpecial`,
+        'special':`HP.Special`,
+        'varie':`HP.Varie`,
       };
 
       for(let i of ingredients) {

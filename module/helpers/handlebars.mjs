@@ -79,15 +79,20 @@ export const RegisterHandlebars = function () {
     });
 
     Handlebars.registerHelper('cibles', function (object) {
-        let ciblesActives = Object.keys(object).filter(key => object[key]).map(key => `<p style='display:contents' title='${game.i18n.localize(`HP.${key.toUpperCase()}Full`)}'>${game.i18n.localize(`HP.${key.toUpperCase()}`)}</p>`);
+        let ciblesActives = Object.keys(object).filter(key => object[key]).map(key => `<p style='display:contents' title='${key === 'varie' || key === 'potion' ? game.i18n.localize(`HP.${capitalizeFirstLetter(key)}`) : game.i18n.localize(`HP.${key.toUpperCase()}Full`)}'>${key === 'varie' || key === 'potion' ? game.i18n.localize(`HP.${capitalizeFirstLetter(key)}`) : game.i18n.localize(`HP.${key.toUpperCase()}`)}</p>`);
         let result = ciblesActives.join(' / ');
         return result;
     });
 
     Handlebars.registerHelper('ingredientstype', function (str) {
-        console.warn(str);
-        return game.i18n.localize(`HP.${str.charAt(0).toUpperCase() + str.slice(1)}`);
+        let string = '';
+
+        if(str === 'rarissimes_special') string = `HP.RarissimesSpecial`;
+        else string = `HP.${str.charAt(0).toUpperCase() + str.slice(1)}`;
+
+        return game.i18n.localize(string);
     });
+
     Handlebars.registerHelper('ingredientsliste', function (liste, items) {
         let array = [];
 
@@ -207,5 +212,12 @@ export const RegisterHandlebars = function () {
 
     Handlebars.registerHelper('ingredientIndex', function (item, id) {
         return item.system.ingredients.items.findIndex(itm => itm._id === id);
+    });
+    Handlebars.registerHelper('addPourcent', function (str) {
+        if(!isNaN(str)) {
+            return `${str}%`;
+        } else {
+            return str;
+        }
     });
 }

@@ -25,8 +25,8 @@
                 </div>
                 <span class="niveau">{{system.niveau}}</span>
                 <span class="ingredientstype">{{ingredientstype system.ingredients.type}}</span>
-                <span class="cibles">{{cibles system.cibles}}</span>
-                <span class="malus">{{system.malus}}%</span>
+                <span class="cibles">{{{cibles system.cibles}}}</span>
+                <span class="malus">{{addPourcent system.malus}}</span>
                 {{#if system.ingredients.liste}}
                 <div class="ingredientsliste" title="{{localize "HP.POTIONS.Ingredients"}}">
                     {{{ingredientsliste system.ingredients.liste system.ingredients.items}}}

@@ -1,4 +1,10 @@
 # Changelog
+## v0.26.0
+- Ajout de cibles manquantes pour les potions.
+- Ajout de type d'ingrédients manquants pour les potions.
+- Modification du champ Malus des potions pour permettre d'écrire du texte (pour les cas où c'est écrit "Varie").
+- Correction d'un bug d'affichage des cibles des potions dans l'inventaire des sorciers.
+
 ## v0.25.1
 - Correction de liens cassés.
 

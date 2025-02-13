@@ -3844,6 +3844,10 @@
 .potion section.window-content form div.data div.cible div.checked i {
   color: #228B22;
 }
+.potion section.window-content form div.data div.cible div.large {
+  grid-column: 1/3;
+  width: max-content;
+}
 .potion section.window-content form div.data div.cible div:hover {
   background: #000000;
 }
