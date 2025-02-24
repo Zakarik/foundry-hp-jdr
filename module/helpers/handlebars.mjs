@@ -210,9 +210,31 @@ export const RegisterHandlebars = function () {
         return result;
     });
 
+    Handlebars.registerHelper('localizeRareteSingular', function (str) {
+        let result = '';
+
+        switch(str) {
+            case 'communs':
+            case 'commun':
+                result = game.i18n.localize('HP.Commun');
+                break
+            case 'rares':
+            case 'rare':
+                result = game.i18n.localize('HP.Rare');
+                break
+            case 'rarissimes':
+            case 'rarissime':
+                result = game.i18n.localize('HP.Rarissime');
+                break
+        }
+
+        return result;
+    });
+
     Handlebars.registerHelper('ingredientIndex', function (item, id) {
         return item.system.ingredients.items.findIndex(itm => itm._id === id);
     });
+
     Handlebars.registerHelper('addPourcent', function (str) {
         if(!isNaN(str)) {
             return `${str}%`;

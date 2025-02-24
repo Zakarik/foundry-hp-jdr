@@ -1,4 +1,9 @@
 # Changelog
+## v0.26.2
+- Correction du texte de la rareté des ingrédients sur les potions, pour y passer au singulier.
+- Correction d'un bug empêchant de créer un ingrédient directement sur une potion, puis de l'éditer.
+
+# Changelog
 ## v0.26.1
 - Correction du texte de la rareté des ingrédients, pour y passer au singulier.
 

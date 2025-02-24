@@ -31,7 +31,7 @@
                                 <i class="fa-solid fa-trash delete clickable" data-id="{{this}}" data-index="{{@index}}" title="{{localize 'HP.Supprimer'}}"></i>
                             {{/if}}
                             <div class="hovered">
-                                <span class="rarete"><b>{{localize "HP.Rarete"}} :</b> {{ingredientData ../item this 'rarete'}}</span>
+                                <span class="rarete"><b>{{localize "HP.Rarete"}} :</b> {{localizeRareteSingular (ingredientData ../item this 'rarete')}}</span>
                                 <div class="description">{{{ingredientData ../item this 'enriched'}}}</div>
                             </div>
                         </div>

@@ -16,7 +16,7 @@ export class PotionDataModel extends foundry.abstract.TypeDataModel {
                     name:new StringField({initial:""}),
                     img:new FilePathField({categories: ["IMAGE"]}),
                     system:new SchemaField({
-                        rarete:new StringField({initial:"communs", choices:['communs', 'rares', 'rarissimes']}),
+                        rarete:new StringField({initial:"communs", choices:['commun', 'rare', 'rarissime', 'communs', 'rares', 'rarissimes']}),
                         description:new HTMLField({initial:""}),
                         enriched:new HTMLField({initial:""}),
                     }),
