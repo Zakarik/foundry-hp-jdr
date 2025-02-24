@@ -22,7 +22,7 @@ import { getDefaultImg } from "../../helpers/common.mjs";
     async getData() {
       const context = super.getData();
 
-      this._prepareData(context);
+      await this._prepareData(context);
 
       context.systemData = context.data.system;
       context.systemData.effets = await TextEditor.enrichHTML(context.item.system.effets, {async: true});
@@ -130,6 +130,8 @@ import { getDefaultImg } from "../../helpers/common.mjs";
       for(let i of ingredients) {
         i.system.enriched = await TextEditor.enrichHTML(i.system.description);
       }
+
+      console.warn(ingredients);
     }
 
     /**
@@ -143,6 +145,7 @@ import { getDefaultImg } from "../../helpers/common.mjs";
       if ( !data.type ) return;
       if ( data.type !== 'Item') return;
       const itm = await fromUuid(data.uuid);
+      if(itm.type !== 'ingredient') return;
       const id = foundry.utils.randomID();
       const listItm = this.item.system.ingredients.items;
       listItm.push({

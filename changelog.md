@@ -1,4 +1,7 @@
 # Changelog
+## v0.26.3
+- Correction d'un problème rare de description des ingrédients qui n'apparaissait pas, parfois, sur les potions.
+
 ## v0.26.2
 - Correction du texte de la rareté des ingrédients sur les potions, pour y passer au singulier.
 - Correction d'un bug empêchant de créer un ingrédient directement sur une potion, puis de l'éditer.
