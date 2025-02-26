@@ -8,7 +8,7 @@ export class PotionDataModel extends foundry.abstract.TypeDataModel {
 
         return {
             version:new NumberField({initial:0}),
-            niveau:new NumberField({initial:0}),
+            niveau:new StringField({initial:"0"}),
             ingredients:new SchemaField({
                 type:new StringField({initial:"communs", choices:['communs', 'rares', 'rarissimes', 'rarissimes_special', 'special', 'varie']}),
                 items:new ArrayField(new SchemaField({

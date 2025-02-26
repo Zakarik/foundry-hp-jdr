@@ -213,6 +213,8 @@ export const RegisterHandlebars = function () {
     Handlebars.registerHelper('localizeRareteSingular', function (str) {
         let result = '';
 
+        console.warn(str);
+
         switch(str) {
             case 'communs':
             case 'commun':

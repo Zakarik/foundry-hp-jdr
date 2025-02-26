@@ -1,4 +1,9 @@
 # Changelog
+## v0.26.4
+- Correction d'un problème transformant les ingrédients en ingrédients "communs" lorsqu'ils étaient mis sur les potions.
+Aucune correction automatique possible : Il faut repasser dessus à la main.
+- Correction d'un bug empêchant de mettre les niveaux 5+ sur les potions.
+
 ## v0.26.3
 - Correction d'un problème rare de description des ingrédients qui n'apparaissait pas, parfois, sur les potions.
 

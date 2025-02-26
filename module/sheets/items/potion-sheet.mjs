@@ -153,7 +153,7 @@ import { getDefaultImg } from "../../helpers/common.mjs";
         img:itm.img,
         name:itm.name,
         system:{
-          type:itm.system.type,
+          rarete:itm.system.rarete,
           description:itm.system.description,
           enriched:'',
         }
