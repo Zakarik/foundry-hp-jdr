@@ -1,4 +1,8 @@
 # Changelog
+## v0.27.0
+- Ajout de 4 Aides de jeu sous forme d'aventures.
+- Ajout des ingrédients et potions au compendium.
+
 ## v0.26.4
 - Correction d'un problème transformant les ingrédients en ingrédients "communs" lorsqu'ils étaient mis sur les potions.
 Aucune correction automatique possible : Il faut repasser dessus à la main.

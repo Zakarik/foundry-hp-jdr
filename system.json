@@ -15,6 +15,12 @@
       "name": "French",
       "path": "lang/fr.json",
       "flags": {}
+    },
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/fr.json",
+      "flags": {}
     }
   ],
   "authors": [
@@ -114,6 +120,21 @@
       "name":"bestiaire",
       "label":"Bestiaire",
       "type":"Actor"
+    },
+    {
+      "name":"potions",
+      "label":"Potions",
+      "type":"Item"
+    },
+    {
+      "name":"ingredients",
+      "label":"Ingrédients",
+      "type":"Item"
+    },
+    {
+      "name":"aides-de-jeu",
+      "label":"Aides de jeu",
+      "type":"Adventure"
     }
   ],
   "packFolders":[
@@ -136,7 +157,10 @@
         "sortileges",
         "capacites-de-creature",
         "encyclopedie-des-esprits-etres-et-non-etres",
-        "bestiaire"
+        "bestiaire",
+        "potions",
+        "ingredients",
+        "aides-de-jeu"
       ]
     }
   ],
