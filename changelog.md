@@ -1,4 +1,7 @@
 # Changelog
+## v0.28.0
+- Compatibilité V13.
+
 ## v0.27.0
 - Ajout de 4 Aides de jeu sous forme d'aventures.
 - Ajout des ingrédients et potions au compendium.

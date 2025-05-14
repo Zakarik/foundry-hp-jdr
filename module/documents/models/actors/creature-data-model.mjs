@@ -52,7 +52,17 @@ export class CreatureDataModel extends foundry.abstract.TypeDataModel {
         }
     }
 
+    get actor() {
+        return this.parent;
+    }
+
+    get effects() {
+        return this.actor.effects;
+    }
+
+
     prepareBaseData() {
+        this.#_effectsV13();
     }
 
     prepareDerivedData() {
@@ -153,5 +163,19 @@ export class CreatureDataModel extends foundry.abstract.TypeDataModel {
         Object.defineProperty(this.seuils.epicfail, 'total', {
             value: this.seuils.epicfail.base+this.seuils.epicfail.mod,
         });
+    }
+
+    #_effectsV13() {
+        const effects = this.effects;
+
+        if(effects.size === 0) return;
+        const del = [];
+
+        for(let e of effects) {
+            del.push(e._id);
+        }
+
+        if(del.length > 0) this.actor.deleteEmbeddedDocuments("ActiveEffect", del);
+
     }
 }

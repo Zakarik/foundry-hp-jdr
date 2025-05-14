@@ -100,8 +100,16 @@ export class SorcierDataModel extends foundry.abstract.TypeDataModel {
         }
     }
 
-    prepareBaseData() {
+    get actor() {
+        return this.parent;
+    }
 
+    get effects() {
+        return this.actor.effects;
+    }
+
+    prepareBaseData() {
+        this.#_effectsV13();
     }
 
     prepareDerivedData() {
@@ -370,5 +378,19 @@ export class SorcierDataModel extends foundry.abstract.TypeDataModel {
         Object.defineProperty(this, 'armure', {
             value: armure,
         });
+    }
+
+    #_effectsV13() {
+        const effects = this.effects;
+
+        if(effects.size === 0) return;
+        const del = [];
+
+        for(let e of effects) {
+            del.push(e._id);
+        }
+
+        if(del.length > 0) this.actor.deleteEmbeddedDocuments("ActiveEffect", del);
+
     }
 }

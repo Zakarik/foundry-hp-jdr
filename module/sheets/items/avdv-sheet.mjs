@@ -152,6 +152,9 @@ import {
     /** @inheritdoc */
     async close(options={}) {
       super.close(options);
+      if(!this.isEditable) return;
+
+      const version = game.version.split('.')[0];
       const effects = this.item.effects.contents[0];
       const dataEffects = this.item.system.effets;
 
@@ -176,7 +179,7 @@ import {
         }]);
       }
 
-      if(this.item.actor) {
+      if(this.item.actor && version <= 12) {
         const actorEffects = this.item.actor.effects.find(itm => itm.origin === `Actor.${this.actor._id}.Item.${this.item._id}`);
 
         if(actorEffects) {
