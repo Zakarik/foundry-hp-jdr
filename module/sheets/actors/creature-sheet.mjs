@@ -159,6 +159,7 @@ export class CreatureActorSheet extends ActorSheet {
           }
       };
 
+      ChatMessage.applyRollMode(chatData, chatRollMode);
       const msg = await ChatMessage.create(chatData);
     });
 
@@ -368,6 +369,7 @@ export class CreatureActorSheet extends ActorSheet {
           }
       };
 
+      ChatMessage.applyRollMode(chatData, chatRollMode);
       const msg = await ChatMessage.create(chatData);
     });
 
@@ -471,6 +473,7 @@ export class CreatureActorSheet extends ActorSheet {
           }
       };
 
+      ChatMessage.applyRollMode(chatData, chatRollMode);
       const msg = await ChatMessage.create(chatData);
     });
 
@@ -516,6 +519,7 @@ export class CreatureActorSheet extends ActorSheet {
         rollMode:chatRollMode,
     };
 
+    ChatMessage.applyRollMode(chatData, chatRollMode);
     const msg = await ChatMessage.create(chatData);
 
     actor.update({[`system.caracteristiques.${key}.base`]:rollTotal});

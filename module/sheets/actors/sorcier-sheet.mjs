@@ -960,6 +960,7 @@ export class SorcierActorSheet extends ActorSheet {
           }
       };
 
+      ChatMessage.applyRollMode(chatData, chatRollMode);
       const msg = await ChatMessage.create(chatData);
     });
 
@@ -1109,6 +1110,7 @@ export class SorcierActorSheet extends ActorSheet {
           }
       };
 
+      ChatMessage.applyRollMode(chatData, chatRollMode);
       const msg = await ChatMessage.create(chatData);
     });
 
@@ -1190,6 +1192,7 @@ export class SorcierActorSheet extends ActorSheet {
           }
       };
 
+      ChatMessage.applyRollMode(chatData, chatRollMode);
       const msg = await ChatMessage.create(chatData);
     });
 
@@ -1225,6 +1228,7 @@ export class SorcierActorSheet extends ActorSheet {
           }
       };
 
+      ChatMessage.applyRollMode(chatData, chatRollMode);
       const msg = await ChatMessage.create(chatData);
     });
 
@@ -1343,6 +1347,7 @@ export class SorcierActorSheet extends ActorSheet {
           }
       };
 
+      ChatMessage.applyRollMode(chatData, chatRollMode);
       const msg = await ChatMessage.create(chatData);
     });
 

@@ -1,4 +1,7 @@
 # Changelog
+## v0.28.1
+- Correction d'un problème de jet privé ne l'étant pas.
+
 ## v0.28.0
 - Compatibilité V13.
 

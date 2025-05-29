@@ -119,6 +119,7 @@ export default class HooksHP {
                             }
                         };
 
+                        ChatMessage.applyRollMode(chatData, chatRollMode);
                         const msg = await ChatMessage.create(chatData);
                     });
                 }

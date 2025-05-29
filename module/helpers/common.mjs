@@ -312,6 +312,7 @@ export async function doRoll(actor, data) {
       rollMode:chatRollMode,
   };
 
+  ChatMessage.applyRollMode(chatData, chatRollMode);
   const msg = await ChatMessage.create(chatData);
 
   return {
@@ -1256,6 +1257,7 @@ export async function prepareRollDegats(actor, id=null) {
 
   if(formula != '0') chatData.rolls = [roll];
 
+  ChatMessage.applyRollMode(chatData, chatRollMode);
   const msg = await ChatMessage.create(chatData);
 }
 
