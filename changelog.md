@@ -1,4 +1,10 @@
 # Changelog
+## v0.29.0
+- Compatibilité avec la V14.
+- Correction d'un problème de calcul des points de vies.
+- Correction d'un problème, en V14, pour créer des élèments dans l'Inventaire.
+
+# Changelog
 ## v0.28.1
 - Correction d'un problème de jet privé ne l'étant pas.
 

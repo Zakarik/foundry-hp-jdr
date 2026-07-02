@@ -313,8 +313,7 @@ export class SorcierDataModel extends foundry.abstract.TypeDataModel {
 
             switch(d) {
                 case 'pv':
-                    base += this.caracteristiques.constitution.total;
-                    base += this.caracteristiques.taille.total;
+                    base += Math.ceil((this.caracteristiques.constitution.total + this.caracteristiques.taille.total) / 2);
                     break;
 
                 case 'idee':
